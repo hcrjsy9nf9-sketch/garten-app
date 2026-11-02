@@ -1,0 +1,1232 @@
+{
+  "schemaVersion": 1,
+  "titel": "Garten-App – Parzelle 23",
+  "stand": "2. Nov. 2026",
+  "standIso": "2026-11-02",
+  "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
+  "kategorien": [
+    { "key": "wasser", "label": "Wasser & Technik" },
+    { "key": "beete", "label": "Beete" },
+    { "key": "gewaechshaus", "label": "Gewächshaus" },
+    { "key": "obst", "label": "Obst & Beeren" },
+    { "key": "natur", "label": "Natur & Insekten" }
+  ],
+  "texte": {
+    "heuteUeberschrift": "Heute & diese Woche",
+    "jahrUeberschrift": "Jahresübersicht",
+    "technikUeberschrift": "Wasser & Technik",
+    "bestandUeberschrift": "Bestand",
+    "tagebuchUeberschrift": "Gartentagebuch",
+    "offenUeberschrift": "Noch zu erfassen",
+    "wasserZuerst": {
+      "ton": "warning",
+      "lead": "Wasser zuerst",
+      "text": "Regenfässer, Brunnenpumpe, Schläuche und Leitung vor dem ersten Dauerfrost winterfest machen; Schnitt-, Mulch- und Laubarbeiten können auch später im November folgen."
+    },
+    "bestandHinweis": "Lageangaben nach der Skizze mit Süden oben; „rechts“ und „links“ beziehen sich auf die Skizze.",
+    "saisonUeberschrift": "Saisonkalender",
+    "saisonHinweis": "Typischer Verlauf für Magdeburg; umrandet ist der aktuelle Monat. Die Termine richten sich nach dem tatsächlichen Frost."
+  },
+  "saisonLegende": [
+    { "code": "b", "label": "in Betrieb" },
+    { "code": "u", "label": "in Betrieb nehmen bzw. winterfest machen" },
+    { "code": "w", "label": "Winterlage" }
+  ],
+  "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+  "heute": [
+    {
+      "text": "Regenfässer leeren und umdrehen oder abdecken",
+      "bereich": "Wasser & Technik · Regenfässer",
+      "kategorie": "wasser",
+      "done": false
+    },
+    {
+      "text": "Brunnenpumpe winterfest machen: Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr bzw. Leitungen frostsicher abdecken",
+      "bereich": "Wasser & Technik · Brunnenpumpe",
+      "kategorie": "wasser",
+      "done": false
+    },
+    {
+      "text": "Gartenschläuche entleeren und frostfrei einlagern",
+      "bereich": "Wasser & Technik · Schläuche",
+      "kategorie": "wasser",
+      "done": false
+    },
+    {
+      "text": "Außenhahn und Wasserleitung absperren und entleeren, Hahn offen lassen",
+      "bereich": "Wasser & Technik · Wasserhahn",
+      "kategorie": "wasser",
+      "done": false
+    },
+    {
+      "text": "Gewächshaus-Bewässerung entleeren (Schläuche, ggf. Tropfleitung, Gießkannen)",
+      "bereich": "Gewächshaus",
+      "kategorie": "gewaechshaus",
+      "done": false
+    },
+    {
+      "text": "Dachrinnen, Fallrohre und Fallrohrfilter nach dem Laubfall von Laub befreien",
+      "bereich": "Wasser & Technik · Regenfässer",
+      "kategorie": "wasser",
+      "done": false
+    },
+    {
+      "text": "Abgeerntete Beete mit Laub oder Mulch abdecken statt umgraben",
+      "bereich": "Beet 1 und Beet 2",
+      "kategorie": "beete",
+      "done": false
+    },
+    {
+      "text": "Johannisbeeren schneiden: Aufbauschnitt, nur schwache und bodennah liegende Triebe entfernen",
+      "bereich": "Johannisbeeren · Südrand links",
+      "kategorie": "obst",
+      "done": false
+    },
+    {
+      "text": "Himbeeren schneiden: abgetragene Ruten bodennah entfernen; bei Herbsthimbeeren alle Ruten erst im Februar",
+      "bereich": "Himbeeren · 2,1 × 1 m",
+      "kategorie": "obst",
+      "done": false
+    },
+    {
+      "text": "Fruchtmumien und Fallobst an Kirschen und Pflaume entfernen, nicht auf den Kompost",
+      "bereich": "Süßkirsche, Pflaume, Sauerkirsche",
+      "kategorie": "obst",
+      "done": false
+    },
+    {
+      "text": "Laubhaufen mit Schnittgut am Südrand neben der Sauerkirsche anlegen",
+      "bereich": "Natur · Südrand rechts",
+      "kategorie": "natur",
+      "done": false
+    }
+  ],
+  "jahr": [
+    {
+      "key": "2026-11",
+      "label": "Nov 26",
+      "name": "November 2026",
+      "aufgaben": {
+        "wasser": [
+          "Vor dem ersten Dauerfrost: Regenfässer leeren und umdrehen oder abdecken.",
+          "Brunnenpumpe winterfest machen: Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr bzw. Leitungen frostsicher abdecken.",
+          "Gartenschläuche entleeren und einlagern; Außenhahn und Wasserleitung absperren und entleeren.",
+          "Dachrinnen und Fallrohre nach dem Laubfall von Laub befreien."
+        ],
+        "beete": ["Abgeerntete Beete mit Laub oder Mulch abdecken statt umgraben."],
+        "gewaechshaus": ["Gewächshaus-Bewässerung entleeren.", "An frostfreien, sonnigen Tagen kurz lüften."],
+        "obst": [
+          "Johannisbeeren schneiden (Aufbauschnitt: schwache und bodennahe Triebe entfernen).",
+          "Himbeeren: abgetragene Ruten bodennah entfernen; Herbsthimbeeren erst im Februar.",
+          "Fruchtmumien und Fallobst an Kirschen und Pflaume entfernen."
+        ],
+        "natur": [
+          "Laubhaufen mit Schnittgut am Südrand neben der Sauerkirsche anlegen.",
+          "Laub unter den Beerensträuchern als Mulch liegen lassen."
+        ]
+      }
+    },
+    {
+      "key": "2026-12",
+      "label": "Dez 26",
+      "name": "Dezember 2026",
+      "aufgaben": {
+        "wasser": [
+          "Nach Sturm oder Schnee die Abdeckung über Brunnenrohr und Regenfässern kontrollieren.",
+          "Prüfen, ob Pumpe und Schläuche frostfrei lagern."
+        ],
+        "beete": [
+          "Mulchdecke nach Sturm prüfen, bei Bedarf Laub nachlegen.",
+          "Saatgut für 2027 sichten (Einkaufsliste im Gartenplan 2027)."
+        ],
+        "gewaechshaus": ["An frostfreien, sonnigen Tagen kurz lüften."],
+        "obst": ["Noch hängende Fruchtmumien abnehmen."],
+        "natur": ["Laub- und Totholzhaufen in Ruhe lassen; Stauden stehen lassen."]
+      }
+    },
+    {
+      "key": "2027-01",
+      "label": "Jan",
+      "name": "Januar 2027",
+      "aufgaben": {
+        "wasser": ["Abdeckungen über Brunnenrohr und Regenfässern nach Sturm oder Schnee kontrollieren."],
+        "beete": [
+          "Saatgut-Inventur, fehlendes Saatgut bestellen.",
+          "Bodenlabor auswählen, Probe für Februar/März einplanen."
+        ],
+        "obst": ["Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung)."],
+        "natur": ["Wildbienen-Nisthilfe und Vogelnistkasten besorgen."]
+      }
+    },
+    {
+      "key": "2027-02",
+      "label": "Feb",
+      "name": "Februar 2027",
+      "aufgaben": {
+        "wasser": ["Eingelagerte Pumpe und Schläuche auf Schäden prüfen, bei Bedarf Ersatzdichtungen besorgen."],
+        "beete": ["Bei offenem Boden Bodenprobe ziehen und ins Labor schicken."],
+        "gewaechshaus": ["Ende Februar: Paprika und Chili auf der Fensterbank aussäen (24–28 °C)."],
+        "obst": [
+          "Falls Herbsthimbeeren: alle Ruten bodennah abschneiden.",
+          "Johannisbeeren bei Bedarf auslichten (frostfreier Tag)."
+        ],
+        "natur": ["Vogelnistkasten bis Ende Februar an der Süßkirsche aufhängen (Flugloch Ost/Südost)."]
+      }
+    },
+    {
+      "key": "2027-03",
+      "label": "Mär",
+      "name": "März 2027",
+      "aufgaben": {
+        "wasser": ["Ende März, sobald keine starken Fröste mehr angesagt sind: Regenfässer aufstellen, Fallrohrfilter reinigen und anschließen."],
+        "beete": [
+          "Ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D).",
+          "Ende März: Steckzwiebeln (1B), Rhabarber pflanzen (2B).",
+          "Kompost: 1A und 2C ca. 5 l/m², 1B und 2D ca. 3 l/m²."
+        ],
+        "gewaechshaus": ["Mitte/Ende März: Tomaten auf der Fensterbank aussäen.", "Radieschen, Pflücksalat und Kohlrabi als Vorkultur."],
+        "obst": ["Kompost auf die Baumscheibe der Sauerkirsche und unter die Johannisbeeren."],
+        "natur": ["Nisthilfe aufstellen und Sandarium im Saum Beet 1 anlegen.", "Stauden und Samenstände erst jetzt zurückschneiden."]
+      }
+    },
+    {
+      "key": "2027-04",
+      "label": "Apr",
+      "name": "April 2027",
+      "aufgaben": {
+        "wasser": [
+          "Anfang/Mitte April, nach den letzten starken Frösten: Brunnenpumpe anschließen, entlüften, Dichtungen prüfen, Probelauf.",
+          "Wasserleitung und Außenhahn öffnen, Schläuche anschließen und auf Risse prüfen."
+        ],
+        "beete": [
+          "Säen: Möhren (2D), Rote Bete ab Ende April (1B), Mangold und Salat (2A), Petersilie (2B).",
+          "Kohlrabi ins Freiland (2C) unter Vlies oder Kulturschutznetz."
+        ],
+        "gewaechshaus": ["Ende April: Zucchini, Hokkaido und Snackgurke vorziehen.", "Ende April/Anfang Mai: Tomaten pflanzen, bei Frostnächten Vlies."],
+        "obst": ["Sauerkirsche: von Monilia befallene Triebspitzen nach der Blüte ins gesunde Holz zurückschneiden."],
+        "natur": ["Säume bepflanzen: Storchschnabel, Wildstauden, Kräuter.", "Ringelblume und Kornblume an den Feldrändern säen."]
+      }
+    },
+    {
+      "key": "2027-05",
+      "label": "Mai",
+      "name": "Mai 2027",
+      "aufgaben": {
+        "wasser": ["Regenfässer mit Deckel oder engmaschigem Gitter abdecken (Mückenlarven, Sicherheit für Igel, Vögel und Kinder)."],
+        "beete": [
+          "Nach den Eisheiligen (11.–15. Mai): Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen.",
+          "Mulchen mit angetrocknetem Rasenschnitt beginnen."
+        ],
+        "gewaechshaus": ["Paprika, Chili und Snackgurke pflanzen."],
+        "obst": [
+          "Gelbtafeln gegen Kirschfruchtfliege beim Umfärben der Kirschen.",
+          "Pheromonfalle an der Pflaume (bis August).",
+          "Himbeeren: Jungruten auf 8–10 pro laufendem Meter auslichten."
+        ],
+        "natur": ["Wasserstelle (flache Schale mit Steinen) am Saum Beet 1 einrichten."]
+      }
+    },
+    {
+      "key": "2027-06",
+      "label": "Jun",
+      "name": "Juni 2027",
+      "aufgaben": {
+        "wasser": [
+          "Brunnenpumpe gelegentlich prüfen (Ansaugfilter, Dichtungen, Geräusche); nie trocken laufen lassen.",
+          "Abdeckungen der Regenfässer kontrollieren."
+        ],
+        "beete": [
+          "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen.",
+          "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C)."
+        ],
+        "gewaechshaus": ["Tomaten wöchentlich ausgeizen und anbinden; täglich lüften."],
+        "obst": ["Kirschen zügig und vollständig ernten.", "Johannisbeeren und Sommerhimbeeren ernten; morgens durchdringend gießen."],
+        "natur": ["Storchschnabel nach der ersten Blüte bodennah zurückschneiden (zweite Blüte)."]
+      }
+    },
+    {
+      "key": "2027-07",
+      "label": "Jul",
+      "name": "Juli 2027",
+      "aufgaben": {
+        "wasser": ["Pumpe gelegentlich prüfen; Abdeckungen der Regenfässer kontrollieren."],
+        "beete": [
+          "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten.",
+          "Gießen nach Bedarf: Kürbisgewächse, Kohl und Sellerie zuerst."
+        ],
+        "gewaechshaus": ["Morgens am Fuß gießen, Tomatenblätter trocken halten."],
+        "obst": [
+          "Süß- und Sauerkirsche direkt nach der Ernte schneiden.",
+          "Sommerhimbeeren: abgetragene Ruten entfernen; Johannisbeeren auslichten."
+        ],
+        "natur": ["Wasserstelle regelmäßig auffüllen."]
+      }
+    },
+    {
+      "key": "2027-08",
+      "label": "Aug",
+      "name": "August 2027",
+      "aufgaben": {
+        "wasser": ["Bei langer Trockenheit die Brunnenpumpe beobachten (fördert sie Luft, sinkt der Wasserstand)."],
+        "beete": ["Feldsalat in 1C säen (nach Erbsen).", "Spinat und Asia-Salate für den Herbst säen (2A)."],
+        "gewaechshaus": ["Feldsalat in Schalen für das Gewächshaus vorziehen."],
+        "obst": ["Pflaume ernten, danach Sommerschnitt."],
+        "natur": ["Samen von Ringelblume, Bohnen und Kapuzinerkresse ernten.", "Wasserstelle auffüllen."]
+      }
+    },
+    {
+      "key": "2027-09",
+      "label": "Sep",
+      "name": "September 2027",
+      "aufgaben": {
+        "beete": ["Hokkaido ernten und nachreifen lassen."],
+        "gewaechshaus": ["Winterpostelein und Feldsalat säen."],
+        "obst": ["Herbsthimbeeren ernten."],
+        "natur": ["Laub- und Totholzhaufen mit Schnittgut aufsetzen.", "Abgeblühte Phacelia als Wintermulch liegen lassen."]
+      }
+    },
+    {
+      "key": "2027-10",
+      "label": "Okt",
+      "name": "Oktober 2027",
+      "aufgaben": {
+        "wasser": ["Dachrinnen, Fallrohre und Fallrohrfilter von Laub befreien."],
+        "beete": ["Knoblauch in 1A stecken.", "Möhren, Sellerie, Rote Bete und Pastinaken ernten."],
+        "gewaechshaus": ["Abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen."],
+        "obst": ["Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen."],
+        "natur": ["Stauden nicht zurückschneiden: Winterquartier und Futter."]
+      }
+    },
+    {
+      "key": "2027-11",
+      "label": "Nov",
+      "name": "November 2027",
+      "aufgaben": {
+        "wasser": [
+          "Vor dem ersten Dauerfrost: Regenfässer leeren und umdrehen oder abdecken.",
+          "Brunnenpumpe winterfest machen, Schläuche einlagern, Außenhahn absperren und entleeren.",
+          "Dachrinnen und Fallrohre nach dem Laubfall nochmals reinigen."
+        ],
+        "beete": ["Grünkohl und Lauch ernten.", "Abgeerntete Beete mulchen statt umgraben."],
+        "gewaechshaus": ["Gewächshaus-Bewässerung entleeren."],
+        "obst": ["Fallobst und Fruchtmumien entfernen."],
+        "natur": ["Vogelnistkasten reinigen; Wildbienen-Nisthilfe nicht öffnen."]
+      }
+    },
+    {
+      "key": "2027-12",
+      "label": "Dez",
+      "name": "Dezember 2027",
+      "aufgaben": {
+        "wasser": ["Nach Sturm oder Schnee Abdeckungen über Brunnenrohr und Regenfässern kontrollieren."],
+        "beete": ["Fruchtfolge 2028 eintragen, Erträge und Probleme notieren.", "Saatgut sichten, Wunschliste für 2028."],
+        "gewaechshaus": ["Feldsalat und Winterpostelein ernten."],
+        "natur": ["Laub- und Totholzhaufen in Ruhe lassen."]
+      }
+    }
+  ],
+  "technik": [
+    {
+      "name": "Regenfässer",
+      "status": "noch nicht winterfest",
+      "stand": "2. Nov. 2026",
+      "erfasst": "Vorhanden; Anzahl, Volumen und Standort noch offen",
+      "winter": "Leeren und umdrehen oder abdecken",
+      "fruehjahr": "Ende März aufstellen, Fallrohrfilter reinigen; Mai–Sep abdecken",
+      "saison": "wwubbbbbbbuw"
+    },
+    {
+      "name": "Brunnenpumpe",
+      "status": "noch nicht winterfest",
+      "stand": "2. Nov. 2026",
+      "erfasst": "Vorhanden; Pumpentyp noch offen",
+      "winter": "Pumpe und Leitungen entleeren, frostfrei einlagern, Brunnenrohr abdecken",
+      "fruehjahr": "April anschließen, entlüften, Dichtungen prüfen, Probelauf",
+      "saison": "wwwubbbbbbuw"
+    },
+    {
+      "name": "Gartenschläuche",
+      "status": "noch nicht winterfest",
+      "stand": "2. Nov. 2026",
+      "erfasst": "Anzahl und Länge noch offen",
+      "winter": "Entleeren und frostfrei einlagern",
+      "fruehjahr": "April anschließen, auf Risse prüfen",
+      "saison": "wwwubbbbbbuw"
+    },
+    {
+      "name": "Wasserhahn und Leitung",
+      "status": "noch nicht winterfest",
+      "stand": "2. Nov. 2026",
+      "erfasst": "Lage des Absperrhahns noch offen",
+      "winter": "Absperren, entleeren, Hahn offen lassen",
+      "fruehjahr": "April öffnen, auf Dichtheit prüfen",
+      "saison": "wwwubbbbbbuw"
+    },
+    {
+      "name": "Gewächshaus-Bewässerung",
+      "status": "noch nicht winterfest",
+      "stand": "2. Nov. 2026",
+      "erfasst": "Ausführung noch offen",
+      "winter": "Schläuche, ggf. Tropfleitung und Gießkannen entleeren",
+      "fruehjahr": "April wieder anschließen",
+      "saison": "wwwubbbbbbuw"
+    }
+  ],
+  "technikSaison": [
+    {
+      "zeitraum": "Nov, vor dem ersten Dauerfrost",
+      "aufgabe": "Regenfässer leeren und umdrehen oder abdecken; Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr abdecken; Schläuche entleeren und einlagern; Außenhahn absperren und entleeren; Gewächshaus-Bewässerung entleeren",
+      "betrifft": "Alle"
+    },
+    {
+      "zeitraum": "Okt–Nov, nach dem Laubfall",
+      "aufgabe": "Dachrinnen, Fallrohre und Fallrohrfilter von Laub befreien",
+      "betrifft": "Regenfässer"
+    },
+    {
+      "zeitraum": "Dez–Feb",
+      "aufgabe": "Abdeckungen nach Sturm oder Schnee prüfen; eingelagerte Geräte auf Schäden prüfen",
+      "betrifft": "Regenfässer, Pumpe, Schläuche"
+    },
+    {
+      "zeitraum": "Ende März",
+      "aufgabe": "Regenfässer aufstellen, Fallrohrfilter reinigen und anschließen",
+      "betrifft": "Regenfässer"
+    },
+    {
+      "zeitraum": "Anfang/Mitte April",
+      "aufgabe": "Pumpe anschließen, entlüften, Dichtungen prüfen, Probelauf; Leitung und Hahn öffnen; Schläuche anschließen",
+      "betrifft": "Pumpe, Hahn, Schläuche, Gewächshaus"
+    },
+    {
+      "zeitraum": "Mai–Sep",
+      "aufgabe": "Regenfässer abdecken (Mückenlarven, Tiersicherheit); Pumpe gelegentlich prüfen, nie trocken laufen lassen",
+      "betrifft": "Regenfässer, Pumpe"
+    }
+  ],
+  "bestand": [
+    {
+      "name": "Süßkirsche",
+      "bereich": "Nordende rechts",
+      "typ": "Obstgehölz",
+      "masse": "Krone ca. 2,5 m",
+      "notiz": "Sorte unbekannt; Sommerschnitt nach der Ernte (Juli)"
+    },
+    {
+      "name": "Pflaume",
+      "bereich": "Nordende rechts",
+      "typ": "Obstgehölz",
+      "masse": "Krone ca. 1 m",
+      "notiz": "Junger Baum; Erziehungsschnitt nach der Ernte (August)"
+    },
+    {
+      "name": "Sauerkirsche",
+      "bereich": "Südende rechts",
+      "typ": "Obstgehölz",
+      "masse": "Krone ca. 2 m",
+      "notiz": "Beschattet den südlichen Teil von Beet 2; auf Monilia achten"
+    },
+    {
+      "name": "Johannisbeeren (2)",
+      "bereich": "Südrand links",
+      "typ": "Beerenstrauch",
+      "masse": "jung",
+      "notiz": "Farbe und Sorte unbekannt; Aufbauschnitt"
+    },
+    {
+      "name": "Himbeeren",
+      "bereich": "Links, zwischen Beet 1 und Gewächshaus",
+      "typ": "Beerenstrauch",
+      "masse": "2,1 × 1 m",
+      "notiz": "Sommer- oder Herbstsorte unbekannt"
+    },
+    {
+      "name": "Beet 1",
+      "bereich": "Links, südlicher Teil",
+      "typ": "Gemüsebeet",
+      "masse": "4,5 × 4 m, 18 m²",
+      "notiz": "Volle Sonne; 2027 Felder 1A–1D und Saum"
+    },
+    {
+      "name": "Beet 2",
+      "bereich": "Rechts, nördlich der Sauerkirsche",
+      "typ": "Gemüsebeet",
+      "masse": "7 × 4 m, 28 m²",
+      "notiz": "Südlicher Teil halbschattig; 2027 Felder 2A–2F und Saum"
+    },
+    {
+      "name": "Gewächshaus",
+      "bereich": "Links, nördlich der Himbeeren",
+      "typ": "Fläche & Bau",
+      "masse": "2,5 × 1,9 m",
+      "notiz": "Sommer: Tomaten, Paprika, Gurke; Winter: Wintersalat"
+    },
+    {
+      "name": "Rasen",
+      "bereich": "Rechts, nördlich von Beet 2",
+      "typ": "Fläche & Bau",
+      "masse": "–",
+      "notiz": "Bleibt unverändert; Schnitt als Mulch"
+    },
+    {
+      "name": "Längsweg",
+      "bereich": "Mitte, zwischen Beet 1 und Beet 2",
+      "typ": "Fläche & Bau",
+      "masse": "ca. 8 m",
+      "notiz": "Breite noch offen"
+    },
+    {
+      "name": "Regenfässer",
+      "bereich": "Standort noch offen",
+      "typ": "Technik",
+      "masse": "–",
+      "notiz": "Anzahl und Volumen noch offen"
+    },
+    {
+      "name": "Brunnenpumpe",
+      "bereich": "Standort noch offen",
+      "typ": "Technik",
+      "masse": "–",
+      "notiz": "Pumpentyp noch offen"
+    },
+    {
+      "name": "Gartenschläuche",
+      "bereich": "–",
+      "typ": "Technik",
+      "masse": "–",
+      "notiz": "Im Winter frostfrei lagern"
+    },
+    {
+      "name": "Wasserhahn und Leitung",
+      "bereich": "–",
+      "typ": "Technik",
+      "masse": "–",
+      "notiz": "Im Winter absperren und entleeren"
+    }
+  ],
+  "tagebuch": [
+    {
+      "datum": "2026-11-02",
+      "anzeige": "2. Nov. 2026",
+      "bereich": "Bestand",
+      "eintrag": "Bestand dokumentiert: Süßkirsche, Pflaume, Sauerkirsche, 2 Johannisbeeren, Himbeeren, Beet 1, Beet 2, Gewächshaus, Rasen, Längsweg."
+    },
+    {
+      "datum": "2026-11-02",
+      "anzeige": "2. Nov. 2026",
+      "bereich": "Garten",
+      "eintrag": "Ausrichtung festgehalten: Auf der Skizze ist Süden oben. Parzelle 23, Magdeburg, 440 m²."
+    },
+    {
+      "datum": "2026-11-02",
+      "anzeige": "2. Nov. 2026",
+      "bereich": "Boden",
+      "eintrag": "Boden als humos erfasst."
+    },
+    {
+      "datum": "2026-11-02",
+      "anzeige": "2. Nov. 2026",
+      "bereich": "Planung",
+      "eintrag": "Gartenplan 2027 erstellt; Wasser- und Technikaufgaben in den Monatskalender aufgenommen."
+    },
+    {
+      "datum": "2026-11-02",
+      "anzeige": "2. Nov. 2026",
+      "bereich": "Wasser & Technik",
+      "eintrag": "Regenfässer und Brunnenpumpe erfasst; noch nicht winterfest. Anzahl/Volumen der Fässer und Pumpentyp noch offen."
+    },
+    {
+      "datum": "2026-11-02",
+      "anzeige": "2. Nov. 2026",
+      "bereich": "Garten-App",
+      "eintrag": "Garten-App als laufendes Gartenbuch angelegt."
+    }
+  ],
+  "offen": [
+    "Regenfässer: Anzahl, Volumen und Standort.",
+    "Brunnenpumpe: Pumpentyp (z. B. Saug- oder Tauchpumpe) und Standort des Brunnens.",
+    "Gewächshaus-Bewässerung: Gießkanne, Schlauch oder Tropfleitung?",
+    "Sorten: Sommer- oder Herbsthimbeeren, Farbe der Johannisbeeren, Kirschsorten."
+  ],
+  "links": [
+    {
+      "title": "Gartenplan 2027 – Parzelle 23",
+      "site": "Page",
+      "date": "Stand 2. Nov. 2026",
+      "href": "https://cursor.com/canvas/store-70062b4c-21e3-4d3b-b40c-7887ed6cad24/83784671-7564-4b01-ad1c-bd4d7346c187"
+    }
+  ],
+  "plan2027": {
+    "titel": "Gartenplan 2027 – Parzelle 23",
+    "summary": "Jahresplan für den 440-m²-Kleingarten in Magdeburg: Beetaufteilung mit Fruchtfolge, Gewächshaus, Obstpflege, Blühsäume, Monatskalender und Einkaufsliste mit geschätzten Kosten.",
+    "leitidee": {
+      "titel": "Leitidee 2027",
+      "text": "Beide Gemüsebeete werden in feste Felder mit Trittpfad geteilt und laufen in einer Vier-Felder-Fruchtfolge; Säume aus Kräutern, Storchschnabel und heimischen Wildstauden fassen die Beete am Längsweg ein. Mulch statt Umgraben, wenig, aber durchdringendes Gießen und mehrjährige Pflanzen halten den Aufwand klein.",
+      "kennzahlen": [
+        { "value": "46 m²", "label": "Gemüsebeete", "detail": "Beet 1: 18 m², Beet 2: 28 m²" },
+        { "value": "4,75 m²", "label": "Gewächshaus", "detail": "Tomaten, Paprika, Gurke, Wintersalat" },
+        { "value": "12", "label": "Teilflächen", "detail": "inkl. 2 Säume am Längsweg" },
+        { "value": "539 €", "label": "Budget (Schätzung)", "detail": "plus 50 € optionale Trittsteine" }
+      ],
+      "punkte": [
+        "Produktiv: Feld für Feld gestaffelte Ernten von Mai bis März, Gewächshaus auch im Winter genutzt.",
+        "Bienenfreundlich: 7,8 m² Phacelia/Buchweizen, Feuerbohnen, Storchschnabel und Wildstauden blühen nacheinander von Mai bis September.",
+        "Naturnah: Laub-/Totholzhaufen, Wildbienen-Nisthilfe, Sandarium, Vogelnistkasten und Wasserstelle; Stauden bleiben über Winter stehen.",
+        "Trockenes Börde-Klima: Mulchen mit angetrocknetem Rasenschnitt vom eigenen Rasen, trockenheitsverträgliche Stauden in die Sonnensäume.",
+        "Bestand bleibt: alle Obstbäume, Beeren und die Rasenfläche bleiben unverändert."
+      ]
+    },
+    "lageplan": {
+      "titel": "Lageplan",
+      "skizzeTitel": "Skizze (Süden oben)",
+      "aufbauTitel": "Aufbau der Beete",
+      "legende": [
+        { "klasse": "stark", "label": "Starkzehrer" },
+        { "klasse": "mittel", "label": "Mittelzehrer" },
+        { "klasse": "schwach", "label": "Schwachzehrer" },
+        { "klasse": "grau", "label": "Bienenweide und Halbschatten" }
+      ],
+      "aufbau": [
+        {
+          "lead": "Beet 1",
+          "title": "4 Felder à 1,65 × 2,25 m",
+          "detail": "Trittpfad 0,3 m in der Mitte (Nord–Süd), Saum 0,4 m entlang Längsweg."
+        },
+        {
+          "lead": "Beet 2",
+          "title": "2 Halbschattenfelder + 4 Sonnenfelder",
+          "detail": "Halbschatten 1,65 × 2 m, Sonne 1,65 × 2,5 m, Trittpfad 0,3 m, Saum 0,4 m am Längsweg."
+        },
+        {
+          "lead": "Grau",
+          "title": "Bienenweide und Halbschatten",
+          "detail": "1D und 2F: Gründüngung; 2A und 2B (gestrichelt): Halbschatten, nicht in der Fruchtfolge."
+        },
+        {
+          "lead": "Annahme",
+          "title": "Längsseiten laufen Nord–Süd",
+          "detail": "Beet 1: 4,5 m, Beet 2: 7 m entlang des Längswegs. Bei anderer Lage bleibt die Feldeinteilung, nur gedreht."
+        },
+        {
+          "lead": "Pflege",
+          "title": "Jedes Feld von Pfad oder Weg erreichbar",
+          "detail": "Maximal ca. 85 cm Greifweite, der Boden wird nicht betreten und muss nicht umgegraben werden."
+        }
+      ],
+      "skizze": {
+        "aria": "Skizze der Parzelle 23, Süden oben",
+        "sueden": "Süden",
+        "norden": "Norden",
+        "johannisbeeren": "Johannisbeeren (2)",
+        "nisthilfe": "Nisthilfe",
+        "beet1": "Beet 1 · 4,5 × 4 m",
+        "saum1": "Kräuter/Storchschnabel",
+        "querweg": "Querweg",
+        "himbeeren": "Himbeeren 2,1 × 1 m",
+        "gewaechshaus": "Gewächshaus",
+        "gewaechshausMass": "2,5 × 1,9 m",
+        "bluehstreifen": "Blühstreifen",
+        "laengsweg": "Längsweg ca. 8 m",
+        "sauerkirsche": "Sauerkirsche",
+        "sauerkirscheUnter": "Balkan-Storchschnabel",
+        "laub": "Laub/Totholz",
+        "saum2": "Wildstauden/Storchschnabel",
+        "halbschatten": "Grenze Halbschatten",
+        "halbschattenAnnahme": "(Annahme ca. 2 m)",
+        "beet2": "Beet 2",
+        "beet2Mass": "7 × 4 m",
+        "rasen": "Rasen",
+        "rasenHinweis": "bleibt unverändert",
+        "pflaume": "Pflaume",
+        "suesskirsche": "Süßkirsche",
+        "nistkasten": "+ Vogelnistkasten",
+        "massstab": "Skizze schematisch; Beet-, Gewächshaus- und Kronenmaße maßstäblich, Wege und Rasen nicht.",
+        "felder": [
+          { "code": "1A", "klasse": "stark", "l1": "Zucchini,", "l2": "Hokkaido" },
+          { "code": "1B", "klasse": "mittel", "l1": "Zwiebeln,", "l2": "Rote Bete, Salat" },
+          { "code": "1C", "klasse": "schwach", "l1": "Zuckererbsen,", "l2": "Buschbohnen" },
+          { "code": "1D", "klasse": "grau", "l1": "Radieschen →", "l2": "Bienenweide" },
+          { "code": "2A", "klasse": "grau", "l1": "Halbschatten:", "l2": "Blattgemüse", "gestrichelt": true },
+          { "code": "2B", "klasse": "grau", "l1": "Rhabarber,", "l2": "Walderdbeeren", "gestrichelt": true },
+          { "code": "2C", "klasse": "stark", "l1": "Kohl,", "l2": "Sellerie" },
+          { "code": "2D", "klasse": "mittel", "l1": "Möhren, Lauch,", "l2": "Pastinake" },
+          { "code": "2E", "klasse": "schwach", "l1": "Stangen- und", "l2": "Feuerbohnen" },
+          { "code": "2F", "klasse": "grau", "l1": "Radieschen →", "l2": "Bienenweide" }
+        ]
+      }
+    },
+    "beete": {
+      "titel": "Beetplan Beet 1 und Beet 2",
+      "optionen": [
+        { "value": "b1", "label": "Beet 1 · volle Sonne" },
+        { "value": "b2", "label": "Beet 2 · Halbschatten + Sonne" }
+      ],
+      "spalten": ["Feld", "Kultur", "Aussaat/Pflanzung", "Abstand", "Ernte", "Partner und Pflege"],
+      "b1": [
+        {
+          "feld": "1A · 3,7 m²",
+          "kultur": "Starkzehrer: Zucchini (2), Hokkaido (1)",
+          "aussaat": "Vorziehen Ende April, Pflanzung ab 15. Mai",
+          "abstand": "100 × 100 cm; Hokkaido 1,5 m²",
+          "ernte": "Jul–Okt",
+          "pflege": "Kapuzinerkresse, Ringelblume; 5 l/m² Kompost, mulchen, hoher Wasserbedarf"
+        },
+        {
+          "feld": "1B · 3,7 m²",
+          "kultur": "Mittelzehrer: Steckzwiebeln, Rote Bete, Pflücksalat",
+          "aussaat": "Zwiebeln Ende März; Rote Bete Ende April–Juni; Salat ab April",
+          "abstand": "Zwiebeln 20 × 10; Bete 30 × 10; Salat 25 × 25 cm",
+          "ernte": "Mai–Okt",
+          "pflege": "Salat zwischen Zwiebelreihen; 3 l/m² Kompost; mittlerer Wasserbedarf"
+        },
+        {
+          "feld": "1C · 3,7 m²",
+          "kultur": "Schwachzehrer: Zuckererbsen, Buschbohnen, Bohnenkraut",
+          "aussaat": "Erbsen Mitte März–April; Bohnen ab Mitte Mai",
+          "abstand": "Erbsen Reihe 40 cm, 4 cm; Bohnen Horste 40 × 40 cm",
+          "ernte": "Jun–Sep",
+          "pflege": "Bohnenkraut gegen Läuse; nach Erbsen Feldsalat (Aug); kein Dünger nötig"
+        },
+        {
+          "feld": "1D · 3,7 m²",
+          "kultur": "Gründüngung/Bienenweide: Radieschen, Spinat, dann Phacelia + Buchweizen",
+          "aussaat": "Radieschen/Spinat Mitte März; Phacelia Juni",
+          "abstand": "Radieschen 15 × 3 cm; Phacelia breitwürfig 2 g/m²",
+          "ernte": "Apr–Mai (Gemüse), Blüte Aug–Sep",
+          "pflege": "Phacelia ist mit keinem Gemüse verwandt; erfriert und bleibt als Mulch liegen"
+        },
+        {
+          "feld": "Saum · 1,8 m²",
+          "kultur": "Kräuter, Blut-Storchschnabel, Karthäuser-Nelke, Sandarium (südl. 1 m)",
+          "aussaat": "April",
+          "abstand": "25–40 cm",
+          "ernte": "Kräuter Mai–Okt",
+          "pflege": "Streifen 0,4 m entlang Längsweg; trocken, vollsonnig; kaum gießen"
+        }
+      ],
+      "b2": [
+        {
+          "feld": "2A · 3,3 m² (Halbschatten)",
+          "kultur": "Blattgemüse: Spinat, Pflücksalat, Mangold, Rucola/Asia-Salat",
+          "aussaat": "Spinat März und Aug; Salat Apr–Aug alle 3–4 Wochen; Mangold April",
+          "abstand": "Spinat Reihe 25 cm; Salat 25 × 25; Mangold 30 × 30 cm",
+          "ernte": "Mai–Nov",
+          "pflege": "Schießt im Halbschatten später; 3 l/m² Kompost; mittlerer Wasserbedarf"
+        },
+        {
+          "feld": "2B · 3,3 m² (Halbschatten)",
+          "kultur": "Dauerkultur: Rhabarber (1), Walderdbeeren (6), Petersilie",
+          "aussaat": "Rhabarber März; Walderdbeeren April; Petersilie April",
+          "abstand": "Rhabarber 1 m²; Walderdbeeren 30 × 30; Petersilie 20 cm",
+          "ernte": "Rhabarber ab 2028; Erdbeeren Jun–Sep",
+          "pflege": "Bleibt mehrjährig stehen, nicht Teil der Fruchtfolge; jährlich Kompost"
+        },
+        {
+          "feld": "2C · 4,1 m²",
+          "kultur": "Starkzehrer: Brokkoli (4), Kohlrabi (8), Grünkohl (4), Knollensellerie (6)",
+          "aussaat": "Kohlrabi April + Juli; Brokkoli/Sellerie Mitte Mai; Grünkohl Ende Juni",
+          "abstand": "Brokkoli/Grünkohl 50 × 50; Kohlrabi 30 × 30; Sellerie 40 × 40 cm",
+          "ernte": "Jun–Feb",
+          "pflege": "Sellerie und Kohl als Partner; Kulturschutznetz; 5 l/m² Kompost; hoher Wasserbedarf"
+        },
+        {
+          "feld": "2D · 4,1 m²",
+          "kultur": "Mittelzehrer: Möhren, Lauch, Pastinake",
+          "aussaat": "Pastinake März–April; Möhren April–Mai; Lauch Juni",
+          "abstand": "Möhren Reihe 25 cm, 3 cm; Lauch 30 × 15; Pastinake 35 × 10 cm",
+          "ernte": "Jul–März",
+          "pflege": "Möhre und Lauch abwechselnd in Reihen gegen Möhrenfliege und Lauchmotte"
+        },
+        {
+          "feld": "2E · 4,1 m²",
+          "kultur": "Schwachzehrer: Stangenbohnen, Feuerbohnen, Kapuzinerkresse",
+          "aussaat": "Ab Mitte Mai direkt säen",
+          "abstand": "Stangen 60 × 70 cm, 4–6 Bohnen je Stange",
+          "ernte": "Jul–Sep",
+          "pflege": "Hoch wachsend an der Nordseite, beschattet nur Richtung Rasen; Feuerbohne blüht für Hummeln"
+        },
+        {
+          "feld": "2F · 4,1 m²",
+          "kultur": "Gründüngung/Bienenweide: Radieschen, Spinat, dann Phacelia + Buchweizen",
+          "aussaat": "Radieschen/Spinat März–April; Phacelia/Buchweizen Juni",
+          "abstand": "breitwürfig",
+          "ernte": "Apr–Mai (Gemüse), Blüte Jul–Sep",
+          "pflege": "Lockert und belebt den Boden für den Starkzehrer 2028"
+        },
+        {
+          "feld": "Saum · 2,8 m²",
+          "kultur": "Süden 2 m: Balkan-Storchschnabel; Norden 5 m: Blut-Storchschnabel, Wiesen-Salbei, Dost, Karthäuser-Nelke",
+          "aussaat": "April",
+          "abstand": "30–40 cm",
+          "ernte": "Blüte Mai–Sep",
+          "pflege": "Streifen 0,4 m entlang Längsweg; nach Anwachsen kaum Gießen"
+        }
+      ],
+      "hinweis": {
+        "ton": "info",
+        "lead": "Halbschatten in Beet 2",
+        "text": "Die Grenze von ca. 2 m nördlich der Sauerkirsche ist eine Annahme. Im April/Mai zur Mittagszeit den Schattenwurf beobachten und die Felder 2A/2B gegebenenfalls verkürzen oder verlängern."
+      }
+    },
+    "fruchtfolge": {
+      "titel": "Fruchtfolge 2027–2030",
+      "spalten": ["Feld", "2027", "2028", "2029", "2030"],
+      "zeilen": [
+        ["1A", "Starkzehrer", "Mittelzehrer", "Schwachzehrer", "Gründüngung"],
+        ["1B", "Mittelzehrer", "Schwachzehrer", "Gründüngung", "Starkzehrer"],
+        ["1C", "Schwachzehrer", "Gründüngung", "Starkzehrer", "Mittelzehrer"],
+        ["1D", "Gründüngung", "Starkzehrer", "Mittelzehrer", "Schwachzehrer"],
+        ["2C", "Starkzehrer", "Mittelzehrer", "Schwachzehrer", "Gründüngung"],
+        ["2D", "Mittelzehrer", "Schwachzehrer", "Gründüngung", "Starkzehrer"],
+        ["2E", "Schwachzehrer", "Gründüngung", "Starkzehrer", "Mittelzehrer"],
+        ["2F", "Gründüngung", "Starkzehrer", "Mittelzehrer", "Schwachzehrer"]
+      ],
+      "text": "Jedes Feld rückt jährlich eine Stufe weiter: Nach der Bienenweide folgt der Starkzehrer, so steht Kohl nur alle vier Jahre auf derselben Fläche (Kohlhernie-Vorbeugung). Stangenbohnen kommen immer an die Nordkante ihres Feldes, damit sie nichts beschatten."
+    },
+    "gewaechshaus": {
+      "titel": "Gewächshaus",
+      "sommerTitel": "Sommerbelegung",
+      "sommerSpalten": ["Bereich", "Kultur", "Pflanzung", "Abstand", "Ernte"],
+      "sommer": [
+        {
+          "bereich": "Seite A, 2,5 × 0,6 m",
+          "kultur": "Tomaten (4), z. B. krautfäuletolerante Sorten; Basilikum darunter",
+          "pflanzung": "Ende April/Anfang Mai",
+          "abstand": "60 cm",
+          "ernte": "Jul–Okt"
+        },
+        {
+          "bereich": "Seite B, 2,5 × 0,6 m",
+          "kultur": "Paprika (2), Chili (1)",
+          "pflanzung": "Mitte Mai",
+          "abstand": "45–50 cm",
+          "ernte": "Aug–Okt"
+        },
+        {
+          "bereich": "Seite B",
+          "kultur": "Snackgurke (1) an Schnur",
+          "pflanzung": "Mitte Mai",
+          "abstand": "60 cm",
+          "ernte": "Jun–Sep"
+        },
+        {
+          "bereich": "Mittelgang",
+          "kultur": "0,7 m, im Frühjahr Platz für Anzuchtschalen",
+          "pflanzung": "–",
+          "abstand": "–",
+          "ernte": "–"
+        }
+      ],
+      "jahreszeitenTitel": "Frühjahr und Herbst",
+      "schritte": [
+        {
+          "titel": "Ende Februar–März: Anzucht",
+          "text": "Paprika/Chili Ende Februar, Tomaten Mitte/Ende März auf der Fensterbank; ab April tagsüber zum Abhärten ins Gewächshaus."
+        },
+        {
+          "titel": "März–April: Vorkultur",
+          "text": "Radieschen, Pflücksalat und Kohlrabi auf den Beeten, geerntet bevor Tomaten und Paprika kommen."
+        },
+        {
+          "titel": "Mai–September: Pflege",
+          "text": "Täglich lüften, Tomaten ausgeizen, morgens am Fuß gießen; Gurke feucht halten, Tomatenblätter trocken."
+        },
+        {
+          "titel": "Oktober–März: Wintersalat",
+          "text": "Feldsalat und Winterpostelein (Aussaat Aug/Sep), dazu Spinat; Ernte November bis März."
+        },
+        {
+          "titel": "Jährlich: Boden pflegen",
+          "text": "Vor der Pflanzung 3–5 l/m² Kompost; Tomaten und Paprika jedes Jahr die Seite tauschen."
+        }
+      ],
+      "hinweis": "Gurke und Tomate wollen unterschiedliche Luftfeuchte. Kommt es zu Mehltau an der Gurke oder Braunfäule an Tomaten, die Gurke 2028 ins Freiland auf das Starkzehrer-Feld setzen."
+    },
+    "obst": {
+      "titel": "Obst und Beeren",
+      "spalten": ["Gehölz", "Schnitt", "Pflege", "Vorbeugung Schädlinge und Krankheiten"],
+      "zeilen": [
+        {
+          "gehoelz": "Süßkirsche (Krone ca. 2,5 m)",
+          "schnitt": "Sommerschnitt direkt nach der Ernte (Jul): nach innen wachsende, sich kreuzende und steile Konkurrenztriebe entfernen; Wunden heilen im Sommer besser.",
+          "pflege": "Baumscheibe mulchen; bei Trockenheit während der Fruchtentwicklung alle 7–10 Tage durchdringend gießen.",
+          "vorbeugung": "Kirschfruchtfliege: Gelbtafeln ab Umfärben der Früchte, Fallobst täglich aufsammeln. Kirschessigfliege: reife Früchte zügig und vollständig ernten. Frostspanner: Leimring ab Oktober."
+        },
+        {
+          "gehoelz": "Sauerkirsche (Krone ca. 2 m)",
+          "schnitt": "Nach der Ernte abgetragene Triebe auf einen jungen Seitentrieb ableiten; bei Morellen jährlich auslichten, da sie am einjährigen Holz tragen.",
+          "pflege": "Kompost im März auf die Baumscheibe; Unterpflanzung mit Balkan-Storchschnabel hält den Boden schattig.",
+          "vorbeugung": "Monilia-Spitzendürre: welke Triebspitzen direkt nach der Blüte bis 15 cm ins gesunde Holz schneiden, Fruchtmumien entfernen. Blattläuse: Nützlinge fördern, nicht spritzen."
+        },
+        {
+          "gehoelz": "Pflaume (Krone ca. 1 m)",
+          "schnitt": "Junger Baum: Erziehungsschnitt nach der Ernte (Aug), 3–4 Leitäste aufbauen, Wasserschosse früh ausreißen.",
+          "pflege": "Bei starkem Fruchtansatz im Juni ausdünnen (Bruchgefahr, bessere Größe).",
+          "vorbeugung": "Pflaumenwickler: Pheromonfalle Mai–August, madige Früchte entfernen. Narrentaschen und Fruchtmumien absammeln."
+        },
+        {
+          "gehoelz": "Johannisbeeren (2, jung)",
+          "schnitt": "Aufbauphase: nur schwache und bodennah liegende Triebe entfernen, Ziel 8–10 Triebe. Später nach der Ernte die ältesten Triebe bodennah schneiden.",
+          "pflege": "Flachwurzler: dauerhaft mulchen, bei Trockenheit gießen; Kompost im März.",
+          "vorbeugung": "Blasenlaus und Mehltau: luftig halten, befallene Triebspitzen schneiden. Schwarze Sorten: auf Gallmilben-Rundknospen achten und ausbrechen."
+        },
+        {
+          "gehoelz": "Himbeeren (2,1 × 1 m)",
+          "schnitt": "Sommerhimbeeren: abgetragene Ruten nach der Ernte bodennah. Herbsthimbeeren: alle Ruten im Februar bodennah.",
+          "pflege": "Drahtgerüst, 8–10 Ruten pro laufendem Meter; dick mulchen, keine Staunässe.",
+          "vorbeugung": "Himbeerkäfer: madige Früchte entfernen. Rutenkrankheit: kranke Ruten früh entfernen, Bestand luftig halten."
+        }
+      ],
+      "hinweis": "Die Sorten sind nicht bekannt; die Schnittzeiten gelten für die üblichen Sorten und werden bei Sommer- oder Herbsthimbeeren bzw. roten oder schwarzen Johannisbeeren entsprechend gewählt."
+    },
+    "kraeuter": {
+      "titel": "Kräuter, Blühpflanzen und Storchschnabel",
+      "spalten": ["Standort", "Pflanze", "Anzahl", "Abstand", "Licht/Wasser", "Kosten (Schätzung)"],
+      "zeilen": [
+        {
+          "standort": "Saum Beet 1 (sonnig)",
+          "pflanze": "Blut-Storchschnabel, Geranium sanguineum (heimisch)",
+          "anzahl": "3",
+          "abstand": "35 cm",
+          "licht": "Sonne, trocken",
+          "kosten": "13,50 €"
+        },
+        {
+          "standort": "Saum Beet 1",
+          "pflanze": "Thymian, Salbei, Schnittlauch",
+          "anzahl": "3 / 1 / 2",
+          "abstand": "25–40 cm",
+          "licht": "Sonne, trocken",
+          "kosten": "17,50 €"
+        },
+        {
+          "standort": "Saum Beet 1",
+          "pflanze": "Karthäuser-Nelke (heimisch)",
+          "anzahl": "3",
+          "abstand": "25 cm",
+          "licht": "Sonne, trocken",
+          "kosten": "12 €"
+        },
+        {
+          "standort": "Saum Beet 2, Nord (sonnig)",
+          "pflanze": "Blut-Storchschnabel",
+          "anzahl": "5",
+          "abstand": "35 cm",
+          "licht": "Sonne, trocken",
+          "kosten": "22,50 €"
+        },
+        {
+          "standort": "Saum Beet 2, Nord",
+          "pflanze": "Wiesen-Salbei, Echter Dost (heimisch)",
+          "anzahl": "3 / 3",
+          "abstand": "40 cm",
+          "licht": "Sonne, trocken",
+          "kosten": "25,50 €"
+        },
+        {
+          "standort": "Saum Beet 2, Nord",
+          "pflanze": "Karthäuser-Nelke",
+          "anzahl": "2",
+          "abstand": "25 cm",
+          "licht": "Sonne, trocken",
+          "kosten": "8 €"
+        },
+        {
+          "standort": "Saum Beet 2, Süd (Halbschatten)",
+          "pflanze": "Balkan-Storchschnabel, Geranium macrorrhizum",
+          "anzahl": "4",
+          "abstand": "40 cm",
+          "licht": "Halbschatten, trockenheitsverträglich",
+          "kosten": "18 €"
+        },
+        {
+          "standort": "Baumscheibe Sauerkirsche",
+          "pflanze": "Balkan-Storchschnabel",
+          "anzahl": "6",
+          "abstand": "40 cm",
+          "licht": "Halbschatten, Wurzeldruck verträglich",
+          "kosten": "27 €"
+        },
+        {
+          "standort": "Rand am Gewächshaus (zum Längsweg)",
+          "pflanze": "Ringelblume, Kapuzinerkresse, Borretsch (einjährig, säen sich selbst aus)",
+          "anzahl": "Saat",
+          "abstand": "breitwürfig",
+          "licht": "Sonne",
+          "kosten": "in Blumensaat enthalten"
+        },
+        {
+          "standort": "Feldränder in allen Beeten",
+          "pflanze": "Ringelblume, Kornblume, Tagetes, Kapuzinerkresse",
+          "anzahl": "Saat",
+          "abstand": "20–30 cm",
+          "licht": "Sonne",
+          "kosten": "in Blumensaat enthalten"
+        }
+      ],
+      "punkte": [
+        "Pflanzzeit Stauden: April (alternativ September); im ersten Sommer bei Trockenheit wöchentlich gießen, danach kaum noch.",
+        "Pflege: Storchschnabel nach der ersten Blüte bodennah zurückschneiden, dann blüht er oft ein zweites Mal; alles Übrige erst im März zurückschneiden.",
+        "Unter den Johannisbeeren nur mulchen und Ringelblumen säen, keine Stauden (flache Wurzeln).",
+        "Kosten: Wildstauden im 9-cm-Topf ca. 4–4,50 €, Kräuter ca. 2,50–3,50 € (Gärtnerei oder Wildstauden-Versand)."
+      ]
+    },
+    "insekten": {
+      "titel": "Insektenlebensräume",
+      "eintraege": [
+        {
+          "lead": "Laub/Totholz",
+          "title": "Haufen am Südrand neben der Sauerkirsche",
+          "detail": "Aus eigenem Schnittholz und Laub im Herbst aufsetzen, ca. 1 m², nicht mehr umschichten; Igel, Käfer, Florfliegen. Platz vor Ort prüfen."
+        },
+        {
+          "lead": "Nisthilfe",
+          "title": "Wildbienen-Nisthilfe auf Pfosten am Südende von Beet 1",
+          "detail": "Bei den Johannisbeeren, Öffnung nach Süd/Südost, 1–1,5 m hoch, regengeschützt, freie Anflugschneise. Hartholz-Bohrungen oder Pappröhrchen, keine Zapfen oder Stroh."
+        },
+        {
+          "lead": "Sandarium",
+          "title": "Offene Sandstelle im Saum Beet 1, südlicher Meter",
+          "detail": "Ca. 0,4 m², 30–40 cm tief mit ungewaschenem Sand; viele Wildbienen nisten im Boden. Thymian daneben."
+        },
+        {
+          "lead": "Vogelkasten",
+          "title": "Meisenkasten an der Süßkirsche",
+          "detail": "Flugloch 28–32 mm, 2–3 m hoch, Ost/Südost; Meisen fressen Raupen und Läuse."
+        },
+        {
+          "lead": "Wasserstelle",
+          "title": "Flache Schale mit Steinen am Saum Beet 1",
+          "detail": "Regelmäßig auffüllen, besonders in trockenen Sommern."
+        }
+      ]
+    },
+    "kalender": {
+      "titel": "Monatskalender 2027",
+      "monate": [
+        {
+          "key": "jan",
+          "label": "Jan",
+          "name": "Januar",
+          "punkte": [
+            "Saatgut-Inventur, fehlendes Saatgut bestellen (Einkaufsliste unten).",
+            "Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung, nicht auf den Kompost).",
+            "Wildbienen-Nisthilfe und Vogelnistkasten besorgen.",
+            "Bodenlabor auswählen und Probe für Februar/März einplanen."
+          ]
+        },
+        {
+          "key": "feb",
+          "label": "Feb",
+          "name": "Februar",
+          "punkte": [
+            "Falls Herbsthimbeeren: alle Ruten bodennah abschneiden.",
+            "Ende Februar: Paprika und Chili auf der Fensterbank aussäen (24–28 °C).",
+            "Vogelnistkasten bis Ende Februar an der Süßkirsche aufhängen (Flugloch Ost/Südost).",
+            "Bei offenem Boden: Bodenprobe ziehen und ins Labor schicken, Spatenprobe machen.",
+            "Johannisbeeren bei Bedarf auslichten (frostfreier Tag)."
+          ]
+        },
+        {
+          "key": "mar",
+          "label": "Mär",
+          "name": "März",
+          "punkte": [
+            "Mitte/Ende März: Tomaten auf der Fensterbank aussäen.",
+            "Gewächshaus: Radieschen, Pflücksalat und Kohlrabi als Vorkultur säen/pflanzen.",
+            "Freiland ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D).",
+            "Ende März: Steckzwiebeln (1B); Rhabarber pflanzen (2B).",
+            "Kompost auf Starkzehrer-Felder 1A und 2C (ca. 5 l/m²), Mittelzehrer 1B und 2D (ca. 3 l/m²).",
+            "Nisthilfe aufstellen und Sandarium im Saum Beet 1 anlegen, bevor die Wildbienen fliegen.",
+            "Wasser & Technik (Ende März, sobald keine starken Fröste mehr angesagt sind): Regenfässer wieder aufstellen, Fallrohrfilter reinigen und anschließen."
+          ]
+        },
+        {
+          "key": "apr",
+          "label": "Apr",
+          "name": "April",
+          "punkte": [
+            "Säume bepflanzen: Storchschnabel, Wildstauden, Kräuter (siehe Abschnitt Kräuter und Blühpflanzen).",
+            "Säen: Möhren (2D), Rote Bete ab Ende April (1B), Mangold und Salat (2A), Petersilie (2B), Ringelblume/Kornblume an Feldrändern.",
+            "Kohlrabi ins Freiland (2C) unter Vlies oder Kulturschutznetz.",
+            "Ende April: Zucchini, Hokkaido und Snackgurke auf der Fensterbank vorziehen.",
+            "Ende April/Anfang Mai: Tomaten ins Gewächshaus pflanzen, bei Frostnächten Vlies auflegen.",
+            "Sauerkirsche: nach der Blüte von Monilia befallene Triebspitzen bis ins gesunde Holz zurückschneiden.",
+            "Wasser & Technik (Anfang/Mitte April, nach den letzten starken Frösten; in milden Jahren schon Ende März): Brunnenpumpe wieder anschließen, Pumpe und Saugleitung mit Wasser füllen und entlüften, Dichtungen und Anschlüsse prüfen, Probelauf machen.",
+            "Wasser & Technik: Wasserleitung und Außenhahn wieder öffnen, Gartenschläuche anschließen und auf Risse prüfen. Bei angesagten Nachtfrösten Schläuche und Pumpe noch einmal entleeren."
+          ]
+        },
+        {
+          "key": "mai",
+          "label": "Mai",
+          "name": "Mai",
+          "punkte": [
+            "Eisheilige (11.–15. Mai) abwarten, danach: Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen.",
+            "Gewächshaus: Paprika, Chili und Snackgurke pflanzen.",
+            "Kirschfruchtfliege: Gelbtafeln aufhängen, sobald die Kirschen von grün auf gelb umfärben.",
+            "Pheromonfalle gegen Pflaumenwickler an der Pflaume aufhängen (bis August).",
+            "Mulchen beginnen (angetrockneter Rasenschnitt vom eigenen Rasen, dünn auftragen).",
+            "Himbeeren: Jungruten auf 8–10 kräftige pro laufendem Meter auslichten.",
+            "Wasser & Technik: Regenfässer mit Deckel oder engmaschigem Gitter abdecken (gegen Mückenlarven; sicher für Igel, Vögel und Kinder), bis zum Herbst geschlossen halten."
+          ]
+        },
+        {
+          "key": "jun",
+          "label": "Jun",
+          "name": "Juni",
+          "punkte": [
+            "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen (Bienenweide).",
+            "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C).",
+            "Tomaten wöchentlich ausgeizen und anbinden; Gewächshaus täglich lüften.",
+            "Kirschen zügig und vollständig ernten (Kirschessigfliege, Kirschfruchtfliege).",
+            "Johannisbeeren und Sommerhimbeeren ernten; durchdringend und morgens gießen.",
+            "Wasser & Technik: Brunnenpumpe gelegentlich prüfen (Ansaugfilter, Dichtungen, ungewöhnliche Geräusche); nie trocken laufen lassen. Abdeckungen der Regenfässer kontrollieren."
+          ]
+        },
+        {
+          "key": "jul",
+          "label": "Jul",
+          "name": "Juli",
+          "punkte": [
+            "Süß- und Sauerkirsche direkt nach der Ernte schneiden (Sommerschnitt).",
+            "Sommerhimbeeren: abgetragene Ruten bodennah entfernen.",
+            "Johannisbeeren nach der Ernte auslichten.",
+            "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten.",
+            "Gießen nach Bedarf: Kürbisgewächse, Kohl, Sellerie und Gewächshaus zuerst."
+          ]
+        },
+        {
+          "key": "aug",
+          "label": "Aug",
+          "name": "August",
+          "punkte": [
+            "Feldsalat in 1C (nach Erbsen) säen, zusätzlich in Schalen für das Gewächshaus vorziehen.",
+            "Spinat und Asia-Salate für den Herbst säen (2A).",
+            "Pflaume ernten; danach Sommerschnitt der Pflaume.",
+            "Samen von Ringelblume, Bohnen und Kapuzinerkresse für 2028 ernten.",
+            "Wasserstelle (flache Schale mit Steinen) regelmäßig auffüllen.",
+            "Wasser & Technik: Bei langer Trockenheit Brunnenpumpe beobachten (fördert sie Luft, sinkt der Wasserstand) und Regenfass-Abdeckungen prüfen."
+          ]
+        },
+        {
+          "key": "sep",
+          "label": "Sep",
+          "name": "September",
+          "punkte": [
+            "Hokkaido ernten, nachreifen lassen; Herbsthimbeeren ernten.",
+            "Winterpostelein und Feldsalat für das Gewächshaus säen.",
+            "Laub- und Totholzhaufen mit Schnittgut aufsetzen.",
+            "Erfrorene oder abgeblühte Phacelia liegen lassen (Wintermulch)."
+          ]
+        },
+        {
+          "key": "okt",
+          "label": "Okt",
+          "name": "Oktober",
+          "punkte": [
+            "Gewächshaus abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen.",
+            "Knoblauch in 1A stecken (2028 Mittelzehrer-Feld).",
+            "Möhren, Sellerie, Rote Bete und Pastinaken ernten.",
+            "Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen.",
+            "Stauden nicht zurückschneiden: hohle Stängel und Samenstände sind Winterquartier und Futter.",
+            "Wasser & Technik: Dachrinnen, Fallrohre und Fallrohrfilter, die die Regenfässer speisen, von Laub befreien."
+          ]
+        },
+        {
+          "key": "nov",
+          "label": "Nov",
+          "name": "November",
+          "punkte": [
+            "Wasser & Technik, vor dem ersten Dauerfrost: Regenfässer leeren und umdrehen oder abdecken, damit kein Wasser darin gefriert.",
+            "Wasser & Technik: Brunnenpumpe winterfest machen: Pumpe und Leitungen vollständig entleeren, Pumpe frostfrei einlagern, Brunnenrohr bzw. Leitungsenden frostsicher abdecken.",
+            "Wasser & Technik: Gartenschläuche entleeren und frostfrei einlagern; Außenhähne und Wasserleitung absperren und entleeren (Hähne offen lassen).",
+            "Wasser & Technik: Gewächshaus-Bewässerung (Schläuche, ggf. Tropfleitung, Gießkannen) entleeren.",
+            "Wasser & Technik: Nach dem Laubfall Dachrinnen und Fallrohre noch einmal von Laub befreien.",
+            "Grünkohl und Lauch ernten (nach erstem Frost milder).",
+            "Abgeerntete Beete mit Laub oder Mulch abdecken statt umgraben.",
+            "Fallobst und Fruchtmumien entfernen.",
+            "Vogelnistkasten reinigen; Wildbienen-Nisthilfe nicht öffnen."
+          ]
+        },
+        {
+          "key": "dez",
+          "label": "Dez",
+          "name": "Dezember",
+          "punkte": [
+            "Feldsalat und Winterpostelein im Gewächshaus ernten.",
+            "Fruchtfolge 2028 eintragen (Tabelle Fruchtfolge), Erträge und Probleme notieren.",
+            "Saatgut sichten, Wunschliste für 2028 schreiben.",
+            "Wasser & Technik: Nach Sturm oder Schnee die Abdeckung über Brunnenrohr und Regenfässern kontrollieren."
+          ]
+        }
+      ],
+      "hinweis": {
+        "ton": "warning",
+        "lead": "Spätfrost bis Mitte Mai",
+        "text": "In der Magdeburger Börde sind Fröste bis nach den Eisheiligen möglich. Wärmebedürftiges (Zucchini, Kürbis, Bohnen, Paprika, Gurke) erst ab 15. Mai ins Freie; Tomaten im Gewächshaus und Kohlrabi im Freiland bei Frostnächten mit Vlies schützen."
+      }
+    },
+    "kosten": {
+      "titel": "Einkaufsliste und Kosten",
+      "hinweis": "Alle Preise sind Schätzungen auf Basis üblicher deutscher Preise 2026; Kompost lose vom Kompostwerk ist meist günstiger als Sackware.",
+      "balken": [
+        { "label": "Stauden und Kräuter", "value": 144, "anzeige": "144 €" },
+        { "label": "Saatgut und Steckzwiebeln", "value": 107, "anzeige": "107 €" },
+        { "label": "Boden, Kompost, Bodentest", "value": 92, "anzeige": "92 €" },
+        { "label": "Pflanzenschutz und Zubehör", "value": 76, "anzeige": "76 €" },
+        { "label": "Insektenlebensräume", "value": 75, "anzeige": "75 €" },
+        { "label": "Jungpflanzen", "value": 45, "anzeige": "45 €" }
+      ],
+      "spalten": ["Posten", "Menge", "Kosten"],
+      "posten": [
+        {
+          "posten": "Gemüsesaatgut (Möhre, Rote Bete, Pastinake, Salate, Spinat, Feldsalat, Radieschen, Erbse, Busch-, Stangen- und Feuerbohne, Mangold, Kohlrabi, Zucchini, Hokkaido, Basilikum)",
+          "menge": "16 Tüten",
+          "kosten": "56 €"
+        },
+        { "posten": "Steckzwiebeln und Knoblauch-Pflanzgut", "menge": "250 g + 1 Knolle", "kosten": "8 €" },
+        { "posten": "Saatgut Tomate, Paprika, Chili, Snackgurke", "menge": "4 Tüten", "kosten": "16 €" },
+        { "posten": "Gründüngung Phacelia und Buchweizen", "menge": "je 250–500 g", "kosten": "14 €" },
+        {
+          "posten": "Blumensaat einjährig (Ringelblume, Kapuzinerkresse, Borretsch, Kornblume, Tagetes)",
+          "menge": "5 Tüten",
+          "kosten": "13 €"
+        },
+        { "posten": "Jungpflanzen Brokkoli, Grünkohl, Knollensellerie, Lauch", "menge": "8 + 6 + 1 Bund", "kosten": "18 €" },
+        { "posten": "Rhabarber", "menge": "1 Pflanze", "kosten": "12 €" },
+        { "posten": "Walderdbeeren", "menge": "6 Pflanzen", "kosten": "15 €" },
+        { "posten": "Blut-Storchschnabel", "menge": "8", "kosten": "36 €" },
+        { "posten": "Balkan-Storchschnabel", "menge": "10", "kosten": "45 €" },
+        { "posten": "Wiesen-Salbei, Echter Dost, Karthäuser-Nelke", "menge": "3 + 3 + 5", "kosten": "45,50 €" },
+        { "posten": "Kräuter Thymian, Salbei, Schnittlauch", "menge": "6", "kosten": "17,50 €" },
+        { "posten": "Kompost (Sackware)", "menge": "ca. 250 l", "kosten": "45 €" },
+        { "posten": "Stroh als Mulch (Kürbis, Gewächshaus)", "menge": "1 Ballen", "kosten": "12 €" },
+        { "posten": "Bodenuntersuchung im Labor (pH, Nährstoffe, Humus)", "menge": "1 Probe", "kosten": "35 €" },
+        { "posten": "Wildbienen-Nisthilfe", "menge": "1", "kosten": "35 €" },
+        { "posten": "Vogelnistkasten", "menge": "1", "kosten": "25 €" },
+        { "posten": "Ungewaschener Sand für Sandarium", "menge": "ca. 100 l", "kosten": "15 €" },
+        { "posten": "Kulturschutznetz", "menge": "2 × 5 m", "kosten": "25 €" },
+        { "posten": "Gelbtafeln Kirschfruchtfliege", "menge": "10 Stück", "kosten": "8 €" },
+        { "posten": "Pheromonfalle Pflaumenwickler", "menge": "1", "kosten": "15 €" },
+        { "posten": "Gartenvlies", "menge": "2 × 5 m", "kosten": "8 €" },
+        { "posten": "Tomatenspiralstäbe, Bohnenstangen, Schnur", "menge": "Set", "kosten": "20 €" },
+        { "posten": "Summe", "menge": "", "kosten": "539 €", "summe": true },
+        { "posten": "Optional: Trittsteine 30 × 30 cm für die Pfade", "menge": "20 Stück", "kosten": "50 €", "optional": true }
+      ],
+      "nachsatz": "Laub, Totholz und Mulch aus angetrocknetem Rasenschnitt kommen aus dem eigenen Garten und kosten nichts. Wer Tomaten, Paprika und Gurke als Jungpflanzen kauft statt selbst anzieht, rechnet mit ca. 3,50–6 € pro Pflanze."
+    },
+    "offen": {
+      "titel": "Offene Punkte zum Ergänzen",
+      "punkte": [
+        "Boden ist humos (Spatenprobe, Stand 2. Nov. 2026): gute Grundlage für Gemüse. Optional noch pH und Nährstoffe im Labor prüfen lassen; bei hohem Humusgehalt reicht oft die untere Kompostmenge (ca. 3 l/m²) auch für Starkzehrer.",
+        "Wasserversorgung: Regenfässer und eine Brunnenpumpe sind vorhanden (Stand 2. Nov. 2026). Offen sind nur noch Anzahl und Volumen der Regenfässer sowie der Pumpentyp (z. B. Saug- oder Tauchpumpe).",
+        "Sorten: Sommer- oder Herbsthimbeeren? Rote, weiße oder schwarze Johannisbeeren? Sorte und Reifezeit der Kirschen (frühe Sorten haben weniger Kirschfruchtfliegen-Befall).",
+        "Lage der Beete: Laufen die Längsseiten (4,5 m bzw. 7 m) wirklich Nord–Süd? Wie breit sind Längsweg und Querweg?",
+        "Schattenwurf der Sauerkirsche im Frühjahr beobachten und die Halbschattengrenze in Beet 2 festlegen.",
+        "Weitere vorhandene Stauden, Gehölze, Kompostplatz oder Laube, die in der Skizze fehlen.",
+        "Platz für Laub-/Totholzhaufen und Nisthilfe vor Ort bestätigen; Baumscheiben von Pflaume und Süßkirsche nur mulchen, wenn sie nicht zur Rasenfläche gehören.",
+        "Gewächshaus: Bodenbeete oder Tische, Lage von Tür und Lüftungsklappen."
+      ]
+    }
+  }
+}
