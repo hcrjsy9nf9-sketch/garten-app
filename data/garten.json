@@ -560,6 +560,30 @@
       "href": "https://cursor.com/canvas/store-70062b4c-21e3-4d3b-b40c-7887ed6cad24/83784671-7564-4b01-ad1c-bd4d7346c187"
     }
   ],
+  "lageplan": {
+    "titel": "Parzelle 23",
+    "flaeche": "440 m²",
+    "aria": "Lageplan der Parzelle 23, Süden oben",
+    "viewBox": "0 0 360 680",
+    "hinweis": "Schema nach deiner Skizze, nicht maßstabsgetreu.",
+    "fussnote": "Regenfässer und Brunnenpumpe: Lage ungefähr.",
+    "kompass": { "x": 170, "y": 34, "s": "S", "n": "N" },
+    "elemente": [
+      { "id": "johannisbeeren", "name": "Johannisbeeren", "typ": "strauch", "x": 10, "y": 62, "b": 146, "h": 54, "anzahl": 2, "masse": "jung", "treffer": ["Johannisbeer"] },
+      { "id": "beet1", "name": "Beet 1", "typ": "beet", "x": 10, "y": 120, "b": 146, "h": 148, "masse": "4,5 × 4 m", "link": "garten-beet-1", "treffer": ["Beet 1", "Beete", "1A", "1B", "1C", "1D"] },
+      { "id": "querweg", "name": "Querweg", "typ": "weg", "x": 10, "y": 274, "b": 146, "h": 34, "treffer": ["Querweg"] },
+      { "id": "himbeeren", "name": "Himbeeren", "typ": "strauch", "x": 10, "y": 314, "b": 146, "h": 56, "masse": "2,1 × 1 m", "treffer": ["Himbeer"] },
+      { "id": "gewaechshaus", "name": "Gewächshaus", "typ": "haus", "x": 10, "y": 376, "b": 104, "h": 96, "masse": "2,5 × 1,9 m", "treffer": ["Gewächshaus"] },
+      { "id": "regenfaesser", "name": "Regenfässer", "typ": "fass", "x": 120, "y": 378, "b": 36, "h": 42, "ungefahr": true, "treffer": ["Regenfass", "Regenfäss"] },
+      { "id": "pumpe", "name": "Brunnenpumpe", "typ": "pumpe", "x": 120, "y": 426, "b": 36, "h": 44, "ungefahr": true, "treffer": ["Brunnenpumpe"] },
+      { "id": "laengsweg", "name": "Längsweg", "typ": "weg", "x": 162, "y": 78, "b": 26, "h": 544, "masse": "ca. 8 m", "treffer": ["Längsweg"] },
+      { "id": "sauerkirsche", "name": "Sauerkirsche", "typ": "baum", "x": 194, "y": 58, "b": 136, "h": 112, "masse": "Krone ca. 2 m", "treffer": ["Sauerkirsche", "Kirsche"] },
+      { "id": "beet2", "name": "Beet 2", "typ": "beet", "x": 194, "y": 176, "b": 136, "h": 214, "masse": "7 × 4 m", "link": "garten-beet-2", "treffer": ["Beet 2", "Beete", "2A", "2B", "2C", "2D", "2E", "2F"] },
+      { "id": "rasen", "name": "Rasen", "typ": "rasen", "x": 194, "y": 396, "b": 136, "h": 100, "treffer": ["Rasen"] },
+      { "id": "pflaume", "name": "Pflaume", "typ": "baum", "x": 194, "y": 502, "b": 64, "h": 112, "masse": "Krone ca. 1 m", "treffer": ["Pflaume"] },
+      { "id": "suesskirsche", "name": "Süßkirsche", "typ": "baum", "x": 262, "y": 494, "b": 68, "h": 124, "masse": "Krone ca. 2,5 m", "treffer": ["Süßkirsche", "Kirsche"] }
+    ]
+  },
   "plan2027": {
     "titel": "Gartenplan 2027 – Parzelle 23",
     "summary": "Jahresplan für den 440-m²-Kleingarten in Magdeburg: Beetaufteilung mit Fruchtfolge, Gewächshaus, Obstpflege, Blühsäume, Monatskalender und Einkaufsliste mit geschätzten Kosten.",

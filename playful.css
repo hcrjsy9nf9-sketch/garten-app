@@ -81,8 +81,13 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
   background: var(--card);
 }
 
-.hill { width: 100%; height: 56px; display: block; margin: 0 0 4px; }
-.hill svg { width: 100%; height: 56px; display: block; }
+.hill { width: 100%; height: 56px; display: block; margin: 0 0 4px; overflow: visible; }
+.hill svg { width: 100%; height: 56px; display: block; overflow: visible; }
+.hill-sun { fill: var(--haus); }
+.hill-ground { fill: var(--green); }
+.hill-ground-2 { fill: var(--green-ink); opacity: 0.45; }
+.hill-tree { fill: var(--green-ink); }
+.hill-trunk { fill: none; stroke: var(--green-ink); stroke-width: 2; stroke-linecap: round; }
 
 .bubble {
   width: 32px;
@@ -151,6 +156,47 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 }
 .empty p { margin: 0; font-weight: 800; }
 
+.plot-block { display: flex; flex-direction: column; gap: 8px; }
+.plot-wrap {
+  background: var(--card);
+  border: 3px solid var(--soil-edge);
+  border-radius: 28px;
+  padding: 6px;
+  overflow: visible;
+}
+.plot-wrap svg { width: 100%; height: auto; display: block; overflow: visible; max-width: 100%; }
+.plot-ground { fill: var(--soil); }
+.plot-beet { fill: var(--green-soft); stroke: var(--green); stroke-width: 2.5; }
+.plot-sprout { fill: var(--green); }
+.plot-house, .plot-roof { fill: var(--haus-soft); stroke: var(--haus); stroke-width: 2.5; }
+.plot-pane, .plot-trunk, .plot-cane, .plot-grass { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+.plot-canopy { fill: var(--green); stroke: var(--green-ink); stroke-width: 2; }
+.plot-canopy-lite { fill: var(--card); opacity: 0.55; }
+.plot-bush { fill: var(--obst); stroke: var(--ink); stroke-width: 2; }
+.plot-berry { fill: var(--card); }
+.plot-cane-bed { fill: var(--obst-soft); stroke: var(--obst); stroke-width: 2.5; }
+.plot-lawn { fill: color-mix(in srgb, var(--green) 28%, var(--card)); stroke: var(--green); stroke-width: 2.5; }
+.plot-path { fill: var(--soil); stroke: var(--soil-edge); stroke-width: 2; }
+.plot-tech, .plot-tech-top { fill: var(--wasser-soft); stroke: var(--wasser); stroke-width: 2.5; }
+.plot-compass { fill: var(--card); stroke: var(--ink); stroke-width: 2; }
+.plot-needle { fill: var(--amber); }
+.plot-label, .plot-sub { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 800; }
+.plot-sub { font-weight: 700; }
+.plot-hit { cursor: pointer; }
+.plot-hit.is-on .plot-shape { stroke: var(--ink); stroke-width: 4; }
+.plot-karte {
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.plot-karte h3, .plot-karte h4, .plot-karte p { margin: 0; }
+.plot-karte ul { margin: 0; padding-left: 1.1rem; }
+#garten-beet-1, #garten-beet-2 { scroll-margin-top: calc(var(--header-h) + 12px); }
+
 .sketch .field { fill-opacity: 0.55; }
 .sketch .field.stark { fill: #8fd18a; }
 .sketch .field.mittel { fill: #f6c56b; }
@@ -164,6 +210,11 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
   .chip.is-on { color: #10241c; }
   .sketch .tree { fill: #2f7d46; }
   .sketch .canopy { fill: #8ee08a; }
+  .hill-ground { fill: #2f7d46; }
+  .hill-ground-2 { fill: #163246; opacity: 1; }
+  .hill-tree, .hill-trunk { fill: #8ee08a; stroke: #8ee08a; }
+  .plot-canopy { fill: #3e9a4a; stroke: #c8f5c4; }
+  .plot-bush { fill: #d63b6a; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -31,6 +31,7 @@ const state = {
   planMonat: "nov",
   planBeet: "b1",
   rotYear: "2027",
+  plotId: null,
   pendingScroll: null,
   listening: false,
   query: "",
@@ -233,6 +234,7 @@ function renderHeader() {
   return h(
     "header",
     { class: "top" },
+    renderHill(),
     h(
       "div",
       { class: "title-row" },
@@ -308,7 +310,24 @@ function renderHeute() {
     "div",
     { class: "view" },
     renderWeatherCard(),
-    h("section", {}, h("h2", {}, "Heute zu tun"), h("div", { id: "heute-aufgaben" }, tasks.map((task) => taskLine("heute", task.text, task.bereich, task.done))), h("p", { class: "hint" }, "Abhaken gilt nur auf diesem Gerät. Sag dem Gartenhelfer Bescheid, dann wird es dauerhaft eingetragen.")),
+    tasks.length
+      ? h(
+          "section",
+          {},
+          h("h2", {}, "Heute zu tun"),
+          h("div", { id: "heute-aufgaben" }, tasks.map((task) => taskLine("heute", task.text, task.bereich, task.done))),
+          h("p", { class: "hint" }, "Abhaken gilt nur auf diesem Gerät. Sag dem Gartenhelfer Bescheid, dann wird es dauerhaft eingetragen.")
+        )
+      : h(
+          "section",
+          {},
+          h(
+            "div",
+            { class: "empty" },
+            h("span", { class: "bubble natur", "aria-hidden": "true" }, plantGlyph("blume ringel")),
+            h("p", {}, "Heute ist nichts zu tun – genieß den Garten")
+          )
+        ),
     renderNextCard(),
     h(
       "section",
@@ -1069,11 +1088,205 @@ function fieldTile(row) {
   );
 }
 
-function bedCard(title, mass, place, rows) {
-  const skizze = (((state.data.plan2027 || {}).lageplan || {}).skizze) || {};
+function renderHill() {
+  const svg = svgEl("svg", { viewBox: "0 0 360 56", "aria-hidden": "true" });
+  svg.append(svgEl("circle", { cx: 308, cy: 16, r: 9, class: "hill-sun" }));
+  svg.append(svgEl("path", { d: "M0 38 C70 38 96 18 150 26 C210 36 230 14 292 28 C320 34 340 32 360 36 L360 56 L0 56 Z", class: "hill-ground" }));
+  svg.append(svgEl("path", { d: "M0 48 C90 40 130 52 200 44 C270 36 310 50 360 46 L360 56 L0 56 Z", class: "hill-ground-2" }));
+  svg.append(svgEl("circle", { cx: 78, cy: 34, r: 8, class: "hill-tree" }));
+  svg.append(svgEl("path", { d: "M78 40 v8", class: "hill-trunk" }));
+  return h("div", { class: "hill" }, svg);
+}
+
+function plotText(x, y, value, size, anchor) {
+  const node = svgEl("text", {
+    x,
+    y,
+    "text-anchor": anchor || "middle",
+    class: size >= 15 ? "plot-label" : "plot-sub",
+    "font-size": size,
+  });
+  node.textContent = value || "";
+  return node;
+}
+
+function plotLines(g, x, y, lines, size) {
+  const gap = size + 3;
+  lines.forEach((line, index) => g.append(plotText(x, y + index * gap, line, size, "middle")));
+}
+
+function taskKey(text) {
+  return String(text || "").replace(/[.\s]+$/g, "").toLowerCase();
+}
+
+function mentionsAny(text, words) {
+  const value = String(text || "");
+  return (words || []).some((word) => {
+    const escaped = String(word).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp("(^|[^0-9A-Za-zÄÖÜäöüß])" + escaped, "i").test(value);
+  });
+}
+
+function tasksForPlot(el) {
+  const words = el.treffer && el.treffer.length ? el.treffer : [el.name];
+  const found = [];
+  const push = (task) => {
+    const text = typeof task === "string" ? task : task && task.text;
+    if (!text) return;
+    const key = taskKey(text);
+    const blob = typeof task === "string" ? task : text + " " + ((task && task.bereich) || "");
+    if (!mentionsAny(blob, words)) return;
+    const idx = found.findIndex((item) => {
+      const have = taskKey(item);
+      if (have === key || have.startsWith(key) || key.startsWith(have)) return true;
+      const short = have.length < key.length ? have : key;
+      const long = short === have ? key : have;
+      return short.length > 24 && long.includes(short);
+    });
+    if (idx >= 0) {
+      if (text.length > found[idx].length) found[idx] = text;
+      return;
+    }
+    found.push(text);
+  };
+  (state.data.heute || []).forEach(push);
+  const today = berlinParts();
+  const key = today.year + "-" + String(today.month).padStart(2, "0");
+  const month = (state.data.jahr || []).find((item) => item.key === key);
+  if (month) Object.values(month.aufgaben || {}).forEach((list) => (list || []).forEach(push));
+  return found.slice(0, 3);
+}
+
+function bestandByName(name) {
+  const wanted = norm(name);
+  return ((state.data && state.data.bestand) || []).find((item) => {
+    const have = norm(item.name);
+    return have === wanted || have.startsWith(wanted) || wanted.startsWith(have);
+  });
+}
+
+function drawPlotElement(svg, el, on) {
+  const g = svgEl("g", {
+    class: "plot-hit" + (on ? " is-on" : ""),
+    "data-plot": el.id,
+    role: "button",
+    tabindex: "0",
+    "aria-label": el.name,
+    "aria-pressed": on ? "true" : "false",
+  });
+  const x = el.x;
+  const y = el.y;
+  const b = el.b;
+  const hgt = el.h;
+  const cx = x + b / 2;
+  if (el.typ === "beet") {
+    g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 16, class: "plot-beet plot-shape" }));
+    [0.3, 0.5, 0.7].forEach((step) => {
+      g.append(svgEl("circle", { cx: x + b * step, cy: y + hgt - 18, r: 4, class: "plot-sprout" }));
+    });
+    plotLines(g, cx, y + hgt / 2 - 6, [el.name, el.masse].filter(Boolean), 16);
+  } else if (el.typ === "haus") {
+    g.append(svgEl("path", { d: `M${cx},${y + 4} L${x + 8},${y + 26} L${x + b - 8},${y + 26} Z`, class: "plot-roof plot-shape" }));
+    g.append(svgEl("rect", { x: x + 8, y: y + 26, width: b - 16, height: hgt - 34, rx: 6, class: "plot-house plot-shape" }));
+    g.append(svgEl("path", { d: `M${x + 16},${y + 40} H${x + b - 16}`, class: "plot-pane" }));
+    plotLines(g, cx, y + hgt - 38, [el.name, el.masse].filter(Boolean), 13);
+  } else if (el.typ === "baum") {
+    const r = Math.min(b, hgt) * 0.34;
+    g.append(svgEl("path", { d: `M${cx},${y + r * 2} v${Math.max(8, r * 0.7)}`, class: "plot-trunk" }));
+    g.append(svgEl("circle", { cx, cy: y + r + 4, r, class: "plot-canopy plot-shape" }));
+    g.append(svgEl("circle", { cx: cx - r * 0.28, cy: y + r * 0.7, r: r * 0.28, class: "plot-canopy-lite" }));
+    plotLines(g, cx, y + hgt - 12, [el.name], 13);
+  } else if (el.typ === "strauch" && el.anzahl > 1) {
+    const r = 14;
+    for (let i = 0; i < el.anzahl; i += 1) {
+      const bx = x + (b * (i + 1)) / (el.anzahl + 1);
+      g.append(svgEl("circle", { cx: bx, cy: y + r + 2, r, class: "plot-bush plot-shape" }));
+      g.append(svgEl("circle", { cx: bx - 4, cy: y + r, r: 2.2, class: "plot-berry" }));
+    }
+    g.append(plotText(cx, y + hgt - 6, el.name, 13, "middle"));
+  } else if (el.typ === "strauch") {
+    g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 12, class: "plot-cane-bed plot-shape" }));
+    plotLines(g, cx, y + 20, [el.name, el.masse].filter(Boolean), 14);
+    [0.28, 0.5, 0.72].forEach((step) => {
+      g.append(svgEl("path", { d: `M${x + b * step},${y + hgt - 4} v-8`, class: "plot-cane" }));
+    });
+  } else if (el.typ === "rasen") {
+    g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 14, class: "plot-lawn plot-shape" }));
+    [0.3, 0.5, 0.7].forEach((step) => {
+      g.append(svgEl("path", { d: `M${x + b * step},${y + 28} v16`, class: "plot-grass" }));
+    });
+    g.append(plotText(cx, y + hgt / 2 + 8, el.name, 16, "middle"));
+  } else if (el.typ === "fass") {
+    g.append(svgEl("rect", { x: x + 6, y: y + 8, width: b - 12, height: hgt - 12, rx: 8, class: "plot-tech plot-shape" }));
+    g.append(svgEl("ellipse", { cx, cy: y + 10, rx: (b - 12) / 2, ry: 4, class: "plot-tech-top" }));
+  } else if (el.typ === "pumpe") {
+    g.append(svgEl("circle", { cx, cy: y + hgt / 2 + 4, r: 12, class: "plot-tech plot-shape" }));
+    g.append(svgEl("path", { d: `M${cx},${y + 8} v10 M${cx},${y + 12} h10`, class: "plot-pane" }));
+  } else if (el.typ === "weg" && b < hgt / 3) {
+    g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 10, class: "plot-path plot-shape" }));
+    const label = [el.name, el.masse].filter(Boolean).join(" · ");
+    const text = plotText(cx, y + hgt / 2, label, 13, "middle");
+    text.setAttribute("transform", `rotate(-90 ${cx} ${y + hgt / 2})`);
+    g.append(text);
+  } else if (el.typ === "weg") {
+    g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 10, class: "plot-path plot-shape" }));
+    g.append(plotText(cx, y + hgt / 2 + 5, el.name, 14, "middle"));
+  }
+  svg.append(g);
+}
+
+function renderPlotCard(el) {
+  if (!el) return null;
+  const bestand = bestandByName(el.name);
+  const masse = bestand && bestand.masse && bestand.masse !== "–" ? bestand.masse : el.masse || "";
+  const tasks = tasksForPlot(el);
   return h(
     "article",
-    { class: "bed-card" },
+    { class: "plot-karte", id: "plot-karte" },
+    h("h3", {}, el.name),
+    masse ? h("p", { class: "bed-mass" }, masse) : null,
+    el.ungefahr ? h("p", { class: "caption" }, "Lage ungefähr") : null,
+    tasks.length ? h("h4", {}, "Jetzt zu tun") : h("p", { class: "caption" }, "Keine Aufgabe für diesen Monat."),
+    tasks.length ? h("ul", { class: "clean wrap-list" }, tasks.map((task) => h("li", {}, task))) : null,
+    el.link ? h("button", { type: "button", class: "text-btn", "data-jump": el.link }, "Felder ansehen") : null
+  );
+}
+
+function renderParzelle(lage) {
+  if (!lage || !(lage.elemente || []).length) return null;
+  const svg = svgEl("svg", {
+    viewBox: lage.viewBox || "0 0 340 660",
+    role: "img",
+    "aria-label": lage.aria || "Lageplan",
+  });
+  const box = String(lage.viewBox || "0 0 360 680").split(/[\s,]+/).map(Number);
+  svg.append(svgEl("rect", { x: 8, y: 52, width: (box[2] || 360) - 16, height: (box[3] || 680) - 68, rx: 28, class: "plot-ground" }));
+  const rose = lage.kompass || { x: 170, y: 34, s: "S", n: "N" };
+  const compass = svgEl("g", { "aria-hidden": "true" });
+  compass.append(svgEl("circle", { cx: rose.x, cy: rose.y, r: 15, class: "plot-compass" }));
+  compass.append(svgEl("path", { d: `M${rose.x},${rose.y - 11} l-5,11 h10 z`, class: "plot-needle" }));
+  compass.append(plotText(rose.x, rose.y - 20, rose.s || "S", 14, "middle"));
+  compass.append(plotText(rose.x, rose.y + 30, rose.n || "N", 14, "middle"));
+  svg.append(compass);
+  (lage.elemente || []).forEach((el) => drawPlotElement(svg, el, state.plotId === el.id));
+  const chosen = (lage.elemente || []).find((el) => el.id === state.plotId);
+  return h(
+    "section",
+    { class: "plot-block" },
+    h("p", { class: "bed-place" }, lage.flaeche || ""),
+    h("div", { class: "plot-wrap" }, svg),
+    h("p", { class: "caption" }, lage.fussnote || ""),
+    h("p", { class: "caption" }, lage.hinweis || ""),
+    renderPlotCard(chosen)
+  );
+}
+
+function bedCard(title, mass, place, rows) {
+  const skizze = (((state.data.plan2027 || {}).lageplan || {}).skizze) || {};
+  const anchor = title === "Beet 1" ? "garten-beet-1" : title === "Beet 2" ? "garten-beet-2" : null;
+  return h(
+    "article",
+    { class: "bed-card", id: anchor },
     h(
       "div",
       { class: "bed-head" },
@@ -1105,9 +1318,12 @@ function renderGarten() {
     ["schwach", "Schwachzehrer"],
     ["grau", "Gründüngung"],
   ];
+  const lage = state.data.lageplan || {};
   return h(
     "div",
     { class: "view garten-view" },
+    h("h2", {}, lage.titel || "Parzelle 23"),
+    renderParzelle(lage),
     h("h2", {}, "Beete"),
     years.length
       ? h(
@@ -1292,6 +1508,11 @@ function paint(resetScroll) {
     state.pendingScroll = null;
     if (target) revealTarget(target);
   }
+  if (state.plotScroll) {
+    state.plotScroll = false;
+    const card = document.getElementById("plot-karte");
+    if (card) card.scrollIntoView({ block: "nearest" });
+  }
 }
 
 function setTab(id, push) {
@@ -1305,6 +1526,13 @@ function setTab(id, push) {
 }
 
 function onClick(event) {
+  const plot = event.target.closest("[data-plot]");
+  if (plot && !event.target.closest(".sheet")) {
+    state.plotId = plot.getAttribute("data-plot");
+    state.plotScroll = true;
+    paint(false);
+    return;
+  }
   const hit = event.target.closest("[data-hit]");
   if (hit && !event.target.closest(".sheet")) {
     state.sheet = hit.getAttribute("data-hit");
@@ -1431,6 +1659,14 @@ function listen() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && state.sheet) {
       state.sheet = null;
+      paint(false);
+      return;
+    }
+    const plotKey = event.target.closest && event.target.closest("[data-plot]");
+    if ((event.key === "Enter" || event.key === " ") && plotKey) {
+      event.preventDefault();
+      state.plotId = plotKey.getAttribute("data-plot");
+      state.plotScroll = true;
       paint(false);
       return;
     }

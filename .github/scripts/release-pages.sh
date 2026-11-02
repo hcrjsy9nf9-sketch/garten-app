@@ -40,8 +40,11 @@ release_once() {
 open_count() {
   local n
   n="$(
-    gh api "repos/${owner}/${repo}/deployments?environment=github-pages&per_page=15" --jq '.[] | "\(.id)"' | while read -r id; do
+    gh api "repos/${owner}/${repo}/deployments?environment=github-pages&per_page=15" --jq '.[] | "\(.id) \(.sha)"' | while read -r id sha; do
       [ -n "${id}" ] || continue
+      if [ "${sha}" = "${GITHUB_SHA:-}" ]; then
+        continue
+      fi
       gh api "repos/${owner}/${repo}/deployments/${id}/statuses" --jq '.[0].state // "unknown"'
     done | grep -c -E '^(in_progress|queued|pending|waiting)$' || true
   )"
