@@ -346,33 +346,49 @@ function renderJahr() {
               "summary",
               {},
               h("i", { class: "dot " + category.key, "aria-hidden": "true" }),
-              h("span", {}, category.label),
-              h("span", { class: "task-meta" }, String(items.length))
+              h("span", { class: "fold-label" }, category.label),
+              h("span", { class: "task-meta count" }, String(items.length))
             )
           );
-          details.append(h("div", { class: "fold-body" }, items.map((taskText) => taskLine(month.key, taskText, "", false, true))));
+          details.append(h("div", { class: "fold-body" }, items.map((taskText) => taskLine(month.key, taskText, "", false, false))));
           return details;
         })
     : [];
   const progress = month ? monthProgress(month) : { done: 0, total: 0 };
   return h(
     "div",
-    { class: "view" },
-    h("div", { class: "section-head" }, h("h2", {}, month ? month.name : "Kalender"), h("p", { class: "task-meta" }, progress.done + " von " + progress.total)),
+    { class: "view calendar" },
     h(
       "div",
-      { class: "chips", "data-chipbar": "Kalender", role: "group", "aria-label": "Monat" },
-      months.map((item) => {
-        const on = month && item.key === month.key;
-        return h(
-          "button",
-          { type: "button", class: "chip" + (on ? " is-on" : ""), "aria-pressed": on ? "true" : "false", "data-monat": item.key },
-          item.label
-        );
-      })
+      { class: "section-head" },
+      h("h2", {}, month ? month.name : "Kalender"),
+      h("div", { class: "progress-side" }, ring(progress.done, progress.total), h("span", { class: "task-meta" }, progress.done + " von " + progress.total))
+    ),
+    monthChips(
+      "Kalender",
+      months.map((item) => ({ value: item.key, label: item.label })),
+      month && month.key,
+      "data-monat"
     ),
     groups.length ? groups : h("p", { class: "caption" }, "Keine Aufgaben erfasst.")
   );
+}
+
+function monthChips(name, options, current, attr) {
+  const row = h("div", { class: "month-row" });
+  const bar = h("div", { class: "chips", "data-chipbar": name, role: "group", "aria-label": name });
+  options.forEach((option) => {
+    const on = option.value === current;
+    bar.append(
+      h(
+        "button",
+        { type: "button", class: "chip" + (on ? " is-on" : ""), "aria-pressed": on ? "true" : "false", [attr]: option.value },
+        option.label
+      )
+    );
+  });
+  row.append(bar);
+  return row;
 }
 
 function renderTechnik() {
@@ -653,7 +669,57 @@ function renderSketch(skizze, viewBox, labelled) {
   svg.append(mark(svgEl("circle", { cx: 388, cy: 660, r: 55, class: "tree" }), "pflanze:Süßkirsche", "Süßkirsche"));
   svg.append(label(skizze.suesskirsche, 388, 658, "sub", { "text-anchor": "middle" }));
   svg.append(label(skizze.nistkasten, 388, 671, "tiny", { "text-anchor": "middle" }));
+  [...svg.childNodes].forEach((node) => {
+    if (!(node instanceof Element)) return;
+    const x = Number(node.getAttribute("x") ?? node.getAttribute("cx") ?? node.getAttribute("x1"));
+    const y = Number(node.getAttribute("y") ?? node.getAttribute("cy") ?? node.getAttribute("y1"));
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return;
+    if (x < vx - 24 || x > vx + vw - 2 || y < vy - 24 || y > vy + vh + 8) node.remove();
+  });
   return svg;
+}
+
+function bindMapZoom(card) {
+  if (!card || card.dataset.zoomBound) return;
+  card.dataset.zoomBound = "1";
+  const pointers = new Map();
+  let startDist = 0;
+  let startScale = 1;
+  let scale = 1;
+  const svg = () => card.querySelector("svg");
+  const apply = () => {
+    const node = svg();
+    if (!node) return;
+    node.style.width = scale <= 1.01 ? "100%" : scale * 100 + "%";
+    card.classList.toggle("is-zoomed", scale > 1.01);
+  };
+  card.addEventListener("pointerdown", (event) => {
+    pointers.set(event.pointerId, [event.clientX, event.clientY]);
+    if (pointers.size === 2) {
+      const pts = [...pointers.values()];
+      startDist = Math.hypot(pts[0][0] - pts[1][0], pts[0][1] - pts[1][1]) || 1;
+      startScale = scale;
+    }
+  });
+  card.addEventListener("pointermove", (event) => {
+    if (!pointers.has(event.pointerId)) return;
+    pointers.set(event.pointerId, [event.clientX, event.clientY]);
+    if (pointers.size === 2) {
+      const pts = [...pointers.values()];
+      const dist = Math.hypot(pts[0][0] - pts[1][0], pts[0][1] - pts[1][1]);
+      scale = Math.min(4, Math.max(1, startScale * (dist / startDist)));
+      apply();
+    }
+  });
+  const end = (event) => {
+    pointers.delete(event.pointerId);
+  };
+  card.addEventListener("pointerup", end);
+  card.addEventListener("pointercancel", end);
+  card.addEventListener("dblclick", () => {
+    scale = 1;
+    apply();
+  });
 }
 
 function renderPlan() {
@@ -709,16 +775,16 @@ function renderPlan() {
             "div",
             { class: "sketch-card" },
             h("p", { class: "sketch-label" }, "Beet 1, Beeren, Gewächshaus"),
-            renderSketch(skizze, "0 8 236 468", true)
+            renderSketch(skizze, "0 0 300 530", true)
           ),
           h(
             "div",
-            { class: "sketch-card pan" },
+            { class: "sketch-card" },
             h("p", { class: "sketch-label" }, "Beet 2, Rasen, Obstbäume"),
-            renderSketch(skizze, "220 8 380 752", false)
+            renderSketch(skizze, "180 0 540 800", false)
           )
         ),
-        h("div", { class: "sketch-full sketch-card" }, renderSketch(skizze, "0 0 600 760", true)),
+        h("div", { class: "sketch-full sketch-card" }, renderSketch(skizze, "0 0 740 800", true)),
         h("figcaption", {}, (skizze.massstab || "") + " Felder und Gehölze antippen.")
       ),
       h("h4", {}, lage.aufbauTitel || "Aufbau der Beete"),
@@ -802,14 +868,14 @@ function renderPlan() {
     section(
       "kalender",
       kalender.titel || "Monatskalender 2027",
-      chipBar(
-        "Kalender",
+      monthChips(
+        "Plankalender",
         (kalender.monate || []).map((item) => ({ value: item.key, label: item.label })),
         month && month.key,
         "data-plan-monat"
       ),
-      month ? h("h4", {}, month.name) : null,
-      month ? bullets(month.punkte) : null,
+      month ? h("h3", {}, month.name) : null,
+      month ? h("ul", { class: "clean wrap-list" }, (month.punkte || []).map((point) => h("li", {}, point))) : null,
       callout(kalender.hinweis)
     ),
     section(
@@ -887,8 +953,8 @@ function renderGarten() {
     h(
       "figure",
       { class: "sketch" },
-      h("div", { class: "sketch-card" }, h("p", { class: "sketch-label" }, "Beet 1, Beeren, Gewächshaus"), renderSketch(skizze, "0 8 236 468", true)),
-      h("div", { class: "sketch-card" }, h("p", { class: "sketch-label" }, "Beet 2, Rasen, Obstbäume"), renderSketch(skizze, "220 8 380 752", true)),
+      h("div", { class: "sketch-zoom" }, h("p", { class: "sketch-label" }, "Beet 1, Beeren, Gewächshaus"), renderSketch(skizze, "0 0 300 530", true)),
+      h("div", { class: "sketch-zoom" }, h("p", { class: "sketch-label" }, "Beet 2, Rasen, Obstbäume"), renderSketch(skizze, "180 0 540 800", true)),
       h("figcaption", {}, skizze.massstab || "")
     ),
     h("h2", {}, "Bestand"),
@@ -1000,12 +1066,26 @@ function renderView() {
   return renderHeute();
 }
 
+function updateChipFades() {
+  document.querySelectorAll(".month-row").forEach((row) => {
+    const bar = row.querySelector(".chips");
+    if (!bar) return;
+    const max = bar.scrollWidth - bar.clientWidth;
+    row.classList.toggle("can-left", bar.scrollLeft > 6);
+    row.classList.toggle("can-right", max > 6 && bar.scrollLeft < max - 6);
+  });
+}
+
 function centerChips() {
   document.querySelectorAll("[data-chipbar]").forEach((bar) => {
     const button = bar.querySelector("[aria-pressed='true']");
     if (!button) return;
-    bar.scrollLeft = Math.max(0, button.offsetLeft - (bar.clientWidth - button.offsetWidth) / 2);
+    const barRect = bar.getBoundingClientRect();
+    const btnRect = button.getBoundingClientRect();
+    const delta = btnRect.left - barRect.left - (bar.clientWidth - btnRect.width) / 2;
+    bar.scrollLeft = Math.max(0, bar.scrollLeft + delta);
   });
+  updateChipFades();
 }
 
 function syncHeader() {
@@ -1031,7 +1111,10 @@ function paint(resetScroll) {
       if (selection) next.setSelectionRange(selection[0], selection[1]);
     }
   }
-  requestAnimationFrame(centerChips);
+  requestAnimationFrame(() => {
+    centerChips();
+    document.querySelectorAll(".sketch-zoom, .sketch-card").forEach(bindMapZoom);
+  });
   if (state.pendingScroll) {
     const target = document.getElementById(state.pendingScroll);
     state.pendingScroll = null;
@@ -1159,6 +1242,7 @@ function listen() {
   if (state.listening) return;
   state.listening = true;
   document.addEventListener("click", onClick);
+  document.addEventListener("scroll", updateChipFades, true);
   document.addEventListener("input", (event) => {
     if (!event.target.matches("[data-search]")) return;
     state.query = event.target.value;

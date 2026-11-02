@@ -768,7 +768,7 @@ details.rules .rules-body {
   padding: 0 14px 14px;
 }
 
-body { overflow-x: hidden; font-size: 16px; line-height: 1.45; }
+body { font-size: 16px; line-height: 1.45; }
 h1 { font-family: var(--sans); font-size: 1.25rem; font-weight: 650; }
 h2 { font-size: 1.35rem; margin: 8px 0; }
 .task-meta, .caption, .hint, .fetched, .stand-quiet { font-size: 0.875rem; }
@@ -817,11 +817,7 @@ h2 { font-size: 1.35rem; margin: 8px 0; }
   justify-content: center;
 }
 .line-text { display: block; }
-.line.clamp .line-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+.line.clamp .line-text { overflow-wrap: anywhere; }
 .fold summary::after {
   content: "";
   margin-left: auto;
@@ -868,13 +864,100 @@ h2 { font-size: 1.35rem; margin: 8px 0; }
 .sketch-card.pan svg, table { min-width: 0; }
 .table-scroll { overflow: visible; }
 .chips { margin: 0 -4px; }
-.next-list li {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+.next-list li { overflow-wrap: anywhere; }
 .sheet .props div { grid-template-columns: 1fr; }
 .status-links .quiet-link span:last-child { margin-left: auto; }
+
+html { hyphens: auto; }
+.app {
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+.top {
+  padding-top: calc(10px + env(safe-area-inset-top));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+.tabbar {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: calc(6px + env(safe-area-inset-bottom));
+}
+.app, main, .view, .fold, .fold-body, .task, .line, .quiet-link, .menu-item,
+p, li, h1, h2, h3, summary, button, dd, .stack-cell, .entry {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.month-row { position: relative; max-width: 100%; }
+.month-row .chips {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0;
+  padding: 2px 2px 12px;
+  scroll-padding-inline: 8px;
+  scrollbar-width: none;
+}
+.chip {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  white-space: nowrap;
+  overflow: visible;
+  overflow-wrap: normal;
+  hyphens: manual;
+  text-overflow: clip;
+}
+.month-row::before, .month-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 12px;
+  width: 16px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+.month-row::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+.month-row::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+.month-row.can-left::before, .month-row.can-right::after { opacity: 1; }
+.section-head { align-items: center; gap: 12px; }
+.section-head h2 { flex: 1; min-width: 0; margin: 0; }
+.progress-side { display: flex; align-items: center; gap: 8px; flex: none; }
+.fold-label { flex: 1 1 auto; min-width: 0; white-space: normal; }
+.fold summary .count { flex: none; }
+.task .line, .task .line-text, .wrap-list li {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  height: auto;
+  max-height: none;
+}
+.calendar { padding-bottom: 8px; }
+.app { padding-bottom: calc(7.5rem + env(safe-area-inset-bottom)); }
+.sketch-card, .sketch-zoom { overflow: visible; max-width: 100%; touch-action: pan-y; }
+.sketch-zoom.is-zoomed, .sketch-card.is-zoomed { overflow: auto; touch-action: none; max-height: 70dvh; }
+.sketch svg { width: 100%; height: auto; max-width: none; }
+.sketch-card.pan svg { min-width: 0; }
+table { min-width: 0; width: 100%; }
+.metrics, .devices { grid-template-columns: 1fr; }
+.strip { display: flex; flex-direction: column; }
+.strip-day { flex-direction: row; justify-content: space-between; width: 100%; min-height: 44px; font-size: 16px; }
+dl.props div, .stack-cell { grid-template-columns: 1fr; }
+.sheet-back {
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+}
+.sheet {
+  max-height: calc(100dvh - env(safe-area-inset-top) - 8px);
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+.sheet-bar { position: sticky; top: 0; background: var(--card); z-index: 2; }
+@media (min-width: 720px) {
+  .metrics, .devices { grid-template-columns: 1fr 1fr; }
+}
 
 @media (prefers-color-scheme: dark) {
   .alert.frost-hard { background: #1a3348; color: #d5e8f8; }
