@@ -14,6 +14,10 @@ release_once() {
     [ -n "${id}" ] || continue
     state="$(gh api "repos/${owner}/${repo}/deployments/${id}/statuses" --jq '.[0].state // "unknown"')"
     echo "deployment ${id} ${sha:0:7} ${state}"
+    if [ "${sha}" = "${GITHUB_SHA:-}" ]; then
+      echo "leave the deployment for this commit alone"
+      continue
+    fi
     if [ "${state}" = "success" ]; then
       continue
     fi
