@@ -936,6 +936,58 @@ p, li, h1, h2, h3, summary, button, dd, .stack-cell, .entry {
 }
 .calendar { padding-bottom: 8px; }
 .app { padding-bottom: calc(7.5rem + env(safe-area-inset-bottom)); }
+
+.year-toggle { display: flex; flex-wrap: wrap; gap: 8px; }
+.year-toggle .chip { flex: 1 1 4.2rem; justify-content: center; }
+.bed-card {
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 12px 12px 8px;
+}
+.bed-tiles { display: flex; flex-direction: column; gap: 10px; }
+.field-tile {
+  width: 100%;
+  min-height: 76px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  border: 0;
+  border-radius: 18px;
+  padding: 14px;
+  color: var(--ink);
+  background: var(--green-soft);
+}
+.field-tile.stark { background: var(--green-soft); }
+.field-tile.mittel { background: var(--beete-soft); }
+.field-tile.schwach { background: var(--obst-soft); }
+.field-tile.grau { background: var(--natur-soft); }
+.tile-copy { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.field-tile .code, .field-tile .crop {
+  display: block;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+  height: auto;
+}
+.field-tile .code { font-size: 0.875rem; color: var(--muted); font-weight: 700; }
+.field-tile .crop { font-size: 1.15rem; font-weight: 800; line-height: 1.25; }
+.now-pill {
+  align-self: flex-start;
+  margin-top: 6px;
+  background: var(--amber-soft);
+  color: var(--amber);
+  font-weight: 800;
+  font-size: 0.875rem;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.compass { margin: 0; text-align: center; font-weight: 800; letter-spacing: 0.18em; color: var(--muted); }
+.sheet-lead { display: flex; gap: 12px; align-items: center; }
+.sheet-lead p { margin: 0; font-weight: 800; font-size: 1.15rem; }
+.rot-on { font-weight: 800; color: var(--green-ink); }
 .sketch-card, .sketch-zoom { overflow: visible; max-width: 100%; touch-action: pan-y; }
 .sketch-zoom.is-zoomed, .sketch-card.is-zoomed { overflow: auto; touch-action: none; max-height: 70dvh; }
 .sketch svg { width: 100%; height: auto; max-width: none; }

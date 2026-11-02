@@ -30,6 +30,7 @@ const state = {
   typ: "alle",
   planMonat: "nov",
   planBeet: "b1",
+  rotYear: "2027",
   pendingScroll: null,
   listening: false,
   query: "",
@@ -937,46 +938,151 @@ function revealTarget(target) {
   target.scrollIntoView({ block: "start" });
 }
 
+function fieldCodeOf(feld) {
+  const match = String(feld || "").match(/^(Saum|[12][A-F])/);
+  return match ? match[1] : "";
+}
+
+function mentionsField(text, code) {
+  return new RegExp("(^|[^0-9A-Za-z])" + code + "([^0-9A-Za-z]|$)").test(String(text || ""));
+}
+
+function tasksForField(code) {
+  const today = berlinParts();
+  const key = today.year + "-" + String(today.month).padStart(2, "0");
+  const found = [];
+  const month = (state.data.jahr || []).find((item) => item.key === key);
+  if (month) {
+    Object.values(month.aufgaben || {}).forEach((list) => {
+      (list || []).forEach((task) => {
+        if (mentionsField(task, code)) found.push(task);
+      });
+    });
+  }
+  const planMonth = ((((state.data.plan2027 || {}).kalender || {}).monate) || [])[today.month - 1];
+  if (planMonth) {
+    (planMonth.punkte || []).forEach((task) => {
+      if (mentionsField(task, code) && found.indexOf(task) < 0) found.push(task);
+    });
+  }
+  return found;
+}
+
+function cropFace(row, code) {
+  const year = state.rotYear || "2027";
+  const rotation = findRotation(code);
+  const index = { 2027: 1, 2028: 2, 2029: 3, 2030: 4 }[year];
+  if (year !== "2027" && rotation && rotation[index]) return rotation[index];
+  const sketch = ((((state.data.plan2027 || {}).lageplan || {}).skizze || {}).felder) || [];
+  const drawn = sketch.find((field) => field.code === code);
+  if (drawn) return (drawn.l1 + " " + (drawn.l2 || "")).replace(/,\s*$/, "").replace(/\s+/g, " ").trim();
+  return String((row && row.kultur) || code);
+}
+
+function tileClass(row, code) {
+  const year = state.rotYear || "2027";
+  const face = year === "2027" ? "" : cropFace(row, code);
+  const named = /Starkzehrer/.test(face) ? "stark" : /Mittelzehrer/.test(face) ? "mittel" : /Schwachzehrer/.test(face) ? "schwach" : /Gründüngung/.test(face) ? "grau" : "";
+  if (named) return named;
+  const sketch = ((((state.data.plan2027 || {}).lageplan || {}).skizze || {}).felder) || [];
+  const drawn = sketch.find((field) => field.code === code);
+  if (drawn && drawn.klasse) return drawn.klasse;
+  const kultur = String((row && row.kultur) || "");
+  if (kultur.indexOf("Starkzehrer") >= 0) return "stark";
+  if (kultur.indexOf("Mittelzehrer") >= 0) return "mittel";
+  if (kultur.indexOf("Schwachzehrer") >= 0) return "schwach";
+  return "grau";
+}
+
+function plantGlyph(label) {
+  const value = norm(label);
+  const svg = svgEl("svg", { viewBox: "0 0 24 24", "aria-hidden": "true" });
+  const stroke = { fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" };
+  if (/zucchini|hokkaido|kuerbis|kürbis/.test(value)) {
+    svg.append(svgEl("circle", Object.assign({ cx: 12, cy: 13, r: 6 }, stroke)));
+    svg.append(svgEl("path", Object.assign({ d: "M12 7c2-3 5-3 6-1" }, stroke)));
+    return svg;
+  }
+  if (/moehre|möhre|pastinake|zwiebel|lauch/.test(value)) {
+    svg.append(svgEl("path", Object.assign({ d: "M12 21c4 0 6-4 5-9-2 1-4 1-5 0-1 1-3 1-5 0  -1 5 1 9 5 9z" }, stroke)));
+    svg.append(svgEl("path", Object.assign({ d: "M12 8V3M9 5c2 1 4 1 6 0" }, stroke)));
+    return svg;
+  }
+  if (/bohne|erbse/.test(value)) {
+    svg.append(svgEl("path", Object.assign({ d: "M8 16c0-6 8-6 8-12" }, stroke)));
+    svg.append(svgEl("circle", Object.assign({ cx: 8, cy: 17, r: 2 }, stroke)));
+    svg.append(svgEl("circle", Object.assign({ cx: 12, cy: 14, r: 2 }, stroke)));
+    return svg;
+  }
+  if (/radies|blume|phacelia|nelke|kraeuter|kräuter|saum|ringel/.test(value)) {
+    svg.append(svgEl("circle", Object.assign({ cx: 12, cy: 10, r: 3 }, stroke)));
+    svg.append(svgEl("path", Object.assign({ d: "M12 13v8M9 16h6" }, stroke)));
+    return svg;
+  }
+  svg.append(svgEl("path", Object.assign({ d: "M12 21c5-1 7-6 6-11-4 2-6 1-6 0 0 1-2 2-6 0  -1 5 1 10 6 11z" }, stroke)));
+  svg.append(svgEl("path", Object.assign({ d: "M12 10V4" }, stroke)));
+  return svg;
+}
+
+function fieldTile(row) {
+  const code = fieldCodeOf(row.feld);
+  const face = cropFace(row, code);
+  const now = tasksForField(code);
+  return h(
+    "button",
+    { type: "button", class: "field-tile " + tileClass(row, code), "data-hit": "feld:" + code },
+    h("span", { class: "bubble beete", "aria-hidden": "true" }, plantGlyph(face + " " + (row.kultur || ""))),
+    h(
+      "span",
+      { class: "tile-copy" },
+      h("span", { class: "code" }, row.feld),
+      h("span", { class: "crop" }, face),
+      now.length ? h("span", { class: "now-pill" }, "jetzt zu tun") : null
+    )
+  );
+}
+
+function bedCard(title, hint, rows) {
+  return h(
+    "article",
+    { class: "bed-card" },
+    h("p", { class: "compass" }, "S"),
+    h("h2", {}, title),
+    hint ? h("p", { class: "task-meta" }, hint) : null,
+    h("div", { class: "bed-tiles" }, rows.map(fieldTile)),
+    h("p", { class: "compass" }, "N")
+  );
+}
+
 function renderGarten() {
   const plan = state.data.plan2027 || {};
-  const skizze = (plan.lageplan && plan.lageplan.skizze) || { felder: [] };
-  const items = state.data.bestand || [];
-  const types = [];
-  items.forEach((item) => {
-    if (item.typ && !types.includes(item.typ)) types.push(item.typ);
-  });
-  const visible = items.filter((item) => state.typ === "alle" || item.typ === typSafe(item));
+  const beete = plan.beete || {};
+  const years = ((plan.fruchtfolge || {}).spalten || []).slice(1);
+  const skizze = (plan.lageplan && plan.lageplan.skizze) || {};
   return h(
     "div",
     { class: "view" },
-    h("h2", {}, "Garten"),
-    h(
-      "figure",
-      { class: "sketch" },
-      h("div", { class: "sketch-zoom" }, h("p", { class: "sketch-label" }, "Beet 1, Beeren, Gewächshaus"), renderSketch(skizze, "0 0 300 530", true)),
-      h("div", { class: "sketch-zoom" }, h("p", { class: "sketch-label" }, "Beet 2, Rasen, Obstbäume"), renderSketch(skizze, "180 0 540 800", true)),
-      h("figcaption", {}, skizze.massstab || "")
-    ),
-    h("h2", {}, "Bestand"),
-    chipBar(
-      "Bestand",
-      [{ value: "alle", label: "Alle" }].concat(types.map((type) => ({ value: type, label: type }))),
-      state.typ,
-      "data-typ"
-    ),
-    h(
-      "div",
-      {},
-      visible.map((item) =>
-        h(
-          "button",
-          { type: "button", class: "quiet-link", "data-hit": "pflanze:" + item.name },
-          h("i", { class: "dot", "aria-hidden": "true" }),
-          h("span", { class: "line-text" }, item.name),
-          h("span", { class: "task-meta" }, item.typ)
+    h("h2", {}, "Beete"),
+    years.length
+      ? h(
+          "div",
+          { class: "year-toggle", role: "group", "aria-label": "Fruchtfolge-Jahr" },
+          years.map((year) =>
+            h(
+              "button",
+              {
+                type: "button",
+                class: "chip" + ((state.rotYear || "2027") === year ? " is-on" : ""),
+                "aria-pressed": (state.rotYear || "2027") === year ? "true" : "false",
+                "data-rot": year,
+              },
+              year
+            )
+          )
         )
-      )
-    )
+      : null,
+    bedCard("Beet 1", skizze.beet1 || "", beete.b1 || []),
+    bedCard("Beet 2", skizze.beet2 ? "Beet 2 · " + skizze.beet2Mass : skizze.beet2Mass || "", beete.b2 || [])
   );
 }
 
@@ -1093,7 +1199,14 @@ function syncHeader() {
   if (header) document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
 }
 
+function applySeason() {
+  const month = berlinParts().month;
+  const season = month === 12 || month <= 2 ? "winter" : month <= 5 ? "spring" : month <= 8 ? "summer" : "autumn";
+  document.documentElement.dataset.season = season;
+}
+
 function paint(resetScroll) {
+  applySeason();
   const search = document.querySelector("[data-search]");
   const focused = search && document.activeElement === search;
   const selection = focused ? [search.selectionStart, search.selectionEnd] : null;
@@ -1113,6 +1226,9 @@ function paint(resetScroll) {
   }
   requestAnimationFrame(() => {
     centerChips();
+    document.querySelectorAll(".ring-fg").forEach((el) => {
+      if (el.dataset.dash) el.setAttribute("stroke-dasharray", el.dataset.dash);
+    });
     document.querySelectorAll(".sketch-zoom, .sketch-card").forEach(bindMapZoom);
   });
   if (state.pendingScroll) {
@@ -1174,7 +1290,10 @@ function onClick(event) {
     return;
   }
   if (button.dataset.check) {
-    toggleCheck(button.dataset.check);
+    const key = button.dataset.check;
+    const turningOn = !loadMap(STORE_CHECKS)[key];
+    toggleCheck(key);
+    state.burst = turningOn ? key : null;
     paint(false);
     return;
   }
@@ -1224,6 +1343,11 @@ function onClick(event) {
   }
   if (button.dataset.beet) {
     state.planBeet = button.dataset.beet;
+    paint(false);
+    return;
+  }
+  if (button.dataset.rot) {
+    state.rotYear = button.dataset.rot;
     paint(false);
     return;
   }

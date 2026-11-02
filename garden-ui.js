@@ -166,7 +166,8 @@ function ring(done, total) {
     class: "ring-fg",
     transform: "rotate(-90 18 18)",
   });
-  bar.setAttribute("stroke-dasharray", (pct * length).toFixed(2) + " " + length.toFixed(2));
+  bar.dataset.dash = (pct * length).toFixed(2) + " " + length.toFixed(2);
+  bar.setAttribute("stroke-dasharray", "0 " + length.toFixed(2));
   svg.append(bar);
   return h(
     "span",
@@ -183,7 +184,7 @@ function taskControl(scope, taskText, jsonDone) {
     "button",
     {
       type: "button",
-      class: "check-btn",
+      class: "check-btn" + (state.burst === checkKey(scope, taskText) ? " burst" : ""),
       "data-check": jsonDone ? null : checkKey(scope, taskText),
       "aria-pressed": done ? "true" : "false",
       disabled: jsonDone ? "disabled" : null,
@@ -316,6 +317,28 @@ function waterTaskLines() {
     .map((task) => task.text);
 }
 
+function wxGlyph(code) {
+  const c = Number(code);
+  const svg = svgEl("svg", { viewBox: "0 0 24 24", "aria-hidden": "true" });
+  const path = (d, extra) => svg.append(svgEl("path", Object.assign({ d, fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round" }, extra || {})));
+  if (c >= 71 && c < 85) {
+    path("M12 3v2M8 8h.01M12 10h.01M16 8h.01M9 14h.01M14 16h.01");
+    return svg;
+  }
+  if ((c >= 51 && c < 70) || (c >= 80 && c < 90) || c >= 95) {
+    svg.append(svgEl("path", { d: "M7 15a4 4 0 1 1 1-7 5 5 0 0 1 9 2 3.5 3.5 0 0 1-1 7H8", fill: "none", stroke: "currentColor", "stroke-width": "1.8" }));
+    path("M9 19v2M13 19v2M17 19v2");
+    return svg;
+  }
+  if (c >= 2) {
+    svg.append(svgEl("path", { d: "M7 16a4 4 0 1 1 1-7 5 5 0 0 1 9 2 3.5 3.5 0 0 1-1 7H8", fill: "none", stroke: "currentColor", "stroke-width": "1.8" }));
+    return svg;
+  }
+  svg.append(svgEl("circle", { cx: 12, cy: 12, r: 4, fill: "none", stroke: "currentColor", "stroke-width": "1.8" }));
+  path("M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19");
+  return svg;
+}
+
 function renderWeatherCard() {
   const pack = state.weather;
   if (!pack || !pack.data) {
@@ -325,7 +348,9 @@ function renderWeatherCard() {
   const rows = forecastRows(pack);
   const today = rows[0];
   const warnings = buildWarnings(rows, pastDry(pack));
-  const line = [
+  const icon = h("span", { class: "wx", "aria-hidden": "true" });
+  icon.append(wxGlyph(current.weather_code));
+  const words = [
     deTemp(current.temperature_2m),
     weatherWord(current.weather_code),
     today ? deTemp(today.min) + " bis " + deTemp(today.max) : "",
@@ -353,7 +378,7 @@ function renderWeatherCard() {
   return h(
     "section",
     { class: "weather", "aria-label": "Wetter Magdeburg" },
-    h("p", { class: "weather-line" }, line),
+    h("p", { class: "weather-line" }, icon, words),
     warnings.map((warning) =>
       h(
         "aside",
@@ -519,6 +544,12 @@ function renderSheet(id) {
     const row = findField(name);
     const rotation = findRotation(name);
     title = row ? row.feld : "Feld " + name;
+    const now = tasksForField(name);
+    blocks.push(h("div", { class: "sheet-lead" }, h("span", { class: "bubble beete", "aria-hidden": "true" }, plantGlyph((row && row.kultur) || name)), h("p", {}, cropFace(row, name))));
+    if (now.length) {
+      blocks.push(h("h3", {}, "Jetzt zu tun"));
+      blocks.push(h("ul", { class: "clean wrap-list" }, now.map((task) => h("li", {}, task))));
+    }
     if (row) {
       blocks.push(
         h(
@@ -537,7 +568,10 @@ function renderSheet(id) {
         h(
           "ul",
           { class: "clean" },
-          rotation.slice(1).map((value, index) => h("li", {}, (columns[index + 1] || "") + ": " + value))
+          rotation.slice(1).map((value, index) => {
+            const year = columns[index + 1] || "";
+            return h("li", { class: year === (state.rotYear || "2027") ? "rot-on" : "" }, year + ": " + value);
+          })
         )
       );
     }

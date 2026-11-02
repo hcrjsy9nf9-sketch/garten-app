@@ -4,13 +4,21 @@
    Paths are relative to the registration scope so the app works under
    https://hcrjsy9nf9-sketch.github.io/garten-app/ */
 
-const STATIC_CACHE = "garten-static-v5";
+const STATIC_CACHE = "garten-static-v7";
 const DATA_CACHE = "garten-data-v1";
 
 const FILES = [
   "",
   "index.html",
+  "fonts.css",
   "styles.css",
+  "playful.css",
+  "fonts/nunito-400-latin.woff2",
+  "fonts/nunito-400-latin-ext.woff2",
+  "fonts/nunito-700-latin.woff2",
+  "fonts/nunito-700-latin-ext.woff2",
+  "fonts/nunito-800-latin.woff2",
+  "fonts/nunito-800-latin-ext.woff2",
   "garden-ui.js",
   "app.js",
   "manifest.webmanifest",
