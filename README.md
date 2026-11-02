@@ -76,6 +76,7 @@ Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt
 | `kalender` | `titel`, `monate` (`key`, `label`, `name`, `punkte`), `hinweis`. Schlüssel: `jan` … `dez` |
 | `kosten` | `titel`, `hinweis`, `balken` (`label`, `value`, `anzeige`), `spalten`, `posten` (`posten`, `menge`, `kosten`, optional `summe` oder `optional`), `nachsatz` |
 | `offen` | `titel`, `punkte` des Plans |
+| `regeln` (optional) | `titel`, `hinweis`, `spalten`, `zeilen` (`thema`, `regel`, `quelle`), `bestand` (`ton`, `lead`, `text`). Fehlt das Objekt, zeigt der Plan die Karte nicht |
 
 Hinweise mit `ton` nutzen `warning` oder `info`.
 

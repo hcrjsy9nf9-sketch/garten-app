@@ -480,6 +480,7 @@ function searchResults(query) {
     (month.punkte || []).forEach((point) => push(point, "Gartenplan " + month.name, { tab: "plan", goto: "plan-kalender", planMonat: month.key }));
   });
   (((plan.kosten || {}).posten) || []).forEach((row) => push(row.posten, row.kosten, { tab: "plan", goto: "plan-kosten" }));
+  (((plan.regeln || {}).zeilen) || []).forEach((row) => push(row.thema + " " + row.regel, row.quelle, { tab: "plan", goto: "plan-regeln" }));
   (((plan.offen || {}).punkte) || []).forEach((point) => push(point, "Offene Punkte", { tab: "plan", goto: "plan-offen" }));
   return hits;
 }

@@ -752,6 +752,22 @@ th:first-child, td:first-child {
 }
 .update-toast p { margin: 0; }
 
+details.rules { padding: 0; }
+details.rules summary {
+  min-height: 48px;
+  padding: 14px 16px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+details.rules .rules-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 14px 14px;
+}
+
 @media (prefers-color-scheme: dark) {
   .alert.frost-hard { background: #1a3348; color: #d5e8f8; }
   .dot.obst { background: #e0a0b4; }

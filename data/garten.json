@@ -154,7 +154,7 @@
           "Saatgut-Inventur, fehlendes Saatgut bestellen.",
           "Bodenlabor auswählen, Probe für Februar/März einplanen."
         ],
-        "obst": ["Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung)."],
+        "obst": ["Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung, nicht auf den Kompost, sondern nach den örtlichen Vorgaben entsorgen; Verbrennen ist verboten, § 3.4)."],
         "natur": ["Wildbienen-Nisthilfe und Vogelnistkasten besorgen."]
       }
     },
@@ -195,7 +195,7 @@
       "name": "April 2027",
       "aufgaben": {
         "wasser": [
-          "Anfang/Mitte April, nach den letzten starken Frösten: Brunnenpumpe anschließen, entlüften, Dichtungen prüfen, Probelauf.",
+          "Anfang/Mitte April, nach den letzten starken Frösten: Brunnenpumpe anschließen, entlüften, Dichtungen prüfen, Probelauf außerhalb der Ruhezeiten machen (§ 8.2).",
           "Wasserleitung und Außenhahn öffnen, Schläuche anschließen und auf Risse prüfen."
         ],
         "beete": [
@@ -215,7 +215,7 @@
         "wasser": ["Regenfässer mit Deckel oder engmaschigem Gitter abdecken (Mückenlarven, Sicherheit für Igel, Vögel und Kinder)."],
         "beete": [
           "Nach den Eisheiligen (11.–15. Mai): Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen.",
-          "Mulchen mit angetrocknetem Rasenschnitt beginnen."
+          "Mulchen mit angetrocknetem Rasenschnitt beginnen. Mähen nur außerhalb der Ruhezeiten: werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht (§ 8.2)."
         ],
         "gewaechshaus": ["Paprika, Chili und Snackgurke pflanzen."],
         "obst": [
@@ -291,7 +291,11 @@
       "name": "Oktober 2027",
       "aufgaben": {
         "wasser": ["Dachrinnen, Fallrohre und Fallrohrfilter von Laub befreien."],
-        "beete": ["Knoblauch in 1A stecken.", "Möhren, Sellerie, Rote Bete und Pastinaken ernten."],
+        "beete": [
+          "Knoblauch in 1A stecken.",
+          "Möhren, Sellerie, Rote Bete und Pastinaken ernten.",
+          "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3)."
+        ],
         "gewaechshaus": ["Abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen."],
         "obst": ["Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen."],
         "natur": ["Stauden nicht zurückschneiden: Winterquartier und Futter."]
@@ -1010,7 +1014,7 @@
           "name": "Januar",
           "punkte": [
             "Saatgut-Inventur, fehlendes Saatgut bestellen (Einkaufsliste unten).",
-            "Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung, nicht auf den Kompost).",
+            "Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung, nicht auf den Kompost, sondern nach den örtlichen Vorgaben entsorgen; Verbrennen ist verboten, § 3.4).",
             "Wildbienen-Nisthilfe und Vogelnistkasten besorgen.",
             "Bodenlabor auswählen und Probe für Februar/März einplanen."
           ]
@@ -1052,7 +1056,7 @@
             "Ende April: Zucchini, Hokkaido und Snackgurke auf der Fensterbank vorziehen.",
             "Ende April/Anfang Mai: Tomaten ins Gewächshaus pflanzen, bei Frostnächten Vlies auflegen.",
             "Sauerkirsche: nach der Blüte von Monilia befallene Triebspitzen bis ins gesunde Holz zurückschneiden.",
-            "Wasser & Technik (Anfang/Mitte April, nach den letzten starken Frösten; in milden Jahren schon Ende März): Brunnenpumpe wieder anschließen, Pumpe und Saugleitung mit Wasser füllen und entlüften, Dichtungen und Anschlüsse prüfen, Probelauf machen.",
+            "Wasser & Technik (Anfang/Mitte April, nach den letzten starken Frösten; in milden Jahren schon Ende März): Brunnenpumpe wieder anschließen, Pumpe und Saugleitung mit Wasser füllen und entlüften, Dichtungen und Anschlüsse prüfen, Probelauf außerhalb der Ruhezeiten machen (§ 8.2).",
             "Wasser & Technik: Wasserleitung und Außenhahn wieder öffnen, Gartenschläuche anschließen und auf Risse prüfen. Bei angesagten Nachtfrösten Schläuche und Pumpe noch einmal entleeren."
           ]
         },
@@ -1065,7 +1069,7 @@
             "Gewächshaus: Paprika, Chili und Snackgurke pflanzen.",
             "Kirschfruchtfliege: Gelbtafeln aufhängen, sobald die Kirschen von grün auf gelb umfärben.",
             "Pheromonfalle gegen Pflaumenwickler an der Pflaume aufhängen (bis August).",
-            "Mulchen beginnen (angetrockneter Rasenschnitt vom eigenen Rasen, dünn auftragen).",
+            "Mulchen beginnen (angetrockneter Rasenschnitt vom eigenen Rasen, dünn auftragen). Mähen nur außerhalb der Ruhezeiten: werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht (§ 8.2).",
             "Himbeeren: Jungruten auf 8–10 kräftige pro laufendem Meter auslichten.",
             "Wasser & Technik: Regenfässer mit Deckel oder engmaschigem Gitter abdecken (gegen Mückenlarven; sicher für Igel, Vögel und Kinder), bis zum Herbst geschlossen halten."
           ]
@@ -1125,6 +1129,7 @@
           "name": "Oktober",
           "punkte": [
             "Gewächshaus abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen.",
+            "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3).",
             "Knoblauch in 1A stecken (2028 Mittelzehrer-Feld).",
             "Möhren, Sellerie, Rote Bete und Pastinaken ernten.",
             "Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen.",
@@ -1211,9 +1216,91 @@
         { "posten": "Gartenvlies", "menge": "2 × 5 m", "kosten": "8 €" },
         { "posten": "Tomatenspiralstäbe, Bohnenstangen, Schnur", "menge": "Set", "kosten": "20 €" },
         { "posten": "Summe", "menge": "", "kosten": "539 €", "summe": true },
-        { "posten": "Optional: Trittsteine 30 × 30 cm für die Pfade", "menge": "20 Stück", "kosten": "50 €", "optional": true }
+        { "posten": "Optional: Trittsteine 30 × 30 cm für die Pfade, lose in Sand oder Erde verlegt, ohne Beton oder Mörtel (keine Versiegelung, § 2.8)", "menge": "20 Stück", "kosten": "50 €", "optional": true }
       ],
       "nachsatz": "Laub, Totholz und Mulch aus angetrocknetem Rasenschnitt kommen aus dem eigenen Garten und kosten nichts. Wer Tomaten, Paprika und Gurke als Jungpflanzen kauft statt selbst anzieht, rechnet mit ca. 3,50–6 € pro Pflanze."
+    },
+    "regeln": {
+      "titel": "Regeln aus der Gartenordnung",
+      "hinweis": "Gartenordnung des Verbandes der Gartenfreunde Magdeburg e.V., gültig ab 04.12.2024; dazu die Satzung des KGV Am Akazienhain (Stand 25.08.2010).",
+      "spalten": ["Thema", "Regel", "Quelle"],
+      "zeilen": [
+        {
+          "thema": "Kleingärtnerische Nutzung",
+          "regel": "Nichterwerbsmäßige Nutzung, insbesondere Gartenbauerzeugnisse für den Eigenbedarf und Erholung; mindestens ein Drittel der Fläche kleingärtnerisch genutzt; Obstgehölze, Beerensträucher, Gemüse und Blumen müssen Bestandteil sein. Hochbeete unter Beachtung der Grenzabstände erlaubt.",
+          "quelle": "§ 1.1"
+        },
+        {
+          "thema": "Grenzabstand Obstbäume (verbindlich)",
+          "regel": "Süßkirsche 5,00 m; Pflaume, Pfirsich, Aprikose 3,00 m; Sauerkirsche, Apfel, Birne, Quitte, Spindeln und kleinkronige Formen 2,00 m.",
+          "quelle": "§ 1.4, Anlage 1"
+        },
+        {
+          "thema": "Grenzabstand Beeren (verbindlich)",
+          "regel": "Schwarze Johannisbeere 1,25 m; rote/weiße Johannisbeere, Stachelbeere, Himbeere, Brombeere, Heidelbeere 1,00 m; Weinrebe 0,70 m. Übrige Pflanzen: halber üblicher Pflanzabstand.",
+          "quelle": "Anlage 1"
+        },
+        {
+          "thema": "Neue Obstbäume",
+          "regel": "Niederstämme auf schwachwachsender Unterlage bevorzugt (Busch, Spindel, Spalier, Säule); ein Halbstamm als Schattenspender möglich.",
+          "quelle": "§ 1.4"
+        },
+        {
+          "thema": "Verbotene Gehölze",
+          "regel": "Ziergehölze höchstens 3,00 m; Wald-, Park- und Nussbäume sowie alle Koniferen verboten; Cannabis verboten. Liste u. a.: Thuja, Wacholder, Eibe, Birke, Ahorn, Walnuss, Hasel, Zierkirsche, Felsenbirne, Feuerdorn, Weißdorn, Cotoneaster, Korkenzieherweide.",
+          "quelle": "§ 1.2, § 1.5, Anlage 3"
+        },
+        {
+          "thema": "Hecken und Zäune",
+          "regel": "Formhecken am Vereinsweg max. 1,20 m hoch und 0,50 m breit; keine lebende Hecke zum Nachbargarten, Zaun dort bis 1,00 m; Grenzabstand Hecken 1,00 m; beim Heckenschnitt Vogelschutz beachten.",
+          "quelle": "§ 1.3, Anlage 1"
+        },
+        {
+          "thema": "Gewächshaus und Bauten",
+          "regel": "2 m² Gewächshaus je 100 m², höchstens 10 m² (Parzelle 23: max. 8,8 m², vorhanden 4,75 m²); Zustimmung des Vorstands vor dem Bau. Nur eine Laube bis 24 m²; Baukörper 3,00 m zur Grenze; jede Baumaßnahme schriftlich mit Zeichnung beantragen.",
+          "quelle": "§ 2.1–2.5; Satzung Akazienhain § 6"
+        },
+        {
+          "thema": "Wege, Teich",
+          "regel": "Wege und Sitzflächen nicht versiegeln. Teich oder Feuchtbiotop bis 6 m² mit flachem Randbereich, Sicherung durch den Pächter.",
+          "quelle": "§ 2.8, § 2.9"
+        },
+        {
+          "thema": "Pflanzenschutz",
+          "regel": "Nur Mittel mit Kennzeichnung „Anwendung im Haus- und Kleingarten zulässig“, Gebrauchsanweisung strikt einhalten; selbst hergestellte Mittel verboten; chemische Unkrautvernichtungsmittel jeglicher Art verboten; integrierter Pflanzenschutz.",
+          "quelle": "§ 3.1, § 3.2, Anlage 2"
+        },
+        {
+          "thema": "Kompost, Abfall, Feuer",
+          "regel": "Pflanzliche Rückstände kompostieren, ohne Nachbarn zu belästigen, Kompost dem Boden zuführen; Nichtkompostierbares nach örtlichen Vorgaben entsorgen; Verbrennen verboten; Feuerschale nur mit trockenem Holz.",
+          "quelle": "§ 3.3, § 3.4, § 3.8"
+        },
+        {
+          "thema": "Wasser",
+          "regel": "Wasser- und Elektroanlagen nach den Vorschriften der Versorger betreiben; keine Abwässer in Gräben oder Gewässer; Kaltwasserzähler alle 6 Jahre eichen. Brunnen, Pumpen und Regenfässer regelt die Gartenordnung nicht.",
+          "quelle": "§ 2.7, § 3.6, Anhang Eichfristen"
+        },
+        {
+          "thema": "Ruhezeiten",
+          "regel": "Werktags 13–15 und 19–8 Uhr sowie sonn- und feiertags keine geräuschintensiven Tätigkeiten.",
+          "quelle": "§ 8.2"
+        },
+        {
+          "thema": "Tiere",
+          "regel": "Kleintierhaltung grundsätzlich nicht erlaubt; Hunde und Katzen nicht halten oder regelmäßig füttern; Hunde auf Vereinswegen an der Leine.",
+          "quelle": "§ 7.1–7.4"
+        },
+        {
+          "thema": "Wege, Winter, Gemeinschaft",
+          "regel": "Angrenzende Wege mindestens zur halben Breite pflegen, unkrautfrei und sauber halten; Winterdienst organisiert der Verein; Gemeinschaftsarbeit leisten, sonst Ersatzbetrag.",
+          "quelle": "§ 4.1, § 4.2; Satzung Akazienhain § 6"
+        }
+      ],
+      "bestand": {
+        "ton": "info",
+        "lead": "Bestand und Lücken",
+        "text": "Der Verein hat den Garten im jetzigen Zustand abgenommen; Bäume, Beeren und Rasen bleiben. Die Regeln gelten für alles Neue im Plan: Alle geplanten Stauden, Kräuter, Rhabarber und Walderdbeeren stehen nicht auf der Verbotsliste, Pflanzenschutz im Plan ist mechanisch oder biotechnisch. Nicht geregelt sind Schnittzeiten für Obstbäume, Düngung außer Kompost, Abstände von Kompost, Laubhaufen und Nisthilfen sowie Rasenpflege."
+      }
     },
     "offen": {
       "titel": "Offene Punkte zum Ergänzen",
@@ -1223,7 +1310,8 @@
         "Sorten: Sommer- oder Herbsthimbeeren? Rote, weiße oder schwarze Johannisbeeren? Sorte und Reifezeit der Kirschen (frühe Sorten haben weniger Kirschfruchtfliegen-Befall).",
         "Lage der Beete: Laufen die Längsseiten (4,5 m bzw. 7 m) wirklich Nord–Süd? Wie breit sind Längsweg und Querweg?",
         "Schattenwurf der Sauerkirsche im Frühjahr beobachten und die Halbschattengrenze in Beet 2 festlegen.",
-        "Weitere vorhandene Stauden, Gehölze, Kompostplatz oder Laube, die in der Skizze fehlen.",
+        "Weitere vorhandene Stauden, Gehölze, Kompostplatz oder Laube, die in der Skizze fehlen. Ohne Kompostplatz einen anlegen (§ 3.3), ohne Einfassung aus Asbestplatten oder Altreifen (§ 1.3).",
+        "Mit dem Vereinsvorstand klären: eigene Vereinsbeschlüsse zur Gartenordnung (§ 10.1), Umfang der Gemeinschaftsarbeit und Ersatzbetrag (§ 4.2) sowie die Grenzabstände des Baumbestands (nur zur Kenntnis, der Bestand wurde so abgenommen).",
         "Platz für Laub-/Totholzhaufen und Nisthilfe vor Ort bestätigen; Baumscheiben von Pflaume und Süßkirsche nur mulchen, wenn sie nicht zur Rasenfläche gehören.",
         "Gewächshaus: Bodenbeete oder Tische, Lage von Tür und Lüftungsklappen."
       ]

@@ -18,6 +18,7 @@ const PLAN_NAV = [
   ["insekten", "Insekten"],
   ["kalender", "Kalender"],
   ["kosten", "Kosten"],
+  ["regeln", "Regeln"],
   ["offen", "Offen"],
 ];
 
@@ -830,12 +831,39 @@ function renderPlan() {
       renderShopping(kosten),
       h("p", {}, kosten.nachsatz || "")
     ),
+    renderRegeln(plan.regeln),
     section(
       "offen",
       (plan.offen && plan.offen.titel) || "Offene Punkte",
       bullets(plan.offen && plan.offen.punkte)
     )
   );
+}
+
+function renderRegeln(regeln) {
+  if (!regeln) return null;
+  const details = h("details", { class: "card rules", id: "plan-regeln" });
+  const summary = h("summary", {}, regeln.titel || "Regeln aus der Gartenordnung");
+  const body = h(
+    "div",
+    { class: "rules-body" },
+    h("p", { class: "caption" }, regeln.hinweis || ""),
+    stackTable(
+      regeln.titel || "Regeln",
+      regeln.spalten || ["Thema", "Regel", "Quelle"],
+      (regeln.zeilen || []).map((row) => ({ values: [row.thema, row.regel, row.quelle] }))
+    ),
+    callout(regeln.bestand)
+  );
+  details.append(summary, body);
+  return details;
+}
+
+function revealTarget(target) {
+  if (!target) return;
+  const details = target.tagName === "DETAILS" ? target : target.closest("details");
+  if (details) details.open = true;
+  target.scrollIntoView({ block: "start" });
 }
 
 function renderView() {
@@ -883,7 +911,7 @@ function paint(resetScroll) {
   if (state.pendingScroll) {
     const target = document.getElementById(state.pendingScroll);
     state.pendingScroll = null;
-    if (target) target.scrollIntoView({ block: "start" });
+    if (target) revealTarget(target);
   }
 }
 
@@ -962,7 +990,7 @@ function onClick(event) {
   }
   if (button.dataset.jump) {
     const target = document.getElementById(button.dataset.jump);
-    if (target) target.scrollIntoView({ block: "start" });
+    if (target) revealTarget(target);
     return;
   }
   if (button.dataset.gotoTab) {
