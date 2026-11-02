@@ -545,12 +545,30 @@ function renderSheet(id) {
     const rotation = findRotation(name);
     title = row ? row.feld : "Feld " + name;
     const now = tasksForField(name);
-    blocks.push(h("div", { class: "sheet-lead" }, h("span", { class: "bubble beete", "aria-hidden": "true" }, plantGlyph((row && row.kultur) || name)), h("p", {}, cropFace(row, name))));
+    const year = state.rotYear || "2027";
+    blocks.push(
+      h(
+        "div",
+        { class: "sheet-lead" },
+        h("span", { class: "tile-plant " + (row ? tileClass(row, name) : "grau"), "aria-hidden": "true" }, plantGlyph(((row && row.kultur) || "") + " " + cropFace(row, name))),
+        h("p", { class: "crop" }, cropFace(row, name))
+      )
+    );
+    if (year !== "2027" && rotation) {
+      blocks.push(
+        h(
+          "p",
+          { class: "caption" },
+          "Für " + year + " ist nur die Fruchtfolge-Stufe eingetragen. Kulturen, Abstände und Termine unten gelten für 2027."
+        )
+      );
+    }
     if (now.length) {
       blocks.push(h("h3", {}, "Jetzt zu tun"));
       blocks.push(h("ul", { class: "clean wrap-list" }, now.map((task) => h("li", {}, task))));
     }
     if (row) {
+      if (year !== "2027" && rotation) blocks.push(h("h3", {}, "Plan 2027"));
       blocks.push(
         h(
           "dl",

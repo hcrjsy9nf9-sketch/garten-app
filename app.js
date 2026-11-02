@@ -968,13 +968,17 @@ function tasksForField(code) {
   return found;
 }
 
+function sketchField(code) {
+  const fields = ((((state.data.plan2027 || {}).lageplan || {}).skizze || {}).felder) || [];
+  return fields.find((field) => field.code === code) || null;
+}
+
 function cropFace(row, code) {
   const year = state.rotYear || "2027";
   const rotation = findRotation(code);
   const index = { 2027: 1, 2028: 2, 2029: 3, 2030: 4 }[year];
   if (year !== "2027" && rotation && rotation[index]) return rotation[index];
-  const sketch = ((((state.data.plan2027 || {}).lageplan || {}).skizze || {}).felder) || [];
-  const drawn = sketch.find((field) => field.code === code);
+  const drawn = sketchField(code);
   if (drawn) return (drawn.l1 + " " + (drawn.l2 || "")).replace(/,\s*$/, "").replace(/\s+/g, " ").trim();
   return String((row && row.kultur) || code);
 }
@@ -984,14 +988,25 @@ function tileClass(row, code) {
   const face = year === "2027" ? "" : cropFace(row, code);
   const named = /Starkzehrer/.test(face) ? "stark" : /Mittelzehrer/.test(face) ? "mittel" : /Schwachzehrer/.test(face) ? "schwach" : /Gründüngung/.test(face) ? "grau" : "";
   if (named) return named;
-  const sketch = ((((state.data.plan2027 || {}).lageplan || {}).skizze || {}).felder) || [];
-  const drawn = sketch.find((field) => field.code === code);
+  const drawn = sketchField(code);
   if (drawn && drawn.klasse) return drawn.klasse;
   const kultur = String((row && row.kultur) || "");
   if (kultur.indexOf("Starkzehrer") >= 0) return "stark";
   if (kultur.indexOf("Mittelzehrer") >= 0) return "mittel";
   if (kultur.indexOf("Schwachzehrer") >= 0) return "schwach";
   return "grau";
+}
+
+function fieldParts(feld) {
+  const raw = String(feld || "");
+  const size = (raw.match(/\d+(?:,\d+)?\s*m²/) || [""])[0];
+  const note = (raw.match(/\(([^)]+)\)/) || [null, ""])[1];
+  return { code: fieldCodeOf(raw), size, note };
+}
+
+function bedMeasure(text) {
+  const match = String(text || "").match(/\d+(?:,\d+)?\s*×\s*\d+(?:,\d+)?\s*m/);
+  return match ? match[0] : "";
 }
 
 function plantGlyph(label) {
@@ -1025,32 +1040,50 @@ function plantGlyph(label) {
 }
 
 function fieldTile(row) {
-  const code = fieldCodeOf(row.feld);
+  const parts = fieldParts(row.feld);
+  const code = parts.code;
   const face = cropFace(row, code);
   const now = tasksForField(code);
+  const drawn = sketchField(code);
   return h(
     "button",
-    { type: "button", class: "field-tile " + tileClass(row, code), "data-hit": "feld:" + code },
-    h("span", { class: "bubble beete", "aria-hidden": "true" }, plantGlyph(face + " " + (row.kultur || ""))),
+    {
+      type: "button",
+      class: "field-tile " + tileClass(row, code) + (drawn && drawn.gestrichelt ? " is-dashed" : ""),
+      "data-hit": "feld:" + code,
+    },
+    h("span", { class: "tile-plant", "aria-hidden": "true" }, plantGlyph(face + " " + (row.kultur || ""))),
     h(
       "span",
       { class: "tile-copy" },
-      h("span", { class: "code" }, row.feld),
+      h(
+        "span",
+        { class: "tile-meta" },
+        h("span", { class: "code" }, code || row.feld),
+        parts.size ? h("span", { class: "size" }, parts.size) : null
+      ),
       h("span", { class: "crop" }, face),
+      parts.note && face.toLowerCase().indexOf(parts.note.toLowerCase()) < 0 ? h("span", { class: "tile-note" }, parts.note) : null,
       now.length ? h("span", { class: "now-pill" }, "jetzt zu tun") : null
     )
   );
 }
 
-function bedCard(title, hint, rows) {
+function bedCard(title, mass, place, rows) {
+  const skizze = (((state.data.plan2027 || {}).lageplan || {}).skizze) || {};
   return h(
     "article",
     { class: "bed-card" },
-    h("p", { class: "compass" }, "S"),
-    h("h2", {}, title),
-    hint ? h("p", { class: "task-meta" }, hint) : null,
-    h("div", { class: "bed-tiles" }, rows.map(fieldTile)),
-    h("p", { class: "compass" }, "N")
+    h(
+      "div",
+      { class: "bed-head" },
+      h("h2", {}, title),
+      mass ? h("p", { class: "bed-mass" }, mass) : null,
+      place ? h("p", { class: "bed-place" }, place) : null
+    ),
+    h("p", { class: "compass" }, skizze.sueden || "Süden"),
+    h("div", { class: "bed-soil" }, h("div", { class: "bed-tiles" }, rows.map(fieldTile))),
+    h("p", { class: "compass" }, skizze.norden || "Norden")
   );
 }
 
@@ -1059,30 +1092,53 @@ function renderGarten() {
   const beete = plan.beete || {};
   const years = ((plan.fruchtfolge || {}).spalten || []).slice(1);
   const skizze = (plan.lageplan && plan.lageplan.skizze) || {};
+  const placeOf = (value) => {
+    const parts = String(value || "").split("·");
+    return parts.length > 1 ? parts.slice(1).join("·").trim() : "";
+  };
+  const options = beete.optionen || [];
+  const place1 = placeOf((options.find((item) => item.value === "b1") || {}).label);
+  const place2 = placeOf((options.find((item) => item.value === "b2") || {}).label);
+  const key = [
+    ["stark", "Starkzehrer"],
+    ["mittel", "Mittelzehrer"],
+    ["schwach", "Schwachzehrer"],
+    ["grau", "Gründüngung"],
+  ];
   return h(
     "div",
-    { class: "view" },
+    { class: "view garten-view" },
     h("h2", {}, "Beete"),
     years.length
       ? h(
           "div",
-          { class: "year-toggle", role: "group", "aria-label": "Fruchtfolge-Jahr" },
-          years.map((year) =>
-            h(
-              "button",
-              {
-                type: "button",
-                class: "chip" + ((state.rotYear || "2027") === year ? " is-on" : ""),
-                "aria-pressed": (state.rotYear || "2027") === year ? "true" : "false",
-                "data-rot": year,
-              },
-              year
+          { class: "year-block" },
+          h("p", { class: "kicker" }, (plan.fruchtfolge && plan.fruchtfolge.titel) || "Fruchtfolge"),
+          h(
+            "div",
+            { class: "year-toggle", role: "group", "aria-label": "Fruchtfolge-Jahr" },
+            years.map((year) =>
+              h(
+                "button",
+                {
+                  type: "button",
+                  class: "chip" + ((state.rotYear || "2027") === year ? " is-on" : ""),
+                  "aria-pressed": (state.rotYear || "2027") === year ? "true" : "false",
+                  "data-rot": year,
+                },
+                year
+              )
             )
           )
         )
       : null,
-    bedCard("Beet 1", skizze.beet1 || "", beete.b1 || []),
-    bedCard("Beet 2", skizze.beet2 ? "Beet 2 · " + skizze.beet2Mass : skizze.beet2Mass || "", beete.b2 || [])
+    h(
+      "ul",
+      { class: "bed-key" },
+      key.map(([id, label]) => h("li", {}, h("i", { class: "swatch " + id, "aria-hidden": "true" }), label))
+    ),
+    bedCard("Beet 1", bedMeasure(skizze.beet1), place1, beete.b1 || []),
+    bedCard("Beet 2", bedMeasure(skizze.beet2Mass || skizze.beet2), place2, beete.b2 || [])
   );
 }
 
