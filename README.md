@@ -87,7 +87,7 @@ Hinweise mit `ton` nutzen `warning` oder `info`.
 - Helles und dunkles Erscheinungsbild über `prefers-color-scheme`.
 - Unten die Bereiche Heute, Jahr, Technik, Bestand, Plan 2027, Tagebuch.
 
-Ein Push auf `main` startet `.github/workflows/pages.yml` (`actions/deploy-pages`, `enablement: true`).
+Ein Push auf `main` startet `.github/workflows/pages.yml` (`actions/deploy-pages`). Die Seite ist auf GitHub Actions als Pages-Quelle eingestellt.
 
 ## Seiten veröffentlichen
 
