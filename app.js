@@ -1,10 +1,9 @@
 const TABS = [
   { id: "heute", label: "Heute" },
-  { id: "jahr", label: "Jahr" },
-  { id: "technik", label: "Technik" },
-  { id: "bestand", label: "Bestand" },
-  { id: "plan", label: "Plan 2027" },
-  { id: "tagebuch", label: "Tagebuch" },
+  { id: "kalender", label: "Kalender" },
+  { id: "garten", label: "Garten" },
+  { id: "plan", label: "Plan" },
+  { id: "mehr", label: "Mehr" },
 ];
 
 const PLAN_NAV = [
@@ -38,6 +37,9 @@ const state = {
   weather: null,
   fetchedAt: null,
   refreshing: false,
+  searchOpen: false,
+  mehrView: null,
+  detail: null,
 };
 
 const SVGNS = "http://www.w3.org/2000/svg";
@@ -93,7 +95,11 @@ function statusTone(status) {
 
 function tabFromHash() {
   const id = location.hash.replace("#", "");
-  return TABS.some((tab) => tab.id === id) ? id : "heute";
+  const map = { jahr: "kalender", bestand: "garten", technik: "mehr", tagebuch: "mehr" };
+  const tab = map[id] || id;
+  if (id === "technik") state.mehrView = "technik";
+  if (id === "tagebuch") state.mehrView = "tagebuch";
+  return TABS.some((item) => item.id === tab) ? tab : "heute";
 }
 
 function initialMonth(data) {
@@ -116,12 +122,22 @@ function icon(name) {
   if (name === "heute") {
     svg.append(svgEl("circle", { cx: 12, cy: 12, r: 4 }));
     ["M12 2v2", "M12 20v2", "M4.9 4.9l1.4 1.4", "M17.7 17.7l1.4 1.4", "M2 12h2", "M20 12h2", "M4.9 19.1l1.4-1.4", "M17.7 6.3l1.4-1.4"].forEach(path);
-  } else if (name === "jahr") {
+  } else if (name === "kalender" || name === "jahr") {
     svg.append(svgEl("rect", { x: 3, y: 4, width: 18, height: 17, rx: 2 }));
     path("M3 9h18M8 2v4M16 2v4");
+  } else if (name === "search") {
+    svg.append(svgEl("circle", { cx: 11, cy: 11, r: 6 }));
+    path("M16 16l4 4");
+  } else if (name === "refresh") {
+    path("M20 12a8 8 0 1 1-2.2-5.6M20 4v5h-5");
+  } else if (name === "mehr") {
+    path("M4 7h16M4 12h16M4 17h16");
   } else if (name === "technik") {
     path("M12 3s5 6 5 10a5 5 0 0 1-10 0c0-4 5-10 5-10z");
   } else if (name === "bestand") {
+    path("M5 19c6-1 8-8 8-14 4 3 6 8 6 12a8 8 0 0 1-14 2z");
+    path("M9 13c2 0 4-2 5-5");
+  } else if (name === "garten") {
     path("M5 19c6-1 8-8 8-14 4 3 6 8 6 12a8 8 0 0 1-14 2z");
     path("M9 13c2 0 4-2 5-5");
   } else if (name === "plan") {
@@ -205,7 +221,10 @@ function dataTable(aria, columns, rows) {
 }
 
 function section(id, title, ...nodes) {
-  return h("section", { class: "plan-section", id: "plan-" + id }, h("h3", {}, title), ...nodes);
+  const details = h("details", { class: "fold", id: "plan-" + id });
+  details.append(h("summary", {}, title));
+  details.append(h("div", { class: "fold-body" }, ...nodes));
+  return details;
 }
 
 function renderHeader() {
@@ -213,21 +232,31 @@ function renderHeader() {
   return h(
     "header",
     { class: "top" },
-    h("div", { class: "title-row" }, h("h1", {}, data.titel || "Garten-App – Parzelle 23"), h("button", { type: "button", class: "icon-btn", "data-refresh": "1" }, state.refreshing ? "Lädt …" : "Aktualisieren")),
-    h("p", { class: "stand", role: "status" }, "Stand: ", h("strong", {}, data.stand || "")),
-    h("p", { class: "fetched" }, state.fetchedAt ? "Daten geladen: " + formatWhen(state.fetchedAt) : "Daten noch nicht frisch geladen"),
     h(
-      "label",
-      { class: "search" },
-      h("span", { class: "sr" }, "Suchen"),
-      h("input", {
-        type: "search",
-        "data-search": "1",
-        placeholder: "Aufgaben, Bestand, Plan, Tagebuch",
-        value: state.query || "",
-        enterkeyhint: "search",
-      })
-    )
+      "div",
+      { class: "title-row" },
+      h("div", {}, h("h1", {}, "Garten · Parzelle 23"), h("p", { class: "stand-quiet" }, "Stand " + (data.stand || ""))),
+      h(
+        "div",
+        { class: "icon-row" },
+        h("button", { type: "button", class: "icon-btn", "data-search-toggle": "1", "aria-label": "Suchen", "aria-expanded": state.searchOpen ? "true" : "false" }, icon("search")),
+        h("button", { type: "button", class: "icon-btn", "data-refresh": "1", "aria-label": state.refreshing ? "Lädt" : "Aktualisieren" }, icon("refresh"))
+      )
+    ),
+    state.searchOpen
+      ? h(
+          "label",
+          { class: "search" },
+          h("span", { class: "sr" }, "Suchen"),
+          h("input", {
+            type: "search",
+            "data-search": "1",
+            placeholder: "Aufgaben, Bestand, Plan, Tagebuch",
+            value: state.query || "",
+            enterkeyhint: "search",
+          })
+        )
+      : null
   );
 }
 
@@ -236,70 +265,67 @@ function renderOffline() {
 }
 
 function renderNav() {
-  const open = (state.data.heute || []).filter((task) => !isTaskDone("heute", task.text, task.done)).length;
   const nav = h("nav", { class: "tabbar", "aria-label": "Bereiche" });
   TABS.forEach((tab) => {
-    const button = h(
-      "button",
-      { type: "button", "data-tab": tab.id, "aria-current": state.tab === tab.id ? "page" : null, "aria-label": tab.label },
-      icon(tab.id),
-      h("span", {}, tab.label)
+    nav.append(
+      h(
+        "button",
+        { type: "button", "data-tab": tab.id, "aria-current": state.tab === tab.id ? "page" : null },
+        icon(tab.id),
+        h("span", {}, tab.label)
+      )
     );
-    if (tab.id === "heute" && open) button.append(h("span", { class: "badge" }, String(open)));
-    nav.append(button);
   });
   return nav;
+}
+
+function taskLine(scope, taskText, meta, jsonDone, clamp) {
+  const control = taskControl(scope, taskText, jsonDone);
+  return h(
+    "article",
+    { class: "task" + (control.done ? " is-done" : "") },
+    control.button,
+    h(
+      "button",
+      {
+        type: "button",
+        class: "line" + (clamp ? " clamp" : ""),
+        "data-detail": taskText,
+        "data-scope": scope,
+        "data-json-done": jsonDone ? "1" : "0",
+      },
+      h("span", { class: "line-text" }, taskText),
+      meta ? h("span", { class: "task-meta" }, meta) : null
+    )
+  );
 }
 
 function renderHeute() {
   const data = state.data;
   const tasks = data.heute || [];
-  const open = tasks.filter((task) => !isTaskDone("heute", task.text, task.done)).length;
-  const done = tasks.length - open;
   return h(
     "div",
     { class: "view" },
     renderWeatherCard(),
-    h("p", { class: "lead" }, data.zusammenfassung || ""),
+    h("section", {}, h("h2", {}, "Heute zu tun"), h("div", { id: "heute-aufgaben" }, tasks.map((task) => taskLine("heute", task.text, task.bereich, task.done))), h("p", { class: "hint" }, "Abhaken gilt nur auf diesem Gerät. Sag dem Gartenhelfer Bescheid, dann wird es dauerhaft eingetragen.")),
     renderNextCard(),
     h(
-      "div",
-      { class: "section-head" },
-      h("h2", {}, tx("heuteUeberschrift", "Heute & diese Woche")),
-      ring(done, tasks.length)
-    ),
-    h("p", { class: "caption" }, "Erfasster Status, Stand " + data.stand + ": " + open + " von " + tasks.length + " Aufgaben offen."),
-    h(
-      "div",
-      { class: "card", id: "heute-aufgaben" },
-      tasks.map((task) => {
-        const control = taskControl("heute", task.text, task.done);
-        return h(
-          "article",
-          { class: "task" + (control.done ? " is-done" : "") + (control.local ? " is-local" : "") },
-          control.button,
+      "section",
+      {},
+      h("h2", {}, "Technik"),
+      h(
+        "div",
+        { class: "status-links" },
+        (data.technik || []).map((device) =>
           h(
-            "div",
-            {},
-            h("p", { class: "task-text" }, task.text),
-            h("p", { class: "task-meta" }, task.bereich),
-            control.local ? h("p", { class: "local-flag" }, "auf diesem Gerät abgehakt") : null,
-            task.done ? h("p", { class: "local-flag" }, "im Gartenbuch erledigt") : null
+            "button",
+            { type: "button", class: "quiet-link", "data-mehr": "technik" },
+            h("i", { class: "dot" + (String(device.status).includes("nicht") ? " warn" : ""), "aria-hidden": "true" }),
+            h("span", {}, device.name),
+            h("span", { class: "task-meta" }, device.status)
           )
-        );
-      })
-    ),
-    deviceHint(),
-    callout(data.texte && data.texte.wasserZuerst),
-    h(
-      "button",
-      { type: "button", class: "text-btn", "data-goto-tab": "plan", "data-goto": "plan-kosten" },
-      "Einkaufsliste"
-    ),
-    h(
-      "button",
-      { type: "button", class: "text-btn", "data-goto-tab": "tagebuch", "data-goto": "offen" },
-      tx("offenUeberschrift", "Noch zu erfassen") + " (" + (data.offen || []).length + ")"
+        )
+      )
     )
   );
 }
@@ -309,57 +335,43 @@ function renderJahr() {
   const months = data.jahr || [];
   const month = months.find((item) => item.key === state.monatKey) || months[0];
   const categories = data.kategorien || [];
-  const blocks = month
+  const groups = month
     ? categories
         .filter((category) => ((month.aufgaben && month.aufgaben[category.key]) || []).length)
-        .map((category) =>
-          h(
-            "section",
-            { class: "card cat " + category.key },
-            h("h3", {}, h("i", { class: "dot " + category.key, "aria-hidden": "true" }), category.label),
+        .map((category, index) => {
+          const items = month.aufgaben[category.key] || [];
+          const details = h("details", { class: "fold", open: index === 0 ? "open" : null });
+          details.append(
             h(
-              "div",
+              "summary",
               {},
-              (month.aufgaben[category.key] || []).map((taskText) => {
-                const control = taskControl(month.key, taskText, false);
-                return h(
-                  "article",
-                  { class: "task" + (control.done ? " is-done" : "") + (control.local ? " is-local" : "") },
-                  control.button,
-                  h(
-                    "div",
-                    {},
-                    h("p", { class: "task-text" }, taskText),
-                    control.local ? h("p", { class: "local-flag" }, "auf diesem Gerät abgehakt") : null
-                  )
-                );
-              })
+              h("i", { class: "dot " + category.key, "aria-hidden": "true" }),
+              h("span", {}, category.label),
+              h("span", { class: "task-meta" }, String(items.length))
             )
-          )
-        )
+          );
+          details.append(h("div", { class: "fold-body" }, items.map((taskText) => taskLine(month.key, taskText, "", false, true))));
+          return details;
+        })
     : [];
   const progress = month ? monthProgress(month) : { done: 0, total: 0 };
   return h(
     "div",
     { class: "view" },
-    h("h2", {}, tx("jahrUeberschrift", "Jahresübersicht")),
+    h("div", { class: "section-head" }, h("h2", {}, month ? month.name : "Kalender"), h("p", { class: "task-meta" }, progress.done + " von " + progress.total)),
     h(
       "div",
-      { class: "chips", "data-chipbar": "Jahr", role: "group", "aria-label": "Jahr" },
+      { class: "chips", "data-chipbar": "Kalender", role: "group", "aria-label": "Monat" },
       months.map((item) => {
-        const itemProgress = monthProgress(item);
         const on = month && item.key === month.key;
         return h(
           "button",
           { type: "button", class: "chip" + (on ? " is-on" : ""), "aria-pressed": on ? "true" : "false", "data-monat": item.key },
-          h("span", {}, item.label),
-          ring(itemProgress.done, itemProgress.total)
+          item.label
         );
       })
     ),
-    month ? h("div", { class: "section-head" }, h("h3", {}, month.name), ring(progress.done, progress.total)) : null,
-    blocks.length ? blocks : h("p", { class: "caption" }, "Keine Aufgaben erfasst."),
-    deviceHint()
+    groups.length ? groups : h("p", { class: "caption" }, "Keine Aufgaben erfasst.")
   );
 }
 
@@ -663,22 +675,11 @@ function renderPlan() {
   return h(
     "div",
     { class: "view" },
-    h("h2", {}, plan.titel || "Gartenplan 2027"),
-    h("p", { class: "lead" }, plan.summary || ""),
-    h(
-      "nav",
-      { class: "subnav", "aria-label": "Gartenplan" },
-      h(
-        "div",
-        { class: "chips", "data-chipbar": "plan" },
-        PLAN_NAV.filter(([id]) => plan[id]).map(([id, label]) =>
-          h("button", { type: "button", class: "chip", "data-jump": "plan-" + id }, label)
-        )
-      )
-    ),
+    h("h2", {}, "Plan 2027"),
     section(
       "leitidee",
       (plan.leitidee && plan.leitidee.titel) || "Leitidee 2027",
+      h("p", {}, plan.summary || ""),
       h("p", {}, (plan.leitidee && plan.leitidee.text) || ""),
       h(
         "div",
@@ -743,7 +744,11 @@ function renderPlan() {
     section(
       "fruchtfolge",
       folge.titel || "Fruchtfolge",
-      dataTable(folge.titel || "Fruchtfolge", folge.spalten || [], folge.zeilen || []),
+      stackTable(
+        folge.titel || "Fruchtfolge",
+        folge.spalten || [],
+        (folge.zeilen || []).map((row) => ({ values: row }))
+      ),
       h("p", {}, folge.text || "")
     ),
     section(
@@ -866,14 +871,132 @@ function revealTarget(target) {
   target.scrollIntoView({ block: "start" });
 }
 
+function renderGarten() {
+  const plan = state.data.plan2027 || {};
+  const skizze = (plan.lageplan && plan.lageplan.skizze) || { felder: [] };
+  const items = state.data.bestand || [];
+  const types = [];
+  items.forEach((item) => {
+    if (item.typ && !types.includes(item.typ)) types.push(item.typ);
+  });
+  const visible = items.filter((item) => state.typ === "alle" || item.typ === typSafe(item));
+  return h(
+    "div",
+    { class: "view" },
+    h("h2", {}, "Garten"),
+    h(
+      "figure",
+      { class: "sketch" },
+      h("div", { class: "sketch-card" }, h("p", { class: "sketch-label" }, "Beet 1, Beeren, Gewächshaus"), renderSketch(skizze, "0 8 236 468", true)),
+      h("div", { class: "sketch-card" }, h("p", { class: "sketch-label" }, "Beet 2, Rasen, Obstbäume"), renderSketch(skizze, "220 8 380 752", true)),
+      h("figcaption", {}, skizze.massstab || "")
+    ),
+    h("h2", {}, "Bestand"),
+    chipBar(
+      "Bestand",
+      [{ value: "alle", label: "Alle" }].concat(types.map((type) => ({ value: type, label: type }))),
+      state.typ,
+      "data-typ"
+    ),
+    h(
+      "div",
+      {},
+      visible.map((item) =>
+        h(
+          "button",
+          { type: "button", class: "quiet-link", "data-hit": "pflanze:" + item.name },
+          h("i", { class: "dot", "aria-hidden": "true" }),
+          h("span", { class: "line-text" }, item.name),
+          h("span", { class: "task-meta" }, item.typ)
+        )
+      )
+    )
+  );
+}
+
+function typSafe(item) {
+  return item.typ;
+}
+
+function mehrBack() {
+  return h("button", { type: "button", class: "back", "data-mehr": "menu" }, "Zurück");
+}
+
+function renderMehr() {
+  const plan = (state.data && state.data.plan2027) || {};
+  if (!state.mehrView || state.mehrView === "menu") {
+    const items = [
+      ["technik", "Wasser & Technik"],
+      ["tagebuch", "Tagebuch"],
+      ["einkauf", "Einkauf"],
+      ["regeln", "Regeln"],
+      ["offen", "Offen"],
+    ];
+    return h(
+      "div",
+      { class: "view" },
+      h("h2", {}, "Mehr"),
+      h(
+        "div",
+        { class: "menu" },
+        items.map(([id, label]) => h("button", { type: "button", class: "menu-item", "data-mehr": id }, label))
+      )
+    );
+  }
+  if (state.mehrView === "technik") {
+    const view = renderTechnik();
+    view.prepend(mehrBack());
+    return view;
+  }
+  if (state.mehrView === "tagebuch") {
+    const view = renderTagebuch();
+    view.prepend(mehrBack());
+    return view;
+  }
+  if (state.mehrView === "einkauf") {
+    return h("div", { class: "view" }, mehrBack(), h("h2", {}, "Einkauf"), renderShopping(plan.kosten || {}), h("p", {}, (plan.kosten && plan.kosten.nachsatz) || ""));
+  }
+  if (state.mehrView === "regeln") {
+    const rules = renderRegeln(plan.regeln);
+    if (rules) rules.open = true;
+    return h("div", { class: "view" }, mehrBack(), rules);
+  }
+  return h(
+    "div",
+    { class: "view" },
+    mehrBack(),
+    h("h2", {}, tx("offenUeberschrift", "Noch zu erfassen")),
+    bullets(state.data.offen),
+    h("h2", {}, (plan.offen && plan.offen.titel) || "Offene Punkte"),
+    bullets(plan.offen && plan.offen.punkte)
+  );
+}
+
+function renderDetail() {
+  const detail = state.detail;
+  if (!detail) return null;
+  const control = detail.scope ? taskControl(detail.scope, detail.text, detail.jsonDone) : null;
+  return h(
+    "div",
+    { class: "sheet-back", "data-close": "1" },
+    h(
+      "div",
+      { class: "sheet", role: "dialog", "aria-modal": "true", "aria-label": "Aufgabe" },
+      h("div", { class: "sheet-bar" }, h("h2", {}, "Aufgabe"), h("button", { type: "button", class: "text-btn", "data-close": "1" }, "Schließen")),
+      control ? control.button : null,
+      h("p", {}, detail.text),
+      control && isLocalChecked(detail.scope, detail.text) ? h("p", { class: "caption" }, "auf diesem Gerät abgehakt") : null
+    )
+  );
+}
+
 function renderView() {
   const query = (state.query || "").trim();
   if (query.length >= 2) return renderSearch();
-  if (state.tab === "jahr") return renderJahr();
-  if (state.tab === "technik") return renderTechnik();
-  if (state.tab === "bestand") return renderBestand();
+  if (state.tab === "kalender") return renderJahr();
+  if (state.tab === "garten") return renderGarten();
   if (state.tab === "plan") return renderPlan();
-  if (state.tab === "tagebuch") return renderTagebuch();
+  if (state.tab === "mehr") return renderMehr();
   return renderHeute();
 }
 
@@ -898,6 +1021,7 @@ function paint(resetScroll) {
   app.replaceChildren(renderHeader(), renderOffline(), main, renderNav());
   main.replaceChildren(renderView());
   if (state.sheet) app.append(renderSheet(state.sheet));
+  if (state.detail) app.append(renderDetail());
   syncHeader();
   window.scrollTo(0, y);
   if (focused) {
@@ -935,13 +1059,37 @@ function onClick(event) {
   if (event.target.closest("[data-close]")) {
     const inside = event.target.closest(".sheet");
     const closeButton = event.target.closest("button[data-close]");
-    if (inside && !closeButton) return;
+    if (!inside || closeButton) {
+      state.sheet = null;
+      state.detail = null;
+      paint(false);
+      return;
+    }
+  }
+  const button = event.target.closest("button");
+  if (!button) return;
+  if (button.dataset.searchToggle) {
+    state.searchOpen = !state.searchOpen;
+    if (!state.searchOpen) state.query = "";
+    paint(false);
+    if (state.searchOpen) {
+      const input = document.querySelector("[data-search]");
+      if (input) input.focus();
+    }
+    return;
+  }
+  if (button.hasAttribute("data-mehr")) {
+    state.mehrView = button.dataset.mehr === "menu" ? null : button.dataset.mehr;
+    if (state.tab !== "mehr") setTab("mehr", true);
+    else paint(true);
+    return;
+  }
+  if (button.dataset.detail) {
+    state.detail = { text: button.dataset.detail, scope: button.dataset.scope || "", jsonDone: button.dataset.jsonDone === "1" };
     state.sheet = null;
     paint(false);
     return;
   }
-  const button = event.target.closest("button");
-  if (!button) return;
   if (button.dataset.check) {
     toggleCheck(button.dataset.check);
     paint(false);
@@ -958,13 +1106,21 @@ function onClick(event) {
   }
   if (button.dataset.resultTab) {
     state.query = "";
+    state.searchOpen = false;
     if (button.dataset.resultMonat) state.monatKey = button.dataset.resultMonat;
     if (button.dataset.resultPlan) state.planMonat = button.dataset.resultPlan;
     state.pendingScroll = button.dataset.goto || null;
-    setTab(button.dataset.resultTab, true);
+    const raw = button.dataset.resultTab;
+    if (raw === "technik") state.mehrView = "technik";
+    if (raw === "tagebuch") state.mehrView = "tagebuch";
+    const map = { jahr: "kalender", bestand: "garten", technik: "mehr", tagebuch: "mehr" };
+    setTab(map[raw] || raw, true);
     return;
   }
   if (button.dataset.tab) {
+    state.query = "";
+    state.searchOpen = false;
+    if (button.dataset.tab === "mehr" && state.tab !== "mehr") state.mehrView = null;
     setTab(button.dataset.tab, true);
     return;
   }

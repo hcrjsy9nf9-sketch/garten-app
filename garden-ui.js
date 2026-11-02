@@ -319,33 +319,23 @@ function waterTaskLines() {
 function renderWeatherCard() {
   const pack = state.weather;
   if (!pack || !pack.data) {
-    return h(
-      "section",
-      { class: "card weather", "aria-label": "Wetter Magdeburg" },
-      h("h2", {}, "Wetter Magdeburg"),
-      h("p", { class: "caption" }, "Wetter gerade nicht erreichbar. Ohne gespeicherte Werte bleibt die Karte leer.")
-    );
+    return h("p", { class: "weather-line" }, "Wetter für Magdeburg gerade nicht erreichbar.");
   }
   const current = pack.data.current || {};
   const rows = forecastRows(pack);
   const today = rows[0];
   const warnings = buildWarnings(rows, pastDry(pack));
-  const card = h(
-    "section",
-    { class: "card weather", "aria-label": "Wetter Magdeburg" },
-    h(
-      "div",
-      { class: "weather-now" },
-      h("div", {}, h("p", { class: "kicker" }, "Magdeburg"), h("p", { class: "temp" }, deTemp(current.temperature_2m)), h("p", { class: "caption" }, weatherWord(current.weather_code))),
-      today
-        ? h(
-            "div",
-            { class: "weather-today" },
-            h("p", {}, "Heute " + deTemp(today.min) + " bis " + deTemp(today.max)),
-            h("p", {}, "Niederschlag " + deMm(today.rain))
-          )
-        : null
-    ),
+  const line = [
+    deTemp(current.temperature_2m),
+    weatherWord(current.weather_code),
+    today ? deTemp(today.min) + " bis " + deTemp(today.max) : "",
+    today ? deMm(today.rain) : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+  const more = h("details", { class: "more-weather" });
+  more.append(h("summary", {}, "Mehr Wetter"));
+  more.append(
     h(
       "div",
       { class: "strip", role: "list" },
@@ -355,32 +345,28 @@ function renderWeatherCard() {
           { class: "strip-day", role: "listitem" },
           h("span", {}, weekdayShort(row.day)),
           h("strong", {}, deTemp(row.max)),
-          h("span", {}, deTemp(row.min)),
-          h("span", {}, deMm(row.rain))
+          h("span", {}, deTemp(row.min) + " · " + deMm(row.rain))
         )
       )
-    ),
-    warnings.map((warning) => {
-      const box = h("aside", { class: "alert " + warning.tone }, h("strong", {}, warning.title), h("p", {}, warning.text));
-      if (warning.frost) {
-        const tasks = waterTaskLines();
-        if (tasks.length) {
-          box.append(h("p", { class: "caption" }, "Wasser & Technik"));
-          box.append(h("ul", { class: "clean" }, tasks.map((task) => h("li", {}, task))));
-          box.append(
-            h("button", { type: "button", class: "text-btn", "data-goto-tab": "technik" }, "Zur Wasser- und Technikseite")
-          );
-        }
-      }
-      return box;
-    }),
-    h(
-      "p",
-      { class: "caption" },
-      pack.stale ? "Zuletzt gespeichertes Wetter, " + formatWhen(pack.at) + "." : "Open-Meteo, " + formatWhen(pack.at) + "."
     )
   );
-  return card;
+  return h(
+    "section",
+    { class: "weather", "aria-label": "Wetter Magdeburg" },
+    h("p", { class: "weather-line" }, line),
+    warnings.map((warning) =>
+      h(
+        "aside",
+        { class: "alert " + (warning.frost ? "warn" : "warn") },
+        h("strong", {}, warning.title),
+        h("p", {}, warning.text),
+        warning.frost
+          ? h("button", { type: "button", class: "quiet-link", "data-mehr": "technik" }, "Wasser und Technik")
+          : null
+      )
+    ),
+    more
+  );
 }
 
 function nextOccurrence(milestone, today) {
@@ -409,43 +395,29 @@ function renderNextCard() {
   const months = (state.data && state.data.jahr) || [];
   const index = months.findIndex((month) => month.key === todayKey);
   const upcoming = index >= 0 ? months[index + 1] : months.find((month) => month.key > todayKey);
-  const tasks = upcoming ? monthTasks(upcoming).slice(0, 4) : [];
+  const tasks = upcoming ? monthTasks(upcoming).slice(0, 2) : [];
   const countdowns = MILESTONES.map((milestone) => {
     const date = nextOccurrence(milestone, today);
-    return { label: milestone.label, days: daysUntil(date, today), date };
+    return { label: milestone.label, days: daysUntil(date, today) };
   })
     .filter((item) => item.days >= 0)
-    .sort((a, b) => a.days - b.days)
-    .slice(0, 5);
-
+    .sort((a, b) => a.days - b.days);
+  const lines = [];
+  tasks.forEach((task) => lines.push(task.text));
+  countdowns.forEach((item) => {
+    const when = item.days === 0 ? "heute" : item.days === 1 ? "morgen" : "in " + item.days + " Tagen";
+    lines.push(when + " · " + item.label);
+  });
   return h(
     "section",
-    { class: "card next-card" },
+    {},
     h("h2", {}, "Als Nächstes"),
-    upcoming
-      ? h("h3", {}, upcoming.name)
-      : h("p", {}, "Im Jahresplan liegt kein späterer Monat."),
-    tasks.length
-      ? h(
-          "ul",
-          { class: "clean" },
-          tasks.map((task) => h("li", {}, h("span", { class: "task-meta" }, task.label), " ", task.text))
-        )
-      : null,
-    countdowns.length
-      ? h(
-          "ul",
-          { class: "countdown" },
-          countdowns.map((item) =>
-            h(
-              "li",
-              {},
-              h("strong", {}, item.days === 0 ? "heute" : item.days === 1 ? "morgen" : "in " + item.days + " Tagen"),
-              h("span", {}, item.label)
-            )
-          )
-        )
-      : null
+    upcoming ? h("p", { class: "task-meta" }, upcoming.name) : null,
+    h(
+      "ul",
+      { class: "clean next-list" },
+      lines.slice(0, 3).map((line) => h("li", {}, line))
+    )
   );
 }
 
