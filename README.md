@@ -4,7 +4,7 @@ Mobiles Gartenbuch für den Kleingarten Parzelle 23 in Magdeburg. Die Seite ist 
 
 Adresse: [https://hcrjsy9nf9-sketch.github.io/garten-app/](https://hcrjsy9nf9-sketch.github.io/garten-app/)
 
-Alle Garteninhalte stehen in **einer** Datei: [`data/garten.json`](data/garten.json). Die Oberfläche liest nur diese Datei. Aufgaben-Häkchen sind Anzeige, keine Eingabe.
+Alle Garteninhalte stehen in **einer** Datei: [`data/garten.json`](data/garten.json). Die Oberfläche liest nur diese Datei. Steht `done` auf `true`, ist die Aufgabe im Gartenbuch erledigt. Zusätzliche Häkchen gelten nur auf diesem Gerät.
 
 ## Installation auf dem Handy
 
@@ -20,7 +20,7 @@ Danach startet sie ohne Browserleiste. Einmal online geöffnet, bleiben die letz
 1. Nur `data/garten.json` ändern. Texte in `index.html`, `app.js` oder `styles.css` sind die Oberfläche, nicht das Gartenbuch.
 2. `stand` auf das lesbare Datum setzen (Beispiel: `3. Nov. 2026`) und `standIso` auf `JJJJ-MM-TT` (Beispiel: `2026-11-03`).
 3. `standIso` wählt den Monat in der Jahresübersicht (wenn `jahr[].key` dazu passt, Form `JJJJ-MM`) und den umrandeten Monat im Saisonstreifen. Im Gartenplan öffnet sich derselbe Kalendermonat.
-4. Heutige Aufgaben: `heute[].done` auf `true` oder `false`. Die Kästchen in der App folgen nur diesem Wert.
+4. Heutige Aufgaben: `heute[].done` auf `true` oder `false`. `true` bleibt immer erledigt. Ein Häkchen nur auf dem Handy steht in `localStorage` (`garten-haken`) und wird mit dem Hinweis „auf diesem Gerät abgehakt“ gezeigt. Dauerhaft wird es erst durch `done: true` in dieser Datei.
 5. Neue Tagebucheinträge in `tagebuch` anhängen. `datum` ist ISO (`2026-11-03`), `anzeige` der lesbare Text. Die App sortiert neueste zuerst.
 6. Monatsaufgaben stehen in `jahr[].aufgaben` unter `wasser`, `beete`, `gewaechshaus`, `obst`, `natur`. Leere Kategorien weglassen.
 7. Gerätestatus in `technik[]`: `status`, `stand`, `erfasst`, `winter`, `fruehjahr`, `saison`.
@@ -78,6 +78,14 @@ Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt
 | `offen` | `titel`, `punkte` des Plans |
 
 Hinweise mit `ton` nutzen `warning` oder `info`.
+
+Neue Felder in `garten.json` sind für diese Fassung nicht nötig. Das Schema bleibt kompatibel; alles Bisherige gilt weiter.
+
+Optional und nur in der Oberfläche, nicht in der JSON:
+
+- Wetter kommt von Open-Meteo für Magdeburg (52,13° N, 11,62° O, Zeitzone Europe/Berlin) und wird unter `garten-wetter` im Browser gespeichert. Ohne Netz erscheint die letzte Fassung, sonst ein kurzer Hinweis.
+- Häkchen der Einkaufsliste liegen unter `garten-einkauf`.
+- Der Zeitpunkt des letzten erfolgreichen Ladens liegt unter `garten-daten-zeit`.
 
 ## Technik
 

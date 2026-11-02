@@ -4,13 +4,14 @@
    Paths are relative to the registration scope so the app works under
    https://hcrjsy9nf9-sketch.github.io/garten-app/ */
 
-const STATIC_CACHE = "garten-static-v1";
+const STATIC_CACHE = "garten-static-v2";
 const DATA_CACHE = "garten-data-v1";
 
 const FILES = [
   "",
   "index.html",
   "styles.css",
+  "garden-ui.js",
   "app.js",
   "manifest.webmanifest",
   "icons/icon-180.png",
@@ -37,9 +38,12 @@ self.addEventListener("install", (event) => {
           }
         })
       );
-      await self.skipWaiting();
     })()
   );
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {

@@ -32,6 +32,11 @@ const state = {
   planBeet: "b1",
   pendingScroll: null,
   listening: false,
+  query: "",
+  sheet: null,
+  weather: null,
+  fetchedAt: null,
+  refreshing: false,
 };
 
 const SVGNS = "http://www.w3.org/2000/svg";
@@ -207,8 +212,21 @@ function renderHeader() {
   return h(
     "header",
     { class: "top" },
-    h("h1", {}, data.titel || "Garten-App – Parzelle 23"),
-    h("p", { class: "stand", role: "status" }, "Stand: ", h("strong", {}, data.stand || ""))
+    h("div", { class: "title-row" }, h("h1", {}, data.titel || "Garten-App – Parzelle 23"), h("button", { type: "button", class: "icon-btn", "data-refresh": "1" }, state.refreshing ? "Lädt …" : "Aktualisieren")),
+    h("p", { class: "stand", role: "status" }, "Stand: ", h("strong", {}, data.stand || "")),
+    h("p", { class: "fetched" }, state.fetchedAt ? "Daten geladen: " + formatWhen(state.fetchedAt) : "Daten noch nicht frisch geladen"),
+    h(
+      "label",
+      { class: "search" },
+      h("span", { class: "sr" }, "Suchen"),
+      h("input", {
+        type: "search",
+        "data-search": "1",
+        placeholder: "Aufgaben, Bestand, Plan, Tagebuch",
+        value: state.query || "",
+        enterkeyhint: "search",
+      })
+    )
   );
 }
 
@@ -217,7 +235,7 @@ function renderOffline() {
 }
 
 function renderNav() {
-  const open = (state.data.heute || []).filter((task) => !task.done).length;
+  const open = (state.data.heute || []).filter((task) => !isTaskDone("heute", task.text, task.done)).length;
   const nav = h("nav", { class: "tabbar", "aria-label": "Bereiche" });
   TABS.forEach((tab) => {
     const button = h(
@@ -235,37 +253,52 @@ function renderNav() {
 function renderHeute() {
   const data = state.data;
   const tasks = data.heute || [];
-  const open = tasks.filter((task) => !task.done).length;
+  const open = tasks.filter((task) => !isTaskDone("heute", task.text, task.done)).length;
   const done = tasks.length - open;
-  const width = tasks.length ? Math.round((done / tasks.length) * 100) : 0;
   return h(
     "div",
     { class: "view" },
+    renderWeatherCard(),
     h("p", { class: "lead" }, data.zusammenfassung || ""),
-    h("h2", {}, tx("heuteUeberschrift", "Heute & diese Woche")),
-    h(
-      "p",
-      { class: "caption" },
-      `Erfasster Status, Stand ${data.stand}: ${open} von ${tasks.length} Aufgaben offen.`
-    ),
-    h("div", { class: "progress", "aria-hidden": "true" }, h("span", { style: "width:" + width + "%" })),
+    renderNextCard(),
     h(
       "div",
-      { class: "card" },
-      tasks.map((task) =>
-        h(
-          "article",
-          { class: "task" + (task.done ? " is-done" : "") },
-          h("span", { class: "check", role: "img", "aria-label": task.done ? "Erledigt" : "Offen" }),
-          h("div", {}, h("p", { class: "task-text" }, task.text), h("p", { class: "task-meta" }, task.bereich))
-        )
-      )
+      { class: "section-head" },
+      h("h2", {}, tx("heuteUeberschrift", "Heute & diese Woche")),
+      ring(done, tasks.length)
     ),
+    h("p", { class: "caption" }, "Erfasster Status, Stand " + data.stand + ": " + open + " von " + tasks.length + " Aufgaben offen."),
+    h(
+      "div",
+      { class: "card", id: "heute-aufgaben" },
+      tasks.map((task) => {
+        const control = taskControl("heute", task.text, task.done);
+        return h(
+          "article",
+          { class: "task" + (control.done ? " is-done" : "") + (control.local ? " is-local" : "") },
+          control.button,
+          h(
+            "div",
+            {},
+            h("p", { class: "task-text" }, task.text),
+            h("p", { class: "task-meta" }, task.bereich),
+            control.local ? h("p", { class: "local-flag" }, "auf diesem Gerät abgehakt") : null,
+            task.done ? h("p", { class: "local-flag" }, "im Gartenbuch erledigt") : null
+          )
+        );
+      })
+    ),
+    deviceHint(),
     callout(data.texte && data.texte.wasserZuerst),
     h(
       "button",
+      { type: "button", class: "text-btn", "data-goto-tab": "plan", "data-goto": "plan-kosten" },
+      "Einkaufsliste"
+    ),
+    h(
+      "button",
       { type: "button", class: "text-btn", "data-goto-tab": "tagebuch", "data-goto": "offen" },
-      `${tx("offenUeberschrift", "Noch zu erfassen")} (${(data.offen || []).length})`
+      tx("offenUeberschrift", "Noch zu erfassen") + " (" + (data.offen || []).length + ")"
     )
   );
 }
@@ -282,23 +315,50 @@ function renderJahr() {
           h(
             "section",
             { class: "card cat " + category.key },
-            h("h3", {}, category.label),
-            bullets(month.aufgaben[category.key])
+            h("h3", {}, h("i", { class: "dot " + category.key, "aria-hidden": "true" }), category.label),
+            h(
+              "div",
+              {},
+              (month.aufgaben[category.key] || []).map((taskText) => {
+                const control = taskControl(month.key, taskText, false);
+                return h(
+                  "article",
+                  { class: "task" + (control.done ? " is-done" : "") + (control.local ? " is-local" : "") },
+                  control.button,
+                  h(
+                    "div",
+                    {},
+                    h("p", { class: "task-text" }, taskText),
+                    control.local ? h("p", { class: "local-flag" }, "auf diesem Gerät abgehakt") : null
+                  )
+                );
+              })
+            )
           )
         )
     : [];
+  const progress = month ? monthProgress(month) : { done: 0, total: 0 };
   return h(
     "div",
     { class: "view" },
     h("h2", {}, tx("jahrUeberschrift", "Jahresübersicht")),
-    chipBar(
-      "Jahr",
-      months.map((item) => ({ value: item.key, label: item.label })),
-      month && month.key,
-      "data-monat"
+    h(
+      "div",
+      { class: "chips", "data-chipbar": "Jahr", role: "group", "aria-label": "Jahr" },
+      months.map((item) => {
+        const itemProgress = monthProgress(item);
+        const on = month && item.key === month.key;
+        return h(
+          "button",
+          { type: "button", class: "chip" + (on ? " is-on" : ""), "aria-pressed": on ? "true" : "false", "data-monat": item.key },
+          h("span", {}, item.label),
+          ring(itemProgress.done, itemProgress.total)
+        );
+      })
     ),
-    month ? h("h3", {}, month.name) : null,
-    blocks.length ? blocks : h("p", { class: "caption" }, "Keine Aufgaben erfasst.")
+    month ? h("div", { class: "section-head" }, h("h3", {}, month.name), ring(progress.done, progress.total)) : null,
+    blocks.length ? blocks : h("p", { class: "caption" }, "Keine Aufgaben erfasst."),
+    deviceHint()
   );
 }
 
@@ -471,12 +531,22 @@ function renderSketch(skizze, viewBox, labelled) {
     return node;
   };
   const boxHas = (x, y) => x >= vx + 6 && x <= vx + vw - 6 && y >= vy && y <= vy + vh - 4;
+  const mark = (node, id, name) => {
+    node.setAttribute("data-hit", id);
+    node.setAttribute("role", "button");
+    node.setAttribute("tabindex", "0");
+    node.setAttribute("aria-label", name);
+    const cls = node.getAttribute("class") || "";
+    node.setAttribute("class", (cls + " hit").trim());
+    return node;
+  };
   if (boxHas(238, 24)) svg.append(label(skizze.sueden, 238, 24, "lbl", { "text-anchor": "middle" }));
   else if (24 > vy && 24 < vy + vh) svg.append(label(skizze.sueden, vx + vw / 2, Math.max(24, vy + 16), "lbl", { "text-anchor": "middle" }));
   if (boxHas(238, 752)) svg.append(label(skizze.norden, 238, 752, "lbl", { "text-anchor": "middle" }));
   svg.append(svgEl("circle", { cx: 75, cy: 62, r: 7, class: "tree" }));
   svg.append(svgEl("circle", { cx: 140, cy: 62, r: 7, class: "tree" }));
   svg.append(label(skizze.johannisbeeren, 40, 46, "sub"));
+  svg.append(mark(svgEl("rect", { x: 52, y: 36, width: 120, height: 42, class: "hit-pad" }), "pflanze:Johannisbeeren", "Johannisbeeren"));
   svg.append(svgEl("rect", { x: 186, y: 54, width: 12, height: 16, class: "soft" }));
   svg.append(label(skizze.nisthilfe, 170, 46, "tiny"));
   svg.append(svgEl("rect", { x: b1x, y: b1y, width: b1w, height: b1h, rx: 4, class: "frame" }));
@@ -492,6 +562,7 @@ function renderSketch(skizze, viewBox, labelled) {
       class: "field " + (field.klasse || "grau"),
     });
     if (field.gestrichelt) rect.setAttribute("stroke-dasharray", "4 3");
+    mark(rect, "feld:" + field.code, "Feld " + field.code);
     svg.append(rect);
     svg.append(label(field.code, box[0] + 5, box[1] + 14, "lbl"));
     svg.append(label(field.l1, box[0] + 5, box[1] + 28, "sub"));
@@ -519,9 +590,9 @@ function renderSketch(skizze, viewBox, labelled) {
   );
   svg.append(label(skizze.beet1, b1x, b1y + b1h + 14, "lbl"));
   svg.append(label(skizze.querweg, b1x, b1y + b1h + 30, "tiny"));
-  svg.append(svgEl("rect", { x: 40, y: 322, width: 2.1 * S, height: S, rx: 3, class: "soft" }));
+  svg.append(mark(svgEl("rect", { x: 40, y: 322, width: 2.1 * S, height: S, rx: 3, class: "soft" }), "pflanze:Himbeeren", "Himbeeren"));
   svg.append(label(skizze.himbeeren, 46, 348, "sub"));
-  svg.append(svgEl("rect", { x: 40, y: 378, width: 2.5 * S, height: 1.9 * S, rx: 3, class: "frame" }));
+  svg.append(mark(svgEl("rect", { x: 40, y: 378, width: 2.5 * S, height: 1.9 * S, rx: 3, class: "frame" }), "pflanze:Gewächshaus", "Gewächshaus"));
   svg.append(svgEl("rect", { x: 44, y: 382, width: 2.5 * S - 8, height: 0.54 * S, class: "bed" }));
   svg.append(svgEl("rect", { x: 44, y: 378 + 1.9 * S - 4 - 0.54 * S, width: 2.5 * S - 8, height: 0.54 * S, class: "bed mittel" }));
   svg.append(label(skizze.gewaechshaus, 48, 421, "sub"));
@@ -531,7 +602,7 @@ function renderSketch(skizze, viewBox, labelled) {
   svg.append(
     label(skizze.laengsweg, 238, 360, "sub", { "text-anchor": "middle", transform: "rotate(-90 238 360)" })
   );
-  svg.append(svgEl("circle", { cx: 348, cy: 94, r: 44, class: "tree" }));
+  svg.append(mark(svgEl("circle", { cx: 348, cy: 94, r: 44, class: "tree" }), "pflanze:Sauerkirsche", "Sauerkirsche"));
   svg.append(label(skizze.sauerkirsche, 348, 92, "sub", { "text-anchor": "middle" }));
   svg.append(label(skizze.sauerkirscheUnter, 348, 105, "tiny", { "text-anchor": "middle" }));
   svg.append(svgEl("rect", { x: 402, y: 78, width: 34, height: 26, rx: 6, fill: "none", stroke: "currentColor", "stroke-dasharray": "3 2" }));
@@ -564,9 +635,9 @@ function renderSketch(skizze, viewBox, labelled) {
   svg.append(svgEl("rect", { x: b2x, y: 460, width: b2w, height: 140, rx: 4, class: "frame", "stroke-dasharray": "6 4" }));
   svg.append(label(skizze.rasen, b2x + b2w / 2, 526, "sub", { "text-anchor": "middle" }));
   svg.append(label(skizze.rasenHinweis, b2x + b2w / 2, 540, "tiny", { "text-anchor": "middle" }));
-  svg.append(svgEl("circle", { cx: 292, cy: 650, r: 22, class: "tree" }));
+  svg.append(mark(svgEl("circle", { cx: 292, cy: 650, r: 28, class: "tree" }), "pflanze:Pflaume", "Pflaume"));
   svg.append(label(skizze.pflaume, 292, 686, "sub", { "text-anchor": "middle" }));
-  svg.append(svgEl("circle", { cx: 388, cy: 660, r: 55, class: "tree" }));
+  svg.append(mark(svgEl("circle", { cx: 388, cy: 660, r: 55, class: "tree" }), "pflanze:Süßkirsche", "Süßkirsche"));
   svg.append(label(skizze.suesskirsche, 388, 658, "sub", { "text-anchor": "middle" }));
   svg.append(label(skizze.nistkasten, 388, 671, "tiny", { "text-anchor": "middle" }));
   return svg;
@@ -646,7 +717,7 @@ function renderPlan() {
           )
         ),
         h("div", { class: "sketch-full sketch-card" }, renderSketch(skizze, "0 0 600 760", true)),
-        h("figcaption", {}, skizze.massstab || "")
+        h("figcaption", {}, (skizze.massstab || "") + " Felder und Gehölze antippen.")
       ),
       h("h4", {}, lage.aufbauTitel || "Aufbau der Beete"),
       h(
@@ -756,11 +827,7 @@ function renderPlan() {
           )
         )
       ),
-      stackTable(
-        kosten.titel || "Kosten",
-        kosten.spalten || [],
-        objectsToRows(kosten.posten, ["posten", "menge", "kosten"])
-      ),
+      renderShopping(kosten),
       h("p", {}, kosten.nachsatz || "")
     ),
     section(
@@ -772,6 +839,8 @@ function renderPlan() {
 }
 
 function renderView() {
+  const query = (state.query || "").trim();
+  if (query.length >= 2) return renderSearch();
   if (state.tab === "jahr") return renderJahr();
   if (state.tab === "technik") return renderTechnik();
   if (state.tab === "bestand") return renderBestand();
@@ -794,11 +863,22 @@ function syncHeader() {
 }
 
 function paint(resetScroll) {
+  const search = document.querySelector("[data-search]");
+  const focused = search && document.activeElement === search;
+  const selection = focused ? [search.selectionStart, search.selectionEnd] : null;
   const y = resetScroll ? 0 : window.scrollY;
   app.replaceChildren(renderHeader(), renderOffline(), main, renderNav());
   main.replaceChildren(renderView());
+  if (state.sheet) app.append(renderSheet(state.sheet));
   syncHeader();
   window.scrollTo(0, y);
+  if (focused) {
+    const next = document.querySelector("[data-search]");
+    if (next) {
+      next.focus({ preventScroll: true });
+      if (selection) next.setSelectionRange(selection[0], selection[1]);
+    }
+  }
   requestAnimationFrame(centerChips);
   if (state.pendingScroll) {
     const target = document.getElementById(state.pendingScroll);
@@ -818,8 +898,44 @@ function setTab(id, push) {
 }
 
 function onClick(event) {
+  const hit = event.target.closest("[data-hit]");
+  if (hit && !event.target.closest(".sheet")) {
+    state.sheet = hit.getAttribute("data-hit");
+    paint(false);
+    return;
+  }
+  if (event.target.closest("[data-close]")) {
+    const inside = event.target.closest(".sheet");
+    const closeButton = event.target.closest("button[data-close]");
+    if (inside && !closeButton) return;
+    state.sheet = null;
+    paint(false);
+    return;
+  }
   const button = event.target.closest("button");
   if (!button) return;
+  if (button.dataset.check) {
+    toggleCheck(button.dataset.check);
+    paint(false);
+    return;
+  }
+  if (button.dataset.shop) {
+    toggleShop(button.dataset.shop);
+    paint(false);
+    return;
+  }
+  if (button.dataset.refresh) {
+    refreshAll();
+    return;
+  }
+  if (button.dataset.resultTab) {
+    state.query = "";
+    if (button.dataset.resultMonat) state.monatKey = button.dataset.resultMonat;
+    if (button.dataset.resultPlan) state.planMonat = button.dataset.resultPlan;
+    state.pendingScroll = button.dataset.goto || null;
+    setTab(button.dataset.resultTab, true);
+    return;
+  }
   if (button.dataset.tab) {
     setTab(button.dataset.tab, true);
     return;
@@ -859,6 +975,42 @@ function listen() {
   if (state.listening) return;
   state.listening = true;
   document.addEventListener("click", onClick);
+  document.addEventListener("input", (event) => {
+    if (!event.target.matches("[data-search]")) return;
+    state.query = event.target.value;
+    paint(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && state.sheet) {
+      state.sheet = null;
+      paint(false);
+      return;
+    }
+    if ((event.key === "Enter" || event.key === " ") && event.target.closest("[data-hit]")) {
+      event.preventDefault();
+      state.sheet = event.target.closest("[data-hit]").getAttribute("data-hit");
+      paint(false);
+    }
+  });
+  let pullStart = null;
+  document.addEventListener(
+    "touchstart",
+    (event) => {
+      if (window.scrollY > 8) return;
+      pullStart = event.touches[0].clientY;
+    },
+    { passive: true }
+  );
+  document.addEventListener(
+    "touchend",
+    (event) => {
+      if (pullStart == null) return;
+      const distance = event.changedTouches[0].clientY - pullStart;
+      pullStart = null;
+      if (distance > 90 && window.scrollY <= 8) refreshAll();
+    },
+    { passive: true }
+  );
   window.addEventListener("popstate", () => {
     state.tab = tabFromHash();
     paint(true);
@@ -917,31 +1069,83 @@ async function activateWorker() {
           { once: true }
         );
       });
+  let reg = null;
   try {
-    await navigator.serviceWorker.register("sw.js", { updateViaCache: "none" });
+    reg = await navigator.serviceWorker.register("sw.js", { updateViaCache: "none" });
   } catch (error) {
     /* The app still works online without a worker. */
   }
+  if (reg && !navigator.serviceWorker.controller) {
+    const installing = reg.installing || reg.waiting;
+    if (installing && installing.state !== "activated") {
+      await new Promise((resolve) => {
+        if (installing.state === "installed" || installing.state === "activated") {
+          installing.postMessage({ type: "SKIP_WAITING" });
+          resolve();
+          return;
+        }
+        installing.addEventListener("statechange", () => {
+          if (installing.state === "installed" || installing.state === "activated") {
+            installing.postMessage({ type: "SKIP_WAITING" });
+            resolve();
+          }
+        });
+        setTimeout(resolve, 4000);
+      });
+    }
+  }
+  if (reg && hadController) watchWorker(reg);
+  state.workerReg = reg;
   await ready;
+}
+
+async function loadData() {
+  const response = await fetch(jsonUrl(), { cache: "no-store" });
+  if (!response.ok) throw new Error("Status " + response.status);
+  const data = await response.json();
+  if (!data || !Array.isArray(data.heute) || !Array.isArray(data.jahr)) throw new Error("schema");
+  state.data = data;
+  if (navigator.onLine) {
+    state.fetchedAt = new Date().toISOString();
+    localStorage.setItem("garten-daten-zeit", state.fetchedAt);
+  } else {
+    state.fetchedAt = localStorage.getItem("garten-daten-zeit");
+  }
+  if (data.titel) document.title = data.titel;
+  return data;
+}
+
+async function refreshAll() {
+  if (state.refreshing) return;
+  state.refreshing = true;
+  paint(false);
+  try {
+    await loadData();
+    if (state.workerReg) state.workerReg.update().catch(() => {});
+  } catch (error) {
+    state.fetchedAt = state.fetchedAt || localStorage.getItem("garten-daten-zeit");
+  }
+  await loadWeather();
+  state.refreshing = false;
+  paint(false);
 }
 
 async function boot() {
   app.replaceChildren(h("p", { class: "boot" }, "Gartenbuch wird geladen …"));
   await activateWorker();
   try {
-    const response = await fetch(jsonUrl(), { cache: "no-store" });
-    if (!response.ok) throw new Error("Status " + response.status);
-    const data = await response.json();
-    if (!data || !Array.isArray(data.heute) || !Array.isArray(data.jahr)) {
-      throw new Error("schema");
+    const data = await loadData();
+    if (!state.ready) {
+      state.monatKey = initialMonth(data);
+      state.planMonat = initialPlanMonth(data);
+      state.ready = true;
     }
-    state.data = data;
-    state.monatKey = initialMonth(data);
-    state.planMonat = initialPlanMonth(data);
     state.tab = tabFromHash();
-    if (data.titel) document.title = data.titel;
     listen();
     paint(true);
+    loadWeather().then(() => {
+      if (state.tab === "heute" && !(state.query || "").trim()) paint(false);
+    });
   } catch (error) {
     showFatal("Die Daten aus data/garten.json konnten nicht geladen werden. Ohne Netz und ohne gespeicherte Kopie bleibt das Gartenbuch leer.");
   }
