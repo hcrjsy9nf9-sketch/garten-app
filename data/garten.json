@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "2. Nov. 2026",
-  "standIso": "2026-11-02",
+  "stand": "3. Nov. 2026",
+  "standIso": "2026-11-03",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,69 +35,21 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Regenfässer leeren und umdrehen oder abdecken",
+      "text": "Bis Freitag (Nächte um 1 °C): Brunnenpumpe winterfest machen, Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr abdecken; dabei Schläuche entleeren und Außenhahn absperren (Hahn offen lassen)",
+      "bereich": "Wasser & Technik · Brunnenpumpe, Schläuche",
+      "kategorie": "wasser",
+      "done": false
+    },
+    {
+      "text": "Regenfässer leeren und umdrehen oder abdecken, Dachrinnen und Fallrohrfilter vom Laub befreien",
       "bereich": "Wasser & Technik · Regenfässer",
       "kategorie": "wasser",
       "done": false
     },
     {
-      "text": "Brunnenpumpe winterfest machen: Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr bzw. Leitungen frostsicher abdecken",
-      "bereich": "Wasser & Technik · Brunnenpumpe",
-      "kategorie": "wasser",
-      "done": false
-    },
-    {
-      "text": "Gartenschläuche entleeren und frostfrei einlagern",
-      "bereich": "Wasser & Technik · Schläuche",
-      "kategorie": "wasser",
-      "done": false
-    },
-    {
-      "text": "Außenhahn und Wasserleitung absperren und entleeren, Hahn offen lassen",
-      "bereich": "Wasser & Technik · Wasserhahn",
-      "kategorie": "wasser",
-      "done": false
-    },
-    {
-      "text": "Gewächshaus-Bewässerung entleeren (Schläuche, ggf. Tropfleitung, Gießkannen)",
-      "bereich": "Gewächshaus",
-      "kategorie": "gewaechshaus",
-      "done": false
-    },
-    {
-      "text": "Dachrinnen, Fallrohre und Fallrohrfilter nach dem Laubfall von Laub befreien",
-      "bereich": "Wasser & Technik · Regenfässer",
-      "kategorie": "wasser",
-      "done": false
-    },
-    {
-      "text": "Abgeerntete Beete mit Laub oder Mulch abdecken statt umgraben",
+      "text": "Abgeerntete Flächen mit 5–10 cm Laub mulchen statt umgraben (trockene Tage nutzen)",
       "bereich": "Beet 1 und Beet 2",
       "kategorie": "beete",
-      "done": false
-    },
-    {
-      "text": "Johannisbeeren schneiden: Aufbauschnitt, nur schwache und bodennah liegende Triebe entfernen",
-      "bereich": "Johannisbeeren · Südrand links",
-      "kategorie": "obst",
-      "done": false
-    },
-    {
-      "text": "Himbeeren schneiden: abgetragene Ruten bodennah entfernen; bei Herbsthimbeeren alle Ruten erst im Februar",
-      "bereich": "Himbeeren · 2,1 × 1 m",
-      "kategorie": "obst",
-      "done": false
-    },
-    {
-      "text": "Fruchtmumien und Fallobst an Kirschen und Pflaume entfernen, nicht auf den Kompost",
-      "bereich": "Süßkirsche, Pflaume, Sauerkirsche",
-      "kategorie": "obst",
-      "done": false
-    },
-    {
-      "text": "Laubhaufen mit Schnittgut am Südrand neben der Sauerkirsche anlegen",
-      "bereich": "Natur · Südrand rechts",
-      "kategorie": "natur",
       "done": false
     }
   ],
