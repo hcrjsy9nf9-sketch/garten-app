@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "3. Nov. 2026",
-  "standIso": "2026-11-03",
+  "stand": "4. Nov. 2026",
+  "standIso": "2026-11-04",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,21 +35,21 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Bis Freitag (Nächte um 1 °C): Brunnenpumpe winterfest machen, Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr abdecken; dabei Schläuche entleeren und Außenhahn absperren (Hahn offen lassen)",
-      "bereich": "Wasser & Technik · Brunnenpumpe, Schläuche",
+      "text": "Noch offen, bis Samstag (kühlster Tag, max. 5 °C): Brunnenpumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Regenfässer leeren und umdrehen; dabei auch die Gewächshaus-Bewässerung (Schläuche, Gießkannen) entleeren",
+      "bereich": "Wasser & Technik · Brunnenpumpe, Regenfässer, Gewächshaus",
       "kategorie": "wasser",
       "done": false
     },
     {
-      "text": "Regenfässer leeren und umdrehen oder abdecken, Dachrinnen und Fallrohrfilter vom Laub befreien",
-      "bereich": "Wasser & Technik · Regenfässer",
-      "kategorie": "wasser",
+      "text": "Johannisbeeren auslichten (Aufbauschnitt): schwache, bodennahe und über 3 Jahre alte Triebe bodennah abschneiden, 8–10 kräftige Triebe stehen lassen; Laub darunter als Mulch liegen lassen (Kosten: keine, scharfe Schere)",
+      "bereich": "Obst & Beeren · Johannisbeeren am Südrand Beet 1",
+      "kategorie": "obst",
       "done": false
     },
     {
-      "text": "Abgeerntete Flächen mit 5–10 cm Laub mulchen statt umgraben (trockene Tage nutzen)",
-      "bereich": "Beet 1 und Beet 2",
-      "kategorie": "beete",
+      "text": "Fruchtmumien und Fallobst unter und an Süßkirsche, Sauerkirsche und Pflaume einsammeln und über den Hausmüll entsorgen, nicht auf den Kompost (Monilia-Vorbeugung)",
+      "bereich": "Obst · Kirschen und Pflaume",
+      "kategorie": "obst",
       "done": false
     }
   ],
