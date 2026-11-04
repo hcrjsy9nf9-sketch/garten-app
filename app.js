@@ -1180,11 +1180,9 @@ function drawPlotElement(svg, el, on) {
   const hgt = el.h;
   const cx = x + b / 2;
   if (el.typ === "beet") {
-    g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 16, class: "plot-beet plot-shape" }));
-    [0.3, 0.5, 0.7].forEach((step) => {
-      g.append(svgEl("circle", { cx: x + b * step, cy: y + hgt - 18, r: 4, class: "plot-sprout" }));
-    });
-    plotLines(g, cx, y + hgt / 2 - 6, [el.name, el.masse].filter(Boolean), 16);
+    svg.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 16, class: "plot-bed-frame" }));
+    drawBedFields(svg, el);
+    return;
   } else if (el.typ === "haus") {
     g.append(svgEl("path", { d: `M${cx},${y + 4} L${x + 8},${y + 26} L${x + b - 8},${y + 26} Z`, class: "plot-roof plot-shape" }));
     g.append(svgEl("rect", { x: x + 8, y: y + 26, width: b - 16, height: hgt - 34, rx: 6, class: "plot-house plot-shape" }));
@@ -1235,6 +1233,136 @@ function drawPlotElement(svg, el, on) {
   svg.append(g);
 }
 
+function bedFieldRows(el) {
+  const beete = ((state.data.plan2027 || {}).beete) || {};
+  if (el.id === "beet2") return beete.b2 || [];
+  if (el.id === "beet1") return beete.b1 || [];
+  return [];
+}
+
+function bedGrid(el) {
+  if (el.id === "beet2") {
+    return { cols: [["2A", "2B"], ["2C", "2D"], ["2E", "2F"]], weights: [2, 2.5, 2.5], saum: "left" };
+  }
+  return { cols: [["1A", "1B"], ["1C", "1D"]], weights: [1, 1], saum: "right" };
+}
+
+function drawBedFields(svg, el) {
+  const byCode = {};
+  bedFieldRows(el).forEach((row) => {
+    const code = fieldCodeOf(row.feld);
+    if (code) byCode[code] = row;
+  });
+  const grid = bedGrid(el);
+  const known = grid.cols.some((pair) => pair.some((code) => byCode[code]));
+  if (!known) {
+    plotLines(svg, el.x + el.b / 2, el.y + el.h / 2, [el.name, el.masse].filter(Boolean), 16);
+    return;
+  }
+  const pad = 4;
+  const gap = 3;
+  const saumW = byCode.Saum ? 18 : 0;
+  const pathW = 5;
+  const innerX = el.x + pad + (grid.saum === "left" ? saumW + gap : 0);
+  const innerY = el.y + pad;
+  const innerW = el.b - pad * 2 - (saumW ? saumW + gap : 0);
+  const innerH = el.h - pad * 2;
+  const colW = (innerW - pathW) / 2;
+  const weightSum = grid.weights.reduce((sum, value) => sum + value, 0);
+  const rowGaps = gap * (grid.cols.length - 1);
+  let cursorY = innerY;
+  grid.cols.forEach((pair, rowIndex) => {
+    const rowH = ((innerH - rowGaps) * grid.weights[rowIndex]) / weightSum;
+    pair.forEach((code, colIndex) => {
+      const row = byCode[code];
+      if (!row) return;
+      drawFieldCell(svg, el, row, code, {
+        x: innerX + colIndex * (colW + pathW),
+        y: cursorY,
+        b: colW,
+        h: rowH,
+      });
+    });
+    cursorY += rowH + gap;
+  });
+  if (byCode.Saum && saumW) {
+    const saumX = grid.saum === "left" ? el.x + pad : el.x + el.b - pad - saumW;
+    drawFieldCell(svg, el, byCode.Saum, "Saum", { x: saumX, y: innerY, b: saumW, h: innerH, vertical: true });
+  }
+}
+
+function drawFieldCell(svg, el, row, code, box) {
+  const id = "feld:" + el.id + ":" + code;
+  const on = state.plotId === id;
+  const klasse = tileClass(row, code);
+  const face = cropFace(row, code);
+  const now = tasksForField(code);
+  const g = svgEl("g", {
+    class: "plot-hit" + (on ? " is-on" : ""),
+    "data-plot": id,
+    role: "button",
+    tabindex: "0",
+    "aria-label": "Feld " + code + ", " + face + (now.length ? ", jetzt zu tun" : ""),
+    "aria-pressed": on ? "true" : "false",
+  });
+  const dashed = sketchField(code) && sketchField(code).gestrichelt ? " is-dashed" : "";
+  g.append(svgEl("rect", {
+    x: box.x,
+    y: box.y,
+    width: box.b,
+    height: box.h,
+    rx: 8,
+    class: "plot-field plot-shape " + klasse + dashed,
+  }));
+  if (box.vertical) {
+    const text = plotText(box.x + box.b / 2, box.y + box.h / 2, code, 12, "middle");
+    text.setAttribute("transform", "rotate(-90 " + (box.x + box.b / 2) + " " + (box.y + box.h / 2) + ")");
+    text.setAttribute("class", "plot-field-label");
+    g.append(text);
+  } else {
+    const size = box.b < 78 ? 15 : 16;
+    g.append(plotText(box.x + box.b / 2, box.y + box.h / 2 + size * 0.35, code, size, "middle"));
+    g.lastChild.setAttribute("class", "plot-field-label");
+  }
+  if (now.length) {
+    g.append(svgEl("circle", {
+      cx: box.x + box.b - 7,
+      cy: box.y + 8,
+      r: 3.5,
+      class: "plot-now",
+    }));
+  }
+  svg.append(g);
+}
+
+function renderFieldCard(bedId, code) {
+  const rows = bedFieldRows({ id: bedId });
+  const row = rows.find((item) => fieldCodeOf(item.feld) === code);
+  if (!row) return null;
+  const face = cropFace(row, code);
+  const parts = fieldParts(row.feld);
+  const year = state.rotYear || "2027";
+  const bedName = bedId === "beet2" ? "Beet 2" : "Beet 1";
+  const tasks = tasksForPlot({ name: code, treffer: [code, bedName, "Beete"] }).filter((task) => {
+    const other = String(task).match(/[12][A-F]/g) || [];
+    if (other.some((item) => item !== code)) return false;
+    if (code !== "Saum" && /Johannisbeer|Himbeer|Kirsche|Pflaume|Gewächshaus|Regenfass|Pumpe/i.test(task)) return false;
+    return true;
+  });
+  return h(
+    "article",
+    { class: "plot-karte", id: "plot-karte" },
+    h("h3", {}, "Feld " + code),
+    h("p", { class: "bed-mass" }, face),
+    parts.size ? h("p", {}, parts.size) : null,
+    parts.note ? h("p", { class: "caption" }, parts.note) : null,
+    year !== "2027" && findRotation(code) ? h("p", { class: "caption" }, year + ": nur die Fruchtfolge-Stufe. Die Kultur im Plan gilt für 2027.") : h("p", {}, row.kultur),
+    tasks.length ? h("h4", {}, "Jetzt zu tun") : h("p", { class: "caption" }, "Keine Aufgabe für dieses Feld in diesem Monat."),
+    tasks.length ? h("ul", { class: "clean wrap-list" }, tasks.map((task) => h("li", {}, task))) : null,
+    h("button", { type: "button", class: "text-btn", "data-jump": bedId === "beet2" ? "garten-beet-2" : "garten-beet-1" }, "Felder ansehen")
+  );
+}
+
 function renderPlotCard(el) {
   if (!el) return null;
   const bestand = bestandByName(el.name);
@@ -1269,15 +1397,36 @@ function renderParzelle(lage) {
   compass.append(plotText(rose.x, rose.y + 30, rose.n || "N", 14, "middle"));
   svg.append(compass);
   (lage.elemente || []).forEach((el) => drawPlotElement(svg, el, state.plotId === el.id));
+  const fieldPick = String(state.plotId || "").match(/^feld:(beet[12]):(.+)$/);
   const chosen = (lage.elemente || []).find((el) => el.id === state.plotId);
+  const plan = state.data.plan2027 || {};
+  const years = ((plan.fruchtfolge || {}).spalten || []).slice(1);
   return h(
     "section",
     { class: "plot-block" },
     h("p", { class: "bed-place" }, lage.flaeche || ""),
+    years.length
+      ? h(
+          "div",
+          { class: "year-toggle", role: "group", "aria-label": "Fruchtfolge-Jahr" },
+          years.map((year) =>
+            h(
+              "button",
+              {
+                type: "button",
+                class: "chip" + ((state.rotYear || "2027") === year ? " is-on" : ""),
+                "aria-pressed": (state.rotYear || "2027") === year ? "true" : "false",
+                "data-rot": year,
+              },
+              year
+            )
+          )
+        )
+      : null,
     h("div", { class: "plot-wrap" }, svg),
     h("p", { class: "caption" }, lage.fussnote || ""),
     h("p", { class: "caption" }, lage.hinweis || ""),
-    renderPlotCard(chosen)
+    fieldPick ? renderFieldCard(fieldPick[1], fieldPick[2]) : renderPlotCard(chosen)
   );
 }
 
@@ -1303,7 +1452,6 @@ function bedCard(title, mass, place, rows) {
 function renderGarten() {
   const plan = state.data.plan2027 || {};
   const beete = plan.beete || {};
-  const years = ((plan.fruchtfolge || {}).spalten || []).slice(1);
   const skizze = (plan.lageplan && plan.lageplan.skizze) || {};
   const placeOf = (value) => {
     const parts = String(value || "").split("·");
@@ -1325,29 +1473,6 @@ function renderGarten() {
     h("h2", {}, lage.titel || "Parzelle 23"),
     renderParzelle(lage),
     h("h2", {}, "Beete"),
-    years.length
-      ? h(
-          "div",
-          { class: "year-block" },
-          h("p", { class: "kicker" }, (plan.fruchtfolge && plan.fruchtfolge.titel) || "Fruchtfolge"),
-          h(
-            "div",
-            { class: "year-toggle", role: "group", "aria-label": "Fruchtfolge-Jahr" },
-            years.map((year) =>
-              h(
-                "button",
-                {
-                  type: "button",
-                  class: "chip" + ((state.rotYear || "2027") === year ? " is-on" : ""),
-                  "aria-pressed": (state.rotYear || "2027") === year ? "true" : "false",
-                  "data-rot": year,
-                },
-                year
-              )
-            )
-          )
-        )
-      : null,
     h(
       "ul",
       { class: "bed-key" },

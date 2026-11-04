@@ -166,7 +166,16 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 }
 .plot-wrap svg { width: 100%; height: auto; display: block; overflow: visible; max-width: 100%; }
 .plot-ground { fill: var(--soil); }
-.plot-beet { fill: var(--green-soft); stroke: var(--green); stroke-width: 2.5; }
+.plot-bed-frame { fill: none; stroke: var(--soil-edge); stroke-width: 2; pointer-events: none; }
+.plot-field { stroke-width: 1.6; }
+.plot-field.stark { fill: var(--green-soft); stroke: var(--green); }
+.plot-field.mittel { fill: var(--beete-soft, #fff0dc); stroke: var(--beete, var(--mittel)); }
+.plot-field.schwach { fill: var(--obst-soft, #ffe4ee); stroke: var(--obst, var(--schwach)); }
+.plot-field.grau { fill: var(--natur-soft, #f1ecff); stroke: var(--natur, var(--grau)); }
+.plot-field.is-dashed { stroke-dasharray: 4 3; }
+.plot-field-label { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 800; }
+.plot-now { fill: var(--amber); stroke: var(--card); stroke-width: 1; }
+.plot-hit.is-on .plot-field { stroke: var(--ink); stroke-width: 3; }
 .plot-sprout { fill: var(--green); }
 .plot-house, .plot-roof { fill: var(--haus-soft); stroke: var(--haus); stroke-width: 2.5; }
 .plot-pane, .plot-trunk, .plot-cane, .plot-grass { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
