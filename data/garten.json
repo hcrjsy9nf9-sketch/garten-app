@@ -538,17 +538,20 @@
     "kompass": { "x": 170, "y": 34, "s": "S", "n": "N" },
     "elemente": [
       { "id": "johannisbeeren", "name": "Johannisbeeren", "typ": "strauch", "x": 10, "y": 62, "b": 146, "h": 54, "anzahl": 2, "masse": "jung", "treffer": ["Johannisbeer"] },
-      { "id": "beet1", "name": "Beet 1", "typ": "beet", "x": 10, "y": 120, "b": 146, "h": 148, "masse": "4,5 × 4 m", "link": "garten-beet-1", "treffer": ["Beet 1", "Beete", "1A", "1B", "1C", "1D"] },
-      { "id": "querweg", "name": "Querweg", "typ": "weg", "x": 10, "y": 274, "b": 146, "h": 34, "treffer": ["Querweg"] },
-      { "id": "himbeeren", "name": "Himbeeren", "typ": "strauch", "x": 10, "y": 314, "b": 146, "h": 46, "masse": "2,1 × 1 m", "treffer": ["Himbeer"] },
+      { "id": "beet1", "name": "Beet 1", "typ": "beet", "x": 10, "y": 120, "b": 140, "h": 158, "masse": "4,5 × 4 m", "link": "garten-beet-1", "treffer": ["Beet 1", "Beete", "1A", "1B", "1C", "1D"] },
+      { "id": "querweg", "name": "Querweg", "typ": "weg", "x": 10, "y": 286, "b": 140, "h": 30, "treffer": ["Querweg"] },
+      { "id": "himbeeren", "name": "Himbeeren", "typ": "strauch", "x": 10, "y": 322, "b": 140, "h": 40, "masse": "2,1 × 1 m", "treffer": ["Himbeer"] },
       {
         "id": "tomaten",
         "name": "Tomaten (außen am Gewächshaus)",
         "typ": "tomate",
         "x": 10,
-        "y": 364,
-        "b": 146,
-        "h": 44,
+        "y": 368,
+        "b": 104,
+        "h": 40,
+        "laenge": 2.5,
+        "breite": 0.6,
+        "ca": true,
         "karte": "jedes Jahr Tomaten, Freiland, geschützter Platz an der Gewächshauswand",
         "treffer": ["Tomaten außen"],
         "aufgaben": [
@@ -559,13 +562,13 @@
           "Oktober: Reste mit Braunfäule in den Hausmüll, nicht auf den Kompost. Am festen Platz jährlich Kompost auffüllen."
         ]
       },
-      { "id": "gewaechshaus", "name": "Gewächshaus", "typ": "haus", "x": 10, "y": 412, "b": 104, "h": 88, "masse": "2,5 × 1,9 m", "treffer": ["Gewächshaus"] },
-      { "id": "regenfaesser", "name": "Regenfässer", "typ": "fass", "x": 120, "y": 414, "b": 36, "h": 40, "ungefahr": true, "treffer": ["Regenfass", "Regenfäss"] },
-      { "id": "pumpe", "name": "Brunnenpumpe", "typ": "pumpe", "x": 120, "y": 458, "b": 36, "h": 40, "ungefahr": true, "treffer": ["Brunnenpumpe"] },
+      { "id": "gewaechshaus", "name": "Gewächshaus", "typ": "haus", "x": 10, "y": 414, "b": 104, "h": 78, "masse": "2,5 × 1,9 m", "treffer": ["Gewächshaus"] },
+      { "id": "regenfaesser", "name": "Regenfässer", "typ": "fass", "x": 118, "y": 414, "b": 36, "h": 36, "ungefahr": true, "treffer": ["Regenfass", "Regenfäss"] },
+      { "id": "pumpe", "name": "Brunnenpumpe", "typ": "pumpe", "x": 118, "y": 454, "b": 36, "h": 36, "ungefahr": true, "treffer": ["Brunnenpumpe"] },
       { "id": "laengsweg", "name": "Längsweg", "typ": "weg", "x": 162, "y": 78, "b": 26, "h": 544, "masse": "ca. 8 m", "treffer": ["Längsweg"] },
       { "id": "sauerkirsche", "name": "Sauerkirsche", "typ": "baum", "x": 194, "y": 58, "b": 136, "h": 112, "masse": "Krone ca. 2 m", "treffer": ["Sauerkirsche", "Kirsche"] },
-      { "id": "beet2", "name": "Beet 2", "typ": "beet", "x": 194, "y": 176, "b": 136, "h": 214, "masse": "7 × 4 m", "link": "garten-beet-2", "treffer": ["Beet 2", "Beete", "2A", "2B", "2C", "2D", "2E", "2F"] },
-      { "id": "rasen", "name": "Rasen", "typ": "rasen", "x": 194, "y": 396, "b": 136, "h": 100, "treffer": ["Rasen"] },
+      { "id": "beet2", "name": "Beet 2", "typ": "beet", "x": 194, "y": 176, "b": 122, "h": 214, "masse": "7 × 4 m", "link": "garten-beet-2", "treffer": ["Beet 2", "Beete", "2A", "2B", "2C", "2D", "2E", "2F"] },
+      { "id": "rasen", "name": "Rasen", "typ": "rasen", "x": 194, "y": 396, "b": 122, "h": 100, "treffer": ["Rasen"] },
       { "id": "pflaume", "name": "Pflaume", "typ": "baum", "x": 194, "y": 502, "b": 64, "h": 112, "masse": "Krone ca. 1 m", "treffer": ["Pflaume"] },
       { "id": "suesskirsche", "name": "Süßkirsche", "typ": "baum", "x": 262, "y": 494, "b": 68, "h": 124, "masse": "Krone ca. 2,5 m", "treffer": ["Süßkirsche", "Kirsche"] }
     ]
@@ -679,6 +682,8 @@
       "b1": [
         {
           "feld": "1A · 3,7 m²",
+          "laenge": 2.25,
+          "breite": 1.65,
           "kultur": "Starkzehrer: Zucchini (2), Hokkaido (1)",
           "aussaat": "Vorziehen Ende April, Pflanzung ab 15. Mai",
           "abstand": "100 × 100 cm; Hokkaido 1,5 m²",
@@ -687,6 +692,8 @@
         },
         {
           "feld": "1B · 3,7 m²",
+          "laenge": 2.25,
+          "breite": 1.65,
           "kultur": "Mittelzehrer: Steckzwiebeln, Rote Bete, Pflücksalat",
           "aussaat": "Zwiebeln Ende März; Rote Bete Ende April–Juni; Salat ab April",
           "abstand": "Zwiebeln 20 × 10; Bete 30 × 10; Salat 25 × 25 cm",
@@ -695,6 +702,8 @@
         },
         {
           "feld": "1C · 3,7 m²",
+          "laenge": 2.25,
+          "breite": 1.65,
           "kultur": "Schwachzehrer: Zuckererbsen, Buschbohnen, Bohnenkraut",
           "aussaat": "Erbsen Mitte März–April; Bohnen ab Mitte Mai",
           "abstand": "Erbsen Reihe 40 cm, 4 cm; Bohnen Horste 40 × 40 cm",
@@ -703,6 +712,8 @@
         },
         {
           "feld": "1D · 3,7 m²",
+          "laenge": 2.25,
+          "breite": 1.65,
           "kultur": "Gründüngung/Bienenweide: Radieschen, Spinat, dann Phacelia + Buchweizen",
           "aussaat": "Radieschen/Spinat Mitte März; Phacelia Juni",
           "abstand": "Radieschen 15 × 3 cm; Phacelia breitwürfig 2 g/m²",
@@ -711,6 +722,8 @@
         },
         {
           "feld": "Saum · 1,8 m²",
+          "laenge": 4.5,
+          "breite": 0.4,
           "kultur": "Kräuter, Blut-Storchschnabel, Karthäuser-Nelke, Sandarium (südl. 1 m)",
           "aussaat": "April",
           "abstand": "25–40 cm",
@@ -721,6 +734,8 @@
       "b2": [
         {
           "feld": "2A · 3,3 m² (Halbschatten)",
+          "laenge": 2.0,
+          "breite": 1.65,
           "kultur": "Blattgemüse: Spinat, Pflücksalat, Mangold, Rucola/Asia-Salat",
           "aussaat": "Spinat März und Aug; Salat Apr–Aug alle 3–4 Wochen; Mangold April",
           "abstand": "Spinat Reihe 25 cm; Salat 25 × 25; Mangold 30 × 30 cm",
@@ -729,6 +744,8 @@
         },
         {
           "feld": "2B · 3,3 m² (Halbschatten)",
+          "laenge": 2.0,
+          "breite": 1.65,
           "kultur": "Dauerkultur: Rhabarber (1), Walderdbeeren (6), Petersilie",
           "aussaat": "Rhabarber März; Walderdbeeren April; Petersilie April",
           "abstand": "Rhabarber 1 m²; Walderdbeeren 30 × 30; Petersilie 20 cm",
@@ -737,6 +754,8 @@
         },
         {
           "feld": "2C · 4,1 m²",
+          "laenge": 2.5,
+          "breite": 1.65,
           "kultur": "Starkzehrer: Brokkoli (4), Kohlrabi (8), Grünkohl (4), Knollensellerie (6)",
           "aussaat": "Kohlrabi April + Juli; Brokkoli/Sellerie Mitte Mai; Grünkohl Ende Juni",
           "abstand": "Brokkoli/Grünkohl 50 × 50; Kohlrabi 30 × 30; Sellerie 40 × 40 cm",
@@ -745,6 +764,8 @@
         },
         {
           "feld": "2D · 4,1 m²",
+          "laenge": 2.5,
+          "breite": 1.65,
           "kultur": "Mittelzehrer: Möhren, Lauch, Pastinake",
           "aussaat": "Pastinake März–April; Möhren April–Mai; Lauch Juni",
           "abstand": "Möhren Reihe 25 cm, 3 cm; Lauch 30 × 15; Pastinake 35 × 10 cm",
@@ -753,6 +774,8 @@
         },
         {
           "feld": "2E · 4,1 m²",
+          "laenge": 2.5,
+          "breite": 1.65,
           "kultur": "Schwachzehrer: Stangenbohnen, Feuerbohnen, Kapuzinerkresse",
           "aussaat": "Ab Mitte Mai direkt säen",
           "abstand": "Stangen 60 × 70 cm, 4–6 Bohnen je Stange",
@@ -761,6 +784,8 @@
         },
         {
           "feld": "2F · 4,1 m²",
+          "laenge": 2.5,
+          "breite": 1.65,
           "kultur": "Gründüngung/Bienenweide: Radieschen, Spinat, dann Phacelia + Buchweizen",
           "aussaat": "Radieschen/Spinat März–April; Phacelia/Buchweizen Juni",
           "abstand": "breitwürfig",
@@ -769,6 +794,8 @@
         },
         {
           "feld": "Saum · 2,8 m²",
+          "laenge": 7.0,
+          "breite": 0.4,
           "kultur": "Süden 2 m: Balkan-Storchschnabel; Norden 5 m: Blut-Storchschnabel, Wiesen-Salbei, Dost, Karthäuser-Nelke",
           "aussaat": "April",
           "abstand": "30–40 cm",
@@ -776,11 +803,23 @@
           "pflege": "Streifen 0,4 m entlang Längsweg; nach Anwachsen kaum Gießen"
         }
       ],
+      "masse": {
+        "hinweis": "Länge ist Nord–Süd, Breite Ost–West. Fläche = Länge × Breite. Zur Beetfläche gehört zusätzlich der Trittpfad, 0,3 m breit über die ganze Länge.",
+        "b1": { "laenge": 4.5, "breite": 4, "pfadBreite": 0.3 },
+        "b2": { "laenge": 7, "breite": 4, "pfadBreite": 0.3 }
+      },
       "hinweis": {
         "ton": "info",
         "lead": "Halbschatten in Beet 2",
         "text": "Die Grenze von ca. 2 m nördlich der Sauerkirsche ist eine Annahme. Im April/Mai zur Mittagszeit den Schattenwurf beobachten und die Felder 2A/2B gegebenenfalls verkürzen oder verlängern."
       }
+    },
+    "tomatenstreifen": {
+      "name": "Tomaten außen am Gewächshaus",
+      "laenge": 2.5,
+      "breite": 0.6,
+      "ca": true,
+      "hinweis": "ca., Länge der Gewächshauswand 2,5 m × ca. 0,6 m. Nicht vermessen."
     },
     "fruchtfolge": {
       "titel": "Fruchtfolge 2027–2030",

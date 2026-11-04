@@ -4,7 +4,7 @@
    Paths are relative to the registration scope so the app works under
    https://hcrjsy9nf9-sketch.github.io/garten-app/ */
 
-const STATIC_CACHE = "garten-static-v11";
+const STATIC_CACHE = "garten-static-v12";
 const DATA_CACHE = "garten-data-v1";
 
 const FILES = [

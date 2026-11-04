@@ -1016,6 +1016,17 @@ function tileClass(row, code) {
   return "grau";
 }
 
+function deNum(value) {
+  const text = (Math.round(Number(value) * 10000) / 10000).toFixed(4).replace(/\.?0+$/, "");
+  return text.replace(".", ",");
+}
+
+function massEquation(src) {
+  if (!src || src.laenge == null || src.breite == null) return "";
+  const area = Math.round(src.laenge * src.breite * 10000) / 10000;
+  return (src.ca ? "ca. " : "") + deNum(src.laenge) + " × " + deNum(src.breite) + " m = " + deNum(area) + " m²";
+}
+
 function fieldParts(feld) {
   const raw = String(feld || "");
   const size = (raw.match(/\d+(?:,\d+)?\s*m²/) || [""])[0];
@@ -1079,7 +1090,7 @@ function fieldTile(row) {
         "span",
         { class: "tile-meta" },
         h("span", { class: "code" }, code || row.feld),
-        parts.size ? h("span", { class: "size" }, parts.size) : null
+        massEquation(row) || parts.size ? h("span", { class: "size" }, massEquation(row) || parts.size) : null
       ),
       h("span", { class: "crop" }, face),
       parts.note && face.toLowerCase().indexOf(parts.note.toLowerCase()) < 0 ? h("span", { class: "tile-note" }, parts.note) : null,
@@ -1196,13 +1207,13 @@ function drawPlotElement(svg, el, on) {
     plotLines(g, cx, y + hgt - 12, [el.name], 13);
   } else if (el.typ === "tomate") {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 12, class: "plot-tomato plot-shape" }));
-    [0.16, 0.34].forEach((step) => {
-      const tx = x + b * step;
+    [14, 32].forEach((dx) => {
+      const tx = x + dx;
       const ty = y + hgt / 2 + 1;
-      g.append(svgEl("circle", { cx: tx, cy: ty, r: 8, class: "plot-tomato-fruit" }));
-      g.append(svgEl("path", { d: `M${tx - 4},${ty - 7} q4,-6 8,0 q-4,2 -8,0`, class: "plot-tomato-leaf" }));
+      g.append(svgEl("circle", { cx: tx, cy: ty, r: 7, class: "plot-tomato-fruit" }));
+      g.append(svgEl("path", { d: `M${tx - 3},${ty - 6} q3,-5 7,0 q-3,2 -7,0`, class: "plot-tomato-leaf" }));
     });
-    g.append(plotText(x + b * 0.72, y + hgt / 2 + 5, "Tomaten", 15, "middle"));
+    g.append(plotText(x + 46, y + hgt / 2 + 5, "Tomaten", 14, "start"));
   } else if (el.typ === "strauch" && el.anzahl > 1) {
     const r = 14;
     for (let i = 0; i < el.anzahl; i += 1) {
@@ -1266,35 +1277,49 @@ function drawBedFields(svg, el) {
     plotLines(svg, el.x + el.b / 2, el.y + el.h / 2, [el.name, el.masse].filter(Boolean), 16);
     return;
   }
-  const pad = 4;
-  const gap = 3;
-  const saumW = byCode.Saum ? 18 : 0;
-  const pathW = 5;
-  const innerX = el.x + pad + (grid.saum === "left" ? saumW + gap : 0);
+  const pad = 3;
+  const sample = byCode[grid.cols[0][0]] || byCode[grid.cols[0][1]];
+  const saum = byCode.Saum;
+  const metered = sample && sample.laenge && sample.breite;
+  const innerX = el.x + pad;
   const innerY = el.y + pad;
-  const innerW = el.b - pad * 2 - (saumW ? saumW + gap : 0);
+  const innerW = el.b - pad * 2;
   const innerH = el.h - pad * 2;
-  const colW = (innerW - pathW) / 2;
-  const weightSum = grid.weights.reduce((sum, value) => sum + value, 0);
-  const rowGaps = gap * (grid.cols.length - 1);
+  const bedWidth = metered ? sample.breite * 2 + 0.3 + (saum && saum.breite ? saum.breite : 0) : 4;
+  const bedLength = metered
+    ? grid.cols.reduce((sum, pair) => sum + ((byCode[pair[0]] || byCode[pair[1]] || {}).laenge || 0), 0)
+    : grid.cols.length;
+  const scaleX = innerW / bedWidth;
+  const scaleY = innerH / bedLength;
+  const fieldW = metered ? sample.breite * scaleX : (innerW - 18 - 5) / 2;
+  const pathW = metered ? 0.3 * scaleX : 5;
+  const saumW = saum ? (metered && saum.breite ? saum.breite * scaleX : 18) : 0;
+  const x0 = innerX + (grid.saum === "left" ? saumW : 0);
   let cursorY = innerY;
-  grid.cols.forEach((pair, rowIndex) => {
-    const rowH = ((innerH - rowGaps) * grid.weights[rowIndex]) / weightSum;
+  grid.cols.forEach((pair) => {
+    const row = byCode[pair[0]] || byCode[pair[1]];
+    const rowH = metered && row && row.laenge ? row.laenge * scaleY : innerH / grid.cols.length;
     pair.forEach((code, colIndex) => {
-      const row = byCode[code];
-      if (!row) return;
-      drawFieldCell(svg, el, row, code, {
-        x: innerX + colIndex * (colW + pathW),
-        y: cursorY,
-        b: colW,
-        h: rowH,
+      const cell = byCode[code];
+      if (!cell) return;
+      drawFieldCell(svg, el, cell, code, {
+        x: x0 + colIndex * (fieldW + pathW) + 1,
+        y: cursorY + 1,
+        b: Math.max(12, fieldW - 2),
+        h: Math.max(12, rowH - 2),
       });
     });
-    cursorY += rowH + gap;
+    cursorY += rowH;
   });
-  if (byCode.Saum && saumW) {
-    const saumX = grid.saum === "left" ? el.x + pad : el.x + el.b - pad - saumW;
-    drawFieldCell(svg, el, byCode.Saum, "Saum", { x: saumX, y: innerY, b: saumW, h: innerH, vertical: true });
+  if (saum && saumW) {
+    const saumX = grid.saum === "left" ? innerX : x0 + fieldW + pathW + fieldW;
+    drawFieldCell(svg, el, saum, "Saum", {
+      x: saumX + 1,
+      y: innerY + 1,
+      b: Math.max(10, saumW - 2),
+      h: Math.max(12, bedLength * scaleY - 2),
+      vertical: true,
+    });
   }
 }
 
@@ -1361,7 +1386,7 @@ function renderFieldCard(bedId, code) {
     { class: "plot-karte", id: "plot-karte" },
     h("h3", {}, "Feld " + code),
     h("p", { class: "bed-mass" }, face),
-    parts.size ? h("p", {}, parts.size) : null,
+    massEquation(row) || parts.size ? h("p", {}, massEquation(row) || parts.size) : null,
     parts.note ? h("p", { class: "caption" }, parts.note) : null,
     year !== "2027" && findRotation(code) ? h("p", { class: "caption" }, year + ": nur die Fruchtfolge-Stufe. Die Kultur im Plan gilt für 2027.") : h("p", {}, row.kultur),
     tasks.length ? h("h4", {}, "Jetzt zu tun") : h("p", { class: "caption" }, "Keine Aufgabe für dieses Feld in diesem Monat."),
@@ -1381,6 +1406,7 @@ function renderPlotCard(el) {
     h("h3", {}, el.name),
     masse ? h("p", { class: "bed-mass" }, masse) : null,
     el.karte ? h("p", {}, el.karte) : null,
+    massEquation(el) ? h("p", { class: "bed-mass" }, massEquation(el)) : null,
     el.ungefahr ? h("p", { class: "caption" }, "Lage ungefähr") : null,
     tasks.length ? h("h4", {}, "Jetzt zu tun") : null,
     tasks.length ? h("ul", { class: "clean wrap-list" }, tasks.map((task) => h("li", {}, task))) : null,
