@@ -175,6 +175,9 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 .plot-field.is-dashed { stroke-dasharray: 4 3; }
 .plot-field-label { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 800; }
 .plot-now { fill: var(--amber); stroke: var(--card); stroke-width: 1; }
+.plot-tomato { fill: #fde8e4; stroke: #a33b32; stroke-width: 2.5; }
+.plot-tomato-fruit { fill: #d64545; stroke: #8e2424; stroke-width: 1.5; }
+.plot-tomato-leaf { fill: #2f9e4f; stroke: none; }
 .plot-hit.is-on .plot-field { stroke: var(--ink); stroke-width: 3; }
 .plot-sprout { fill: var(--green); }
 .plot-house, .plot-roof { fill: var(--haus-soft); stroke: var(--haus); stroke-width: 2.5; }
@@ -224,6 +227,9 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
   .hill-tree, .hill-trunk { fill: #8ee08a; stroke: #8ee08a; }
   .plot-canopy { fill: #3e9a4a; stroke: #c8f5c4; }
   .plot-bush { fill: #d63b6a; }
+  .plot-tomato { fill: #3d1c22; stroke: #ff9aa4; }
+  .plot-tomato-fruit { fill: #e85a6a; stroke: #ffd0d6; }
+  .plot-tomato-leaf { fill: #6fbf7a; }
 }
 
 @media (prefers-reduced-motion: reduce) {

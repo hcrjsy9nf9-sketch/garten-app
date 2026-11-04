@@ -1194,6 +1194,15 @@ function drawPlotElement(svg, el, on) {
     g.append(svgEl("circle", { cx, cy: y + r + 4, r, class: "plot-canopy plot-shape" }));
     g.append(svgEl("circle", { cx: cx - r * 0.28, cy: y + r * 0.7, r: r * 0.28, class: "plot-canopy-lite" }));
     plotLines(g, cx, y + hgt - 12, [el.name], 13);
+  } else if (el.typ === "tomate") {
+    g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 12, class: "plot-tomato plot-shape" }));
+    [0.16, 0.34].forEach((step) => {
+      const tx = x + b * step;
+      const ty = y + hgt / 2 + 1;
+      g.append(svgEl("circle", { cx: tx, cy: ty, r: 8, class: "plot-tomato-fruit" }));
+      g.append(svgEl("path", { d: `M${tx - 4},${ty - 7} q4,-6 8,0 q-4,2 -8,0`, class: "plot-tomato-leaf" }));
+    });
+    g.append(plotText(x + b * 0.72, y + hgt / 2 + 5, "Tomaten", 15, "middle"));
   } else if (el.typ === "strauch" && el.anzahl > 1) {
     const r = 14;
     for (let i = 0; i < el.anzahl; i += 1) {
@@ -1204,10 +1213,8 @@ function drawPlotElement(svg, el, on) {
     g.append(plotText(cx, y + hgt - 6, el.name, 13, "middle"));
   } else if (el.typ === "strauch") {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 12, class: "plot-cane-bed plot-shape" }));
-    plotLines(g, cx, y + 20, [el.name, el.masse].filter(Boolean), 14);
-    [0.28, 0.5, 0.72].forEach((step) => {
-      g.append(svgEl("path", { d: `M${x + b * step},${y + hgt - 4} v-8`, class: "plot-cane" }));
-    });
+    const lines = [el.name, el.masse].filter(Boolean);
+    plotLines(g, cx, y + (lines.length > 1 ? 18 : hgt / 2 + 5), lines, 14);
   } else if (el.typ === "rasen") {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 14, class: "plot-lawn plot-shape" }));
     [0.3, 0.5, 0.7].forEach((step) => {
@@ -1373,9 +1380,13 @@ function renderPlotCard(el) {
     { class: "plot-karte", id: "plot-karte" },
     h("h3", {}, el.name),
     masse ? h("p", { class: "bed-mass" }, masse) : null,
+    el.karte ? h("p", {}, el.karte) : null,
     el.ungefahr ? h("p", { class: "caption" }, "Lage ungefähr") : null,
-    tasks.length ? h("h4", {}, "Jetzt zu tun") : h("p", { class: "caption" }, "Keine Aufgabe für diesen Monat."),
+    tasks.length ? h("h4", {}, "Jetzt zu tun") : null,
     tasks.length ? h("ul", { class: "clean wrap-list" }, tasks.map((task) => h("li", {}, task))) : null,
+    (el.aufgaben || []).length ? h("h4", {}, "Aufgaben") : null,
+    (el.aufgaben || []).length ? h("ul", { class: "clean wrap-list" }, el.aufgaben.map((task) => h("li", {}, task))) : null,
+    !tasks.length && !(el.aufgaben || []).length ? h("p", { class: "caption" }, "Keine Aufgabe für diesen Monat.") : null,
     el.link ? h("button", { type: "button", class: "text-btn", "data-jump": el.link }, "Felder ansehen") : null
   );
 }

@@ -134,7 +134,8 @@
         "beete": [
           "Ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D).",
           "Ende März: Steckzwiebeln (1B), Rhabarber pflanzen (2B).",
-          "Kompost: 1A und 2C ca. 5 l/m², 1B und 2D ca. 3 l/m²."
+          "Kompost: 1A und 2C ca. 5 l/m², 1B und 2D ca. 3 l/m².",
+          "Tomaten außen: Anzucht auf der Fensterbank, oder Jungpflanzen kaufen (ca. 2–3 €/Stück)."
         ],
         "gewaechshaus": ["Mitte/Ende März: Tomaten auf der Fensterbank aussäen.", "Radieschen, Pflücksalat und Kohlrabi als Vorkultur."],
         "obst": ["Kompost auf die Baumscheibe der Sauerkirsche und unter die Johannisbeeren."],
@@ -167,6 +168,7 @@
         "wasser": ["Regenfässer mit Deckel oder engmaschigem Gitter abdecken (Mückenlarven, Sicherheit für Igel, Vögel und Kinder)."],
         "beete": [
           "Nach den Eisheiligen (11.–15. Mai): Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen.",
+          "Tomaten außen: Mitte Mai nach den Eisheiligen auspflanzen, Abstand ca. 50–60 cm, Stäbe oder Spiralen, Kompost einarbeiten, mulchen.",
           "Mulchen mit angetrocknetem Rasenschnitt beginnen. Mähen nur außerhalb der Ruhezeiten: werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht (§ 8.2)."
         ],
         "gewaechshaus": ["Paprika, Chili und Snackgurke pflanzen."],
@@ -189,7 +191,8 @@
         ],
         "beete": [
           "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen.",
-          "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C)."
+          "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C).",
+          "Tomaten außen: Juni–August ausgeizen und von unten gießen. Regenschutz und Kraut- und Braunfäule beachten (robuste Sorten wie Philovita, Primabella, Resi)."
         ],
         "gewaechshaus": ["Tomaten wöchentlich ausgeizen und anbinden; täglich lüften."],
         "obst": ["Kirschen zügig und vollständig ernten.", "Johannisbeeren und Sommerhimbeeren ernten; morgens durchdringend gießen."],
@@ -204,7 +207,8 @@
         "wasser": ["Pumpe gelegentlich prüfen; Abdeckungen der Regenfässer kontrollieren."],
         "beete": [
           "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten.",
-          "Gießen nach Bedarf: Kürbisgewächse, Kohl und Sellerie zuerst."
+          "Gießen nach Bedarf: Kürbisgewächse, Kohl und Sellerie zuerst.",
+          "Tomaten außen: Ernte ab Juli bis Oktober, weiter ausgeizen und von unten gießen."
         ],
         "gewaechshaus": ["Morgens am Fuß gießen, Tomatenblätter trocken halten."],
         "obst": [
@@ -220,7 +224,11 @@
       "name": "August 2027",
       "aufgaben": {
         "wasser": ["Bei langer Trockenheit die Brunnenpumpe beobachten (fördert sie Luft, sinkt der Wasserstand)."],
-        "beete": ["Feldsalat in 1C säen (nach Erbsen).", "Spinat und Asia-Salate für den Herbst säen (2A)."],
+        "beete": [
+          "Feldsalat in 1C säen (nach Erbsen).",
+          "Spinat und Asia-Salate für den Herbst säen (2A).",
+          "Tomaten außen: weiter ausgeizen, von unten gießen und ernten."
+        ],
         "gewaechshaus": ["Feldsalat in Schalen für das Gewächshaus vorziehen."],
         "obst": ["Pflaume ernten, danach Sommerschnitt."],
         "natur": ["Samen von Ringelblume, Bohnen und Kapuzinerkresse ernten.", "Wasserstelle auffüllen."]
@@ -231,7 +239,7 @@
       "label": "Sep",
       "name": "September 2027",
       "aufgaben": {
-        "beete": ["Hokkaido ernten und nachreifen lassen."],
+        "beete": ["Hokkaido ernten und nachreifen lassen.", "Tomaten außen: Ernte bis Oktober, von unten gießen."],
         "gewaechshaus": ["Winterpostelein und Feldsalat säen."],
         "obst": ["Herbsthimbeeren ernten."],
         "natur": ["Laub- und Totholzhaufen mit Schnittgut aufsetzen.", "Abgeblühte Phacelia als Wintermulch liegen lassen."]
@@ -246,7 +254,8 @@
         "beete": [
           "Knoblauch in 1A stecken.",
           "Möhren, Sellerie, Rote Bete und Pastinaken ernten.",
-          "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3)."
+          "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3).",
+          "Tomaten außen: Pflanzenreste mit Kraut- oder Braunfäule in den Hausmüll, nicht auf den Kompost. Am festen Platz jährlich Kompost auffüllen."
         ],
         "gewaechshaus": ["Abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen."],
         "obst": ["Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen."],
@@ -411,6 +420,13 @@
       "notiz": "Südlicher Teil halbschattig; 2027 Felder 2A–2F und Saum"
     },
     {
+      "name": "Tomaten-Streifen außen am Gewächshaus",
+      "bereich": "Links, zwischen Himbeeren und Gewächshaus",
+      "typ": "Kultur",
+      "masse": "schmaler Streifen an der Gewächshauswand",
+      "notiz": "Jedes Jahr Tomaten, Freiland, geschützter Platz an der Gewächshauswand. Abstand ca. 50–60 cm. Bei festem Platz jährlich Kompost auffüllen; kranke Reste nicht kompostieren."
+    },
+    {
       "name": "Gewächshaus",
       "bereich": "Links, nördlich der Himbeeren",
       "typ": "Fläche & Bau",
@@ -524,10 +540,28 @@
       { "id": "johannisbeeren", "name": "Johannisbeeren", "typ": "strauch", "x": 10, "y": 62, "b": 146, "h": 54, "anzahl": 2, "masse": "jung", "treffer": ["Johannisbeer"] },
       { "id": "beet1", "name": "Beet 1", "typ": "beet", "x": 10, "y": 120, "b": 146, "h": 148, "masse": "4,5 × 4 m", "link": "garten-beet-1", "treffer": ["Beet 1", "Beete", "1A", "1B", "1C", "1D"] },
       { "id": "querweg", "name": "Querweg", "typ": "weg", "x": 10, "y": 274, "b": 146, "h": 34, "treffer": ["Querweg"] },
-      { "id": "himbeeren", "name": "Himbeeren", "typ": "strauch", "x": 10, "y": 314, "b": 146, "h": 56, "masse": "2,1 × 1 m", "treffer": ["Himbeer"] },
-      { "id": "gewaechshaus", "name": "Gewächshaus", "typ": "haus", "x": 10, "y": 376, "b": 104, "h": 96, "masse": "2,5 × 1,9 m", "treffer": ["Gewächshaus"] },
-      { "id": "regenfaesser", "name": "Regenfässer", "typ": "fass", "x": 120, "y": 378, "b": 36, "h": 42, "ungefahr": true, "treffer": ["Regenfass", "Regenfäss"] },
-      { "id": "pumpe", "name": "Brunnenpumpe", "typ": "pumpe", "x": 120, "y": 426, "b": 36, "h": 44, "ungefahr": true, "treffer": ["Brunnenpumpe"] },
+      { "id": "himbeeren", "name": "Himbeeren", "typ": "strauch", "x": 10, "y": 314, "b": 146, "h": 46, "masse": "2,1 × 1 m", "treffer": ["Himbeer"] },
+      {
+        "id": "tomaten",
+        "name": "Tomaten (außen am Gewächshaus)",
+        "typ": "tomate",
+        "x": 10,
+        "y": 364,
+        "b": 146,
+        "h": 44,
+        "karte": "jedes Jahr Tomaten, Freiland, geschützter Platz an der Gewächshauswand",
+        "treffer": ["Tomaten außen"],
+        "aufgaben": [
+          "März: Anzucht auf der Fensterbank, oder Jungpflanzen kaufen (ca. 2–3 €/Stück).",
+          "Mitte Mai nach den Eisheiligen: auspflanzen, Abstand ca. 50–60 cm, Stäbe oder Spiralen, Kompost einarbeiten, mulchen.",
+          "Juni–August: ausgeizen, von unten gießen. Regenschutz und Kraut- und Braunfäule beachten (robuste Sorten wie Philovita, Primabella, Resi).",
+          "Ernte Juli–Oktober.",
+          "Oktober: Reste mit Braunfäule in den Hausmüll, nicht auf den Kompost. Am festen Platz jährlich Kompost auffüllen."
+        ]
+      },
+      { "id": "gewaechshaus", "name": "Gewächshaus", "typ": "haus", "x": 10, "y": 412, "b": 104, "h": 88, "masse": "2,5 × 1,9 m", "treffer": ["Gewächshaus"] },
+      { "id": "regenfaesser", "name": "Regenfässer", "typ": "fass", "x": 120, "y": 414, "b": 36, "h": 40, "ungefahr": true, "treffer": ["Regenfass", "Regenfäss"] },
+      { "id": "pumpe", "name": "Brunnenpumpe", "typ": "pumpe", "x": 120, "y": 458, "b": 36, "h": 40, "ungefahr": true, "treffer": ["Brunnenpumpe"] },
       { "id": "laengsweg", "name": "Längsweg", "typ": "weg", "x": 162, "y": 78, "b": 26, "h": 544, "masse": "ca. 8 m", "treffer": ["Längsweg"] },
       { "id": "sauerkirsche", "name": "Sauerkirsche", "typ": "baum", "x": 194, "y": 58, "b": 136, "h": 112, "masse": "Krone ca. 2 m", "treffer": ["Sauerkirsche", "Kirsche"] },
       { "id": "beet2", "name": "Beet 2", "typ": "beet", "x": 194, "y": 176, "b": 136, "h": 214, "masse": "7 × 4 m", "link": "garten-beet-2", "treffer": ["Beet 2", "Beete", "2A", "2B", "2C", "2D", "2E", "2F"] },
@@ -1017,6 +1051,7 @@
             "Freiland ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D).",
             "Ende März: Steckzwiebeln (1B); Rhabarber pflanzen (2B).",
             "Kompost auf Starkzehrer-Felder 1A und 2C (ca. 5 l/m²), Mittelzehrer 1B und 2D (ca. 3 l/m²).",
+            "Tomaten außen: Anzucht auf der Fensterbank, oder Jungpflanzen kaufen (ca. 2–3 €/Stück).",
             "Nisthilfe aufstellen und Sandarium im Saum Beet 1 anlegen, bevor die Wildbienen fliegen.",
             "Wasser & Technik (Ende März, sobald keine starken Fröste mehr angesagt sind): Regenfässer wieder aufstellen, Fallrohrfilter reinigen und anschließen."
           ]
@@ -1042,6 +1077,7 @@
           "name": "Mai",
           "punkte": [
             "Eisheilige (11.–15. Mai) abwarten, danach: Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen.",
+            "Tomaten außen: Mitte Mai nach den Eisheiligen auspflanzen, Abstand ca. 50–60 cm, Stäbe oder Spiralen, Kompost einarbeiten, mulchen.",
             "Gewächshaus: Paprika, Chili und Snackgurke pflanzen.",
             "Kirschfruchtfliege: Gelbtafeln aufhängen, sobald die Kirschen von grün auf gelb umfärben.",
             "Pheromonfalle gegen Pflaumenwickler an der Pflaume aufhängen (bis August).",
@@ -1057,6 +1093,7 @@
           "punkte": [
             "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen (Bienenweide).",
             "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C).",
+            "Tomaten außen: Juni–August ausgeizen und von unten gießen. Regenschutz und Kraut- und Braunfäule beachten (robuste Sorten wie Philovita, Primabella, Resi).",
             "Tomaten wöchentlich ausgeizen und anbinden; Gewächshaus täglich lüften.",
             "Kirschen zügig und vollständig ernten (Kirschessigfliege, Kirschfruchtfliege).",
             "Johannisbeeren und Sommerhimbeeren ernten; durchdringend und morgens gießen.",
@@ -1072,6 +1109,7 @@
             "Sommerhimbeeren: abgetragene Ruten bodennah entfernen.",
             "Johannisbeeren nach der Ernte auslichten.",
             "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten.",
+            "Tomaten außen: Ernte ab Juli bis Oktober, weiter ausgeizen und von unten gießen.",
             "Gießen nach Bedarf: Kürbisgewächse, Kohl, Sellerie und Gewächshaus zuerst."
           ]
         },
@@ -1082,6 +1120,7 @@
           "punkte": [
             "Feldsalat in 1C (nach Erbsen) säen, zusätzlich in Schalen für das Gewächshaus vorziehen.",
             "Spinat und Asia-Salate für den Herbst säen (2A).",
+            "Tomaten außen: weiter ausgeizen, von unten gießen und ernten.",
             "Pflaume ernten; danach Sommerschnitt der Pflaume.",
             "Samen von Ringelblume, Bohnen und Kapuzinerkresse für 2028 ernten.",
             "Wasserstelle (flache Schale mit Steinen) regelmäßig auffüllen.",
@@ -1094,6 +1133,7 @@
           "name": "September",
           "punkte": [
             "Hokkaido ernten, nachreifen lassen; Herbsthimbeeren ernten.",
+            "Tomaten außen: Ernte bis Oktober, von unten gießen.",
             "Winterpostelein und Feldsalat für das Gewächshaus säen.",
             "Laub- und Totholzhaufen mit Schnittgut aufsetzen.",
             "Erfrorene oder abgeblühte Phacelia liegen lassen (Wintermulch)."
@@ -1106,6 +1146,7 @@
           "punkte": [
             "Gewächshaus abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen.",
             "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3).",
+            "Tomaten außen: Pflanzenreste mit Kraut- oder Braunfäule in den Hausmüll, nicht auf den Kompost. Am festen Platz jährlich Kompost auffüllen.",
             "Knoblauch in 1A stecken (2028 Mittelzehrer-Feld).",
             "Möhren, Sellerie, Rote Bete und Pastinaken ernten.",
             "Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen.",
