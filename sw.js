@@ -4,7 +4,7 @@
    Paths are relative to the registration scope so the app works under
    https://hcrjsy9nf9-sketch.github.io/garten-app/ */
 
-const STATIC_CACHE = "garten-static-v13";
+const STATIC_CACHE = "garten-static-v14";
 const DATA_CACHE = "garten-data-v1";
 
 const FILES = [
@@ -76,7 +76,7 @@ async function networkFirst(request) {
   const cache = await caches.open(DATA_CACHE);
   const cacheKey = scopeUrl("data/garten.json");
   try {
-    const response = await fetch(request);
+    const response = await fetch(request, { cache: "no-store" });
     if (response && response.ok) {
       await cache.put(cacheKey, response.clone());
       return response;

@@ -229,6 +229,15 @@ function section(id, title, ...nodes) {
   return details;
 }
 
+function berlinDateLabel() {
+  return new Intl.DateTimeFormat("de-DE", {
+    timeZone: "Europe/Berlin",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date());
+}
+
 function renderHeader() {
   const data = state.data;
   return h(
@@ -238,7 +247,13 @@ function renderHeader() {
     h(
       "div",
       { class: "title-row" },
-      h("div", {}, h("h1", {}, "Garten · Parzelle 23"), h("p", { class: "stand-quiet" }, "Stand " + (data.stand || ""))),
+      h(
+        "div",
+        {},
+        h("h1", {}, "Garten · Parzelle 23"),
+        h("p", { class: "stand-quiet" }, "Daten vom " + (data.stand || "–")),
+        h("p", { class: "stand-today" }, "Heute " + berlinDateLabel())
+      ),
       h(
         "div",
         { class: "icon-row" },
@@ -341,9 +356,9 @@ function renderHeute() {
           h(
             "button",
             { type: "button", class: "quiet-link", "data-mehr": "technik" },
-            h("i", { class: "dot" + (String(device.status).includes("nicht") ? " warn" : ""), "aria-hidden": "true" }),
+            h("i", { class: "dot" + (String(technikStatus(device)).includes("nicht") ? " warn" : ""), "aria-hidden": "true" }),
             h("span", {}, device.name),
-            h("span", { class: "task-meta" }, device.status)
+            h("span", { class: "task-meta" }, technikStatus(device))
           )
         )
       )
@@ -461,7 +476,7 @@ function renderTechnik() {
             "header",
             {},
             h("h3", {}, device.name),
-            h("span", { class: "pill " + statusTone(device.status) }, device.status)
+            h("span", { class: "pill " + statusTone(technikStatus(device)) }, technikStatus(device))
           ),
           h(
             "dl",

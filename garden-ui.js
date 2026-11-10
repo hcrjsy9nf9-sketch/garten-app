@@ -61,6 +61,12 @@ function isIdsChecked(ids) {
   return ids.every((id) => !!map[idKey(id)]);
 }
 
+function technikStatus(device) {
+  const ids = device && device.erledigtDurch;
+  if (ids && ids.length && isIdsChecked(ids)) return "winterfest";
+  return (device && device.status) || "";
+}
+
 function isTaskDone(scope, text, jsonDone, ids) {
   return !!jsonDone || (ids && ids.length ? isIdsChecked(ids) : isLocalChecked(scope, text));
 }

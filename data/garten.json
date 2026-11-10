@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "4. Nov. 2026",
-  "standIso": "2026-11-04",
+  "stand": "10. Nov. 2026",
+  "standIso": "2026-11-10",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Noch offen, bis Samstag (kühlster Tag, max. 5 °C): Brunnenpumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Regenfässer leeren und umdrehen; dabei auch die Gewächshaus-Bewässerung (Schläuche, Gießkannen) entleeren",
-      "bereich": "Wasser & Technik · Brunnenpumpe, Regenfässer, Gewächshaus",
+      "text": "Brunnenpumpe winterfest machen und Gartenschläuche samt Außenhahn einlagern.",
+      "bereich": "Wasser & Technik · Brunnenpumpe, Schläuche",
       "kategorie": "wasser",
-      "ref": ["2026-11-wasser-brunnenpumpe", "2026-11-wasser-regenfaesser", "2026-11-gewaechshaus-bewaesserung"],
+      "ref": ["2026-11-wasser-brunnenpumpe", "2026-11-wasser-schlaeuche"],
       "done": false
     },
     {
-      "text": "Johannisbeeren auslichten (Aufbauschnitt): schwache, bodennahe und über 3 Jahre alte Triebe bodennah abschneiden, 8–10 kräftige Triebe stehen lassen; Laub darunter als Mulch liegen lassen (Kosten: keine, scharfe Schere)",
-      "bereich": "Obst & Beeren · Johannisbeeren am Südrand Beet 1",
-      "kategorie": "obst",
-      "ref": "2026-11-obst-johannisbeeren",
+      "text": "Regenfässer leeren und Dachrinnen nach dem Laubfall von Laub befreien.",
+      "bereich": "Wasser & Technik · Regenfässer, Dachrinnen",
+      "kategorie": "wasser",
+      "ref": ["2026-11-wasser-regenfaesser", "2026-11-wasser-dachrinnen"],
       "done": false
     },
     {
-      "text": "Fruchtmumien und Fallobst unter und an Süßkirsche, Sauerkirsche und Pflaume einsammeln und über den Hausmüll entsorgen, nicht auf den Kompost (Monilia-Vorbeugung)",
-      "bereich": "Obst · Kirschen und Pflaume",
+      "text": "Johannisbeeren auslichten und Fruchtmumien an Kirschen und Pflaume einsammeln.",
+      "bereich": "Obst · Johannisbeeren, Fruchtmumien",
       "kategorie": "obst",
-      "ref": "2026-11-obst-fruchtmumien",
+      "ref": ["2026-11-obst-johannisbeeren", "2026-11-obst-fruchtmumien"],
       "done": false
     }
   ],
@@ -734,6 +734,7 @@
     {
       "name": "Regenfässer",
       "status": "noch nicht winterfest",
+      "erledigtDurch": ["2026-11-wasser-regenfaesser", "2026-11-wasser-dachrinnen"],
       "stand": "2. Nov. 2026",
       "erfasst": "Vorhanden; Anzahl, Volumen und Standort noch offen",
       "winter": "Leeren und umdrehen oder abdecken",
@@ -743,6 +744,7 @@
     {
       "name": "Brunnenpumpe",
       "status": "noch nicht winterfest",
+      "erledigtDurch": ["2026-11-wasser-brunnenpumpe"],
       "stand": "2. Nov. 2026",
       "erfasst": "Vorhanden; Pumpentyp noch offen",
       "winter": "Pumpe und Leitungen entleeren, frostfrei einlagern, Brunnenrohr abdecken",
@@ -752,6 +754,7 @@
     {
       "name": "Gartenschläuche",
       "status": "noch nicht winterfest",
+      "erledigtDurch": ["2026-11-wasser-schlaeuche"],
       "stand": "2. Nov. 2026",
       "erfasst": "Anzahl und Länge noch offen",
       "winter": "Entleeren und frostfrei einlagern",
@@ -761,6 +764,7 @@
     {
       "name": "Wasserhahn und Leitung",
       "status": "noch nicht winterfest",
+      "erledigtDurch": ["2026-11-wasser-schlaeuche"],
       "stand": "2. Nov. 2026",
       "erfasst": "Lage des Absperrhahns noch offen",
       "winter": "Absperren, entleeren, Hahn offen lassen",
@@ -770,6 +774,7 @@
     {
       "name": "Gewächshaus-Bewässerung",
       "status": "noch nicht winterfest",
+      "erledigtDurch": ["2026-11-gewaechshaus-bewaesserung"],
       "stand": "2. Nov. 2026",
       "erfasst": "Ausführung noch offen",
       "winter": "Schläuche, ggf. Tropfleitung und Gießkannen entleeren",
