@@ -38,17 +38,52 @@ function checkKey(scope, text) {
   return scope + "|" + text;
 }
 
+function taskText(task) {
+  return typeof task === "string" ? task : (task && task.text) || "";
+}
+
+function taskId(task, monthKey, category, index) {
+  if (task && typeof task === "object" && task.id) return task.id;
+  return monthKey + "-" + category + "-" + String(index + 1).padStart(2, "0");
+}
+
+function idKey(id) {
+  return "id|" + id;
+}
+
 function isLocalChecked(scope, text) {
   return !!loadMap(STORE_CHECKS)[checkKey(scope, text)];
 }
 
-function isTaskDone(scope, text, jsonDone) {
-  return !!jsonDone || isLocalChecked(scope, text);
+function isIdsChecked(ids) {
+  if (!ids || !ids.length) return false;
+  const map = loadMap(STORE_CHECKS);
+  return ids.every((id) => !!map[idKey(id)]);
+}
+
+function isTaskDone(scope, text, jsonDone, ids) {
+  return !!jsonDone || (ids && ids.length ? isIdsChecked(ids) : isLocalChecked(scope, text));
+}
+
+function checksOn(key) {
+  const map = loadMap(STORE_CHECKS);
+  if (String(key).startsWith("ids:")) {
+    const ids = key.slice(4).split(",").filter(Boolean);
+    return ids.length > 0 && ids.every((id) => !!map[idKey(id)]);
+  }
+  return !!map[key];
 }
 
 function toggleCheck(key) {
   const map = loadMap(STORE_CHECKS);
-  if (map[key]) delete map[key];
+  if (String(key).startsWith("ids:")) {
+    const ids = key.slice(4).split(",").filter(Boolean);
+    const allOn = ids.length > 0 && ids.every((id) => !!map[idKey(id)]);
+    ids.forEach((id) => {
+      if (allOn) delete map[idKey(id)];
+      else map[idKey(id)] = true;
+    });
+  } else if (map[key]) delete map[key];
   else map[key] = true;
   saveMap(STORE_CHECKS, map);
 }
@@ -141,8 +176,13 @@ function weekdayShort(iso) {
 function monthTasks(month) {
   const tasks = [];
   ((state.data && state.data.kategorien) || []).forEach((category) => {
-    (((month || {}).aufgaben || {})[category.key] || []).forEach((text) => {
-      tasks.push({ text, kategorie: category.key, label: category.label });
+    (((month || {}).aufgaben || {})[category.key] || []).forEach((task, index) => {
+      tasks.push({
+        text: taskText(task),
+        kategorie: category.key,
+        label: category.label,
+        id: taskId(task, (month || {}).key, category.key, index),
+      });
     });
   });
   return tasks;
@@ -150,8 +190,84 @@ function monthTasks(month) {
 
 function monthProgress(month) {
   const tasks = monthTasks(month);
-  const done = tasks.filter((task) => isTaskDone(month.key, task.text, false)).length;
+  const permanent = permanentIds();
+  const done = tasks.filter((task) => isTaskDone(month.key, task.text, permanent.has(task.id), [task.id])).length;
   return { done, total: tasks.length };
+}
+
+const FUZZY_WORDS = [
+  "brunnenpumpe",
+  "regenfass",
+  "johannisbeer",
+  "fruchtmumie",
+  "fallobst",
+  "himbeer",
+  "dachrinne",
+  "gartenschlauch",
+  "laubhaufen",
+  "bewasserung",
+  "umgraben",
+];
+
+function jahrCatalog() {
+  const list = [];
+  ((state.data && state.data.jahr) || []).forEach((month) => {
+    monthTasks(month).forEach((task) => list.push({ month: month.key, id: task.id, text: task.text }));
+  });
+  return list;
+}
+
+function fuzzyHeuteIds(task) {
+  const monthKey = String((state.data && state.data.standIso) || "").slice(0, 7);
+  const hay = norm((task.text || "") + " " + (task.bereich || ""));
+  const words = FUZZY_WORDS.filter((word) => hay.includes(word));
+  if (!words.length || !monthKey) return [];
+  return jahrCatalog()
+    .filter((item) => item.month === monthKey && words.some((word) => norm(item.text).includes(word)))
+    .map((item) => item.id);
+}
+
+function heuteIds(task) {
+  const known = new Set(jahrCatalog().map((item) => item.id));
+  const raw = task && task.ref;
+  const refs = raw == null ? [] : Array.isArray(raw) ? raw : [raw];
+  const valid = refs.filter((id) => known.has(id));
+  if (valid.length) return valid;
+  const fuzzy = fuzzyHeuteIds(task || {});
+  if (fuzzy.length) return fuzzy;
+  return ["heute-" + norm(task && task.text).slice(0, 80)];
+}
+
+function permanentIds() {
+  const set = new Set();
+  ((state.data && state.data.heute) || []).forEach((task) => {
+    if (!task.done) return;
+    heuteIds(task).forEach((id) => set.add(id));
+  });
+  return set;
+}
+
+function migrateChecks() {
+  if (!state.data) return;
+  const map = loadMap(STORE_CHECKS);
+  let changed = false;
+  const keep = (id) => {
+    const key = idKey(id);
+    if (!map[key]) {
+      map[key] = true;
+      changed = true;
+    }
+  };
+  (state.data.jahr || []).forEach((month) => {
+    monthTasks(month).forEach((task) => {
+      if (map[month.key + "|" + task.text]) keep(task.id);
+    });
+  });
+  (state.data.heute || []).forEach((task) => {
+    if (!map["heute|" + task.text]) return;
+    heuteIds(task).forEach(keep);
+  });
+  if (changed) saveMap(STORE_CHECKS, map);
 }
 
 function ring(done, total) {
@@ -177,22 +293,24 @@ function ring(done, total) {
   );
 }
 
-function taskControl(scope, taskText, jsonDone) {
-  const done = isTaskDone(scope, taskText, jsonDone);
+function taskControl(scope, taskText, jsonDone, ids) {
+  const useIds = ids && ids.length ? ids : null;
+  const done = isTaskDone(scope, taskText, jsonDone, useIds);
   const local = done && !jsonDone;
+  const checkValue = useIds ? "ids:" + useIds.join(",") : checkKey(scope, taskText);
   const button = h(
     "button",
     {
       type: "button",
-      class: "check-btn" + (state.burst === checkKey(scope, taskText) ? " burst" : ""),
-      "data-check": jsonDone ? null : checkKey(scope, taskText),
+      class: "check-btn" + (state.burst === checkValue ? " burst" : ""),
+      "data-check": jsonDone ? null : checkValue,
       "aria-pressed": done ? "true" : "false",
       disabled: jsonDone ? "disabled" : null,
       "aria-label": jsonDone ? "Im Gartenbuch erledigt" : local ? "Auf diesem Gerät abgehakt" : "Auf diesem Gerät abhaken",
     },
     h("span", { class: "check" + (done ? " is-on" : "") + (local ? " is-local" : "") })
   );
-  return { done, local, button };
+  return { done, local, button, ids: useIds };
 }
 
 function deviceHint() {

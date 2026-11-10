@@ -20,7 +20,7 @@ Danach startet sie ohne Browserleiste. Einmal online geöffnet, bleiben die letz
 1. Nur `data/garten.json` ändern. Texte in `index.html`, `app.js` oder `styles.css` sind die Oberfläche, nicht das Gartenbuch.
 2. `stand` auf das lesbare Datum setzen (Beispiel: `3. Nov. 2026`) und `standIso` auf `JJJJ-MM-TT` (Beispiel: `2026-11-03`).
 3. `standIso` wählt den Monat in der Jahresübersicht (wenn `jahr[].key` dazu passt, Form `JJJJ-MM`) und den umrandeten Monat im Saisonstreifen. Im Gartenplan öffnet sich derselbe Kalendermonat.
-4. Heutige Aufgaben: `heute[].done` auf `true` oder `false`. `true` bleibt immer erledigt. Ein Häkchen nur auf dem Handy steht in `localStorage` (`garten-haken`) und wird mit dem Hinweis „auf diesem Gerät abgehakt“ gezeigt. Dauerhaft wird es erst durch `done: true` in dieser Datei.
+4. Heutige Aufgaben: `heute[].done` auf `true` oder `false`. `true` bleibt immer erledigt. Ein Häkchen nur auf dem Handy steht in `localStorage` (`garten-haken`) und wird mit dem Hinweis „auf diesem Gerät abgehakt“ gezeigt. Dauerhaft wird es erst durch `done: true` in dieser Datei. Setze `heute[].ref` auf die `id` der passenden Aufgabe in `jahr` (eine Id oder eine Liste). Dann gilt dasselbe Häkchen unter Heute und im Kalender. Fehlt `ref`, sucht die App im Monat von `standIso` nach Stichworten (Brunnenpumpe, Regenfässer, Johannisbeeren, Fruchtmumien). Beim Umformulieren einer Monatsaufgabe die `id` behalten und nur `text` ändern.
 5. Neue Tagebucheinträge in `tagebuch` anhängen. `datum` ist ISO (`2026-11-03`), `anzeige` der lesbare Text. Die App sortiert neueste zuerst.
 6. Monatsaufgaben stehen in `jahr[].aufgaben` unter `wasser`, `beete`, `gewaechshaus`, `obst`, `natur`. Leere Kategorien weglassen.
 7. Gerätestatus in `technik[]`: `status`, `stand`, `erfasst`, `winter`, `fruehjahr`, `saison`.
@@ -46,8 +46,8 @@ Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt
 | `texte` | Überschriften und Hinweistexte der Garten-App |
 | `saisonLegende` | `{ code, label }` für `b`, `u`, `w` |
 | `monateKurz` | Zwölf Kürzel Januar–Dezember für den Saisonstreifen |
-| `heute` | `{ text, bereich, kategorie, done }` |
-| `jahr` | `{ key, label, name, aufgaben }` von November 2026 bis Dezember 2027. `key` ist `JJJJ-MM`. `aufgaben` enthält nur Kategorien mit Einträgen, jeweils eine Liste von Sätzen |
+| `heute` | `{ text, bereich, kategorie, done, ref? }`. `ref` ist die `id` einer `jahr`-Aufgabe oder eine Liste solcher Ids |
+| `jahr` | `{ key, label, name, aufgaben }` von November 2026 bis Dezember 2027. `key` ist `JJJJ-MM`. `aufgaben` enthält nur Kategorien mit Einträgen. Jeder Eintrag ist `{ id, text }`; ein reiner Satz ohne `id` funktioniert weiter, bekommt dann aber nur eine abgeleitete Id |
 | `technik` | `{ name, status, stand, erfasst, winter, fruehjahr, saison }` |
 | `technikSaison` | `{ zeitraum, aufgabe, betrifft }` |
 | `bestand` | `{ name, bereich, typ, masse, notiz }`. `typ` erzeugt die Filter automatisch |

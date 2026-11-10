@@ -38,43 +38,87 @@
       "text": "Noch offen, bis Samstag (kühlster Tag, max. 5 °C): Brunnenpumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Regenfässer leeren und umdrehen; dabei auch die Gewächshaus-Bewässerung (Schläuche, Gießkannen) entleeren",
       "bereich": "Wasser & Technik · Brunnenpumpe, Regenfässer, Gewächshaus",
       "kategorie": "wasser",
+      "ref": ["2026-11-wasser-brunnenpumpe", "2026-11-wasser-regenfaesser", "2026-11-gewaechshaus-bewaesserung"],
       "done": false
     },
     {
       "text": "Johannisbeeren auslichten (Aufbauschnitt): schwache, bodennahe und über 3 Jahre alte Triebe bodennah abschneiden, 8–10 kräftige Triebe stehen lassen; Laub darunter als Mulch liegen lassen (Kosten: keine, scharfe Schere)",
       "bereich": "Obst & Beeren · Johannisbeeren am Südrand Beet 1",
       "kategorie": "obst",
+      "ref": "2026-11-obst-johannisbeeren",
       "done": false
     },
     {
       "text": "Fruchtmumien und Fallobst unter und an Süßkirsche, Sauerkirsche und Pflaume einsammeln und über den Hausmüll entsorgen, nicht auf den Kompost (Monilia-Vorbeugung)",
       "bereich": "Obst · Kirschen und Pflaume",
       "kategorie": "obst",
+      "ref": "2026-11-obst-fruchtmumien",
       "done": false
     }
   ],
-  "jahr": [
+  "jahr":   [
     {
       "key": "2026-11",
       "label": "Nov 26",
       "name": "November 2026",
       "aufgaben": {
         "wasser": [
-          "Vor dem ersten Dauerfrost: Regenfässer leeren und umdrehen oder abdecken.",
-          "Brunnenpumpe winterfest machen: Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr bzw. Leitungen frostsicher abdecken.",
-          "Gartenschläuche entleeren und einlagern; Außenhahn und Wasserleitung absperren und entleeren.",
-          "Dachrinnen und Fallrohre nach dem Laubfall von Laub befreien."
+          {
+            "id": "2026-11-wasser-regenfaesser",
+            "text": "Vor dem ersten Dauerfrost: Regenfässer leeren und umdrehen oder abdecken."
+          },
+          {
+            "id": "2026-11-wasser-brunnenpumpe",
+            "text": "Brunnenpumpe winterfest machen: Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr bzw. Leitungen frostsicher abdecken."
+          },
+          {
+            "id": "2026-11-wasser-schlaeuche",
+            "text": "Gartenschläuche entleeren und einlagern; Außenhahn und Wasserleitung absperren und entleeren."
+          },
+          {
+            "id": "2026-11-wasser-dachrinnen",
+            "text": "Dachrinnen und Fallrohre nach dem Laubfall von Laub befreien."
+          }
         ],
-        "beete": ["Abgeerntete Beete mit Laub oder Mulch abdecken statt umgraben."],
-        "gewaechshaus": ["Gewächshaus-Bewässerung entleeren.", "An frostfreien, sonnigen Tagen kurz lüften."],
+        "beete": [
+          {
+            "id": "2026-11-beete-mulch",
+            "text": "Abgeerntete Beete mit Laub oder Mulch abdecken statt umgraben."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2026-11-gewaechshaus-bewaesserung",
+            "text": "Gewächshaus-Bewässerung entleeren."
+          },
+          {
+            "id": "2026-11-gewaechshaus-lueften",
+            "text": "An frostfreien, sonnigen Tagen kurz lüften."
+          }
+        ],
         "obst": [
-          "Johannisbeeren schneiden (Aufbauschnitt: schwache und bodennahe Triebe entfernen).",
-          "Himbeeren: abgetragene Ruten bodennah entfernen; Herbsthimbeeren erst im Februar.",
-          "Fruchtmumien und Fallobst an Kirschen und Pflaume entfernen."
+          {
+            "id": "2026-11-obst-johannisbeeren",
+            "text": "Johannisbeeren schneiden (Aufbauschnitt: schwache und bodennahe Triebe entfernen)."
+          },
+          {
+            "id": "2026-11-obst-himbeeren",
+            "text": "Himbeeren: abgetragene Ruten bodennah entfernen; Herbsthimbeeren erst im Februar."
+          },
+          {
+            "id": "2026-11-obst-fruchtmumien",
+            "text": "Fruchtmumien und Fallobst an Kirschen und Pflaume entfernen."
+          }
         ],
         "natur": [
-          "Laubhaufen mit Schnittgut am Südrand neben der Sauerkirsche anlegen.",
-          "Laub unter den Beerensträuchern als Mulch liegen lassen."
+          {
+            "id": "2026-11-natur-laubhaufen",
+            "text": "Laubhaufen mit Schnittgut am Südrand neben der Sauerkirsche anlegen."
+          },
+          {
+            "id": "2026-11-natur-beerenmulch",
+            "text": "Laub unter den Beerensträuchern als Mulch liegen lassen."
+          }
         ]
       }
     },
@@ -84,16 +128,43 @@
       "name": "Dezember 2026",
       "aufgaben": {
         "wasser": [
-          "Nach Sturm oder Schnee die Abdeckung über Brunnenrohr und Regenfässern kontrollieren.",
-          "Prüfen, ob Pumpe und Schläuche frostfrei lagern."
+          {
+            "id": "2026-12-wasser-01",
+            "text": "Nach Sturm oder Schnee die Abdeckung über Brunnenrohr und Regenfässern kontrollieren."
+          },
+          {
+            "id": "2026-12-wasser-02",
+            "text": "Prüfen, ob Pumpe und Schläuche frostfrei lagern."
+          }
         ],
         "beete": [
-          "Mulchdecke nach Sturm prüfen, bei Bedarf Laub nachlegen.",
-          "Saatgut für 2027 sichten (Einkaufsliste im Gartenplan 2027)."
+          {
+            "id": "2026-12-beete-01",
+            "text": "Mulchdecke nach Sturm prüfen, bei Bedarf Laub nachlegen."
+          },
+          {
+            "id": "2026-12-beete-02",
+            "text": "Saatgut für 2027 sichten (Einkaufsliste im Gartenplan 2027)."
+          }
         ],
-        "gewaechshaus": ["An frostfreien, sonnigen Tagen kurz lüften."],
-        "obst": ["Noch hängende Fruchtmumien abnehmen."],
-        "natur": ["Laub- und Totholzhaufen in Ruhe lassen; Stauden stehen lassen."]
+        "gewaechshaus": [
+          {
+            "id": "2026-12-gewaechshaus-01",
+            "text": "An frostfreien, sonnigen Tagen kurz lüften."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2026-12-obst-01",
+            "text": "Noch hängende Fruchtmumien abnehmen."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2026-12-natur-01",
+            "text": "Laub- und Totholzhaufen in Ruhe lassen; Stauden stehen lassen."
+          }
+        ]
       }
     },
     {
@@ -101,13 +172,34 @@
       "label": "Jan",
       "name": "Januar 2027",
       "aufgaben": {
-        "wasser": ["Abdeckungen über Brunnenrohr und Regenfässern nach Sturm oder Schnee kontrollieren."],
-        "beete": [
-          "Saatgut-Inventur, fehlendes Saatgut bestellen.",
-          "Bodenlabor auswählen, Probe für Februar/März einplanen."
+        "wasser": [
+          {
+            "id": "2027-01-wasser-01",
+            "text": "Abdeckungen über Brunnenrohr und Regenfässern nach Sturm oder Schnee kontrollieren."
+          }
         ],
-        "obst": ["Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung, nicht auf den Kompost, sondern nach den örtlichen Vorgaben entsorgen; Verbrennen ist verboten, § 3.4)."],
-        "natur": ["Wildbienen-Nisthilfe und Vogelnistkasten besorgen."]
+        "beete": [
+          {
+            "id": "2027-01-beete-01",
+            "text": "Saatgut-Inventur, fehlendes Saatgut bestellen."
+          },
+          {
+            "id": "2027-01-beete-02",
+            "text": "Bodenlabor auswählen, Probe für Februar/März einplanen."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-01-obst-01",
+            "text": "Fruchtmumien an Kirschen und Pflaume abnehmen und entsorgen (Monilia-Vorbeugung, nicht auf den Kompost, sondern nach den örtlichen Vorgaben entsorgen; Verbrennen ist verboten, § 3.4)."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-01-natur-01",
+            "text": "Wildbienen-Nisthilfe und Vogelnistkasten besorgen."
+          }
+        ]
       }
     },
     {
@@ -115,14 +207,40 @@
       "label": "Feb",
       "name": "Februar 2027",
       "aufgaben": {
-        "wasser": ["Eingelagerte Pumpe und Schläuche auf Schäden prüfen, bei Bedarf Ersatzdichtungen besorgen."],
-        "beete": ["Bei offenem Boden Bodenprobe ziehen und ins Labor schicken."],
-        "gewaechshaus": ["Ende Februar: Paprika und Chili auf der Fensterbank aussäen (24–28 °C)."],
-        "obst": [
-          "Falls Herbsthimbeeren: alle Ruten bodennah abschneiden.",
-          "Johannisbeeren bei Bedarf auslichten (frostfreier Tag)."
+        "wasser": [
+          {
+            "id": "2027-02-wasser-01",
+            "text": "Eingelagerte Pumpe und Schläuche auf Schäden prüfen, bei Bedarf Ersatzdichtungen besorgen."
+          }
         ],
-        "natur": ["Vogelnistkasten bis Ende Februar an der Süßkirsche aufhängen (Flugloch Ost/Südost)."]
+        "beete": [
+          {
+            "id": "2027-02-beete-01",
+            "text": "Bei offenem Boden Bodenprobe ziehen und ins Labor schicken."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2027-02-gewaechshaus-01",
+            "text": "Ende Februar: Paprika und Chili auf der Fensterbank aussäen (24–28 °C)."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-02-obst-01",
+            "text": "Falls Herbsthimbeeren: alle Ruten bodennah abschneiden."
+          },
+          {
+            "id": "2027-02-obst-02",
+            "text": "Johannisbeeren bei Bedarf auslichten (frostfreier Tag)."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-02-natur-01",
+            "text": "Vogelnistkasten bis Ende Februar an der Süßkirsche aufhängen (Flugloch Ost/Südost)."
+          }
+        ]
       }
     },
     {
@@ -130,16 +248,56 @@
       "label": "Mär",
       "name": "März 2027",
       "aufgaben": {
-        "wasser": ["Ende März, sobald keine starken Fröste mehr angesagt sind: Regenfässer aufstellen, Fallrohrfilter reinigen und anschließen."],
-        "beete": [
-          "Ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D).",
-          "Ende März: Steckzwiebeln (1B), Rhabarber pflanzen (2B).",
-          "Kompost: 1A und 2C ca. 5 l/m², 1B und 2D ca. 3 l/m².",
-          "Tomaten außen: Anzucht auf der Fensterbank, oder Jungpflanzen kaufen (ca. 2–3 €/Stück)."
+        "wasser": [
+          {
+            "id": "2027-03-wasser-01",
+            "text": "Ende März, sobald keine starken Fröste mehr angesagt sind: Regenfässer aufstellen, Fallrohrfilter reinigen und anschließen."
+          }
         ],
-        "gewaechshaus": ["Mitte/Ende März: Tomaten auf der Fensterbank aussäen.", "Radieschen, Pflücksalat und Kohlrabi als Vorkultur."],
-        "obst": ["Kompost auf die Baumscheibe der Sauerkirsche und unter die Johannisbeeren."],
-        "natur": ["Nisthilfe aufstellen und Sandarium im Saum Beet 1 anlegen.", "Stauden und Samenstände erst jetzt zurückschneiden."]
+        "beete": [
+          {
+            "id": "2027-03-beete-01",
+            "text": "Ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D)."
+          },
+          {
+            "id": "2027-03-beete-02",
+            "text": "Ende März: Steckzwiebeln (1B), Rhabarber pflanzen (2B)."
+          },
+          {
+            "id": "2027-03-beete-03",
+            "text": "Kompost: 1A und 2C ca. 5 l/m², 1B und 2D ca. 3 l/m²."
+          },
+          {
+            "id": "2027-03-beete-04",
+            "text": "Tomaten außen: Anzucht auf der Fensterbank, oder Jungpflanzen kaufen (ca. 2–3 €/Stück)."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2027-03-gewaechshaus-01",
+            "text": "Mitte/Ende März: Tomaten auf der Fensterbank aussäen."
+          },
+          {
+            "id": "2027-03-gewaechshaus-02",
+            "text": "Radieschen, Pflücksalat und Kohlrabi als Vorkultur."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-03-obst-01",
+            "text": "Kompost auf die Baumscheibe der Sauerkirsche und unter die Johannisbeeren."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-03-natur-01",
+            "text": "Nisthilfe aufstellen und Sandarium im Saum Beet 1 anlegen."
+          },
+          {
+            "id": "2027-03-natur-02",
+            "text": "Stauden und Samenstände erst jetzt zurückschneiden."
+          }
+        ]
       }
     },
     {
@@ -148,16 +306,51 @@
       "name": "April 2027",
       "aufgaben": {
         "wasser": [
-          "Anfang/Mitte April, nach den letzten starken Frösten: Brunnenpumpe anschließen, entlüften, Dichtungen prüfen, Probelauf außerhalb der Ruhezeiten machen (§ 8.2).",
-          "Wasserleitung und Außenhahn öffnen, Schläuche anschließen und auf Risse prüfen."
+          {
+            "id": "2027-04-wasser-01",
+            "text": "Anfang/Mitte April, nach den letzten starken Frösten: Brunnenpumpe anschließen, entlüften, Dichtungen prüfen, Probelauf außerhalb der Ruhezeiten machen (§ 8.2)."
+          },
+          {
+            "id": "2027-04-wasser-02",
+            "text": "Wasserleitung und Außenhahn öffnen, Schläuche anschließen und auf Risse prüfen."
+          }
         ],
         "beete": [
-          "Säen: Möhren (2D), Rote Bete ab Ende April (1B), Mangold und Salat (2A), Petersilie (2B).",
-          "Kohlrabi ins Freiland (2C) unter Vlies oder Kulturschutznetz."
+          {
+            "id": "2027-04-beete-01",
+            "text": "Säen: Möhren (2D), Rote Bete ab Ende April (1B), Mangold und Salat (2A), Petersilie (2B)."
+          },
+          {
+            "id": "2027-04-beete-02",
+            "text": "Kohlrabi ins Freiland (2C) unter Vlies oder Kulturschutznetz."
+          }
         ],
-        "gewaechshaus": ["Ende April: Zucchini, Hokkaido und Snackgurke vorziehen.", "Ende April/Anfang Mai: Tomaten pflanzen, bei Frostnächten Vlies."],
-        "obst": ["Sauerkirsche: von Monilia befallene Triebspitzen nach der Blüte ins gesunde Holz zurückschneiden."],
-        "natur": ["Säume bepflanzen: Storchschnabel, Wildstauden, Kräuter.", "Ringelblume und Kornblume an den Feldrändern säen."]
+        "gewaechshaus": [
+          {
+            "id": "2027-04-gewaechshaus-01",
+            "text": "Ende April: Zucchini, Hokkaido und Snackgurke vorziehen."
+          },
+          {
+            "id": "2027-04-gewaechshaus-02",
+            "text": "Ende April/Anfang Mai: Tomaten pflanzen, bei Frostnächten Vlies."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-04-obst-01",
+            "text": "Sauerkirsche: von Monilia befallene Triebspitzen nach der Blüte ins gesunde Holz zurückschneiden."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-04-natur-01",
+            "text": "Säume bepflanzen: Storchschnabel, Wildstauden, Kräuter."
+          },
+          {
+            "id": "2027-04-natur-02",
+            "text": "Ringelblume und Kornblume an den Feldrändern säen."
+          }
+        ]
       }
     },
     {
@@ -165,19 +358,52 @@
       "label": "Mai",
       "name": "Mai 2027",
       "aufgaben": {
-        "wasser": ["Regenfässer mit Deckel oder engmaschigem Gitter abdecken (Mückenlarven, Sicherheit für Igel, Vögel und Kinder)."],
+        "wasser": [
+          {
+            "id": "2027-05-wasser-01",
+            "text": "Regenfässer mit Deckel oder engmaschigem Gitter abdecken (Mückenlarven, Sicherheit für Igel, Vögel und Kinder)."
+          }
+        ],
         "beete": [
-          "Nach den Eisheiligen (11.–15. Mai): Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen.",
-          "Tomaten außen: Mitte Mai nach den Eisheiligen auspflanzen, Abstand ca. 50–60 cm, Stäbe oder Spiralen, Kompost einarbeiten, mulchen.",
-          "Mulchen mit angetrocknetem Rasenschnitt beginnen. Mähen nur außerhalb der Ruhezeiten: werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht (§ 8.2)."
+          {
+            "id": "2027-05-beete-01",
+            "text": "Nach den Eisheiligen (11.–15. Mai): Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen."
+          },
+          {
+            "id": "2027-05-beete-02",
+            "text": "Tomaten außen: Mitte Mai nach den Eisheiligen auspflanzen, Abstand ca. 50–60 cm, Stäbe oder Spiralen, Kompost einarbeiten, mulchen."
+          },
+          {
+            "id": "2027-05-beete-03",
+            "text": "Mulchen mit angetrocknetem Rasenschnitt beginnen. Mähen nur außerhalb der Ruhezeiten: werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht (§ 8.2)."
+          }
         ],
-        "gewaechshaus": ["Paprika, Chili und Snackgurke pflanzen."],
+        "gewaechshaus": [
+          {
+            "id": "2027-05-gewaechshaus-01",
+            "text": "Paprika, Chili und Snackgurke pflanzen."
+          }
+        ],
         "obst": [
-          "Gelbtafeln gegen Kirschfruchtfliege beim Umfärben der Kirschen.",
-          "Pheromonfalle an der Pflaume (bis August).",
-          "Himbeeren: Jungruten auf 8–10 pro laufendem Meter auslichten."
+          {
+            "id": "2027-05-obst-01",
+            "text": "Gelbtafeln gegen Kirschfruchtfliege beim Umfärben der Kirschen."
+          },
+          {
+            "id": "2027-05-obst-02",
+            "text": "Pheromonfalle an der Pflaume (bis August)."
+          },
+          {
+            "id": "2027-05-obst-03",
+            "text": "Himbeeren: Jungruten auf 8–10 pro laufendem Meter auslichten."
+          }
         ],
-        "natur": ["Wasserstelle (flache Schale mit Steinen) am Saum Beet 1 einrichten."]
+        "natur": [
+          {
+            "id": "2027-05-natur-01",
+            "text": "Wasserstelle (flache Schale mit Steinen) am Saum Beet 1 einrichten."
+          }
+        ]
       }
     },
     {
@@ -186,17 +412,51 @@
       "name": "Juni 2027",
       "aufgaben": {
         "wasser": [
-          "Brunnenpumpe gelegentlich prüfen (Ansaugfilter, Dichtungen, Geräusche); nie trocken laufen lassen.",
-          "Abdeckungen der Regenfässer kontrollieren."
+          {
+            "id": "2027-06-wasser-01",
+            "text": "Brunnenpumpe gelegentlich prüfen (Ansaugfilter, Dichtungen, Geräusche); nie trocken laufen lassen."
+          },
+          {
+            "id": "2027-06-wasser-02",
+            "text": "Abdeckungen der Regenfässer kontrollieren."
+          }
         ],
         "beete": [
-          "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen.",
-          "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C).",
-          "Tomaten außen: Juni–August ausgeizen und von unten gießen. Regenschutz und Kraut- und Braunfäule beachten (robuste Sorten wie Philovita, Primabella, Resi)."
+          {
+            "id": "2027-06-beete-01",
+            "text": "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen."
+          },
+          {
+            "id": "2027-06-beete-02",
+            "text": "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C)."
+          },
+          {
+            "id": "2027-06-beete-03",
+            "text": "Tomaten außen: Juni–August ausgeizen und von unten gießen. Regenschutz und Kraut- und Braunfäule beachten (robuste Sorten wie Philovita, Primabella, Resi)."
+          }
         ],
-        "gewaechshaus": ["Tomaten wöchentlich ausgeizen und anbinden; täglich lüften."],
-        "obst": ["Kirschen zügig und vollständig ernten.", "Johannisbeeren und Sommerhimbeeren ernten; morgens durchdringend gießen."],
-        "natur": ["Storchschnabel nach der ersten Blüte bodennah zurückschneiden (zweite Blüte)."]
+        "gewaechshaus": [
+          {
+            "id": "2027-06-gewaechshaus-01",
+            "text": "Tomaten wöchentlich ausgeizen und anbinden; täglich lüften."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-06-obst-01",
+            "text": "Kirschen zügig und vollständig ernten."
+          },
+          {
+            "id": "2027-06-obst-02",
+            "text": "Johannisbeeren und Sommerhimbeeren ernten; morgens durchdringend gießen."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-06-natur-01",
+            "text": "Storchschnabel nach der ersten Blüte bodennah zurückschneiden (zweite Blüte)."
+          }
+        ]
       }
     },
     {
@@ -204,18 +464,48 @@
       "label": "Jul",
       "name": "Juli 2027",
       "aufgaben": {
-        "wasser": ["Pumpe gelegentlich prüfen; Abdeckungen der Regenfässer kontrollieren."],
+        "wasser": [
+          {
+            "id": "2027-07-wasser-01",
+            "text": "Pumpe gelegentlich prüfen; Abdeckungen der Regenfässer kontrollieren."
+          }
+        ],
         "beete": [
-          "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten.",
-          "Gießen nach Bedarf: Kürbisgewächse, Kohl und Sellerie zuerst.",
-          "Tomaten außen: Ernte ab Juli bis Oktober, weiter ausgeizen und von unten gießen."
+          {
+            "id": "2027-07-beete-01",
+            "text": "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten."
+          },
+          {
+            "id": "2027-07-beete-02",
+            "text": "Gießen nach Bedarf: Kürbisgewächse, Kohl und Sellerie zuerst."
+          },
+          {
+            "id": "2027-07-beete-03",
+            "text": "Tomaten außen: Ernte ab Juli bis Oktober, weiter ausgeizen und von unten gießen."
+          }
         ],
-        "gewaechshaus": ["Morgens am Fuß gießen, Tomatenblätter trocken halten."],
+        "gewaechshaus": [
+          {
+            "id": "2027-07-gewaechshaus-01",
+            "text": "Morgens am Fuß gießen, Tomatenblätter trocken halten."
+          }
+        ],
         "obst": [
-          "Süß- und Sauerkirsche direkt nach der Ernte schneiden.",
-          "Sommerhimbeeren: abgetragene Ruten entfernen; Johannisbeeren auslichten."
+          {
+            "id": "2027-07-obst-01",
+            "text": "Süß- und Sauerkirsche direkt nach der Ernte schneiden."
+          },
+          {
+            "id": "2027-07-obst-02",
+            "text": "Sommerhimbeeren: abgetragene Ruten entfernen; Johannisbeeren auslichten."
+          }
         ],
-        "natur": ["Wasserstelle regelmäßig auffüllen."]
+        "natur": [
+          {
+            "id": "2027-07-natur-01",
+            "text": "Wasserstelle regelmäßig auffüllen."
+          }
+        ]
       }
     },
     {
@@ -223,15 +513,48 @@
       "label": "Aug",
       "name": "August 2027",
       "aufgaben": {
-        "wasser": ["Bei langer Trockenheit die Brunnenpumpe beobachten (fördert sie Luft, sinkt der Wasserstand)."],
-        "beete": [
-          "Feldsalat in 1C säen (nach Erbsen).",
-          "Spinat und Asia-Salate für den Herbst säen (2A).",
-          "Tomaten außen: weiter ausgeizen, von unten gießen und ernten."
+        "wasser": [
+          {
+            "id": "2027-08-wasser-01",
+            "text": "Bei langer Trockenheit die Brunnenpumpe beobachten (fördert sie Luft, sinkt der Wasserstand)."
+          }
         ],
-        "gewaechshaus": ["Feldsalat in Schalen für das Gewächshaus vorziehen."],
-        "obst": ["Pflaume ernten, danach Sommerschnitt."],
-        "natur": ["Samen von Ringelblume, Bohnen und Kapuzinerkresse ernten.", "Wasserstelle auffüllen."]
+        "beete": [
+          {
+            "id": "2027-08-beete-01",
+            "text": "Feldsalat in 1C säen (nach Erbsen)."
+          },
+          {
+            "id": "2027-08-beete-02",
+            "text": "Spinat und Asia-Salate für den Herbst säen (2A)."
+          },
+          {
+            "id": "2027-08-beete-03",
+            "text": "Tomaten außen: weiter ausgeizen, von unten gießen und ernten."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2027-08-gewaechshaus-01",
+            "text": "Feldsalat in Schalen für das Gewächshaus vorziehen."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-08-obst-01",
+            "text": "Pflaume ernten, danach Sommerschnitt."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-08-natur-01",
+            "text": "Samen von Ringelblume, Bohnen und Kapuzinerkresse ernten."
+          },
+          {
+            "id": "2027-08-natur-02",
+            "text": "Wasserstelle auffüllen."
+          }
+        ]
       }
     },
     {
@@ -239,10 +562,38 @@
       "label": "Sep",
       "name": "September 2027",
       "aufgaben": {
-        "beete": ["Hokkaido ernten und nachreifen lassen.", "Tomaten außen: Ernte bis Oktober, von unten gießen."],
-        "gewaechshaus": ["Winterpostelein und Feldsalat säen."],
-        "obst": ["Herbsthimbeeren ernten."],
-        "natur": ["Laub- und Totholzhaufen mit Schnittgut aufsetzen.", "Abgeblühte Phacelia als Wintermulch liegen lassen."]
+        "beete": [
+          {
+            "id": "2027-09-beete-01",
+            "text": "Hokkaido ernten und nachreifen lassen."
+          },
+          {
+            "id": "2027-09-beete-02",
+            "text": "Tomaten außen: Ernte bis Oktober, von unten gießen."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2027-09-gewaechshaus-01",
+            "text": "Winterpostelein und Feldsalat säen."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-09-obst-01",
+            "text": "Herbsthimbeeren ernten."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-09-natur-01",
+            "text": "Laub- und Totholzhaufen mit Schnittgut aufsetzen."
+          },
+          {
+            "id": "2027-09-natur-02",
+            "text": "Abgeblühte Phacelia als Wintermulch liegen lassen."
+          }
+        ]
       }
     },
     {
@@ -250,16 +601,48 @@
       "label": "Okt",
       "name": "Oktober 2027",
       "aufgaben": {
-        "wasser": ["Dachrinnen, Fallrohre und Fallrohrfilter von Laub befreien."],
-        "beete": [
-          "Knoblauch in 1A stecken.",
-          "Möhren, Sellerie, Rote Bete und Pastinaken ernten.",
-          "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3).",
-          "Tomaten außen: Pflanzenreste mit Kraut- oder Braunfäule in den Hausmüll, nicht auf den Kompost. Am festen Platz jährlich Kompost auffüllen."
+        "wasser": [
+          {
+            "id": "2027-10-wasser-01",
+            "text": "Dachrinnen, Fallrohre und Fallrohrfilter von Laub befreien."
+          }
         ],
-        "gewaechshaus": ["Abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen."],
-        "obst": ["Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen."],
-        "natur": ["Stauden nicht zurückschneiden: Winterquartier und Futter."]
+        "beete": [
+          {
+            "id": "2027-10-beete-01",
+            "text": "Knoblauch in 1A stecken."
+          },
+          {
+            "id": "2027-10-beete-02",
+            "text": "Möhren, Sellerie, Rote Bete und Pastinaken ernten."
+          },
+          {
+            "id": "2027-10-beete-03",
+            "text": "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3)."
+          },
+          {
+            "id": "2027-10-beete-04",
+            "text": "Tomaten außen: Pflanzenreste mit Kraut- oder Braunfäule in den Hausmüll, nicht auf den Kompost. Am festen Platz jährlich Kompost auffüllen."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2027-10-gewaechshaus-01",
+            "text": "Abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-10-obst-01",
+            "text": "Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-10-natur-01",
+            "text": "Stauden nicht zurückschneiden: Winterquartier und Futter."
+          }
+        ]
       }
     },
     {
@@ -268,14 +651,47 @@
       "name": "November 2027",
       "aufgaben": {
         "wasser": [
-          "Vor dem ersten Dauerfrost: Regenfässer leeren und umdrehen oder abdecken.",
-          "Brunnenpumpe winterfest machen, Schläuche einlagern, Außenhahn absperren und entleeren.",
-          "Dachrinnen und Fallrohre nach dem Laubfall nochmals reinigen."
+          {
+            "id": "2027-11-wasser-01",
+            "text": "Vor dem ersten Dauerfrost: Regenfässer leeren und umdrehen oder abdecken."
+          },
+          {
+            "id": "2027-11-wasser-02",
+            "text": "Brunnenpumpe winterfest machen, Schläuche einlagern, Außenhahn absperren und entleeren."
+          },
+          {
+            "id": "2027-11-wasser-03",
+            "text": "Dachrinnen und Fallrohre nach dem Laubfall nochmals reinigen."
+          }
         ],
-        "beete": ["Grünkohl und Lauch ernten.", "Abgeerntete Beete mulchen statt umgraben."],
-        "gewaechshaus": ["Gewächshaus-Bewässerung entleeren."],
-        "obst": ["Fallobst und Fruchtmumien entfernen."],
-        "natur": ["Vogelnistkasten reinigen; Wildbienen-Nisthilfe nicht öffnen."]
+        "beete": [
+          {
+            "id": "2027-11-beete-01",
+            "text": "Grünkohl und Lauch ernten."
+          },
+          {
+            "id": "2027-11-beete-02",
+            "text": "Abgeerntete Beete mulchen statt umgraben."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2027-11-gewaechshaus-01",
+            "text": "Gewächshaus-Bewässerung entleeren."
+          }
+        ],
+        "obst": [
+          {
+            "id": "2027-11-obst-01",
+            "text": "Fallobst und Fruchtmumien entfernen."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-11-natur-01",
+            "text": "Vogelnistkasten reinigen; Wildbienen-Nisthilfe nicht öffnen."
+          }
+        ]
       }
     },
     {
@@ -283,10 +699,34 @@
       "label": "Dez",
       "name": "Dezember 2027",
       "aufgaben": {
-        "wasser": ["Nach Sturm oder Schnee Abdeckungen über Brunnenrohr und Regenfässern kontrollieren."],
-        "beete": ["Fruchtfolge 2028 eintragen, Erträge und Probleme notieren.", "Saatgut sichten, Wunschliste für 2028."],
-        "gewaechshaus": ["Feldsalat und Winterpostelein ernten."],
-        "natur": ["Laub- und Totholzhaufen in Ruhe lassen."]
+        "wasser": [
+          {
+            "id": "2027-12-wasser-01",
+            "text": "Nach Sturm oder Schnee Abdeckungen über Brunnenrohr und Regenfässern kontrollieren."
+          }
+        ],
+        "beete": [
+          {
+            "id": "2027-12-beete-01",
+            "text": "Fruchtfolge 2028 eintragen, Erträge und Probleme notieren."
+          },
+          {
+            "id": "2027-12-beete-02",
+            "text": "Saatgut sichten, Wunschliste für 2028."
+          }
+        ],
+        "gewaechshaus": [
+          {
+            "id": "2027-12-gewaechshaus-01",
+            "text": "Feldsalat und Winterpostelein ernten."
+          }
+        ],
+        "natur": [
+          {
+            "id": "2027-12-natur-01",
+            "text": "Laub- und Totholzhaufen in Ruhe lassen."
+          }
+        ]
       }
     }
   ],

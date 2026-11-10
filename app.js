@@ -282,8 +282,8 @@ function renderNav() {
   return nav;
 }
 
-function taskLine(scope, taskText, meta, jsonDone, clamp) {
-  const control = taskControl(scope, taskText, jsonDone);
+function taskLine(scope, taskText, meta, jsonDone, clamp, ids) {
+  const control = taskControl(scope, taskText, jsonDone, ids);
   return h(
     "article",
     { class: "task" + (control.done ? " is-done" : "") },
@@ -296,6 +296,7 @@ function taskLine(scope, taskText, meta, jsonDone, clamp) {
         "data-detail": taskText,
         "data-scope": scope,
         "data-json-done": jsonDone ? "1" : "0",
+        "data-ids": ids && ids.length ? ids.join(",") : null,
       },
       h("span", { class: "line-text" }, taskText),
       meta ? h("span", { class: "task-meta" }, meta) : null
@@ -315,7 +316,7 @@ function renderHeute() {
           "section",
           {},
           h("h2", {}, "Heute zu tun"),
-          h("div", { id: "heute-aufgaben" }, tasks.map((task) => taskLine("heute", task.text, task.bereich, task.done))),
+          h("div", { id: "heute-aufgaben" }, tasks.map((task) => taskLine("heute", task.text, task.bereich, task.done, false, heuteIds(task)))),
           h("p", { class: "hint" }, "Abhaken gilt nur auf diesem Gerät. Sag dem Gartenhelfer Bescheid, dann wird es dauerhaft eingetragen.")
         )
       : h(
@@ -360,6 +361,7 @@ function renderJahr() {
         .filter((category) => ((month.aufgaben && month.aufgaben[category.key]) || []).length)
         .map((category, index) => {
           const items = month.aufgaben[category.key] || [];
+          const permanent = permanentIds();
           const details = h("details", { class: "fold", open: index === 0 ? "open" : null });
           details.append(
             h(
@@ -370,7 +372,17 @@ function renderJahr() {
               h("span", { class: "task-meta count" }, String(items.length))
             )
           );
-          details.append(h("div", { class: "fold-body" }, items.map((taskText) => taskLine(month.key, taskText, "", false, false))));
+          details.append(
+            h(
+              "div",
+              { class: "fold-body" },
+              items.map((task, taskIndex) => {
+                const text = taskText(task);
+                const id = taskId(task, month.key, category.key, taskIndex);
+                return taskLine(month.key, text, "", permanent.has(id), false, [id]);
+              })
+            )
+          );
           return details;
         })
     : [];
@@ -974,7 +986,8 @@ function tasksForField(code) {
   if (month) {
     Object.values(month.aufgaben || {}).forEach((list) => {
       (list || []).forEach((task) => {
-        if (mentionsField(task, code)) found.push(task);
+        const text = taskText(task);
+        if (mentionsField(text, code)) found.push(text);
       });
     });
   }
@@ -1581,7 +1594,7 @@ function renderMehr() {
 function renderDetail() {
   const detail = state.detail;
   if (!detail) return null;
-  const control = detail.scope ? taskControl(detail.scope, detail.text, detail.jsonDone) : null;
+  const control = detail.scope ? taskControl(detail.scope, detail.text, detail.jsonDone, detail.ids) : null;
   return h(
     "div",
     { class: "sheet-back", "data-close": "1" },
@@ -1591,7 +1604,7 @@ function renderDetail() {
       h("div", { class: "sheet-bar" }, h("h2", {}, "Aufgabe"), h("button", { type: "button", class: "text-btn", "data-close": "1" }, "Schließen")),
       control ? control.button : null,
       h("p", {}, detail.text),
-      control && isLocalChecked(detail.scope, detail.text) ? h("p", { class: "caption" }, "auf diesem Gerät abgehakt") : null
+      control && control.local ? h("p", { class: "caption" }, "auf diesem Gerät abgehakt") : null
     )
   );
 }
@@ -1730,14 +1743,19 @@ function onClick(event) {
     return;
   }
   if (button.dataset.detail) {
-    state.detail = { text: button.dataset.detail, scope: button.dataset.scope || "", jsonDone: button.dataset.jsonDone === "1" };
+    state.detail = {
+      text: button.dataset.detail,
+      scope: button.dataset.scope || "",
+      jsonDone: button.dataset.jsonDone === "1",
+      ids: button.dataset.ids ? button.dataset.ids.split(",") : null,
+    };
     state.sheet = null;
     paint(false);
     return;
   }
   if (button.dataset.check) {
     const key = button.dataset.check;
-    const turningOn = !loadMap(STORE_CHECKS)[key];
+    const turningOn = !checksOn(key);
     toggleCheck(key);
     state.burst = turningOn ? key : null;
     paint(false);
@@ -1951,6 +1969,7 @@ async function loadData() {
   const data = await response.json();
   if (!data || !Array.isArray(data.heute) || !Array.isArray(data.jahr)) throw new Error("schema");
   state.data = data;
+  migrateChecks();
   if (navigator.onLine) {
     state.fetchedAt = new Date().toISOString();
     localStorage.setItem("garten-daten-zeit", state.fetchedAt);
