@@ -1021,19 +1021,46 @@ function sketchField(code) {
   return fields.find((field) => field.code === code) || null;
 }
 
+function rotationAt(code, year) {
+  const row = findRotation(code);
+  const index = { 2027: 1, 2028: 2, 2029: 3, 2030: 4 }[year || state.rotYear || "2027"];
+  return row && index ? row[index] : "";
+}
+
+function infoForYear(code, year) {
+  const root = ((state.data.plan2027 || {}).kulturInfo) || {};
+  const chosen = year || state.rotYear || "2027";
+  if (chosen === "2028" && root.jahr2028 && root.jahr2028[code]) return root.jahr2028[code];
+  if (chosen === "2027" || chosen === "2028") return (root.eintraege || {})[code] || null;
+  return null;
+}
+
 function cropFace(row, code) {
   const year = state.rotYear || "2027";
-  const rotation = findRotation(code);
-  const index = { 2027: 1, 2028: 2, 2029: 3, 2030: 4 }[year];
-  if (year !== "2027" && rotation && rotation[index]) return rotation[index];
+  const info = infoForYear(code, year);
+  if (info && info.haupt) return info.haupt.name + (info.misch ? " + " + info.misch.name : "");
+  const klasse = year !== "2027" ? rotationAt(code, year) : "";
+  if (klasse) return klasse;
   const drawn = sketchField(code);
   if (drawn) return (drawn.l1 + " " + (drawn.l2 || "")).replace(/,\s*$/, "").replace(/\s+/g, " ").trim();
   return String((row && row.kultur) || code);
 }
 
+function planCropShort(code) {
+  const full = cropFace(null, code);
+  const shorts = {
+    Zuckererbsen: "Erbsen",
+    Buschbohnen: "Bohnen",
+    Pflücksalat: "Salat",
+    "Möhre + Steckzwiebel": "Möhre+Zw.",
+    "Möhre + Zwiebel": "Möhre+Zw.",
+  };
+  return shorts[full] || full;
+}
+
 function tileClass(row, code) {
   const year = state.rotYear || "2027";
-  const face = year === "2027" ? "" : cropFace(row, code);
+  const face = year === "2027" ? "" : rotationAt(code, year);
   const named = /Starkzehrer/.test(face) ? "stark" : /Mittelzehrer/.test(face) ? "mittel" : /Schwachzehrer/.test(face) ? "schwach" : /Gründüngung/.test(face) ? "grau" : "";
   if (named) return named;
   const drawn = sketchField(code);
@@ -1380,8 +1407,16 @@ function drawFieldCell(svg, el, row, code, box) {
     g.append(text);
   } else {
     const size = box.b < 78 ? 12 : 13;
-    g.append(plotText(box.x + box.b / 2, box.y + box.h / 2 + size * 0.32, code, size, "middle"));
+    const crop = planCropShort(code);
+    const showCrop = crop && crop !== code && box.h >= 36 && box.b >= 42;
+    const cy = box.y + box.h / 2 + (showCrop ? 0 : size * 0.32);
+    g.append(plotText(box.x + box.b / 2, showCrop ? cy - 5 : cy, code, size, "middle"));
     g.lastChild.setAttribute("class", "plot-field-label");
+    if (showCrop) {
+      const sub = plotText(box.x + box.b / 2, cy + 9, crop, 8, "middle");
+      sub.setAttribute("class", "plot-field-year");
+      g.append(sub);
+    }
   }
   if (now.length) {
     g.append(svgEl("circle", {
@@ -1531,14 +1566,36 @@ function renderPlanSvg(lage) {
 
 const INFO_MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 
-function kulturEntry() {
-  const bag = (((state.data.plan2027 || {}).kulturInfo || {}).eintraege) || {};
+function plotInfoKey() {
   const pick = String(state.plotId || "").match(/^feld:(beet[12]):(.+)$/);
-  if (pick) {
-    const code = pick[2] === "Saum" ? (pick[1] === "beet2" ? "saum2" : "saum1") : pick[2];
-    return bag[code] || null;
-  }
-  return bag[state.plotId] || null;
+  if (pick) return pick[2] === "Saum" ? (pick[1] === "beet2" ? "saum2" : "saum1") : pick[2];
+  return state.plotId || "";
+}
+
+function kulturEntry() {
+  return infoForYear(plotInfoKey(), state.rotYear || "2027");
+}
+
+function yearSwitch(later) {
+  const fromPlan = ((((state.data.plan2027 || {}).fruchtfolge || {}).spalten) || []).slice(1);
+  const years = later && fromPlan.length ? fromPlan : ["2027", "2028"];
+  const current = state.rotYear || "2027";
+  return h(
+    "div",
+    { class: "year-toggle garten-years", role: "group", "aria-label": "Jahr" },
+    years.map((item) =>
+      h(
+        "button",
+        {
+          type: "button",
+          class: "chip" + (current === item ? " is-on" : ""),
+          "data-rot": item,
+          "aria-pressed": current === item ? "true" : "false",
+        },
+        item
+      )
+    )
+  );
 }
 
 function monthSpan(nums) {
@@ -1626,15 +1683,25 @@ function kulturLead(info) {
     h("p", { class: "info-haupt" }, title),
     info.vor ? h("p", { class: "info-neben" }, "Vorher: " + info.vor.name) : null,
     info.nach ? h("p", { class: "info-neben" }, "Danach: " + info.nach.name) : null,
-    info.naechstes
-      ? h(
-          "p",
-          { class: "info-next" },
-          "Nächstes Jahr: " + info.naechstes,
-          h("span", { class: "info-timeline" }, "2027 → 2028")
-        )
-      : null,
+    previewLine(info),
   ];
+}
+
+function previewLine(info) {
+  const year = state.rotYear || "2027";
+  if (year === "2027" && info && info.naechstes) {
+    return h(
+      "p",
+      { class: "info-next" },
+      "Nächstes Jahr: " + info.naechstes,
+      h("span", { class: "info-timeline" }, "2027 → 2028")
+    );
+  }
+  if (year === "2028") {
+    const klasse = rotationAt(plotInfoKey(), "2029");
+    if (klasse) return h("p", { class: "info-next" }, "2029: " + klasse);
+  }
+  return null;
 }
 
 function renderAnleitung(info) {
@@ -1764,33 +1831,14 @@ function gartenSheetBody(lage) {
     const year = state.rotYear || "2027";
     const tasks = tasksForFieldArea(bedId, code);
     const info = kulturEntry();
-    const years = ((((state.data.plan2027 || {}).fruchtfolge || {}).spalten) || []).slice(1);
     return [
       h("p", { class: "garten-measure" }, massEquation(row) || fieldParts(row.feld).size || ""),
       ...(info && info.haupt ? kulturLead(info) : [h("p", { class: "garten-grow" }, face)]),
-      year === "2027"
-        ? info
-          ? null
-          : h("p", { class: "garten-note" }, row.kultur)
-        : h("p", { class: "garten-note" }, year + ": nur die Fruchtfolge-Stufe. Die Kulturen unten gelten für 2027."),
-      years.length
-        ? h(
-            "div",
-            { class: "year-toggle garten-years", role: "group", "aria-label": "Fruchtfolge-Jahr" },
-            years.map((item) =>
-              h(
-                "button",
-                {
-                  type: "button",
-                  class: "chip" + ((state.rotYear || "2027") === item ? " is-on" : ""),
-                  "data-rot": item,
-                  "aria-pressed": (state.rotYear || "2027") === item ? "true" : "false",
-                },
-                item
-              )
-            )
-          )
+      year === "2027" && !info ? h("p", { class: "garten-note" }, row.kultur) : null,
+      year !== "2027" && year !== "2028"
+        ? h("p", { class: "garten-note" }, year + ": " + (rotationAt(code, year) || "Fruchtfolge") + ". Konkrete Kultur nur für 2027 und 2028.")
         : null,
+      yearSwitch(true),
       renderKulturInfo(info),
       renderAnleitung(info),
       h("h3", { class: "info-open" }, "Offen"),
@@ -1801,13 +1849,15 @@ function gartenSheetBody(lage) {
             tasks.map((task) => taskLine(task.month, task.text, "", permanentIds().has(task.id), false, [task.id]))
           )
         : h("p", { class: "garten-note" }, "Nichts Offen in diesem Monat."),
-      h(
-        "details",
-        { class: "garten-more" },
-        h("summary", {}, "Plan 2027"),
-        h("p", {}, [row.aussaat, row.abstand, row.ernte, row.pflege].filter(Boolean).join(" · ")),
-        info && info.mehr ? h("p", {}, info.mehr) : null
-      ),
+      year === "2027"
+        ? h(
+            "details",
+            { class: "garten-more" },
+            h("summary", {}, "Plan 2027"),
+            h("p", {}, [row.aussaat, row.abstand, row.ernte, row.pflege].filter(Boolean).join(" · ")),
+            info && info.mehr ? h("p", {}, info.mehr) : null
+          )
+        : null,
     ];
   }
   const el = (lage.elemente || []).find((item) => item.id === state.plotId);
@@ -1822,6 +1872,7 @@ function gartenSheetBody(lage) {
     grows ? h("p", { class: "garten-grow" }, grows) : null,
     el.ungefahr ? h("p", { class: "garten-note" }, "Lage ungefähr") : null,
     ...(info && info.haupt && el.name.indexOf(info.haupt.name) < 0 ? kulturLead(info) : info && info.haupt ? kulturLead(info).slice(1) : []),
+    info && info.haupt ? yearSwitch(false) : null,
     renderKulturInfo(info),
     renderAnleitung(info),
     h("h3", { class: "info-open" }, "Offen"),
@@ -1848,7 +1899,8 @@ function renderGartenSheet(lage) {
   if (!state.plotId) return null;
   const pick = String(state.plotId).match(/^feld:(beet[12]):(.+)$/);
   const el = (lage.elemente || []).find((item) => item.id === state.plotId);
-  const title = pick ? "Feld " + pick[2] : el ? el.name : "Bereich";
+  const year = state.rotYear || "2027";
+  const title = (pick ? "Feld " + pick[2] : el ? el.name : "Bereich") + (year === "2027" ? "" : " · " + year);
   return h(
     "div",
     { class: "garten-sheet-back", "data-plot-close": "1" },
@@ -1888,6 +1940,7 @@ function renderGarten() {
     h("p", { class: "garten-lead" }, lage.flaeche || ""),
     h("div", { class: "plot-wrap" }, elements.length ? renderPlanSvg(lage) : null),
     h("p", { class: "garten-hint" }, lage.hinweis || ""),
+    yearSwitch(false),
     h(
       "div",
       { class: "garten-filters", role: "group", "aria-label": "Bereiche filtern" },

@@ -69,7 +69,7 @@ Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt
 | `beete` | `titel`, `optionen` (`value`: `b1` oder `b2`), `spalten`, `b1`, `b2`, `hinweis` |
 | Beetzeile | `feld`, `kultur`, `aussaat`, `abstand`, `ernte`, `pflege` |
 | `fruchtfolge` | `titel`, `spalten`, `zeilen` (Listen), `text` |
-| `kulturInfo` | Zusatz fürs Detail-Blatt. Felder, Tomaten und Gewächshaus: `haupt` (eine Kultur), optional `vor` oder `nach`, optional `misch` (nur Möhre/Zwiebel), `naechstes` (2028), `anleitung` (`kopf`, `reihen`, `schritte`). Obst und Säume weiter über `kulturen`. Monate `s`/`p`/`e` als 1–12. Bestehende Felder bleiben |
+| `kulturInfo` | Zusatz fürs Detail-Blatt. `eintraege` ist 2027. `jahr2028` hat dieselben Schlüssel mit der Kultur des Folgejahres. Felder: `haupt`, optional `vor` oder `nach`, optional `misch`, `naechstes` nur in 2027, `anleitung`. Monate `s`/`p`/`e` als 1–12. Die 2027-Einträge bleiben |
 | `gewaechshaus` | `titel`, `sommerTitel`, `sommerSpalten`, `sommer` (`bereich`, `kultur`, `pflanzung`, `abstand`, `ernte`), `jahreszeitenTitel`, `schritte` (`titel`, `text`), `hinweis` |
 | `obst` | `titel`, `spalten`, `zeilen` (`gehoelz`, `schnitt`, `pflege`, `vorbeugung`), `hinweis` |
 | `kraeuter` | `titel`, `spalten`, `zeilen` (`standort`, `pflanze`, `anzahl`, `abstand`, `licht`, `kosten`), `punkte` |

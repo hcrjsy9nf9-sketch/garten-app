@@ -174,6 +174,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 .plot-field.grau { fill: var(--natur-soft, #f1ecff); stroke: var(--natur, var(--grau)); }
 .plot-field.is-dashed { stroke-dasharray: 4 3; }
 .plot-field-label { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 800; }
+.plot-field-year { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 700; }
 .plot-now { fill: var(--amber); stroke: var(--card); stroke-width: 1; }
 .plot-tomato { fill: #fde8e4; stroke: #a33b32; stroke-width: 1; }
 .plot-tomato-fruit { fill: #d64545; stroke: #8e2424; stroke-width: 1.5; }
@@ -385,6 +386,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 }
 .garten-tasks .task { padding: 2px 0; }
 .garten-years { margin-top: 10px; }
+.garten-view > .garten-years { margin: 2px 0 8px; }
 @media (min-width: 840px) {
   .garten-sheet-back { justify-content: flex-end; align-items: stretch; }
   .garten-sheet {

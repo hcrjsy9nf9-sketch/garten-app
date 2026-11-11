@@ -1988,6 +1988,638 @@
             "Gemüse in der Baumscheibe"
           ]
         }
+      },
+      "jahr2028": {
+        "1A": {
+          "haupt": {
+            "name": "Rote Bete",
+            "art": "Direktsaat Ende April",
+            "s": [
+              4,
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "pflege": [
+            "Ende April bis Mitte Mai säen, 2 cm tief. Früher schosst sie.",
+            "3 l/m² Kompost, danach gleichmäßig feucht halten.",
+            "Knollen ab Juli ernten, die letzten vor strengem Frost."
+          ],
+          "gut": [
+            "Dill",
+            "Zwiebel"
+          ],
+          "schlecht": [
+            "Mangold",
+            "Spinat"
+          ],
+          "anleitung": {
+            "kopf": "1,65 m breit, Reihen Nord–Süd. Fünf Reihen, nur Rote Bete.",
+            "reihen": [
+              {
+                "name": "Rote Bete",
+                "ton": "haupt"
+              },
+              {
+                "name": "Rote Bete",
+                "ton": "haupt"
+              },
+              {
+                "name": "Rote Bete",
+                "ton": "haupt"
+              },
+              {
+                "name": "Rote Bete",
+                "ton": "haupt"
+              },
+              {
+                "name": "Rote Bete",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Ende April bis Mitte Mai direkt säen, 2 cm tief. In Magdeburg nicht früher, kalte Saat schosst.",
+              "Fünf Reihen im Abstand von 30 cm, links und rechts bleiben je etwa 22 cm. In der Reihe alle 8 cm.",
+              "3 l/m² Kompost vor der Saat. Boden nicht austrocknen lassen, sonst werden die Knollen holzig."
+            ]
+          }
+        },
+        "1B": {
+          "haupt": {
+            "name": "Zuckererbsen",
+            "art": "Direktsaat Mitte März",
+            "s": [
+              3,
+              4
+            ],
+            "e": [
+              6,
+              7
+            ]
+          },
+          "pflege": [
+            "Kein Dünger, die Vorfrucht Rote Bete hat gereicht.",
+            "Reisig oder ein niedriges Netz, etwa 80 cm hoch.",
+            "Wurzeln nach der Ernte im Boden lassen."
+          ],
+          "gut": [
+            "Möhre",
+            "Feldsalat danach"
+          ],
+          "schlecht": [
+            "Zwiebel",
+            "Knoblauch"
+          ],
+          "nach": {
+            "name": "Feldsalat",
+            "art": "Nachkultur, Direktsaat",
+            "s": [
+              8
+            ],
+            "e": [
+              10,
+              11,
+              12,
+              1,
+              2,
+              3
+            ]
+          },
+          "anleitung": {
+            "kopf": "1,65 m breit. Zuerst Erbsen, ab Mitte August Feldsalat.",
+            "reihen": [
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Mitte März bis Anfang April vier Reihen säen. Abstand 40 cm, Rand je etwa 22 cm. In der Reihe alle 4 cm, 3–4 cm tief.",
+              "Juni und Juli pflücken. Danach abräumen, die Wurzeln bleiben.",
+              "Ab Mitte August Feldsalat in zehn Reihen, Abstand 15 cm, Rand je 15 cm, 1 cm tief. In der Reihe auf 2 cm vereinzeln."
+            ]
+          }
+        },
+        "1C": {
+          "haupt": {
+            "name": "Phacelia",
+            "art": "Direktsaat Anfang Mai, Blüte Jul–Sep",
+            "s": [
+              5
+            ]
+          },
+          "pflege": [
+            "Feldsalat von 2027 vorher abräumen.",
+            "2 g/m² breitwürfig, 1 cm einharken und andrücken.",
+            "Nicht mähen, solange Bienen auf den Blüten sind. Nach dem Frost liegen lassen."
+          ],
+          "gut": [
+            "Verträgt sich mit jedem Gemüse"
+          ],
+          "schlecht": [
+            "Keine, sie ist mit keinem Gemüse verwandt"
+          ]
+        },
+        "1D": {
+          "haupt": {
+            "name": "Brokkoli",
+            "art": "Voranzucht, Auspflanzen ab 15. Mai",
+            "s": [
+              3
+            ],
+            "p": [
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9
+            ]
+          },
+          "pflege": [
+            "5 l/m² Kompost. Phacelia von 2027 ist der Mulch darunter.",
+            "Kulturschutznetz vom Setzen bis zur Ernte.",
+            "Hauptkopf und danach die Seitentriebe schneiden."
+          ],
+          "gut": [
+            "Buschbohne",
+            "Sellerie"
+          ],
+          "schlecht": [
+            "Zwiebel",
+            "anderer Kohl"
+          ],
+          "anleitung": {
+            "kopf": "2,25 × 1,65 m. Drei Reihen mit je drei Pflanzen, Abstand 50 cm.",
+            "reihen": [
+              {
+                "name": "Brokkoli",
+                "ton": "haupt"
+              },
+              {
+                "name": "Brokkoli",
+                "ton": "haupt"
+              },
+              {
+                "name": "Brokkoli",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Anfang März auf der Fensterbank vorziehen.",
+              "Ab dem 15. Mai neun Pflanzen setzen: drei Reihen, in der Reihe 50 cm. Zum Rand bleiben etwa 30 cm in der Breite und etwa 60 cm in der Länge.",
+              "Netz sofort schließen. 5 l/m² Kompost. Ernte Juli bis September, Seitentriebe mitnehmen."
+            ]
+          }
+        },
+        "2A": {
+          "haupt": {
+            "name": "Mangold",
+            "art": "Direktsaat April",
+            "s": [
+              4
+            ],
+            "e": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          },
+          "pflege": [
+            "Eine Saat reicht, außen die Blätter einzeln ernten.",
+            "3 l/m² Kompost. Im Halbschatten bleibt er länger zart.",
+            "Nicht neben Rote Bete stellen, gleiche Familie."
+          ],
+          "gut": [
+            "Buschbohne",
+            "Möhre"
+          ],
+          "schlecht": [
+            "Rote Bete",
+            "Spinat"
+          ],
+          "anleitung": {
+            "kopf": "2,00 × 1,65 m. Drei Reihen, je vier Pflanzen.",
+            "reihen": [
+              {
+                "name": "Mangold",
+                "ton": "haupt"
+              },
+              {
+                "name": "Mangold",
+                "ton": "haupt"
+              },
+              {
+                "name": "Mangold",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Im April direkt säen, 2 cm tief.",
+              "Drei Reihen im Abstand von 40 cm, Rand je etwa 42 cm. In der Reihe vier Pflanzen, 40 cm auseinander.",
+              "Auf 40 cm vereinzeln. Äußere Blätter ernten, das Herz stehen lassen."
+            ]
+          }
+        },
+        "2B": {
+          "haupt": {
+            "name": "Rhabarber",
+            "art": "erste Ernte April–Juni",
+            "e": [
+              4,
+              5,
+              6
+            ]
+          },
+          "pflege": [
+            "Im März Kompost auf die Kronen, nicht in die Augen.",
+            "Nur die dicken Stangen am Grund herausdrehen, höchstens ein Drittel.",
+            "Ab dem 24. Juni nicht mehr ernten, die Blätter füttern die Pflanze."
+          ],
+          "gut": [
+            "Buschbohne",
+            "Salat"
+          ],
+          "schlecht": [
+            "Sellerie"
+          ],
+          "anleitung": {
+            "kopf": "Die beiden Kronen von 2027 bleiben. Keine neue Pflanzung.",
+            "reihen": [
+              {
+                "name": "Rhabarber",
+                "ton": "haupt"
+              },
+              {
+                "name": "Rhabarber",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Ab April die dicken Stangen am Grund drehen, nicht schneiden.",
+              "Pro Durchgang höchstens ein Drittel der Stangen nehmen.",
+              "Letzte Ernte um den 24. Juni. Blütenstände ausbrechen, damit die Kraft in die Wurzel geht."
+            ]
+          }
+        },
+        "2C": {
+          "haupt": {
+            "name": "Möhren",
+            "art": "Direktsaat ab Mitte April",
+            "s": [
+              4,
+              5
+            ],
+            "e": [
+              8,
+              9,
+              10
+            ]
+          },
+          "pflege": [
+            "Nur reifer Kompost, höchstens 3 l/m². Frischer Mist macht beinige Wurzeln.",
+            "Saat bis zum Auflaufen feucht halten, 1–2 cm tief.",
+            "Auf 3 cm vereinzeln. Ernte August bis Oktober."
+          ],
+          "gut": [
+            "Zwiebel",
+            "Lauch",
+            "Salat"
+          ],
+          "schlecht": [
+            "Dill"
+          ],
+          "anleitung": {
+            "kopf": "2,50 × 1,65 m. Sechs Reihen Nord–Süd, Abstand 25 cm, Rand je 20 cm.",
+            "reihen": [
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Grünkohl von 2027 abräumen, sobald die Ernte vorbei ist.",
+              "Ab Mitte April säen, 1–2 cm tief. Sechs Reihen, Abstand 25 cm. In der Reihe auf 3 cm vereinzeln.",
+              "Bis zum Auflaufen feucht halten. In Magdeburg lohnt Saat vor Mitte April selten."
+            ]
+          }
+        },
+        "2D": {
+          "haupt": {
+            "name": "Buschbohnen",
+            "art": "Direktsaat ab 15. Mai",
+            "s": [
+              5,
+              6
+            ],
+            "e": [
+              7,
+              8,
+              9
+            ]
+          },
+          "pflege": [
+            "Kein Stickstoff, die Vorfrucht und der Spinat reichen.",
+            "Bei Nachtfrost nach der Saat mit Vlies decken.",
+            "Hülsen jung pflücken, dann tragen die Pflanzen weiter."
+          ],
+          "gut": [
+            "Bohnenkraut im Saum",
+            "Gurke"
+          ],
+          "schlecht": [
+            "Zwiebel",
+            "Fenchel"
+          ],
+          "vor": {
+            "name": "Spinat",
+            "art": "Vorkultur, Direktsaat",
+            "s": [
+              3
+            ],
+            "e": [
+              4,
+              5
+            ]
+          },
+          "anleitung": {
+            "kopf": "2,50 × 1,65 m. Zuerst Spinat, ab dem 15. Mai Buschbohnen.",
+            "reihen": [
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              }
+            ],
+            "schritte": [
+              "Mitte März sechs Spinatreihen, Abstand 25 cm, Rand je 20 cm. In der Reihe alle 5 cm, 2 cm tief.",
+              "Bis zum 15. Mai ernten und abräumen.",
+              "Danach vier Bohnenreihen, Abstand 40 cm, Rand je etwa 22 cm. Fünf Horste je Reihe, 40 cm auseinander, fünf Samen, 3 cm tief."
+            ]
+          }
+        },
+        "2E": {
+          "haupt": {
+            "name": "Phacelia",
+            "art": "Direktsaat Anfang Mai, Blüte Jul–Sep",
+            "s": [
+              5
+            ]
+          },
+          "pflege": [
+            "2 g/m² breitwürfig, 1 cm einharken.",
+            "Blüte für die Bienen stehen lassen.",
+            "Nach dem Frost als Mulch liegen lassen."
+          ],
+          "gut": [
+            "Verträgt sich mit jedem Gemüse"
+          ],
+          "schlecht": [
+            "Keine, sie ist mit keinem Gemüse verwandt"
+          ]
+        },
+        "2F": {
+          "haupt": {
+            "name": "Zucchini",
+            "art": "Voranzucht, Auspflanzen ab 15. Mai",
+            "s": [
+              4
+            ],
+            "p": [
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "pflege": [
+            "5 l/m² Kompost. Die Phacelia von 2027 bleibt als Mulch.",
+            "Von unten gießen, Blätter trocken lassen.",
+            "Drei Pflanzen, oft ernten, sonst stellen sie das Blühen ein."
+          ],
+          "gut": [
+            "Buschbohne",
+            "Zwiebel"
+          ],
+          "schlecht": [
+            "Kartoffel"
+          ],
+          "vor": {
+            "name": "Spinat",
+            "art": "Vorkultur, Direktsaat",
+            "s": [
+              3
+            ],
+            "e": [
+              4,
+              5
+            ]
+          },
+          "anleitung": {
+            "kopf": "2,50 × 1,65 m. Zuerst Spinat, ab dem 15. Mai drei Zucchini auf der Mittellinie.",
+            "reihen": [
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              }
+            ],
+            "schritte": [
+              "Mitte März sechs Spinatreihen, Abstand 25 cm, Rand je 20 cm. In der Reihe alle 5 cm, 2 cm tief.",
+              "Bis zum 15. Mai abräumen, auch wenn der Spinat noch klein ist.",
+              "Zucchini ab Ende April im Topf vorziehen. Drei Pflanzen auf die Mittellinie, 80 cm auseinander. Zum Rand der Länge bleiben je etwa 45 cm. Nachtfrost mit Vlies decken."
+            ]
+          }
+        },
+        "tomaten": {
+          "haupt": {
+            "name": "Tomaten",
+            "art": "Voranzucht oder Jungpflanze, ab 15. Mai",
+            "s": [
+              3
+            ],
+            "p": [
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "pflege": [
+            "Wieder vier Pflanzen an der Wand, Abstand 60 cm.",
+            "Vorher Kompost auffrischen und mulchen. Von unten gießen, ausgeizen.",
+            "Kranke Reste in den Hausmüll, nicht auf den Kompost."
+          ],
+          "gut": [
+            "Basilikum im Topf",
+            "Petersilie im Saum"
+          ],
+          "schlecht": [
+            "Kartoffel",
+            "Gurke"
+          ],
+          "anleitung": {
+            "kopf": "Eine Reihe an der Wand, 2,50 m lang, etwa 0,60 m breit.",
+            "reihen": [
+              {
+                "name": "Tomate",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "März auf der Fensterbank säen oder Jungpflanzen kaufen.",
+              "Ab dem 15. Mai vier Pflanzen setzen, Abstand 60 cm, Stab oder Spirale.",
+              "Juni bis August ausgeizen und nur von unten gießen. Ernte Juli bis Oktober."
+            ]
+          }
+        },
+        "gewaechshaus": {
+          "haupt": {
+            "name": "Tomaten",
+            "art": "Voranzucht, Ende April/Anfang Mai",
+            "s": [
+              3
+            ],
+            "p": [
+              4,
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "pflege": [
+            "Wieder acht Pflanzen, je vier pro Seite, Abstand 60 cm.",
+            "Täglich lüften, ausgeizen, morgens am Fuß gießen.",
+            "3–5 l/m² Kompost. Kranke Reste nicht kompostieren."
+          ],
+          "gut": [
+            "Feldsalat als Nachkultur"
+          ],
+          "schlecht": [
+            "Gurke daneben",
+            "Kartoffel"
+          ],
+          "nach": {
+            "name": "Feldsalat",
+            "art": "Nachkultur, Direktsaat September",
+            "s": [
+              9
+            ],
+            "e": [
+              11,
+              12,
+              1,
+              2,
+              3
+            ]
+          },
+          "anleitung": {
+            "kopf": "Dieselbe Belegung wie 2027: Sommer Tomaten, ab September Feldsalat.",
+            "reihen": [
+              {
+                "name": "Tomaten, Seite A",
+                "ton": "haupt"
+              },
+              {
+                "name": "Tomaten, Seite B",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Mitte bis Ende März säen. Ende April oder Anfang Mai je vier Pflanzen pro Seite, Abstand 60 cm.",
+              "Täglich lüften, Seitentriebe ausgeizen, morgens am Fuß gießen.",
+              "Im September abräumen. Danach Feldsalat in Reihen von 15 cm, 1 cm tief. Ernte November bis März."
+            ]
+          }
+        }
       }
     },
     "fruchtfolge": {
