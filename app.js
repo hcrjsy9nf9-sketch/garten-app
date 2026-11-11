@@ -1604,8 +1604,109 @@ function monthStrip(crop) {
   );
 }
 
+function cropBar(crop, kind) {
+  if (!crop) return null;
+  return h(
+    "div",
+    { class: "info-crop" + (kind ? " is-" + kind : "") },
+    h(
+      "div",
+      { class: "info-crop-line" },
+      h("strong", {}, crop.name),
+      crop.art ? h("span", { class: "info-art" }, crop.art) : null
+    ),
+    monthStrip(crop)
+  );
+}
+
+function kulturLead(info) {
+  if (!info || !info.haupt) return [];
+  const title = info.haupt.name + (info.misch ? " + " + info.misch.name : "");
+  return [
+    h("p", { class: "info-haupt" }, title),
+    info.vor ? h("p", { class: "info-neben" }, "Vorher: " + info.vor.name) : null,
+    info.nach ? h("p", { class: "info-neben" }, "Danach: " + info.nach.name) : null,
+    info.naechstes
+      ? h(
+          "p",
+          { class: "info-next" },
+          "Nächstes Jahr: " + info.naechstes,
+          h("span", { class: "info-timeline" }, "2027 → 2028")
+        )
+      : null,
+  ];
+}
+
+function renderAnleitung(info) {
+  const plan = info && info.anleitung;
+  if (!plan || !(plan.schritte || []).length) return null;
+  const rows = plan.reihen || [];
+  return h(
+    "details",
+    { class: "garten-more", "data-anleitung": "1" },
+    h("summary", {}, "Anleitung"),
+    plan.kopf ? h("p", { class: "garten-note" }, plan.kopf) : null,
+    rows.length
+      ? h(
+          "div",
+          { class: "row-sketch", "aria-hidden": "true" },
+          rows.map((row) => h("span", { class: "rk is-" + (row.ton || "haupt") }, row.name))
+        )
+      : null,
+    h(
+      "ol",
+      { class: "info-steps" },
+      plan.schritte.map((line) => h("li", {}, line))
+    )
+  );
+}
+
+function renderHauptInfo(info) {
+  return h(
+    "div",
+    { class: "info-wrap" },
+    h(
+      "section",
+      { class: "info-sec" },
+      cropBar(info.vor, "side"),
+      cropBar(info.haupt, "main"),
+      cropBar(info.misch, "main"),
+      cropBar(info.nach, "side"),
+      h(
+        "p",
+        { class: "info-legend" },
+        h("span", {}, h("span", { class: "swatch is-s" }), "Saat"),
+        h("span", {}, h("span", { class: "swatch is-p" }), "Pflanzung"),
+        h("span", {}, h("span", { class: "swatch is-e" }), "Ernte")
+      )
+    ),
+    (info.pflege || []).length
+      ? h(
+          "section",
+          { class: "info-sec" },
+          h("h3", {}, infoIcon("pflege"), "Pflege"),
+          h(
+            "ul",
+            { class: "info-tips" },
+            info.pflege.slice(0, 4).map((line) => h("li", {}, line))
+          )
+        )
+      : null,
+    info.gut || info.schlecht
+      ? h(
+          "section",
+          { class: "info-sec" },
+          h("h3", {}, infoIcon("nachbar"), "Nachbarn"),
+          info.gut && info.gut.length ? h("p", { class: "info-nb gut" }, h("b", {}, "Gut "), info.gut.join(", ")) : null,
+          info.schlecht && info.schlecht.length ? h("p", { class: "info-nb schlecht" }, h("b", {}, "Meiden "), info.schlecht.join(", ")) : null
+        )
+      : null
+  );
+}
+
 function renderKulturInfo(info) {
   if (!info) return null;
+  if (info.haupt) return renderHauptInfo(info);
   const crops = info.kulturen || [];
   return h(
     "div",
@@ -1666,7 +1767,7 @@ function gartenSheetBody(lage) {
     const years = ((((state.data.plan2027 || {}).fruchtfolge || {}).spalten) || []).slice(1);
     return [
       h("p", { class: "garten-measure" }, massEquation(row) || fieldParts(row.feld).size || ""),
-      h("p", { class: "garten-grow" }, face),
+      ...(info && info.haupt ? kulturLead(info) : [h("p", { class: "garten-grow" }, face)]),
       year === "2027"
         ? info
           ? null
@@ -1691,6 +1792,7 @@ function gartenSheetBody(lage) {
           )
         : null,
       renderKulturInfo(info),
+      renderAnleitung(info),
       h("h3", { class: "info-open" }, "Offen"),
       tasks.length
         ? h(
@@ -1719,7 +1821,9 @@ function gartenSheetBody(lage) {
     measure ? h("p", { class: "garten-measure" }, measure) : null,
     grows ? h("p", { class: "garten-grow" }, grows) : null,
     el.ungefahr ? h("p", { class: "garten-note" }, "Lage ungefähr") : null,
+    ...(info && info.haupt && el.name.indexOf(info.haupt.name) < 0 ? kulturLead(info) : info && info.haupt ? kulturLead(info).slice(1) : []),
     renderKulturInfo(info),
+    renderAnleitung(info),
     h("h3", { class: "info-open" }, "Offen"),
     tasks.length
       ? h(

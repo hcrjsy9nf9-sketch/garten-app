@@ -222,7 +222,7 @@
         "gewaechshaus": [
           {
             "id": "2027-02-gewaechshaus-01",
-            "text": "Ende Februar: Paprika und Chili auf der Fensterbank aussäen (24–28 °C)."
+            "text": "Keine Paprika-Anzucht. Tomaten erst Mitte bis Ende März auf der Fensterbank säen."
           }
         ],
         "obst": [
@@ -257,11 +257,11 @@
         "beete": [
           {
             "id": "2027-03-beete-01",
-            "text": "Ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D)."
+            "text": "Ab Mitte März: Zuckererbsen (1C) und Spinat als Vorkultur auf 1A. Ende März Rhabarber pflanzen (2B)."
           },
           {
             "id": "2027-03-beete-02",
-            "text": "Ende März: Steckzwiebeln (1B), Rhabarber pflanzen (2B)."
+            "text": "Ende März: Steckzwiebeln in 2D stecken, drei Reihen im Wechsel mit den späteren Möhren."
           },
           {
             "id": "2027-03-beete-03",
@@ -279,7 +279,7 @@
           },
           {
             "id": "2027-03-gewaechshaus-02",
-            "text": "Radieschen, Pflücksalat und Kohlrabi als Vorkultur."
+            "text": "Gewächshaus bis zur Tomatenpflanzung nur für Anzuchtschalen nutzen."
           }
         ],
         "obst": [
@@ -318,17 +318,17 @@
         "beete": [
           {
             "id": "2027-04-beete-01",
-            "text": "Säen: Möhren (2D), Rote Bete ab Ende April (1B), Mangold und Salat (2A), Petersilie (2B)."
+            "text": "Säen: Möhren zwischen die Zwiebelreihen (2D), Rote Bete (1B), Pflücksalat (2A). Petersilie in den Saum, nicht ins Beet."
           },
           {
             "id": "2027-04-beete-02",
-            "text": "Kohlrabi ins Freiland (2C) unter Vlies oder Kulturschutznetz."
+            "text": "Grünkohl (2C) vorgezogen halten; auspflanzen erst Ende Mai unter Kulturschutznetz."
           }
         ],
         "gewaechshaus": [
           {
             "id": "2027-04-gewaechshaus-01",
-            "text": "Ende April: Zucchini, Hokkaido und Snackgurke vorziehen."
+            "text": "Ende April: nur Zucchini für Feld 1A vorziehen. Keine Gurke."
           },
           {
             "id": "2027-04-gewaechshaus-02",
@@ -348,7 +348,7 @@
           },
           {
             "id": "2027-04-natur-02",
-            "text": "Ringelblume und Kornblume an den Feldrändern säen."
+            "text": "Ringelblume und Kornblume in die Säume säen, nicht in die Gemüsefelder."
           }
         ]
       }
@@ -367,7 +367,7 @@
         "beete": [
           {
             "id": "2027-05-beete-01",
-            "text": "Nach den Eisheiligen (11.–15. Mai): Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen."
+            "text": "Anfang Mai Phacelia in 1D und 2F säen. Nach den Eisheiligen: Spinat auf 1A abräumen, zwei Zucchini pflanzen; Buschbohnen (2E) säen; Grünkohl (2C) setzen."
           },
           {
             "id": "2027-05-beete-02",
@@ -381,7 +381,7 @@
         "gewaechshaus": [
           {
             "id": "2027-05-gewaechshaus-01",
-            "text": "Paprika, Chili und Snackgurke pflanzen."
+            "text": "Im Gewächshaus nur die Tomaten pflegen: ausgeizen, anbinden, täglich lüften."
           }
         ],
         "obst": [
@@ -424,11 +424,11 @@
         "beete": [
           {
             "id": "2027-06-beete-01",
-            "text": "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen."
+            "text": "Phacelia in 1D und 2F blühen lassen und nicht abmähen, solange Bienen darauf sind."
           },
           {
             "id": "2027-06-beete-02",
-            "text": "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C)."
+            "text": "Kulturschutznetz über dem Grünkohl (2C) geschlossen halten."
           },
           {
             "id": "2027-06-beete-03",
@@ -473,11 +473,11 @@
         "beete": [
           {
             "id": "2027-07-beete-01",
-            "text": "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten."
+            "text": "Zuckererbsen (1C) abräumen, sobald sie durch sind. Zucchini alle 2–3 Tage ernten."
           },
           {
             "id": "2027-07-beete-02",
-            "text": "Gießen nach Bedarf: Kürbisgewächse, Kohl und Sellerie zuerst."
+            "text": "Gießen nach Bedarf: Zucchini, Grünkohl und das Gewächshaus zuerst."
           },
           {
             "id": "2027-07-beete-03",
@@ -526,7 +526,7 @@
           },
           {
             "id": "2027-08-beete-02",
-            "text": "Spinat und Asia-Salate für den Herbst säen (2A)."
+            "text": "Pflücksalat (2A) nur bis Anfang August nachsäen, immer nur zwei Reihen."
           },
           {
             "id": "2027-08-beete-03",
@@ -565,7 +565,7 @@
         "beete": [
           {
             "id": "2027-09-beete-01",
-            "text": "Hokkaido ernten und nachreifen lassen."
+            "text": "Zucchini weiter ernten. Phacelia in 1D und 2F stehen lassen."
           },
           {
             "id": "2027-09-beete-02",
@@ -575,7 +575,7 @@
         "gewaechshaus": [
           {
             "id": "2027-09-gewaechshaus-01",
-            "text": "Winterpostelein und Feldsalat säen."
+            "text": "Feldsalat ins Gewächshaus säen, sobald die Tomaten raus sind."
           }
         ],
         "obst": [
@@ -610,11 +610,11 @@
         "beete": [
           {
             "id": "2027-10-beete-01",
-            "text": "Knoblauch in 1A stecken."
+            "text": "Feld 1A nach der Zucchini nur mulchen. 2028 kommt Rote Bete, deshalb keinen Knoblauch stecken."
           },
           {
             "id": "2027-10-beete-02",
-            "text": "Möhren, Sellerie, Rote Bete und Pastinaken ernten."
+            "text": "Möhren (2D) und Rote Bete (1B) ernten. Zwiebeln sind schon im Sommer raus."
           },
           {
             "id": "2027-10-beete-03",
@@ -628,7 +628,7 @@
         "gewaechshaus": [
           {
             "id": "2027-10-gewaechshaus-01",
-            "text": "Abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen."
+            "text": "Tomaten abräumen, kranke Reste in den Hausmüll, Kompost einarbeiten, Feldsalat säen."
           }
         ],
         "obst": [
@@ -667,7 +667,7 @@
         "beete": [
           {
             "id": "2027-11-beete-01",
-            "text": "Grünkohl und Lauch ernten."
+            "text": "Grünkohl (2C) ernten. Nach dem ersten Frost wird er milder."
           },
           {
             "id": "2027-11-beete-02",
@@ -718,7 +718,7 @@
         "gewaechshaus": [
           {
             "id": "2027-12-gewaechshaus-01",
-            "text": "Feldsalat und Winterpostelein ernten."
+            "text": "Feldsalat im Gewächshaus ernten."
           }
         ],
         "natur": [
@@ -876,7 +876,7 @@
       "bereich": "Links, nördlich der Himbeeren",
       "typ": "Fläche & Bau",
       "masse": "2,5 × 1,9 m",
-      "notiz": "Sommer: Tomaten, Paprika, Gurke; Winter: Wintersalat"
+      "notiz": "Sommer nur Tomaten; ab September Feldsalat"
     },
     {
       "name": "Rasen",
@@ -1026,13 +1026,13 @@
       "text": "Beide Gemüsebeete werden in feste Felder mit Trittpfad geteilt und laufen in einer Vier-Felder-Fruchtfolge; Säume aus Kräutern, Storchschnabel und heimischen Wildstauden fassen die Beete am Längsweg ein. Mulch statt Umgraben, wenig, aber durchdringendes Gießen und mehrjährige Pflanzen halten den Aufwand klein.",
       "kennzahlen": [
         { "value": "46 m²", "label": "Gemüsebeete", "detail": "Beet 1: 18 m², Beet 2: 28 m²" },
-        { "value": "4,75 m²", "label": "Gewächshaus", "detail": "Tomaten, Paprika, Gurke, Wintersalat" },
+        { "value": "4,75 m²", "label": "Gewächshaus", "detail": "Tomaten, ab September Feldsalat" },
         { "value": "12", "label": "Teilflächen", "detail": "inkl. 2 Säume am Längsweg" },
-        { "value": "539 €", "label": "Budget (Schätzung)", "detail": "plus 50 € optionale Trittsteine" }
+        { "value": "497 €", "label": "Budget (Schätzung)", "detail": "plus 50 € optionale Trittsteine" }
       ],
       "punkte": [
         "Produktiv: Feld für Feld gestaffelte Ernten von Mai bis März, Gewächshaus auch im Winter genutzt.",
-        "Bienenfreundlich: 7,8 m² Phacelia/Buchweizen, Feuerbohnen, Storchschnabel und Wildstauden blühen nacheinander von Mai bis September.",
+        "Bienenfreundlich: 7,8 m² Phacelia, dazu Storchschnabel, Dost und die Blühsäume von Mai bis September.",
         "Naturnah: Laub-/Totholzhaufen, Wildbienen-Nisthilfe, Sandarium, Vogelnistkasten und Wasserstelle; Stauden bleiben über Winter stehen.",
         "Trockenes Börde-Klima: Mulchen mit angetrocknetem Rasenschnitt vom eigenen Rasen, trockenheitsverträgliche Stauden in die Sonnensäume.",
         "Bestand bleibt: alle Obstbäume, Beeren und die Rasenfläche bleiben unverändert."
@@ -1104,16 +1104,16 @@
         "nistkasten": "+ Vogelnistkasten",
         "massstab": "Skizze schematisch; Beet-, Gewächshaus- und Kronenmaße maßstäblich, Wege und Rasen nicht.",
         "felder": [
-          { "code": "1A", "klasse": "stark", "l1": "Zucchini,", "l2": "Hokkaido" },
-          { "code": "1B", "klasse": "mittel", "l1": "Zwiebeln,", "l2": "Rote Bete, Salat" },
-          { "code": "1C", "klasse": "schwach", "l1": "Zuckererbsen,", "l2": "Buschbohnen" },
-          { "code": "1D", "klasse": "grau", "l1": "Radieschen →", "l2": "Bienenweide" },
-          { "code": "2A", "klasse": "grau", "l1": "Halbschatten:", "l2": "Blattgemüse", "gestrichelt": true },
-          { "code": "2B", "klasse": "grau", "l1": "Rhabarber,", "l2": "Walderdbeeren", "gestrichelt": true },
-          { "code": "2C", "klasse": "stark", "l1": "Kohl,", "l2": "Sellerie" },
-          { "code": "2D", "klasse": "mittel", "l1": "Möhren, Lauch,", "l2": "Pastinake" },
-          { "code": "2E", "klasse": "schwach", "l1": "Stangen- und", "l2": "Feuerbohnen" },
-          { "code": "2F", "klasse": "grau", "l1": "Radieschen →", "l2": "Bienenweide" }
+          { "code": "1A", "klasse": "stark", "l1": "Zucchini", "l2": "nach Spinat" },
+          { "code": "1B", "klasse": "mittel", "l1": "Rote Bete", "l2": "" },
+          { "code": "1C", "klasse": "schwach", "l1": "Zuckererbsen", "l2": "dann Feldsalat" },
+          { "code": "1D", "klasse": "grau", "l1": "Phacelia", "l2": "" },
+          { "code": "2A", "klasse": "grau", "l1": "Pflücksalat", "l2": "", "gestrichelt": true },
+          { "code": "2B", "klasse": "grau", "l1": "Rhabarber", "l2": "", "gestrichelt": true },
+          { "code": "2C", "klasse": "stark", "l1": "Grünkohl", "l2": "" },
+          { "code": "2D", "klasse": "mittel", "l1": "Möhre +", "l2": "Zwiebel" },
+          { "code": "2E", "klasse": "schwach", "l1": "Buschbohnen", "l2": "" },
+          { "code": "2F", "klasse": "grau", "l1": "Phacelia", "l2": "" }
         ]
       }
     },
@@ -1129,47 +1129,47 @@
           "feld": "1A · 3,7 m²",
           "laenge": 2.25,
           "breite": 1.65,
-          "kultur": "Starkzehrer: Zucchini (2), Hokkaido (1)",
-          "aussaat": "Vorziehen Ende April, Pflanzung ab 15. Mai",
-          "abstand": "100 × 100 cm; Hokkaido 1,5 m²",
-          "ernte": "Jul–Okt",
-          "pflege": "Kapuzinerkresse, Ringelblume; 5 l/m² Kompost, mulchen, hoher Wasserbedarf"
+          "kultur": "Starkzehrer: Zucchini, davor Spinat",
+          "aussaat": "Spinat Mitte März; Zucchini vorziehen Ende April, pflanzen ab 15. Mai",
+          "abstand": "Spinat 25 × 5 cm; zwei Zucchini, 100 cm",
+          "ernte": "Spinat Apr–Mai, Zucchini Jul–Okt",
+          "pflege": "5 l/m² Kompost, mulchen, von unten gießen"
         },
         {
           "feld": "1B · 3,7 m²",
           "laenge": 2.25,
           "breite": 1.65,
-          "kultur": "Mittelzehrer: Steckzwiebeln, Rote Bete, Pflücksalat",
-          "aussaat": "Zwiebeln Ende März; Rote Bete Ende April–Juni; Salat ab April",
-          "abstand": "Zwiebeln 20 × 10; Bete 30 × 10; Salat 25 × 25 cm",
-          "ernte": "Mai–Okt",
-          "pflege": "Salat zwischen Zwiebelreihen; 3 l/m² Kompost; mittlerer Wasserbedarf"
+          "kultur": "Mittelzehrer: Rote Bete",
+          "aussaat": "Direktsaat Ende April bis Mitte Mai",
+          "abstand": "5 Reihen, 30 cm; in der Reihe 8 cm; 2 cm tief",
+          "ernte": "Jul–Okt",
+          "pflege": "3 l/m² Kompost, gleichmäßig feucht halten"
         },
         {
           "feld": "1C · 3,7 m²",
           "laenge": 2.25,
           "breite": 1.65,
-          "kultur": "Schwachzehrer: Zuckererbsen, Buschbohnen, Bohnenkraut",
-          "aussaat": "Erbsen Mitte März–April; Bohnen ab Mitte Mai",
-          "abstand": "Erbsen Reihe 40 cm, 4 cm; Bohnen Horste 40 × 40 cm",
-          "ernte": "Jun–Sep",
-          "pflege": "Bohnenkraut gegen Läuse; nach Erbsen Feldsalat (Aug); kein Dünger nötig"
+          "kultur": "Schwachzehrer: Zuckererbsen, danach Feldsalat",
+          "aussaat": "Erbsen Mitte März–Anfang April; Feldsalat ab Mitte August",
+          "abstand": "Erbsen 40 × 4 cm, 3–4 cm tief; Feldsalat 15 cm, 1 cm tief",
+          "ernte": "Erbsen Jun–Jul, Feldsalat Okt–März",
+          "pflege": "Kein Dünger; Bohnenkraut steht im Saum, nicht im Feld"
         },
         {
           "feld": "1D · 3,7 m²",
           "laenge": 2.25,
           "breite": 1.65,
-          "kultur": "Gründüngung/Bienenweide: Radieschen, Spinat, dann Phacelia + Buchweizen",
-          "aussaat": "Radieschen/Spinat Mitte März; Phacelia Juni",
-          "abstand": "Radieschen 15 × 3 cm; Phacelia breitwürfig 2 g/m²",
-          "ernte": "Apr–Mai (Gemüse), Blüte Aug–Sep",
-          "pflege": "Phacelia ist mit keinem Gemüse verwandt; erfriert und bleibt als Mulch liegen"
+          "kultur": "Gründüngung: Phacelia",
+          "aussaat": "Direktsaat Anfang Mai, breitwürfig 2 g/m²",
+          "abstand": "1 cm einharken, andrücken",
+          "ernte": "Blüte Jul–Sep, kein Gemüse",
+          "pflege": "Stehen lassen, bis der Frost sie zu Mulch macht"
         },
         {
           "feld": "Saum · 1,8 m²",
           "laenge": 4.5,
           "breite": 0.4,
-          "kultur": "Kräuter, Blut-Storchschnabel, Karthäuser-Nelke, Sandarium (südl. 1 m)",
+          "kultur": "Kräuter und Blüten: Thymian, Salbei, Schnittlauch, Petersilie, Bohnenkraut, Kapuzinerkresse, Blut-Storchschnabel, Karthäuser-Nelke, Sandarium (südl. 1 m)",
           "aussaat": "April",
           "abstand": "25–40 cm",
           "ernte": "Kräuter Mai–Okt",
@@ -1181,61 +1181,61 @@
           "feld": "2A · 3,3 m² (Halbschatten)",
           "laenge": 2.0,
           "breite": 1.65,
-          "kultur": "Blattgemüse: Spinat, Pflücksalat, Mangold, Rucola/Asia-Salat",
-          "aussaat": "Spinat März und Aug; Salat Apr–Aug alle 3–4 Wochen; Mangold April",
-          "abstand": "Spinat Reihe 25 cm; Salat 25 × 25; Mangold 30 × 30 cm",
-          "ernte": "Mai–Nov",
-          "pflege": "Schießt im Halbschatten später; 3 l/m² Kompost; mittlerer Wasserbedarf"
+          "kultur": "Halbschatten: Pflücksalat",
+          "aussaat": "Direktsaat ab April, alle 3–4 Wochen bis Anfang August",
+          "abstand": "Reihen 25 cm, in der Reihe auf 25 cm vereinzeln, 1 cm tief",
+          "ernte": "Mai–Okt",
+          "pflege": "Nur zwei Reihen auf einmal; 3 l/m² Kompost; im Schatten schießt er später"
         },
         {
           "feld": "2B · 3,3 m² (Halbschatten)",
           "laenge": 2.0,
           "breite": 1.65,
-          "kultur": "Dauerkultur: Rhabarber (1), Walderdbeeren (6), Petersilie",
-          "aussaat": "Rhabarber März; Walderdbeeren April; Petersilie April",
-          "abstand": "Rhabarber 1 m²; Walderdbeeren 30 × 30; Petersilie 20 cm",
-          "ernte": "Rhabarber ab 2028; Erdbeeren Jun–Sep",
-          "pflege": "Bleibt mehrjährig stehen, nicht Teil der Fruchtfolge; jährlich Kompost"
+          "kultur": "Dauerkultur: Rhabarber",
+          "aussaat": "Zwei Kronen im März pflanzen, 3 cm tief",
+          "abstand": "100 cm entlang der Länge, mittig in den 1,65 m",
+          "ernte": "Erst ab 2028, April–Juni",
+          "pflege": "Bleibt stehen, nicht in der Fruchtfolge; jährlich Kompost, 2027 nicht ernten"
         },
         {
           "feld": "2C · 4,1 m²",
           "laenge": 2.5,
           "breite": 1.65,
-          "kultur": "Starkzehrer: Brokkoli (4), Kohlrabi (8), Grünkohl (4), Knollensellerie (6)",
-          "aussaat": "Kohlrabi April + Juli; Brokkoli/Sellerie Mitte Mai; Grünkohl Ende Juni",
-          "abstand": "Brokkoli/Grünkohl 50 × 50; Kohlrabi 30 × 30; Sellerie 40 × 40 cm",
-          "ernte": "Jun–Feb",
-          "pflege": "Sellerie und Kohl als Partner; Kulturschutznetz; 5 l/m² Kompost; hoher Wasserbedarf"
+          "kultur": "Starkzehrer: Grünkohl",
+          "aussaat": "Vorziehen Anfang April, auspflanzen Ende Mai",
+          "abstand": "3 Reihen × 4 Pflanzen, 50 cm",
+          "ernte": "Okt–Feb",
+          "pflege": "Kulturschutznetz, 5 l/m² Kompost, gleichmäßig gießen"
         },
         {
           "feld": "2D · 4,1 m²",
           "laenge": 2.5,
           "breite": 1.65,
-          "kultur": "Mittelzehrer: Möhren, Lauch, Pastinake",
-          "aussaat": "Pastinake März–April; Möhren April–Mai; Lauch Juni",
-          "abstand": "Möhren Reihe 25 cm, 3 cm; Lauch 30 × 15; Pastinake 35 × 10 cm",
-          "ernte": "Jul–März",
-          "pflege": "Möhre und Lauch abwechselnd in Reihen gegen Möhrenfliege und Lauchmotte"
+          "kultur": "Mittelzehrer: Möhre und Steckzwiebel, Reihe um Reihe",
+          "aussaat": "Zwiebeln Ende März stecken; Möhren ab Mitte April säen",
+          "abstand": "7 Reihen im Wechsel, 20 cm; Möhre 3 cm, Zwiebel 10 cm",
+          "ernte": "Zwiebel Jul–Aug, Möhre Aug–Okt",
+          "pflege": "Gegen Möhren- und Zwiebelfliege; Randreihe zum Kohl ist Möhre"
         },
         {
           "feld": "2E · 4,1 m²",
           "laenge": 2.5,
           "breite": 1.65,
-          "kultur": "Schwachzehrer: Stangenbohnen, Feuerbohnen, Kapuzinerkresse",
-          "aussaat": "Ab Mitte Mai direkt säen",
-          "abstand": "Stangen 60 × 70 cm, 4–6 Bohnen je Stange",
+          "kultur": "Schwachzehrer: Buschbohnen",
+          "aussaat": "Direktsaat ab 15. Mai",
+          "abstand": "4 Reihen à 40 cm, Horste alle 40 cm, 5 Samen, 3 cm tief",
           "ernte": "Jul–Sep",
-          "pflege": "Hoch wachsend an der Nordseite, beschattet nur Richtung Rasen; Feuerbohne blüht für Hummeln"
+          "pflege": "Kein Stickstoffdünger; Kapuzinerkresse blüht im Saum, nicht im Feld"
         },
         {
           "feld": "2F · 4,1 m²",
           "laenge": 2.5,
           "breite": 1.65,
-          "kultur": "Gründüngung/Bienenweide: Radieschen, Spinat, dann Phacelia + Buchweizen",
-          "aussaat": "Radieschen/Spinat März–April; Phacelia/Buchweizen Juni",
-          "abstand": "breitwürfig",
-          "ernte": "Apr–Mai (Gemüse), Blüte Jul–Sep",
-          "pflege": "Lockert und belebt den Boden für den Starkzehrer 2028"
+          "kultur": "Gründüngung: Phacelia",
+          "aussaat": "Direktsaat Anfang Mai, breitwürfig 2 g/m²",
+          "abstand": "1 cm einharken, andrücken",
+          "ernte": "Blüte Jul–Sep, kein Gemüse",
+          "pflege": "Bleibt als Mulch liegen und bereitet den Starkzehrer 2028 vor"
         },
         {
           "feld": "Saum · 2,8 m²",
@@ -1270,238 +1270,200 @@
       "hinweis": "Kulturen 2027 für Magdeburg: letzte Fröste Mitte Mai, wärmeliebendes Gemüse ins Freiland erst nach dem 15. Mai. Nur Maßnahmen für Haus- und Kleingarten, ohne Spritzmittel.",
       "eintraege": {
         "1A": {
-          "kulturen": [
-            {
-              "name": "Zucchini",
-              "art": "Voranzucht, Auspflanzen",
-              "s": [
-                4
-              ],
-              "p": [
-                5
-              ],
-              "e": [
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Hokkaido",
-              "art": "Voranzucht, Auspflanzen",
-              "s": [
-                4
-              ],
-              "p": [
-                5
-              ],
-              "e": [
-                8,
-                9,
-                10
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Zucchini",
+            "art": "Voranzucht, Auspflanzen ab 15. Mai",
+            "s": [
+              4
+            ],
+            "p": [
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
           "pflege": [
             "5 l/m² Kompost vor der Pflanzung, danach mulchen.",
-            "Reichlich gießen, Blätter trocken lassen.",
-            "Kapuzinerkresse und Ringelblume statt Spritzmittel."
+            "Reichlich von unten gießen, Blätter trocken lassen.",
+            "Zwei Pflanzen reichen für das Feld, öfter ernten."
           ],
           "gut": [
-            "Kapuzinerkresse",
-            "Ringelblume",
             "Buschbohne",
             "Zwiebel"
           ],
           "schlecht": [
             "Kartoffel"
-          ]
+          ],
+          "naechstes": "Rote Bete",
+          "vor": {
+            "name": "Spinat",
+            "art": "Vorkultur, Direktsaat",
+            "s": [
+              3
+            ],
+            "e": [
+              4,
+              5
+            ]
+          },
+          "anleitung": {
+            "kopf": "1,65 m breit, Reihen laufen Nord–Süd. Zuerst Spinat, ab dem 15. Mai zwei Zucchini.",
+            "reihen": [
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              },
+              {
+                "name": "Spinat",
+                "ton": "vor"
+              }
+            ],
+            "schritte": [
+              "Mitte März sechs Spinatreihen säen. Abstand 25 cm, links und rechts bleiben je 20 cm. In der Reihe alle 5 cm, 2 cm tief.",
+              "Bis zum 15. Mai ernten und abräumen, auch wenn der Spinat noch klein ist. Die Wurzeln dürfen bleiben.",
+              "Zucchini ab Ende April im Topf vorziehen. Ab dem 15. Mai zwei Pflanzen auf die Mittellinie setzen, 100 cm auseinander. Nachtfrost mit Vlies decken."
+            ]
+          }
         },
         "1B": {
-          "kulturen": [
-            {
-              "name": "Steckzwiebeln",
-              "art": "Stecken Ende März",
-              "p": [
-                3
-              ],
-              "e": [
-                6,
-                7,
-                8
-              ]
-            },
-            {
-              "name": "Rote Bete",
-              "art": "Direktsaat",
-              "s": [
-                4,
-                5,
-                6
-              ],
-              "e": [
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Pflücksalat",
-              "art": "Direktsaat, Zwischensaat",
-              "s": [
-                4,
-                5,
-                6,
-                7,
-                8
-              ],
-              "e": [
-                5,
-                6,
-                7,
-                8,
-                9,
-                10
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Rote Bete",
+            "art": "Direktsaat Ende April",
+            "s": [
+              4,
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
           "pflege": [
-            "3 l/m² Kompost, Boden gleichmäßig feucht halten.",
-            "Pflücksalat zwischen die Zwiebelreihen setzen.",
-            "Rote Bete in Sätzen säen."
+            "Ende April säen, 2 cm tief. Zu frühe Saat schosst in der Kälte.",
+            "Fünf Reihen im Abstand von 30 cm, in der Reihe alle 8 cm.",
+            "3 l/m² Kompost und gleichmäßig feucht halten."
           ],
           "gut": [
-            "Pflücksalat zur Zwiebel",
-            "Möhre",
-            "Dill"
+            "Dill",
+            "Zwiebel"
           ],
           "schlecht": [
-            "Bohne",
-            "Erbse",
-            "Mangold"
-          ]
+            "Mangold",
+            "Spinat"
+          ],
+          "naechstes": "Zuckererbsen"
         },
         "1C": {
-          "kulturen": [
-            {
-              "name": "Zuckererbsen",
-              "art": "Direktsaat",
-              "s": [
-                3,
-                4
-              ],
-              "e": [
-                6,
-                7
-              ]
-            },
-            {
-              "name": "Buschbohnen",
-              "art": "Direktsaat ab Mitte Mai",
-              "s": [
-                5,
-                6
-              ],
-              "e": [
-                7,
-                8,
-                9
-              ]
-            },
-            {
-              "name": "Bohnenkraut",
-              "art": "Zwischenkultur",
-              "p": [
-                5
-              ],
-              "e": [
-                7,
-                8,
-                9
-              ]
-            },
-            {
-              "name": "Feldsalat",
-              "art": "Nachkultur",
-              "s": [
-                8
-              ],
-              "e": [
-                10,
-                11
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Zuckererbsen",
+            "art": "Direktsaat Mitte März",
+            "s": [
+              3,
+              4
+            ],
+            "e": [
+              6,
+              7
+            ]
+          },
           "pflege": [
-            "Kein Dünger, Leguminosen binden Stickstoff selbst.",
-            "Bohnenkraut in die Reihe, hält Läuse fern.",
-            "Nach den Erbsen im August Feldsalat säen."
+            "Kein Dünger, die Erbsen bringen Stickstoff.",
+            "Reisig oder ein niedriges Netz als Rankhilfe.",
+            "Bohnenkraut gegen Läuse steht im Saum."
           ],
           "gut": [
-            "Bohnenkraut",
-            "Kapuzinerkresse",
             "Möhre",
-            "Gurke"
+            "Feldsalat danach"
           ],
           "schlecht": [
             "Zwiebel",
-            "Knoblauch",
-            "Fenchel"
-          ]
+            "Knoblauch"
+          ],
+          "naechstes": "Phacelia",
+          "nach": {
+            "name": "Feldsalat",
+            "art": "Nachkultur, Direktsaat",
+            "s": [
+              8
+            ],
+            "e": [
+              10,
+              11,
+              12,
+              1,
+              2,
+              3
+            ]
+          },
+          "anleitung": {
+            "kopf": "1,65 m breit. Zuerst Erbsen, nach dem Abräumen Feldsalat auf dieselbe Fläche.",
+            "reihen": [
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zuckererbse",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Mitte März bis Anfang April vier Reihen säen. Abstand 40 cm, Rand je etwa 22 cm. In der Reihe alle 4 cm, 3–4 cm tief.",
+              "Juni und Juli ernten. Danach abräumen, die Wurzeln im Boden lassen.",
+              "Ab Mitte August Feldsalat: zehn Reihen im Abstand von 15 cm, Rand je 15 cm, 1 cm tief. In der Reihe dicht säen und auf 2 cm vereinzeln. Ernte Oktober bis März."
+            ]
+          }
         },
         "1D": {
-          "kulturen": [
-            {
-              "name": "Radieschen",
-              "art": "Direktsaat, Vorkultur",
-              "s": [
-                3
-              ],
-              "e": [
-                4,
-                5
-              ]
-            },
-            {
-              "name": "Spinat",
-              "art": "Direktsaat, Vorkultur",
-              "s": [
-                3
-              ],
-              "e": [
-                4,
-                5
-              ]
-            },
-            {
-              "name": "Phacelia",
-              "art": "Direktsaat, Blüte Aug–Sep",
-              "s": [
-                6
-              ]
-            },
-            {
-              "name": "Buchweizen",
-              "art": "Direktsaat, Blüte Aug–Sep",
-              "s": [
-                6
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Phacelia",
+            "art": "Direktsaat Anfang Mai, Blüte Jul–Sep",
+            "s": [
+              5
+            ]
+          },
           "pflege": [
-            "Radieschen und Spinat früh ernten, dann Phacelia und Buchweizen.",
-            "Blühende Gründüngung stehen lassen, Bienen nutzen sie.",
-            "Abgefrorenes als Mulch liegen lassen, nicht untergraben."
+            "2 g/m² breitwürfig, 1 cm einharken und andrücken.",
+            "Nicht mähen, solange Bienen auf den Blüten sind.",
+            "Nach dem Frost als Mulch liegen lassen, nicht untergraben."
           ],
           "gut": [
-            "Phacelia verträgt sich mit allem Gemüse"
+            "Verträgt sich mit jedem Gemüse"
           ],
           "schlecht": [
-            "Radieschen nicht nach Kohl",
-            "Spinat nicht neben Mangold"
-          ]
+            "Keine, sie ist mit keinem Gemüse verwandt"
+          ],
+          "naechstes": "Brokkoli"
         },
         "saum1": {
           "kulturen": [
@@ -1531,7 +1493,8 @@
           "pflege": [
             "Im April pflanzen, danach kaum gießen.",
             "Sandarium im südlichen Meter sonnig und offen lassen.",
-            "Verblühtes erst im Frühjahr schneiden."
+            "Verblühtes erst im Frühjahr schneiden.",
+            "Petersilie, Bohnenkraut und Kapuzinerkresse nur hier, nicht im Gemüsefeld."
           ],
           "gut": [
             "Thymian",
@@ -1544,406 +1507,222 @@
           ]
         },
         "2A": {
-          "kulturen": [
-            {
-              "name": "Spinat",
-              "art": "Direktsaat",
-              "s": [
-                3,
-                8
-              ],
-              "e": [
-                5,
-                6,
-                10,
-                11
-              ]
-            },
-            {
-              "name": "Pflücksalat",
-              "art": "Direktsaat alle 3–4 Wochen",
-              "s": [
-                4,
-                5,
-                6,
-                7,
-                8
-              ],
-              "e": [
-                5,
-                6,
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Mangold",
-              "art": "Direktsaat",
-              "s": [
-                4
-              ],
-              "e": [
-                6,
-                7,
-                8,
-                9,
-                10,
-                11
-              ]
-            },
-            {
-              "name": "Rucola, Asia-Salat",
-              "art": "Direktsaat, Zwischensaat",
-              "s": [
-                4,
-                5,
-                6,
-                7,
-                8
-              ],
-              "e": [
-                5,
-                6,
-                7,
-                8,
-                9
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Pflücksalat",
+            "art": "Direktsaat, Satzsaat",
+            "s": [
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "e": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
           "pflege": [
-            "3 l/m² Kompost, im Halbschatten gleichmäßig feucht halten.",
-            "Salat alle 3–4 Wochen nachsäen.",
-            "Spinat im März und noch einmal im August."
+            "Nicht alles auf einmal: zwei Reihen, drei bis vier Wochen später die nächsten.",
+            "Reihenabstand 25 cm, in der Reihe auf 25 cm vereinzeln, knapp 1 cm tief.",
+            "3 l/m² Kompost. Im Halbschatten schießt er später."
           ],
           "gut": [
             "Radieschen",
-            "Zwiebel",
-            "Kohlrabi"
+            "Zwiebel"
           ],
           "schlecht": [
-            "Mangold nicht neben Rote Bete",
-            "Spinat und Mangold nur zeitlich versetzt"
-          ]
+            "Petersilie",
+            "Sellerie"
+          ],
+          "naechstes": "Mangold"
         },
         "2B": {
-          "kulturen": [
-            {
-              "name": "Rhabarber",
-              "art": "Pflanzung, Ernte erst ab 2028",
-              "p": [
-                3
-              ]
-            },
-            {
-              "name": "Walderdbeeren",
-              "art": "Pflanzung",
-              "p": [
-                4
-              ],
-              "e": [
-                6,
-                7,
-                8,
-                9
-              ]
-            },
-            {
-              "name": "Petersilie",
-              "art": "Direktsaat",
-              "s": [
-                4
-              ],
-              "e": [
-                6,
-                7,
-                8,
-                9,
-                10
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Rhabarber",
+            "art": "Pflanzung März, Ernte erst 2028",
+            "p": [
+              3
+            ]
+          },
           "pflege": [
-            "Mehrjährig, nicht in die Fruchtfolge nehmen.",
-            "Jedes Jahr Kompost; Rhabarber im Pflanzjahr nicht ernten.",
-            "Mulchen, Walderdbeeren nicht auf nacktem Boden."
+            "Zwei Kronen, 100 cm auseinander, 3 cm tief, mittig in den 1,65 m.",
+            "Im Pflanzjahr nicht ernten. Jährlich Kompost und Mulch.",
+            "Bleibt dauerhaft, die anderen Felder rotieren um ihn herum."
           ],
           "gut": [
-            "Schnittlauch",
             "Buschbohne",
             "Salat"
           ],
           "schlecht": [
-            "Sellerie neben Rhabarber",
-            "Kohl neben Erdbeeren"
+            "Sellerie"
           ],
-          "mehr": "Rhabarber trägt ab 2028, dann April bis Juni. Die Stangen vor dem Johannistag ernten und die Blüte ausbrechen."
+          "naechstes": "Rhabarber bleibt, erste Ernte"
         },
         "2C": {
-          "kulturen": [
-            {
-              "name": "Brokkoli",
-              "art": "Voranzucht, Auspflanzen Mitte Mai",
-              "s": [
-                3
-              ],
-              "p": [
-                5
-              ],
-              "e": [
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Knollensellerie",
-              "art": "Voranzucht, Auspflanzen Mitte Mai",
-              "s": [
-                2,
-                3
-              ],
-              "p": [
-                5
-              ],
-              "e": [
-                10,
-                11
-              ]
-            },
-            {
-              "name": "Kohlrabi",
-              "art": "Direktsaat oder Jungpflanzen, April und Juli",
-              "s": [
-                4,
-                7
-              ],
-              "p": [
-                4,
-                7
-              ],
-              "e": [
-                6,
-                7,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Grünkohl",
-              "art": "Direktsaat oder Pflanzung Ende Juni",
-              "s": [
-                6
-              ],
-              "p": [
-                6
-              ],
-              "e": [
-                10,
-                11,
-                12,
-                1,
-                2
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Grünkohl",
+            "art": "Voranzucht, Auspflanzen Ende Mai",
+            "s": [
+              4
+            ],
+            "p": [
+              5,
+              6
+            ],
+            "e": [
+              10,
+              11,
+              12,
+              1,
+              2
+            ]
+          },
           "pflege": [
-            "5 l/m² Kompost, gleichmäßig und reichlich gießen.",
-            "Kulturschutznetz gegen Kohlweißling und Kohlfliege.",
-            "Sellerie neben den Kohl setzen."
+            "Anfang April vorziehen, Ende Mai setzen. Drei Reihen mit je vier Pflanzen, 50 cm.",
+            "Kulturschutznetz vom Setzen bis zum Herbst.",
+            "5 l/m² Kompost, gleichmäßig gießen."
           ],
           "gut": [
-            "Knollensellerie",
-            "Tomate",
-            "Bohne"
+            "Erbse",
+            "Buschbohne"
           ],
           "schlecht": [
             "Zwiebel",
-            "Erdbeere",
-            "Kohl nicht nach Kohl"
-          ]
+            "anderer Kohl"
+          ],
+          "naechstes": "Möhren"
         },
         "2D": {
-          "kulturen": [
-            {
-              "name": "Pastinake",
-              "art": "Direktsaat",
-              "s": [
-                3,
-                4
-              ],
-              "e": [
-                10,
-                11,
-                12,
-                1,
-                2,
-                3
-              ]
-            },
-            {
-              "name": "Möhren",
-              "art": "Direktsaat",
-              "s": [
-                4,
-                5
-              ],
-              "e": [
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Lauch",
-              "art": "Voranzucht, Auspflanzen Juni",
-              "s": [
-                3
-              ],
-              "p": [
-                6
-              ],
-              "e": [
-                9,
-                10,
-                11,
-                12,
-                1,
-                2,
-                3
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Möhre",
+            "art": "Direktsaat ab Mitte April",
+            "s": [
+              4,
+              5
+            ],
+            "e": [
+              8,
+              9,
+              10
+            ]
+          },
           "pflege": [
-            "Möhre und Lauch Reihe um Reihe wechseln.",
-            "Saat flach feucht halten, später mulchen.",
-            "Pastinake über den Winter im Beet lassen."
+            "Saat bis zum Auflaufen feucht halten, 1–2 cm tief.",
+            "Zwiebeln ernten, wenn das Laub umfällt. Möhren bleiben bis Oktober.",
+            "Die Reihe am Rand zu Feld 2C ist Möhre, nicht Zwiebel."
           ],
           "gut": [
-            "Lauch",
-            "Zwiebel",
-            "Salat",
-            "Erbse"
+            "Steckzwiebel in der Nachbarreihe"
           ],
           "schlecht": [
             "Dill",
-            "Bohne neben Lauch"
-          ]
+            "Erbse direkt an der Zwiebel"
+          ],
+          "naechstes": "Buschbohnen",
+          "misch": {
+            "name": "Steckzwiebel",
+            "art": "Stecken Ende März",
+            "p": [
+              3
+            ],
+            "e": [
+              7,
+              8
+            ]
+          },
+          "anleitung": {
+            "kopf": "2,50 m lang, 1,65 m breit. Sieben Reihen laufen Nord–Süd, Abstand 20 cm, Rand je etwa 22 cm.",
+            "reihen": [
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zwiebel",
+                "ton": "misch"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zwiebel",
+                "ton": "misch"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              },
+              {
+                "name": "Zwiebel",
+                "ton": "misch"
+              },
+              {
+                "name": "Möhre",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Ende März die drei Zwiebelreihen stecken. In der Reihe alle 10 cm, die Spitze bleibt gerade sichtbar. Pro Reihe etwa 25 Stück, zusammen etwa 75.",
+              "Ab Mitte April die vier Möhrenreihen in die Lücken säen, 1–2 cm tief. In der Reihe auf 3 cm vereinzeln. Früher säen lohnt in Magdeburg selten, die Saat verfault in kalter Nässe.",
+              "Zwiebeln ernten, wenn das Laub im Juli oder August umfällt. Möhren bis Oktober stehen lassen. Danach kommt nichts mehr in dieses Feld."
+            ]
+          }
         },
         "2E": {
-          "kulturen": [
-            {
-              "name": "Stangenbohnen",
-              "art": "Direktsaat ab Mitte Mai",
-              "s": [
-                5,
-                6
-              ],
-              "e": [
-                7,
-                8,
-                9
-              ]
-            },
-            {
-              "name": "Feuerbohnen",
-              "art": "Direktsaat ab Mitte Mai",
-              "s": [
-                5,
-                6
-              ],
-              "e": [
-                7,
-                8,
-                9
-              ]
-            },
-            {
-              "name": "Kapuzinerkresse",
-              "art": "Direktsaat, Blüte bis zum Frost",
-              "s": [
-                5
-              ],
-              "e": [
-                7,
-                8,
-                9,
-                10
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Buschbohnen",
+            "art": "Direktsaat ab 15. Mai",
+            "s": [
+              5,
+              6
+            ],
+            "e": [
+              7,
+              8,
+              9
+            ]
+          },
           "pflege": [
-            "Erst ab Mitte Mai säen, bis dahin droht Frost.",
-            "Rankhilfe an der Nordkante, kein Stickstoffdünger.",
-            "Feuerbohne blüht für Hummeln, Kresse hält Läuse klein."
+            "Vier Reihen im Abstand von 40 cm, Rand je etwa 22 cm.",
+            "Fünf Horste je Reihe, 40 cm auseinander, fünf Samen, 3 cm tief.",
+            "Kein Stickstoff. Bei Nachtfrost nach der Saat mit Vlies decken."
           ],
           "gut": [
-            "Kapuzinerkresse",
-            "Bohnenkraut",
+            "Bohnenkraut im Saum",
             "Gurke"
           ],
           "schlecht": [
             "Zwiebel",
-            "Knoblauch",
             "Fenchel"
-          ]
+          ],
+          "naechstes": "Phacelia"
         },
         "2F": {
-          "kulturen": [
-            {
-              "name": "Radieschen",
-              "art": "Direktsaat, Vorkultur",
-              "s": [
-                3,
-                4
-              ],
-              "e": [
-                4,
-                5
-              ]
-            },
-            {
-              "name": "Spinat",
-              "art": "Direktsaat, Vorkultur",
-              "s": [
-                3,
-                4
-              ],
-              "e": [
-                4,
-                5
-              ]
-            },
-            {
-              "name": "Phacelia",
-              "art": "Direktsaat, Blüte Jul–Sep",
-              "s": [
-                6
-              ]
-            },
-            {
-              "name": "Buchweizen",
-              "art": "Direktsaat, Blüte Jul–Sep",
-              "s": [
-                6
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Phacelia",
+            "art": "Direktsaat Anfang Mai, Blüte Jul–Sep",
+            "s": [
+              5
+            ]
+          },
           "pflege": [
-            "Radieschen und Spinat März bis April, danach Phacelia und Buchweizen.",
-            "Blüte stehen lassen, der Boden lockert sich für 2028.",
-            "Abgefrorenes als Mulch liegen lassen."
+            "2 g/m² breitwürfig, 1 cm einharken.",
+            "Blüte für die Bienen stehen lassen.",
+            "Abgefrorenes ist der Mulch für die Zucchini 2028."
           ],
           "gut": [
-            "Phacelia verträgt sich mit allem Gemüse"
+            "Verträgt sich mit jedem Gemüse"
           ],
           "schlecht": [
-            "Radieschen nicht nach Kohl",
-            "Spinat nicht neben Mangold"
-          ]
+            "Keine, sie ist mit keinem Gemüse verwandt"
+          ],
+          "naechstes": "Zucchini"
         },
         "saum2": {
           "kulturen": [
@@ -1978,134 +1757,100 @@
           ]
         },
         "tomaten": {
-          "kulturen": [
-            {
-              "name": "Tomate, Freiland",
-              "art": "Voranzucht oder Jungpflanze, ab 15. Mai",
-              "s": [
-                3
-              ],
-              "p": [
-                5
-              ],
-              "e": [
-                7,
-                8,
-                9,
-                10
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Tomaten",
+            "art": "Voranzucht oder Jungpflanze, ab 15. Mai",
+            "s": [
+              3
+            ],
+            "p": [
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
           "pflege": [
-            "Abstand 50–60 cm, Stab oder Spirale, Kompost und Mulch.",
-            "Von unten gießen, Juni bis August ausgeizen.",
-            "Sorten wie Philovita, Primabella oder Resi; kranke Reste in den Hausmüll."
+            "Vier Pflanzen in einer Reihe an der Wand, Abstand 60 cm.",
+            "Von unten gießen, Juni bis August ausgeizen, mulchen.",
+            "Robuste Sorten wie Philovita, Primabella oder Resi. Kranke Reste in den Hausmüll."
           ],
           "gut": [
-            "Basilikum",
-            "Petersilie",
-            "Kapuzinerkresse",
-            "Ringelblume"
+            "Basilikum im Topf",
+            "Petersilie im Saum"
           ],
           "schlecht": [
             "Kartoffel",
-            "Fenchel",
             "Gurke"
           ],
-          "mehr": "Jedes Jahr am geschützten Platz an der Gewächshauswand. Jährlich Kompost auffüllen, krankes Laub nicht kompostieren."
+          "naechstes": "wieder Tomaten, mit Kompost"
         },
         "gewaechshaus": {
-          "kulturen": [
-            {
-              "name": "Radieschen, Pflücksalat, Kohlrabi",
-              "art": "Vorkultur, Direktsaat",
-              "s": [
-                3,
-                4
-              ],
-              "e": [
-                4,
-                5
-              ]
-            },
-            {
-              "name": "Tomaten, Basilikum darunter",
-              "art": "Voranzucht, Ende April/Anfang Mai",
-              "s": [
-                3
-              ],
-              "p": [
-                4,
-                5
-              ],
-              "e": [
-                7,
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Paprika, Chili",
-              "art": "Voranzucht Ende Februar, Mitte Mai",
-              "s": [
-                2
-              ],
-              "p": [
-                5
-              ],
-              "e": [
-                8,
-                9,
-                10
-              ]
-            },
-            {
-              "name": "Snackgurke",
-              "art": "Voranzucht, Auspflanzen Mitte Mai",
-              "s": [
-                4
-              ],
-              "p": [
-                5
-              ],
-              "e": [
-                6,
-                7,
-                8,
-                9
-              ]
-            },
-            {
-              "name": "Feldsalat, Winterpostelein, Spinat",
-              "art": "Nachkultur, Direktsaat Aug/Sep",
-              "s": [
-                8,
-                9
-              ],
-              "e": [
-                11,
-                12,
-                1,
-                2,
-                3
-              ]
-            }
-          ],
+          "haupt": {
+            "name": "Tomaten",
+            "art": "Voranzucht, Ende April/Anfang Mai",
+            "s": [
+              3
+            ],
+            "p": [
+              4,
+              5
+            ],
+            "e": [
+              7,
+              8,
+              9,
+              10
+            ]
+          },
           "pflege": [
-            "Täglich lüften, Tomaten ausgeizen, morgens am Fuß gießen.",
-            "Gurke feucht halten, Tomatenblätter trocken lassen.",
-            "3–5 l/m² Kompost; Tomaten und Paprika jährlich die Seite tauschen."
+            "Acht Pflanzen, je vier pro Seite, Abstand 60 cm.",
+            "Täglich lüften, ausgeizen, morgens am Fuß gießen.",
+            "3–5 l/m² Kompost. Kranke Reste nicht kompostieren."
           ],
           "gut": [
-            "Basilikum unter Tomate",
-            "Tagetes"
+            "Feldsalat als Nachkultur"
           ],
           "schlecht": [
-            "Gurke direkt neben Tomate",
+            "Gurke daneben",
             "Kartoffel"
           ],
-          "mehr": "Gurke und Tomate wollen unterschiedliche Luftfeuchte. Bei Mehltau oder Braunfäule die Gurke 2028 ins Freiland auf das Starkzehrer-Feld setzen."
+          "naechstes": "wieder Tomaten, danach Feldsalat",
+          "nach": {
+            "name": "Feldsalat",
+            "art": "Nachkultur, Direktsaat September",
+            "s": [
+              9
+            ],
+            "e": [
+              11,
+              12,
+              1,
+              2,
+              3
+            ]
+          },
+          "anleitung": {
+            "kopf": "Jede Seite ist 2,50 × 0,60 m. Eine Kultur im Sommer, eine im Winter.",
+            "reihen": [
+              {
+                "name": "Tomaten, Seite A",
+                "ton": "haupt"
+              },
+              {
+                "name": "Tomaten, Seite B",
+                "ton": "haupt"
+              }
+            ],
+            "schritte": [
+              "Mitte bis Ende März auf der Fensterbank säen. Ende April oder Anfang Mai je vier Pflanzen pro Seite setzen, Abstand 60 cm. Der Mittelgang bleibt frei.",
+              "Täglich lüften, Seitentriebe ausgeizen, nur morgens am Fuß gießen.",
+              "Im September abräumen. Was Braunfäule hat, kommt in den Hausmüll. Danach auf beiden Seiten Feldsalat in Reihen von 15 cm, 1 cm tief. Ernte November bis März."
+            ]
+          }
         },
         "himbeeren": {
           "kulturen": [
@@ -2258,7 +2003,7 @@
         ["2E", "Schwachzehrer", "Gründüngung", "Starkzehrer", "Mittelzehrer"],
         ["2F", "Gründüngung", "Starkzehrer", "Mittelzehrer", "Schwachzehrer"]
       ],
-      "text": "Jedes Feld rückt jährlich eine Stufe weiter: Nach der Bienenweide folgt der Starkzehrer, so steht Kohl nur alle vier Jahre auf derselben Fläche (Kohlhernie-Vorbeugung). Stangenbohnen kommen immer an die Nordkante ihres Feldes, damit sie nichts beschatten."
+      "text": "Jedes Feld hat eine Hauptkultur und rückt jährlich eine Stufe weiter. Nach der Phacelia folgt der Starkzehrer, Kohl deshalb nur alle vier Jahre auf derselben Fläche. 2028: 1A Rote Bete, 1B Zuckererbsen, 1C Phacelia, 1D Brokkoli, 2C Möhren, 2D Buschbohnen, 2E Phacelia, 2F Zucchini. 2A Mangold, 2B Rhabarber bleibt."
     },
     "gewaechshaus": {
       "titel": "Gewächshaus",
@@ -2266,25 +2011,18 @@
       "sommerSpalten": ["Bereich", "Kultur", "Pflanzung", "Abstand", "Ernte"],
       "sommer": [
         {
-          "bereich": "Seite A, 2,5 × 0,6 m",
-          "kultur": "Tomaten (4), z. B. krautfäuletolerante Sorten; Basilikum darunter",
+          "bereich": "Seite A und B, je 2,5 × 0,6 m",
+          "kultur": "Tomaten (8), eine robuste Sorte, auf beiden Seiten",
           "pflanzung": "Ende April/Anfang Mai",
-          "abstand": "60 cm",
+          "abstand": "60 cm, je 4 Pflanzen",
           "ernte": "Jul–Okt"
         },
         {
-          "bereich": "Seite B, 2,5 × 0,6 m",
-          "kultur": "Paprika (2), Chili (1)",
-          "pflanzung": "Mitte Mai",
-          "abstand": "45–50 cm",
-          "ernte": "Aug–Okt"
-        },
-        {
-          "bereich": "Seite B",
-          "kultur": "Snackgurke (1) an Schnur",
-          "pflanzung": "Mitte Mai",
-          "abstand": "60 cm",
-          "ernte": "Jun–Sep"
+          "bereich": "Beide Seiten, ab September",
+          "kultur": "Feldsalat, Nachkultur",
+          "pflanzung": "Direktsaat September",
+          "abstand": "15 cm, 1 cm tief",
+          "ernte": "Nov–März"
         },
         {
           "bereich": "Mittelgang",
@@ -2298,11 +2036,11 @@
       "schritte": [
         {
           "titel": "Ende Februar–März: Anzucht",
-          "text": "Paprika/Chili Ende Februar, Tomaten Mitte/Ende März auf der Fensterbank; ab April tagsüber zum Abhärten ins Gewächshaus."
+          "text": "Tomaten Mitte/Ende März auf der Fensterbank; ab April tagsüber zum Abhärten ins Gewächshaus."
         },
         {
           "titel": "März–April: Vorkultur",
-          "text": "Radieschen, Pflücksalat und Kohlrabi auf den Beeten, geerntet bevor Tomaten und Paprika kommen."
+          "text": "Kein Gemüse vor den Tomaten. Der Mittelgang bleibt für Anzuchtschalen frei."
         },
         {
           "titel": "Mai–September: Pflege",
@@ -2310,14 +2048,14 @@
         },
         {
           "titel": "Oktober–März: Wintersalat",
-          "text": "Feldsalat und Winterpostelein (Aussaat Aug/Sep), dazu Spinat; Ernte November bis März."
+          "text": "Im September, nach den Tomaten, nur Feldsalat säen. Ernte November bis März."
         },
         {
           "titel": "Jährlich: Boden pflegen",
-          "text": "Vor der Pflanzung 3–5 l/m² Kompost; Tomaten und Paprika jedes Jahr die Seite tauschen."
+          "text": "Vor der Pflanzung 3–5 l/m² Kompost. Kranke Reste in den Hausmüll, nicht auf den Kompost."
         }
       ],
-      "hinweis": "Gurke und Tomate wollen unterschiedliche Luftfeuchte. Kommt es zu Mehltau an der Gurke oder Braunfäule an Tomaten, die Gurke 2028 ins Freiland auf das Starkzehrer-Feld setzen."
+      "hinweis": "Nur Tomaten, damit Lüften und Gießen zu einer Kultur passen. Gurke und Paprika bleiben 2027 draußen."
     },
     "obst": {
       "titel": "Obst und Beeren",
@@ -2433,8 +2171,8 @@
           "kosten": "in Blumensaat enthalten"
         },
         {
-          "standort": "Feldränder in allen Beeten",
-          "pflanze": "Ringelblume, Kornblume, Tagetes, Kapuzinerkresse",
+          "standort": "Säume, nicht in den Gemüsefeldern",
+          "pflanze": "Ringelblume, Kornblume, Kapuzinerkresse",
           "anzahl": "Saat",
           "abstand": "20–30 cm",
           "licht": "Sonne",
@@ -2498,7 +2236,7 @@
           "name": "Februar",
           "punkte": [
             "Falls Herbsthimbeeren: alle Ruten bodennah abschneiden.",
-            "Ende Februar: Paprika und Chili auf der Fensterbank aussäen (24–28 °C).",
+            "Keine Paprika-Anzucht. Tomaten erst Mitte bis Ende März auf der Fensterbank säen.",
             "Vogelnistkasten bis Ende Februar an der Süßkirsche aufhängen (Flugloch Ost/Südost).",
             "Bei offenem Boden: Bodenprobe ziehen und ins Labor schicken, Spatenprobe machen.",
             "Johannisbeeren bei Bedarf auslichten (frostfreier Tag)."
@@ -2510,9 +2248,9 @@
           "name": "März",
           "punkte": [
             "Mitte/Ende März: Tomaten auf der Fensterbank aussäen.",
-            "Gewächshaus: Radieschen, Pflücksalat und Kohlrabi als Vorkultur säen/pflanzen.",
-            "Freiland ab Mitte/Ende März: Zuckererbsen (1C), Spinat und Radieschen (1D, 2F, 2A), Pastinake (2D).",
-            "Ende März: Steckzwiebeln (1B); Rhabarber pflanzen (2B).",
+            "Gewächshaus bis zur Tomatenpflanzung nur für Anzuchtschalen nutzen.",
+            "Freiland ab Mitte März: Zuckererbsen (1C) und Spinat als Vorkultur auf 1A. Rhabarber (2B) pflanzen.",
+            "Ende März: Steckzwiebeln in 2D stecken, drei Reihen im Wechsel mit den späteren Möhren.",
             "Kompost auf Starkzehrer-Felder 1A und 2C (ca. 5 l/m²), Mittelzehrer 1B und 2D (ca. 3 l/m²).",
             "Tomaten außen: Anzucht auf der Fensterbank, oder Jungpflanzen kaufen (ca. 2–3 €/Stück).",
             "Nisthilfe aufstellen und Sandarium im Saum Beet 1 anlegen, bevor die Wildbienen fliegen.",
@@ -2525,9 +2263,9 @@
           "name": "April",
           "punkte": [
             "Säume bepflanzen: Storchschnabel, Wildstauden, Kräuter (siehe Abschnitt Kräuter und Blühpflanzen).",
-            "Säen: Möhren (2D), Rote Bete ab Ende April (1B), Mangold und Salat (2A), Petersilie (2B), Ringelblume/Kornblume an Feldrändern.",
-            "Kohlrabi ins Freiland (2C) unter Vlies oder Kulturschutznetz.",
-            "Ende April: Zucchini, Hokkaido und Snackgurke auf der Fensterbank vorziehen.",
+            "Säen: Möhren zwischen die Zwiebelreihen (2D), Rote Bete (1B), Pflücksalat (2A). Petersilie und Blumen nur in die Säume.",
+            "Grünkohl (2C) bleibt in der Anzucht und kommt Ende Mai unter Netz.",
+            "Ende April: nur Zucchini für Feld 1A vorziehen.",
             "Ende April/Anfang Mai: Tomaten ins Gewächshaus pflanzen, bei Frostnächten Vlies auflegen.",
             "Sauerkirsche: nach der Blüte von Monilia befallene Triebspitzen bis ins gesunde Holz zurückschneiden.",
             "Wasser & Technik (Anfang/Mitte April, nach den letzten starken Frösten; in milden Jahren schon Ende März): Brunnenpumpe wieder anschließen, Pumpe und Saugleitung mit Wasser füllen und entlüften, Dichtungen und Anschlüsse prüfen, Probelauf außerhalb der Ruhezeiten machen (§ 8.2).",
@@ -2539,9 +2277,9 @@
           "label": "Mai",
           "name": "Mai",
           "punkte": [
-            "Eisheilige (11.–15. Mai) abwarten, danach: Zucchini, Hokkaido, Brokkoli, Sellerie pflanzen; Busch-, Stangen- und Feuerbohnen säen.",
+            "Anfang Mai Phacelia in 1D und 2F säen. Nach den Eisheiligen: Spinat auf 1A abräumen, zwei Zucchini pflanzen; Buschbohnen (2E) säen; Grünkohl (2C) setzen.",
             "Tomaten außen: Mitte Mai nach den Eisheiligen auspflanzen, Abstand ca. 50–60 cm, Stäbe oder Spiralen, Kompost einarbeiten, mulchen.",
-            "Gewächshaus: Paprika, Chili und Snackgurke pflanzen.",
+            "Gewächshaus: nur Tomaten ausgeizen, anbinden und täglich lüften.",
             "Kirschfruchtfliege: Gelbtafeln aufhängen, sobald die Kirschen von grün auf gelb umfärben.",
             "Pheromonfalle gegen Pflaumenwickler an der Pflaume aufhängen (bis August).",
             "Mulchen beginnen (angetrockneter Rasenschnitt vom eigenen Rasen, dünn auftragen). Mähen nur außerhalb der Ruhezeiten: werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht (§ 8.2).",
@@ -2554,8 +2292,8 @@
           "label": "Jun",
           "name": "Juni",
           "punkte": [
-            "Nach Radieschen/Spinat: Phacelia und Buchweizen in 1D und 2F säen (Bienenweide).",
-            "Lauch pflanzen (2D); Ende Juni/Juli Grünkohl (2C).",
+            "Phacelia in 1D und 2F blühen lassen, solange Bienen darauf sind.",
+            "Kulturschutznetz über dem Grünkohl (2C) geschlossen halten.",
             "Tomaten außen: Juni–August ausgeizen und von unten gießen. Regenschutz und Kraut- und Braunfäule beachten (robuste Sorten wie Philovita, Primabella, Resi).",
             "Tomaten wöchentlich ausgeizen und anbinden; Gewächshaus täglich lüften.",
             "Kirschen zügig und vollständig ernten (Kirschessigfliege, Kirschfruchtfliege).",
@@ -2571,9 +2309,9 @@
             "Süß- und Sauerkirsche direkt nach der Ernte schneiden (Sommerschnitt).",
             "Sommerhimbeeren: abgetragene Ruten bodennah entfernen.",
             "Johannisbeeren nach der Ernte auslichten.",
-            "Erbsen abräumen; Kohlrabi 2. Satz pflanzen; Zucchini alle 2–3 Tage ernten.",
+            "Zuckererbsen (1C) abräumen, sobald sie durch sind. Zucchini alle 2–3 Tage ernten.",
             "Tomaten außen: Ernte ab Juli bis Oktober, weiter ausgeizen und von unten gießen.",
-            "Gießen nach Bedarf: Kürbisgewächse, Kohl, Sellerie und Gewächshaus zuerst."
+            "Gießen nach Bedarf: Zucchini, Grünkohl und das Gewächshaus zuerst."
           ]
         },
         {
@@ -2582,7 +2320,7 @@
           "name": "August",
           "punkte": [
             "Feldsalat in 1C (nach Erbsen) säen, zusätzlich in Schalen für das Gewächshaus vorziehen.",
-            "Spinat und Asia-Salate für den Herbst säen (2A).",
+            "Pflücksalat (2A) nur bis Anfang August nachsäen, immer nur zwei Reihen.",
             "Tomaten außen: weiter ausgeizen, von unten gießen und ernten.",
             "Pflaume ernten; danach Sommerschnitt der Pflaume.",
             "Samen von Ringelblume, Bohnen und Kapuzinerkresse für 2028 ernten.",
@@ -2595,9 +2333,9 @@
           "label": "Sep",
           "name": "September",
           "punkte": [
-            "Hokkaido ernten, nachreifen lassen; Herbsthimbeeren ernten.",
+            "Zucchini weiter ernten. Phacelia stehen lassen. Herbsthimbeeren ernten.",
             "Tomaten außen: Ernte bis Oktober, von unten gießen.",
-            "Winterpostelein und Feldsalat für das Gewächshaus säen.",
+            "Feldsalat ins Gewächshaus säen, sobald die Tomaten raus sind.",
             "Laub- und Totholzhaufen mit Schnittgut aufsetzen.",
             "Erfrorene oder abgeblühte Phacelia liegen lassen (Wintermulch)."
           ]
@@ -2607,11 +2345,11 @@
           "label": "Okt",
           "name": "Oktober",
           "punkte": [
-            "Gewächshaus abräumen, Kompost einarbeiten, Feldsalat und Winterpostelein pflanzen.",
+            "Gewächshaus abräumen, Kompost einarbeiten, Feldsalat säen.",
             "Gesunde Pflanzenreste aus Beeten und Gewächshaus kompostieren, Kompost so anlegen, dass er die Nachbarn nicht belästigt (§ 3.3).",
             "Tomaten außen: Pflanzenreste mit Kraut- oder Braunfäule in den Hausmüll, nicht auf den Kompost. Am festen Platz jährlich Kompost auffüllen.",
-            "Knoblauch in 1A stecken (2028 Mittelzehrer-Feld).",
-            "Möhren, Sellerie, Rote Bete und Pastinaken ernten.",
+            "Feld 1A nach der Zucchini nur mulchen. 2028 kommt Rote Bete, deshalb keinen Knoblauch.",
+            "Möhren (2D) und Rote Bete (1B) ernten.",
             "Leimringe an Kirschen und Pflaume gegen Frostspanner anlegen.",
             "Stauden nicht zurückschneiden: hohle Stängel und Samenstände sind Winterquartier und Futter.",
             "Wasser & Technik: Dachrinnen, Fallrohre und Fallrohrfilter, die die Regenfässer speisen, von Laub befreien."
@@ -2627,7 +2365,7 @@
             "Wasser & Technik: Gartenschläuche entleeren und frostfrei einlagern; Außenhähne und Wasserleitung absperren und entleeren (Hähne offen lassen).",
             "Wasser & Technik: Gewächshaus-Bewässerung (Schläuche, ggf. Tropfleitung, Gießkannen) entleeren.",
             "Wasser & Technik: Nach dem Laubfall Dachrinnen und Fallrohre noch einmal von Laub befreien.",
-            "Grünkohl und Lauch ernten (nach erstem Frost milder).",
+            "Grünkohl (2C) ernten. Nach dem ersten Frost wird er milder.",
             "Abgeerntete Beete mit Laub oder Mulch abdecken statt umgraben.",
             "Fallobst und Fruchtmumien entfernen.",
             "Vogelnistkasten reinigen; Wildbienen-Nisthilfe nicht öffnen."
@@ -2638,7 +2376,7 @@
           "label": "Dez",
           "name": "Dezember",
           "punkte": [
-            "Feldsalat und Winterpostelein im Gewächshaus ernten.",
+            "Feldsalat im Gewächshaus ernten.",
             "Fruchtfolge 2028 eintragen (Tabelle Fruchtfolge), Erträge und Probleme notieren.",
             "Saatgut sichten, Wunschliste für 2028 schreiben.",
             "Wasser & Technik: Nach Sturm oder Schnee die Abdeckung über Brunnenrohr und Regenfässern kontrollieren."
@@ -2648,7 +2386,7 @@
       "hinweis": {
         "ton": "warning",
         "lead": "Spätfrost bis Mitte Mai",
-        "text": "In der Magdeburger Börde sind Fröste bis nach den Eisheiligen möglich. Wärmebedürftiges (Zucchini, Kürbis, Bohnen, Paprika, Gurke) erst ab 15. Mai ins Freie; Tomaten im Gewächshaus und Kohlrabi im Freiland bei Frostnächten mit Vlies schützen."
+        "text": "In der Magdeburger Börde sind Fröste bis nach den Eisheiligen möglich. Zucchini und Buschbohnen erst ab 15. Mai ins Freie; Tomaten im Gewächshaus bei Frostnächten mit Vlies schützen."
       }
     },
     "kosten": {
@@ -2656,36 +2394,35 @@
       "hinweis": "Alle Preise sind Schätzungen auf Basis üblicher deutscher Preise 2026; Kompost lose vom Kompostwerk ist meist günstiger als Sackware.",
       "balken": [
         { "label": "Stauden und Kräuter", "value": 144, "anzeige": "144 €" },
-        { "label": "Saatgut und Steckzwiebeln", "value": 107, "anzeige": "107 €" },
+        { "label": "Saatgut und Steckzwiebeln", "value": 79, "anzeige": "79 €" },
         { "label": "Boden, Kompost, Bodentest", "value": 92, "anzeige": "92 €" },
         { "label": "Pflanzenschutz und Zubehör", "value": 76, "anzeige": "76 €" },
         { "label": "Insektenlebensräume", "value": 75, "anzeige": "75 €" },
-        { "label": "Jungpflanzen", "value": 45, "anzeige": "45 €" }
+        { "label": "Jungpflanzen", "value": 31, "anzeige": "31 €" }
       ],
       "spalten": ["Posten", "Menge", "Kosten"],
       "posten": [
         {
-          "posten": "Gemüsesaatgut (Möhre, Rote Bete, Pastinake, Salate, Spinat, Feldsalat, Radieschen, Erbse, Busch-, Stangen- und Feuerbohne, Mangold, Kohlrabi, Zucchini, Hokkaido, Basilikum)",
-          "menge": "16 Tüten",
-          "kosten": "56 €"
+          "posten": "Gemüsesaatgut (Möhre, Rote Bete, Pflücksalat, Spinat, Feldsalat, Zuckererbse, Buschbohne, Zucchini, Grünkohl, Petersilie, Bohnenkraut)",
+          "menge": "14 Tüten",
+          "kosten": "49 €"
         },
-        { "posten": "Steckzwiebeln und Knoblauch-Pflanzgut", "menge": "250 g + 1 Knolle", "kosten": "8 €" },
-        { "posten": "Saatgut Tomate, Paprika, Chili, Snackgurke", "menge": "4 Tüten", "kosten": "16 €" },
-        { "posten": "Gründüngung Phacelia und Buchweizen", "menge": "je 250–500 g", "kosten": "14 €" },
+        { "posten": "Steckzwiebeln", "menge": "250 g", "kosten": "6 €" },
+        { "posten": "Saatgut Tomate", "menge": "2 Tüten", "kosten": "8 €" },
+        { "posten": "Gründüngung Phacelia", "menge": "250 g", "kosten": "8 €" },
         {
-          "posten": "Blumensaat einjährig (Ringelblume, Kapuzinerkresse, Borretsch, Kornblume, Tagetes)",
-          "menge": "5 Tüten",
-          "kosten": "13 €"
+          "posten": "Blumensaat für die Säume (Ringelblume, Kapuzinerkresse, Kornblume)",
+          "menge": "3 Tüten",
+          "kosten": "8 €"
         },
-        { "posten": "Jungpflanzen Brokkoli, Grünkohl, Knollensellerie, Lauch", "menge": "8 + 6 + 1 Bund", "kosten": "18 €" },
-        { "posten": "Rhabarber", "menge": "1 Pflanze", "kosten": "12 €" },
-        { "posten": "Walderdbeeren", "menge": "6 Pflanzen", "kosten": "15 €" },
+        { "posten": "Jungpflanzen Grünkohl, falls nicht selbst vorgezogen", "menge": "12", "kosten": "15 €" },
+        { "posten": "Rhabarber", "menge": "2 Pflanzen", "kosten": "16 €" },
         { "posten": "Blut-Storchschnabel", "menge": "8", "kosten": "36 €" },
         { "posten": "Balkan-Storchschnabel", "menge": "10", "kosten": "45 €" },
         { "posten": "Wiesen-Salbei, Echter Dost, Karthäuser-Nelke", "menge": "3 + 3 + 5", "kosten": "45,50 €" },
         { "posten": "Kräuter Thymian, Salbei, Schnittlauch", "menge": "6", "kosten": "17,50 €" },
         { "posten": "Kompost (Sackware)", "menge": "ca. 250 l", "kosten": "45 €" },
-        { "posten": "Stroh als Mulch (Kürbis, Gewächshaus)", "menge": "1 Ballen", "kosten": "12 €" },
+        { "posten": "Stroh als Mulch (Zucchini, Gewächshaus)", "menge": "1 Ballen", "kosten": "12 €" },
         { "posten": "Bodenuntersuchung im Labor (pH, Nährstoffe, Humus)", "menge": "1 Probe", "kosten": "35 €" },
         { "posten": "Wildbienen-Nisthilfe", "menge": "1", "kosten": "35 €" },
         { "posten": "Vogelnistkasten", "menge": "1", "kosten": "25 €" },
@@ -2695,10 +2432,10 @@
         { "posten": "Pheromonfalle Pflaumenwickler", "menge": "1", "kosten": "15 €" },
         { "posten": "Gartenvlies", "menge": "2 × 5 m", "kosten": "8 €" },
         { "posten": "Tomatenspiralstäbe, Bohnenstangen, Schnur", "menge": "Set", "kosten": "20 €" },
-        { "posten": "Summe", "menge": "", "kosten": "539 €", "summe": true },
+        { "posten": "Summe", "menge": "", "kosten": "497 €", "summe": true },
         { "posten": "Optional: Trittsteine 30 × 30 cm für die Pfade, lose in Sand oder Erde verlegt, ohne Beton oder Mörtel (keine Versiegelung, § 2.8)", "menge": "20 Stück", "kosten": "50 €", "optional": true }
       ],
-      "nachsatz": "Laub, Totholz und Mulch aus angetrocknetem Rasenschnitt kommen aus dem eigenen Garten und kosten nichts. Wer Tomaten, Paprika und Gurke als Jungpflanzen kauft statt selbst anzieht, rechnet mit ca. 3,50–6 € pro Pflanze."
+      "nachsatz": "Laub, Totholz und Mulch aus angetrocknetem Rasenschnitt kommen aus dem eigenen Garten und kosten nichts. Wer Tomaten als Jungpflanzen kauft statt selbst anzieht, rechnet im Freiland mit ca. 2–3 € pro Pflanze."
     },
     "regeln": {
       "titel": "Regeln aus der Gartenordnung",
@@ -2779,7 +2516,7 @@
       "bestand": {
         "ton": "info",
         "lead": "Bestand und Lücken",
-        "text": "Der Verein hat den Garten im jetzigen Zustand abgenommen; Bäume, Beeren und Rasen bleiben. Die Regeln gelten für alles Neue im Plan: Alle geplanten Stauden, Kräuter, Rhabarber und Walderdbeeren stehen nicht auf der Verbotsliste, Pflanzenschutz im Plan ist mechanisch oder biotechnisch. Nicht geregelt sind Schnittzeiten für Obstbäume, Düngung außer Kompost, Abstände von Kompost, Laubhaufen und Nisthilfen sowie Rasenpflege."
+        "text": "Der Verein hat den Garten im jetzigen Zustand abgenommen; Bäume, Beeren und Rasen bleiben. Die Regeln gelten für alles Neue im Plan: Alle geplanten Stauden, Kräuter und der Rhabarber stehen nicht auf der Verbotsliste, Pflanzenschutz im Plan ist mechanisch oder biotechnisch. Nicht geregelt sind Schnittzeiten für Obstbäume, Düngung außer Kompost, Abstände von Kompost, Laubhaufen und Nisthilfen sowie Rasenpflege."
       }
     },
     "offen": {

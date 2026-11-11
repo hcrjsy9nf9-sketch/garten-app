@@ -313,7 +313,12 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 }
 .garten-sheet .info-sec h3 svg { width: 14px; height: 14px; flex: none; }
 .garten-sheet h3.info-open { margin-top: 12px; }
-.info-wrap { margin-top: 12px; }
+.info-haupt { margin: 8px 0 0; font-size: 1.35rem; font-weight: 800; line-height: 1.15; }
+.info-neben { margin: 2px 0 0; color: var(--muted); font-size: 0.82rem; }
+.info-next { margin: 6px 0 0; font-size: 0.86rem; }
+.info-timeline { margin-left: 6px; color: var(--muted); font-size: 0.75rem; }
+.info-crop.is-side strong { font-size: 0.8rem; font-weight: 700; }
+.info-wrap { margin-top: 10px; }
 .info-sec + .info-sec { margin-top: 10px; }
 .info-crop { margin: 0 0 7px; }
 .info-crop-line { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1px 8px; }
@@ -348,6 +353,23 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 .info-nb b { font-weight: 800; }
 .info-nb.gut b { color: var(--green-ink); }
 .info-nb.schlecht b { color: var(--obst); }
+.row-sketch { display: flex; flex-direction: column; gap: 3px; margin: 4px 0 8px; }
+.row-sketch .rk {
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-style: normal;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.rk.is-vor { background: #c5dff3; color: #1a4664; }
+.rk.is-haupt { background: #f6d7a4; color: #6a3a00; }
+.rk.is-misch { background: #c6e7c2; color: #145c28; }
+.rk.is-nach { background: #d9efe4; color: #145c28; }
+.info-steps { margin: 0 0 8px; padding-left: 1.2rem; }
+.info-steps li { margin: 4px 0; font-size: 0.84rem; line-height: 1.35; }
 @media (prefers-color-scheme: dark) {
   .month-strip .is-s, .swatch.is-s { background: #1d4e6e; color: #d6eeff; }
   .month-strip .is-p, .swatch.is-p { background: #1e5a32; color: #d8f5d4; }
@@ -356,6 +378,10 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
   .month-strip .is-se { background: linear-gradient(#1d4e6e 50%, #6a4a16 50%); color: #ffe6b8; }
   .month-strip .is-pe { background: linear-gradient(#1e5a32 50%, #6a4a16 50%); color: #ffe6b8; }
   .month-strip .is-spe { background: linear-gradient(#1d4e6e 34%, #1e5a32 34% 67%, #6a4a16 67%); color: #ffe6b8; }
+  .rk.is-vor { background: #1d4e6e; color: #d6eeff; }
+  .rk.is-haupt { background: #6a4a16; color: #ffe6b8; }
+  .rk.is-misch { background: #1e5a32; color: #d8f5d4; }
+  .rk.is-nach { background: #1a4336; color: #d8f5d4; }
 }
 .garten-tasks .task { padding: 2px 0; }
 .garten-years { margin-top: 10px; }
