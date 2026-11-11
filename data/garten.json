@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "10. Nov. 2026",
-  "standIso": "2026-11-10",
+  "stand": "11. Nov. 2026",
+  "standIso": "2026-11-11",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Falls noch nicht erledigt, bis Sonntag (Nacht auf Montag ca. 1 °C): Brunnenpumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr abdecken; Regenfässer leeren und umdrehen; Schläuche und Gewächshaus-Bewässerung entleeren, Außenhahn absperren und offen lassen (Kosten: keine)",
+      "text": "Falls noch nicht erledigt, bis Samstag (Nacht auf Montag bis ca. 0 °C): Brunnenpumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr abdecken; Regenfässer leeren und umdrehen; Schläuche und Gewächshaus-Bewässerung entleeren, Außenhahn absperren und offen lassen (Kosten: keine)",
       "bereich": "Wasser & Technik · Brunnenpumpe, Regenfässer, Schläuche, Gewächshaus",
       "kategorie": "wasser",
       "ref": ["2026-11-wasser-regenfaesser", "2026-11-wasser-brunnenpumpe", "2026-11-wasser-schlaeuche", "2026-11-gewaechshaus-bewaesserung"],
       "done": false
     },
     {
-      "text": "Himbeeren: abgetragene, verholzte Ruten bodennah abschneiden, junge grüne Ruten stehen lassen (6–8 pro laufendem Meter); bei Herbsthimbeeren erst im Februar schneiden. Schnittgut zum Laubhaufen am Südrand neben der Sauerkirsche legen (Kosten: keine)",
-      "bereich": "Obst & Beeren · Himbeeren 2,1 × 1 m; Natur · Laubhaufen Südrand",
-      "kategorie": "obst",
-      "ref": ["2026-11-obst-himbeeren", "2026-11-natur-laubhaufen"],
-      "done": false
-    },
-    {
-      "text": "Vor den Böen am Freitag (bis 45 km/h): Dachrinne und Fallrohr am Gewächshaus von Laub befreien und lose Teile (Abdeckungen, Vlies, Töpfe) sichern",
+      "text": "Bis Donnerstag, vor den Sturmböen am Freitag (bis ca. 55 km/h): Dachrinne und Fallrohr am Gewächshaus von Laub befreien, Gewächshaustür und Fenster schließen, lose Teile (Vlies, Töpfe, Abdeckungen) sichern (Kosten: keine)",
       "bereich": "Wasser & Technik · Gewächshaus",
       "kategorie": "wasser",
       "ref": ["2026-11-wasser-dachrinnen"],
+      "done": false
+    },
+    {
+      "text": "Fruchtmumien und Fallobst an Süßkirsche, Sauerkirsche und Pflaume absammeln und in den Hausmüll geben, nicht auf den Kompost (Monilia-Vorbeugung, Kosten: keine)",
+      "bereich": "Obst & Beeren · Süßkirsche, Pflaume (Nordende), Sauerkirsche (Südende)",
+      "kategorie": "obst",
+      "ref": ["2026-11-obst-fruchtmumien"],
       "done": false
     }
   ],
