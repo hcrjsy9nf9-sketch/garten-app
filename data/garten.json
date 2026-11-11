@@ -3165,5 +3165,1885 @@
         "Gewächshaus: Bodenbeete oder Tische, Lage von Tür und Lüftungsklappen."
       ]
     }
+  },
+  "checkliste": {
+    "1": [
+      {
+        "id": "m1-abdeckung",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe, Regenfässer",
+        "titel": "Abdeckungen nach Sturm oder Schnee prüfen",
+        "anleitung": "Schnee und Eis von Brunnenrohr und Regenfässern nehmen. Liegt die Abdeckung schief, wieder festlegen, damit kein Wasser hineinläuft.",
+        "wann": "nach Sturm oder Schnee",
+        "prio": "wichtig",
+        "ref": [
+          "2027-01-wasser-01"
+        ]
+      },
+      {
+        "id": "m1-mumien",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche, Sauerkirsche, Pflaume",
+        "titel": "Fruchtmumien abnehmen",
+        "anleitung": "Hängengebliebene Fruchtmumien abnehmen und in den Hausmüll geben, nicht auf den Kompost. Verbrennen ist verboten.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-01-obst-01"
+        ]
+      },
+      {
+        "id": "m1-saatgut",
+        "bereich": "Allgemein",
+        "ort": "Saatgut",
+        "titel": "Saatgut sichten und Fehlendes bestellen",
+        "anleitung": "Tüten für 1A bis 2F, Tomaten, Phacelia und die Säume durchzählen. Bestellen, bevor die beliebten Sorten weg sind.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-01-beete-01"
+        ]
+      },
+      {
+        "id": "m1-labor",
+        "bereich": "Boden/Kompost",
+        "ort": "Beete",
+        "titel": "Bodenlabor für die Probe auswählen",
+        "anleitung": "Der Boden ist humos. Eine Laborprobe auf pH, Nährstoffe und Humus reicht, wenn sie im Februar oder März gezogen wird.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-01-beete-02"
+        ]
+      },
+      {
+        "id": "m1-nisthilfe",
+        "bereich": "Allgemein",
+        "ort": "Nisthilfe, Nistkasten",
+        "titel": "Nisthilfe und Nistkasten besorgen",
+        "anleitung": "Wildbienen-Nisthilfe mit glatten Röhren, 2–9 mm, und einen Nistkasten mit Flugloch nach Ost oder Südost. Kein chemischer Holzschutz.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-01-natur-01"
+        ]
+      },
+      {
+        "id": "m1-gruenkohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohl bei Frost ernten",
+        "anleitung": "Nach Frost schmeckt er milder. Nur so viele Blätter nehmen, wie gebraucht werden. Das Herz stehen lassen, dann treibt er weiter.",
+        "wann": "bei Frost",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m1-feldsalat",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Feldsalat ernten",
+        "anleitung": "Blätter oder ganze Rosetten schneiden, das Herz kann nachtreiben. An frostfreien Tagen kurz lüften, damit die Blätter abtrocknen.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m1-laub",
+        "bereich": "Boden/Kompost",
+        "ort": "Laubhaufen",
+        "titel": "Laubhaufen in Ruhe lassen",
+        "anleitung": "Nicht umsetzen und nicht festtreten. Igel und Insekten sitzen darin. Laub auf den Beeten bleibt als Mulch liegen.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      },
+      {
+        "id": "m1-rhabarber",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "2B",
+        "titel": "Rhabarber nicht antreiben",
+        "anleitung": "Die Kronen bleiben unter Laub. Noch nicht ernten und nicht umgraben. Kompost kommt erst im März.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      },
+      {
+        "id": "m1-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen nicht betreten, wenn er gefroren ist",
+        "anleitung": "Der Rasen bleibt, wie er ist. Gefrorene Halme brechen. Laub nur wegräumen, wenn es den Rasen erstickt, und dann auf den Mulch.",
+        "wann": "bei Frost",
+        "prio": "optional"
+      },
+      {
+        "id": "m1-werkzeug",
+        "bereich": "Allgemein",
+        "ort": "Werkzeug",
+        "titel": "Werkzeug putzen und ölen",
+        "anleitung": "Spaten und Hippe trocken abreiben, ein Tropfen Öl auf die Gelenke. Kein Mittel gegen Rost aus dem Baumarkt, das in den Boden gehört.",
+        "wann": "Mitte",
+        "prio": "optional"
+      },
+      {
+        "id": "m1-plan",
+        "bereich": "Allgemein",
+        "ort": "Beete",
+        "titel": "Feldplan 2027 noch einmal ansehen",
+        "anleitung": "1A Zucchini nach Spinat, 1B Rote Bete, 1C Erbsen, 1D Phacelia, 2A Salat, 2B Rhabarber, 2C Grünkohl, 2D Möhre mit Zwiebel, 2E Bohnen, 2F Phacelia.",
+        "wann": "Ende",
+        "prio": "optional"
+      }
+    ],
+    "2": [
+      {
+        "id": "m2-pumpe",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe, Schläuche",
+        "titel": "Eingelagerte Pumpe und Schläuche prüfen",
+        "anleitung": "Dichtungen und Kupplungen ansehen. Risse oder verhärtete Ringe jetzt ersetzen, solange die Teile frostfrei im Haus liegen.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-02-wasser-01"
+        ]
+      },
+      {
+        "id": "m2-boden",
+        "bereich": "Boden/Kompost",
+        "ort": "Beete",
+        "titel": "Bodenprobe ziehen und einschicken",
+        "anleitung": "An einem frostfreien Tag aus 1A, 2C und 2D je eine Spatenprobe aus 0–20 cm mischen. Etwa 500 g reichen. Nicht direkt nach Kompost ziehen.",
+        "wann": "bei offenem Boden",
+        "prio": "wichtig",
+        "ref": [
+          "2027-02-beete-01"
+        ]
+      },
+      {
+        "id": "m2-himbeeren",
+        "bereich": "Beeren",
+        "ort": "Himbeeren",
+        "titel": "Herbsthimbeeren bodennah schneiden",
+        "anleitung": "Nur wenn es Herbstsorten sind: alle Ruten dicht am Boden abschneiden. Sommerhimbeeren bleiben, ihre jungen Ruten tragen im Sommer.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-02-obst-01"
+        ]
+      },
+      {
+        "id": "m2-johannis",
+        "bereich": "Beeren",
+        "ort": "Johannisbeeren",
+        "titel": "Johannisbeeren an einem frostfreien Tag auslichten",
+        "anleitung": "Schwache und bodennah liegende Triebe weg. Ziel bleiben 8–10 kräftige Triebe. Schnitt in den Hausmüll, wenn er krank ist.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-02-obst-02"
+        ]
+      },
+      {
+        "id": "m2-kasten",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche",
+        "titel": "Nistkasten an der Süßkirsche aufhängen",
+        "anleitung": "Bis Ende Februar. Flugloch nach Ost oder Südost, 2–3 m hoch, nicht in die pralle Mittagssonne. Kein Nagel tief ins Holz.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-02-natur-01"
+        ]
+      },
+      {
+        "id": "m2-tomaten-warten",
+        "bereich": "Gewächshaus",
+        "ort": "Fensterbank",
+        "titel": "Tomaten noch nicht säen",
+        "anleitung": "Paprika und Chili sind in diesem Plan nicht vorgesehen. Tomaten kommen erst Mitte bis Ende März auf die Fensterbank.",
+        "wann": "ganzer Monat",
+        "prio": "wichtig",
+        "ref": [
+          "2027-02-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m2-gruenkohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Letzten Grünkohl ernten",
+        "anleitung": "Was noch steht, vor dem Neuaustrieb abernten. Die Strünke ausreißen und in den Hausmüll, wenn Kohlhernie oder Läuse daran sitzen, sonst auf den Kompost.",
+        "wann": "Ende",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m2-kompost",
+        "bereich": "Boden/Kompost",
+        "ort": "Kompost",
+        "titel": "Kompost umsetzen, wenn er nicht gefroren ist",
+        "anleitung": "Außen nach innen, innen nach außen. Zu trocken: eine Kanne Regenwasser. Keinen Küchenabfall mit Fleisch oder Gekochtem.",
+        "wann": "Mitte",
+        "prio": "optional"
+      },
+      {
+        "id": "m2-vlies",
+        "bereich": "Allgemein",
+        "ort": "Vlies, Netz",
+        "titel": "Vlies und Kulturschutznetz bereitlegen",
+        "anleitung": "Vlies für die Zucchini-Anzucht und das Netz für den Grünkohl auf Löcher prüfen. Flicken mit Nadel, nicht mit Klebeband, das im Beet landet.",
+        "wann": "Ende",
+        "prio": "optional"
+      },
+      {
+        "id": "m2-feldsalat",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Feldsalat weiter ernten",
+        "anleitung": "An sonnigen Tagen zehn Minuten lüften. Gegossen wird nur, wenn die Erde fingerbreit unter der Oberfläche trocken ist.",
+        "wann": "laufend",
+        "prio": "optional"
+      },
+      {
+        "id": "m2-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen ruhen lassen",
+        "anleitung": "Noch nicht mähen. Maulwurfshügel später verteilen, nicht jetzt auf den gefrorenen Boden treten.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      },
+      {
+        "id": "m2-saat",
+        "bereich": "Allgemein",
+        "ort": "Saatgut",
+        "titel": "Fehlendes Saatgut nachbestellen",
+        "anleitung": "Möhre, Rote Bete, Spinat, Salat, Erbse, Buschbohne, Zucchini, Grünkohl, Phacelia, Tomate, Steckzwiebeln 250 g.",
+        "wann": "Anfang",
+        "prio": "optional"
+      }
+    ],
+    "3": [
+      {
+        "id": "m3-spinat",
+        "bereich": "Beete",
+        "ort": "1A",
+        "titel": "Spinat als Vorkultur säen",
+        "anleitung": "Sechs Reihen Nord–Süd, Abstand 25 cm, Rand je 20 cm. In der Reihe alle 5 cm, 2 cm tief. Der Spinat muss bis zum 15. Mai weg sein.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-beete-01"
+        ]
+      },
+      {
+        "id": "m3-erbsen",
+        "bereich": "Beete",
+        "ort": "1C",
+        "titel": "Zuckererbsen säen",
+        "anleitung": "Vier Reihen, Abstand 40 cm, Rand je etwa 22 cm. In der Reihe alle 4 cm, 3–4 cm tief. Reisig oder ein Netz von etwa 80 cm dazu.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-beete-01"
+        ]
+      },
+      {
+        "id": "m3-rhabarber",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "2B",
+        "titel": "Zwei Rhabarberkronen pflanzen",
+        "anleitung": "100 cm auseinander, mittig in den 1,65 m, Krone 3 cm unter der Erde. Dieses Jahr nicht ernten. Eine Handvoll Kompost in das Pflanzloch.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-beete-01"
+        ]
+      },
+      {
+        "id": "m3-zwiebel",
+        "bereich": "Beete",
+        "ort": "2D",
+        "titel": "Steckzwiebeln stecken",
+        "anleitung": "Drei Reihen im Wechsel mit den späteren Möhren: Möhre, Zwiebel, Möhre, Zwiebel, Möhre, Zwiebel, Möhre. In der Reihe alle 10 cm, die Spitze bleibt sichtbar. Etwa 75 Stück.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-beete-02"
+        ]
+      },
+      {
+        "id": "m3-kompost",
+        "bereich": "Boden/Kompost",
+        "ort": "1A, 1B, 2C, 2D",
+        "titel": "Kompost auf die Beete geben",
+        "anleitung": "1A und 2C etwa 5 l/m², 1B und 2D etwa 3 l/m². Bei hohem Humus reicht die untere Menge. Oberflächlich einharken, nicht umgraben.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-beete-03"
+        ]
+      },
+      {
+        "id": "m3-tomate-aussen",
+        "bereich": "Tomaten außen",
+        "ort": "Tomatenstreifen",
+        "titel": "Tomaten für draußen vorziehen oder kaufen",
+        "anleitung": "Mitte März auf die warme Fensterbank, oder später Jungpflanzen für etwa 2–3 €. Vier Pflanzen reichen für die 2,5 m Wand.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-beete-04"
+        ]
+      },
+      {
+        "id": "m3-tomate-haus",
+        "bereich": "Gewächshaus",
+        "ort": "Fensterbank",
+        "titel": "Gewächshaustomaten aussäen",
+        "anleitung": "Acht Pflanzen, eine robuste Sorte. Töpfchen 8–9 cm, hell und eher kühl nach dem Auflaufen, damit sie nicht vergeilen.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m3-anzucht",
+        "bereich": "Gewächshaus",
+        "ort": "Mittelgang",
+        "titel": "Haus nur für Anzuchtschalen nutzen",
+        "anleitung": "Kein Gemüse vor den Tomaten. Der Mittelgang bleibt frei. Ab April die Schalen tagsüber zum Abhärten hineinstellen.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-gewaechshaus-02"
+        ]
+      },
+      {
+        "id": "m3-obst",
+        "bereich": "Obstbäume",
+        "ort": "Sauerkirsche, Johannisbeeren",
+        "titel": "Kompost an Sauerkirsche und Johannisbeeren",
+        "anleitung": "Eine dünne Schicht reifer Kompost auf die Baumscheibe und unter die beiden Sträucher. Nicht an den Stamm anhäufeln. Darüber Mulch.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-obst-01"
+        ]
+      },
+      {
+        "id": "m3-sandarium",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Saum Beet 1",
+        "titel": "Sandarium und Nisthilfe fertig machen",
+        "anleitung": "Im südlichen Meter des Saums eine sonnige, offene Sandfläche. Nisthilfe fest und regenabgewandt, bevor die Wildbienen fliegen.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-natur-01"
+        ]
+      },
+      {
+        "id": "m3-schnitt",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume",
+        "titel": "Stauden erst jetzt zurückschneiden",
+        "anleitung": "Hohle Stängel bis März stehen lassen. Schnittgut auf den Laubhaufen, nicht in die Tonne, außer es ist krank.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-natur-02"
+        ]
+      },
+      {
+        "id": "m3-faesser",
+        "bereich": "Wasser & Technik",
+        "ort": "Regenfässer",
+        "titel": "Regenfässer wieder aufstellen",
+        "anleitung": "Erst wenn keine starken Fröste mehr angesagt sind. Fallrohrfilter reinigen und anschließen. Deckel noch nicht nötig.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-03-wasser-01"
+        ]
+      },
+      {
+        "id": "m3-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Ersten Schnitt nur bei tragfähigem Boden",
+        "anleitung": "Nicht kürzer als 5 cm. Schnitt antrocknen lassen und als dünnen Mulch auf die Beete. Werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht.",
+        "wann": "Ende",
+        "prio": "optional"
+      },
+      {
+        "id": "m3-beeren",
+        "bereich": "Beeren",
+        "ort": "Himbeeren",
+        "titel": "Himbeeren mulchen",
+        "anleitung": "Dicke Schicht Laub oder angetrockneter Rasenschnitt, nicht bis an die Ruten. Keine Staunässe. Drahtgerüst auf festen Sitz prüfen.",
+        "wann": "Mitte",
+        "prio": "optional"
+      },
+      {
+        "id": "m3-wege",
+        "bereich": "Allgemein",
+        "ort": "Wege",
+        "titel": "Wege mit der Hacke säubern",
+        "anleitung": "Auflaufendes Kraut ausstechen oder aushacken. Kein Unkrautvernichter. Das Grün auf den Kompost, solange es noch nicht blüht.",
+        "wann": "laufend",
+        "prio": "optional"
+      },
+      {
+        "id": "m3-gruenkohl-saat",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohl-Anzucht vorbereiten",
+        "anleitung": "Töpfe und Aussaaterde bereitlegen. Gesät wird Anfang April, gepflanzt Ende Mai. Zwölf Pflanzen, falls nicht selbst gezogen.",
+        "wann": "Ende",
+        "prio": "optional"
+      }
+    ],
+    "4": [
+      {
+        "id": "m4-pumpe",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe",
+        "titel": "Brunnenpumpe in Betrieb nehmen",
+        "anleitung": "Nach den letzten starken Frösten anschließen, mit Wasser füllen, entlüften, Dichtungen prüfen. Probelauf außerhalb der Ruhezeiten. Nie trocken laufen lassen.",
+        "wann": "Anfang/Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-wasser-01"
+        ]
+      },
+      {
+        "id": "m4-hahn",
+        "bereich": "Wasser & Technik",
+        "ort": "Außenhahn, Schläuche",
+        "titel": "Leitung öffnen und Schläuche anschließen",
+        "anleitung": "Außenhahn aufdrehen, Schläuche auf Risse prüfen. Ist noch eine Frostnacht angesagt, wieder entleeren.",
+        "wann": "Anfang/Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-wasser-02"
+        ]
+      },
+      {
+        "id": "m4-moehre",
+        "bereich": "Beete",
+        "ort": "2D",
+        "titel": "Möhren zwischen die Zwiebelreihen säen",
+        "anleitung": "Vier Reihen in die Lücken, 1–2 cm tief, Abstand der Reihen 20 cm. In der Reihe später auf 3 cm vereinzeln. Bis zum Auflaufen feucht halten.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-beete-01"
+        ]
+      },
+      {
+        "id": "m4-bete",
+        "bereich": "Beete",
+        "ort": "1B",
+        "titel": "Rote Bete säen",
+        "anleitung": "Ende April bis Mitte Mai, 2 cm tief. Fünf Reihen, Abstand 30 cm, Rand je etwa 22 cm, in der Reihe alle 8 cm. Früher säen schosst in der Kälte.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-beete-01"
+        ]
+      },
+      {
+        "id": "m4-salat",
+        "bereich": "Beete",
+        "ort": "2A",
+        "titel": "Pflücksalat in zwei Reihen säen",
+        "anleitung": "Nicht das ganze Feld. Reihenabstand 25 cm, später auf 25 cm vereinzeln, knapp 1 cm tief. Die nächsten zwei Reihen drei bis vier Wochen später.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-beete-01"
+        ]
+      },
+      {
+        "id": "m4-petersilie",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Saum Beet 1",
+        "titel": "Petersilie in den Saum säen",
+        "anleitung": "Nicht ins Gemüsefeld. 1 cm tief, Reihe 20 cm. Petersilie keimt langsam, die Saat nicht austrocknen lassen.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-beete-01"
+        ]
+      },
+      {
+        "id": "m4-kohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohl vorziehen",
+        "anleitung": "Anfang April in Töpfe, hell und kühl. Auspflanzen erst Ende Mai unter Netz. Drei Reihen zu vier Pflanzen, 50 cm.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-beete-02"
+        ]
+      },
+      {
+        "id": "m4-zucchini",
+        "bereich": "Beete",
+        "ort": "1A",
+        "titel": "Zwei Zucchini vorziehen",
+        "anleitung": "Ende April in 9-cm-Töpfe auf die Fensterbank. Keine Gurke. Ab dem 15. Mai ins Feld, 100 cm auseinander auf der Mittellinie.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m4-haus",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Tomaten ins Haus pflanzen, Vlies bereithalten",
+        "anleitung": "Ende April oder Anfang Mai je vier Pflanzen pro Seite, Abstand 60 cm. Bei Frostnacht Vlies über die Pflanzen, tagsüber wieder ab.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-gewaechshaus-02"
+        ]
+      },
+      {
+        "id": "m4-monilia",
+        "bereich": "Obstbäume",
+        "ort": "Sauerkirsche",
+        "titel": "Monilia-Spitzen nach der Blüte schneiden",
+        "anleitung": "Welke Triebspitzen bis 15 cm ins gesunde Holz. Schnitt und Fruchtmumien in den Hausmüll. Nicht spritzen, Nützlinge schonen.",
+        "wann": "nach der Blüte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-obst-01"
+        ]
+      },
+      {
+        "id": "m4-saeume",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume",
+        "titel": "Stauden und Kräuter in die Säume pflanzen",
+        "anleitung": "Thymian, Salbei, Schnittlauch, Storchschnabel, Nelke. Abstand 25–40 cm. Nach dem Angießen kaum noch wässern.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-natur-01"
+        ]
+      },
+      {
+        "id": "m4-blumen",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume",
+        "titel": "Ringelblume und Kornblume in die Säume säen",
+        "anleitung": "Nur in die Säume, nicht in die Gemüsefelder. Flach säen, andrücken. Kapuzinerkresse erst ab Mitte Mai, sie erfriert.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-04-natur-02"
+        ]
+      },
+      {
+        "id": "m4-bohnenkraut",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Saum Beet 1",
+        "titel": "Bohnenkraut säen",
+        "anleitung": "Flach, in einer kurzen Reihe im Saum. Es hält Läuse von den späteren Bohnen fern und gehört nicht ins Feld 2E.",
+        "wann": "Ende",
+        "prio": "optional"
+      },
+      {
+        "id": "m4-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen mähen und Schnitt antrocknen",
+        "anleitung": "Höhe etwa 5 cm. Nur außerhalb der Ruhezeiten. Der angetrocknete Schnitt wird Mulch, nicht in die Tonne.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m4-johannis",
+        "bereich": "Beeren",
+        "ort": "Johannisbeeren",
+        "titel": "Bei Trockenheit durchdringend gießen",
+        "anleitung": "Einmal kräftig auf den Mulch, nicht täglich ein Schlückchen. Flachwurzler trocknen sonst aus.",
+        "wann": "bei Trockenheit",
+        "prio": "optional"
+      },
+      {
+        "id": "m4-kompost",
+        "bereich": "Boden/Kompost",
+        "ort": "Kompost",
+        "titel": "Kompost feucht und abgedeckt halten",
+        "anleitung": "Eine Plane oder eine Laubschicht gegen Austrocknung. Zu nass: umsetzen. Regenwürmer sind das Zeichen, dass er lebt.",
+        "wann": "Mitte",
+        "prio": "optional"
+      }
+    ],
+    "5": [
+      {
+        "id": "m5-eis",
+        "bereich": "Allgemein",
+        "ort": "ganzer Garten",
+        "titel": "Eisheilige abwarten",
+        "anleitung": "11. bis 15. Mai. Zucchini, Buschbohnen und die Freilandtomaten bleiben bis danach im Schutz. Ein Vlies liegt bereit.",
+        "wann": "Mitte",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m5-phacelia",
+        "bereich": "Beete",
+        "ort": "1D, 2F",
+        "titel": "Phacelia säen",
+        "anleitung": "Anfang Mai, 2 g/m², breitwürfig, 1 cm einharken und andrücken. Nicht mit Gemüse mischen. Die Blüte bleibt für die Bienen stehen.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-beete-01"
+        ]
+      },
+      {
+        "id": "m5-zucchini",
+        "bereich": "Beete",
+        "ort": "1A",
+        "titel": "Spinat abräumen und Zucchini pflanzen",
+        "anleitung": "Auch wenn der Spinat noch klein ist: bis zum 15. Mai raus. Zwei Pflanzen auf die Mittellinie, 100 cm auseinander. Nachtfrost mit Vlies.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-beete-01"
+        ]
+      },
+      {
+        "id": "m5-bohnen",
+        "bereich": "Beete",
+        "ort": "2E",
+        "titel": "Buschbohnen säen",
+        "anleitung": "Ab dem 15. Mai. Vier Reihen, Abstand 40 cm, Rand je etwa 22 cm. Fünf Horste je Reihe, 40 cm auseinander, fünf Samen, 3 cm tief.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-beete-01"
+        ]
+      },
+      {
+        "id": "m5-kohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohl unter Netz pflanzen",
+        "anleitung": "Ende Mai. Drei Reihen, je vier Pflanzen, 50 cm. Kulturschutznetz sofort schließen und am Boden beschweren, sonst finden die Kohlfliegen den Weg.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-beete-01"
+        ]
+      },
+      {
+        "id": "m5-tomate",
+        "bereich": "Tomaten außen",
+        "ort": "Tomatenstreifen",
+        "titel": "Vier Tomaten an die Gewächshauswand setzen",
+        "anleitung": "Ab dem 15. Mai, Abstand 60 cm, Stab oder Spirale. Kompost in das Pflanzloch, danach mulchen. Sorten wie Philovita, Primabella oder Resi.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-beete-02"
+        ]
+      },
+      {
+        "id": "m5-mulch",
+        "bereich": "Boden/Kompost",
+        "ort": "Beete",
+        "titel": "Mit angetrocknetem Rasenschnitt mulchen",
+        "anleitung": "Dünn auftragen, sonst schimmelt er. Zucchini, Grünkohl und die Baumscheiben zuerst. Mähen nur außerhalb der Ruhezeiten.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-beete-03"
+        ]
+      },
+      {
+        "id": "m5-haus",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Tomaten ausgeizen, anbinden, lüften",
+        "anleitung": "Nur Tomaten, acht Pflanzen. Täglich lüften, Seitentriebe ausbrechen, morgens am Fuß gießen. Gurke und Paprika bleiben draußen.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m5-gelb",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche, Sauerkirsche",
+        "titel": "Gelbtafeln aufhängen",
+        "anleitung": "Sobald die Kirschen von grün auf gelb umfärben. Tafeln in die Krone, nicht in die Blüten der Säume. Nach der Ernte abnehmen.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-obst-01"
+        ]
+      },
+      {
+        "id": "m5-falle",
+        "bereich": "Obstbäume",
+        "ort": "Pflaume",
+        "titel": "Pheromonfalle an die Pflaume",
+        "anleitung": "Ab Mai bis August. Madige Früchte einsammeln und in den Hausmüll. Kein Spritzmittel.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-obst-02"
+        ]
+      },
+      {
+        "id": "m5-himbeer",
+        "bereich": "Beeren",
+        "ort": "Himbeeren",
+        "titel": "Jungruten auslichten",
+        "anleitung": "8–10 kräftige Ruten je laufendem Meter stehen lassen, der Rest bodennah weg. Der Bestand soll luftig bleiben.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-obst-03"
+        ]
+      },
+      {
+        "id": "m5-wasserstelle",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Saum Beet 1",
+        "titel": "Wasserstelle für Insekten und Vögel",
+        "anleitung": "Flache Schale mit Steinen, damit niemand ertrinkt. Alle paar Tage frisches Wasser, nicht mit Spülmittel reinigen.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-natur-01"
+        ]
+      },
+      {
+        "id": "m5-fass",
+        "bereich": "Wasser & Technik",
+        "ort": "Regenfässer",
+        "titel": "Regenfässer abdecken",
+        "anleitung": "Deckel oder engmaschiges Gitter gegen Mückenlarven. So, dass Igel, Vögel und Kinder nicht hineinfallen. Bis zum Herbst geschlossen halten.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-05-wasser-01"
+        ]
+      },
+      {
+        "id": "m5-salat",
+        "bereich": "Beete",
+        "ort": "2A",
+        "titel": "Salat nachsäen",
+        "anleitung": "Wieder nur zwei Reihen, 25 cm Abstand, 1 cm tief. Im Halbschatten schießt er später. Die alten Reihen weiter pflücken.",
+        "wann": "Mitte",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m5-kresse",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume",
+        "titel": "Kapuzinerkresse in die Säume säen",
+        "anleitung": "Ab Mitte Mai, 2 cm tief, Abstand 20–30 cm. Nicht in die Gemüsefelder. Die Blüten sind für Hummeln.",
+        "wann": "Mitte",
+        "prio": "optional"
+      },
+      {
+        "id": "m5-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen mähen, Schnitt als Mulch",
+        "anleitung": "Etwa 5 cm stehen lassen. Schnitt einen Tag antrocknen, dann dünn auf die Beete. Nicht auf nasse Bohnen oder auf die Phacelia.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      }
+    ],
+    "6": [
+      {
+        "id": "m6-phacelia",
+        "bereich": "Beete",
+        "ort": "1D, 2F",
+        "titel": "Phacelia blühen lassen",
+        "anleitung": "Nicht abmähen, solange Bienen darauf sind. Sie ist die Gründüngung und bleibt bis zum Frost als Mulch liegen.",
+        "wann": "ganzer Monat",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-beete-01"
+        ]
+      },
+      {
+        "id": "m6-netz",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Netz über dem Grünkohl geschlossen halten",
+        "anleitung": "Ränder am Boden beschweren. Löcher sofort schließen. Kohlweißling und Kohlfliege kommen durch jede Lücke.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-beete-02"
+        ]
+      },
+      {
+        "id": "m6-tomate",
+        "bereich": "Tomaten außen",
+        "ort": "Tomatenstreifen",
+        "titel": "Ausgeizen und von unten gießen",
+        "anleitung": "Seitentriebe wöchentlich ausbrechen. Gießkanne an den Fuß, Blätter trocken lassen. Bei Braunfäule befallene Blätter in den Hausmüll.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-beete-03"
+        ]
+      },
+      {
+        "id": "m6-haus",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Haus täglich lüften und Tomaten anbinden",
+        "anleitung": "Morgens auf, abends zu, an heißen Tagen auch die Tür. Eine Schnur je Pflanze, ausgeizen wie draußen.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m6-kirsche",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche, Sauerkirsche",
+        "titel": "Kirschen zügig und vollständig ernten",
+        "anleitung": "Reife Früchte nicht hängen lassen, das hält Kirschessigfliege und Kirschfruchtfliege klein. Fallobst täglich aufsammeln.",
+        "wann": "Mitte/Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-obst-01"
+        ]
+      },
+      {
+        "id": "m6-beeren",
+        "bereich": "Beeren",
+        "ort": "Johannisbeeren, Himbeeren",
+        "titel": "Johannisbeeren und Sommerhimbeeren ernten",
+        "anleitung": "Morgens pflücken, wenn sie trocken sind. Danach einmal durchdringend gießen, auf den Mulch, nicht über die Früchte.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-obst-02"
+        ]
+      },
+      {
+        "id": "m6-storch",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume",
+        "titel": "Storchschnabel nach der ersten Blüte schneiden",
+        "anleitung": "Bodennah zurückschneiden, dann blüht er oft ein zweites Mal. Schnittgut auf den Kompost, wenn es gesund ist.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-natur-01"
+        ]
+      },
+      {
+        "id": "m6-pumpe",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe",
+        "titel": "Pumpe kurz prüfen",
+        "anleitung": "Ansaugfilter, Dichtungen, ungewöhnliche Geräusche. Nie trocken laufen lassen. Ein Blick reicht, kein Auseinanderbauen.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-wasser-01"
+        ]
+      },
+      {
+        "id": "m6-fass",
+        "bereich": "Wasser & Technik",
+        "ort": "Regenfässer",
+        "titel": "Abdeckung der Fässer kontrollieren",
+        "anleitung": "Gitter oder Deckel muss aufliegen. Laub aus dem Filter nehmen, sonst läuft das Fallrohr über.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-06-wasser-02"
+        ]
+      },
+      {
+        "id": "m6-erbsen",
+        "bereich": "Beete",
+        "ort": "1C",
+        "titel": "Zuckererbsen pflücken",
+        "anleitung": "Alle zwei bis drei Tage, dann kommen neue Hülsen. Noch nicht abräumen, das kommt im Juli.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m6-giessen",
+        "bereich": "Beete",
+        "ort": "1A, 2C",
+        "titel": "Zucchini und Grünkohl durchdringend gießen",
+        "anleitung": "Lieber einmal die Woche kräftig als jeden Tag ein bisschen. Morgens, an den Fuß, unter den Mulch.",
+        "wann": "bei Trockenheit",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m6-zwiebel",
+        "bereich": "Beete",
+        "ort": "2D",
+        "titel": "Zwiebeln in Ruhe lassen",
+        "anleitung": "Laub nicht knicken. Geerntet wird, wenn es von selbst umfällt, meist Juli oder August. Möhren daneben weiter feucht halten.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      },
+      {
+        "id": "m6-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen in den Ruhezeiten nicht mähen",
+        "anleitung": "Werktags nicht 13–15 und 19–8 Uhr, sonn- und feiertags gar nicht. Schnitt als Mulch nutzen.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m6-rhabarber",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "2B",
+        "titel": "Rhabarber noch nicht ernten",
+        "anleitung": "Im Pflanzjahr die Blätter arbeiten lassen. Nur gießen, wenn der Mulch darunter trocken ist. Blütenstand ausbrechen.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      }
+    ],
+    "7": [
+      {
+        "id": "m7-erbsen",
+        "bereich": "Beete",
+        "ort": "1C",
+        "titel": "Zuckererbsen abräumen",
+        "anleitung": "Sobald sie durch sind, rausziehen. Die Wurzeln bleiben im Boden, sie haben Stickstoff gesammelt. Feldsalat kommt erst im August.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-beete-01"
+        ]
+      },
+      {
+        "id": "m7-zucchini",
+        "bereich": "Beete",
+        "ort": "1A",
+        "titel": "Zucchini alle zwei bis drei Tage ernten",
+        "anleitung": "Früchte bei 15–20 cm schneiden. Bleibt eine hängen und wird zum Kolben, setzt die Pflanze kaum noch neue an.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-beete-01"
+        ]
+      },
+      {
+        "id": "m7-giessen",
+        "bereich": "Beete",
+        "ort": "1A, 2C, Gewächshaus",
+        "titel": "Zuerst Zucchini, Grünkohl und das Haus gießen",
+        "anleitung": "Morgens, durchdringend, unter den Mulch. Salat und Möhren danach. Phacelia braucht in normalen Sommern kein Extra-Wasser.",
+        "wann": "bei Trockenheit",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-beete-02"
+        ]
+      },
+      {
+        "id": "m7-tomate",
+        "bereich": "Tomaten außen",
+        "ort": "Tomatenstreifen",
+        "titel": "Tomaten ernten, weiter ausgeizen",
+        "anleitung": "Ab Juli bis Oktober. Von unten gießen. Braune Blätter sofort in den Hausmüll, nicht auf den Kompost.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-beete-03"
+        ]
+      },
+      {
+        "id": "m7-haus",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Morgens am Fuß gießen",
+        "anleitung": "Tomatenblätter trocken halten. Täglich lüften. Geiztriebe noch immer ausbrechen, auch kleine.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m7-schnitt",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche, Sauerkirsche",
+        "titel": "Direkt nach der Ernte schneiden",
+        "anleitung": "Nach innen wachsende, sich kreuzende und steile Triebe weg. Bei der Sauerkirsche abgetragene Triebe auf junges Holz ableiten. Wunden heilen im Sommer.",
+        "wann": "nach der Ernte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-obst-01"
+        ]
+      },
+      {
+        "id": "m7-ruten",
+        "bereich": "Beeren",
+        "ort": "Himbeeren, Johannisbeeren",
+        "titel": "Abgetragene Himbeerruten weg, Johannisbeeren auslichten",
+        "anleitung": "Sommerhimbeeren: die Ruten, die getragen haben, bodennah. Johannisbeeren: die ältesten Triebe am Boden, wenn der Strauch schon dicht ist. Jungsträucher nur schwache Triebe.",
+        "wann": "nach der Ernte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-obst-02"
+        ]
+      },
+      {
+        "id": "m7-schale",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Saum Beet 1",
+        "titel": "Wasserstelle nachfüllen",
+        "anleitung": "Täglich im Hochsommer. Steine drin lassen. Algen einfach auskippen, ohne Reiniger.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-natur-01"
+        ]
+      },
+      {
+        "id": "m7-pumpe",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe, Regenfässer",
+        "titel": "Pumpe und Fassabdeckung im Blick behalten",
+        "anleitung": "Filter nicht zusetzen lassen. Deckel muss liegen. Fördert die Pumpe Luft, sofort abschalten.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-07-wasser-01"
+        ]
+      },
+      {
+        "id": "m7-zwiebel",
+        "bereich": "Beete",
+        "ort": "2D",
+        "titel": "Zwiebeln ernten, wenn das Laub umfällt",
+        "anleitung": "Nicht vorher knicken. Ein paar Tage trocknen lassen, dann kühl und luftig lagern. Die Möhrenreihen bleiben bis Oktober.",
+        "wann": "Mitte/Ende",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m7-mulch",
+        "bereich": "Boden/Kompost",
+        "ort": "Beete",
+        "titel": "Mulch nachlegen, wo der Boden sichtbar wird",
+        "anleitung": "Angetrockneter Rasenschnitt, eine Finger dicke Schicht. Nicht an die Tomatenstängel und nicht auf die Phacelia.",
+        "wann": "Mitte",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m7-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen nicht zu kurz mähen",
+        "anleitung": "In der Hitze 6 cm stehen lassen, sonst verbrennt er. Kein Dünger aus der Tüte, der Schnitt reicht als Nahrung.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m7-bohnen",
+        "bereich": "Beete",
+        "ort": "2E",
+        "titel": "Buschbohnen jung pflücken",
+        "anleitung": "Hülsen ernten, bevor die Körner dick werden. Dann blüht die Pflanze weiter. Kein Stickstoffdünger.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m7-netz",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Netz am Grünkohl noch einmal abdichten",
+        "anleitung": "Nach Wind die Ränder prüfen. Gelbe Eigelege des Kohlweißlings von Hand abwischen, wenn welche auf den Blättern sitzen.",
+        "wann": "Mitte",
+        "prio": "optional"
+      }
+    ],
+    "8": [
+      {
+        "id": "m8-feldsalat",
+        "bereich": "Beete",
+        "ort": "1C",
+        "titel": "Feldsalat nach den Erbsen säen",
+        "anleitung": "Ab Mitte August. Zehn Reihen, Abstand 15 cm, Rand je 15 cm, 1 cm tief. In der Reihe dicht säen und auf 2 cm vereinzeln.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-beete-01"
+        ]
+      },
+      {
+        "id": "m8-salat",
+        "bereich": "Beete",
+        "ort": "2A",
+        "titel": "Letzte Salatreihen säen",
+        "anleitung": "Nur bis Anfang August, wieder zwei Reihen, 25 × 25 cm, 1 cm tief. Danach nicht mehr, er wird vor dem Winter nicht mehr groß.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-beete-02"
+        ]
+      },
+      {
+        "id": "m8-tomate",
+        "bereich": "Tomaten außen",
+        "ort": "Tomatenstreifen",
+        "titel": "Weiter ausgeizen, gießen und ernten",
+        "anleitung": "Untere Blätter, die den Boden berühren, entfernen. Gießen nur am Fuß. Kranke Früchte in den Hausmüll.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-beete-03"
+        ]
+      },
+      {
+        "id": "m8-haus",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Haus weiter lüften, Feldsalat noch nicht ins Beet",
+        "anleitung": "Der Plan sät den Feldsalat im September direkt, wenn die Tomaten raus sind. Schalen nur, falls die Pflanzen das Beet noch blockieren.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m8-pflaume",
+        "bereich": "Obstbäume",
+        "ort": "Pflaume",
+        "titel": "Pflaumen ernten und danach schneiden",
+        "anleitung": "Madige Früchte, Narrentaschen und Fruchtmumien in den Hausmüll. Nach der Ernte Wasserschosse ausreißen und den jungen Baum in Form bringen.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-obst-01"
+        ]
+      },
+      {
+        "id": "m8-samen",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume, 2E",
+        "titel": "Samen von Ringelblume, Bohne und Kresse nehmen",
+        "anleitung": "Trockene Samenstände an einem sonnigen Tag. In Tüten, kühl und trocken. Nicht die ganze Blüte abernten, Bienen nutzen den Rest.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-natur-01"
+        ]
+      },
+      {
+        "id": "m8-schale",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Saum Beet 1",
+        "titel": "Wasserstelle weiter füllen",
+        "anleitung": "Auch im August trinken Vögel und Insekten. Steine drin lassen, Wasser alle paar Tage wechseln.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-natur-02"
+        ]
+      },
+      {
+        "id": "m8-pumpe",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe",
+        "titel": "Pumpe bei langer Trockenheit beobachten",
+        "anleitung": "Fördert sie Luft oder wird der Strahl dünn, abschalten und den Wasserstand prüfen. Nicht trocken weiterlaufen lassen.",
+        "wann": "bei Trockenheit",
+        "prio": "wichtig",
+        "ref": [
+          "2027-08-wasser-01"
+        ]
+      },
+      {
+        "id": "m8-moehre",
+        "bereich": "Beete",
+        "ort": "2D",
+        "titel": "Möhren auf 3 cm vereinzelt lassen",
+        "anleitung": "Stehen sie dichter, die kleinsten ziehen und essen. Weiter feucht halten, sonst platzen sie nach dem nächsten Regen.",
+        "wann": "Anfang",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m8-bohnen",
+        "bereich": "Beete",
+        "ort": "2E",
+        "titel": "Buschbohnen weiter durchpflücken",
+        "anleitung": "Jede reife Hülse nimmt der Pflanze Kraft. Ende August lässt der Ertrag nach, die Pflanzen bleiben bis September stehen.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m8-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen mähen, solange er wächst",
+        "anleitung": "Schnitt antrocknen und als Mulch auf freie Stellen an 1A und unter die Beeren. Ruhezeiten einhalten.",
+        "wann": "laufend",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m8-kompost",
+        "bereich": "Boden/Kompost",
+        "ort": "Kompost",
+        "titel": "Kompost nicht austrocknen lassen",
+        "anleitung": "Eine Kanne Regenwasser, wenn die Mitte staubt. Abdecken. Gesunde Bohnen- und Erbsenreste dürfen jetzt darauf.",
+        "wann": "Mitte",
+        "prio": "optional"
+      },
+      {
+        "id": "m8-phacelia",
+        "bereich": "Beete",
+        "ort": "1D, 2F",
+        "titel": "Phacelia nicht abmähen",
+        "anleitung": "Sie blüht noch. Erst nach dem Frost wird sie Mulch. Wege frei halten, damit sie nicht in den Trittpfad säht.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      }
+    ],
+    "9": [
+      {
+        "id": "m9-zucchini",
+        "bereich": "Beete",
+        "ort": "1A",
+        "titel": "Zucchini weiter ernten",
+        "anleitung": "Auch kleine Früchte schneiden. Werden die Blätter mehlig, die schlimmsten abnehmen und in den Hausmüll geben. Nicht die ganze Pflanze rausreißen.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-09-beete-01"
+        ]
+      },
+      {
+        "id": "m9-phacelia",
+        "bereich": "Beete",
+        "ort": "1D, 2F",
+        "titel": "Phacelia stehen lassen",
+        "anleitung": "Nicht untergraben und nicht mähen. Nach dem Frost legt sie sich als Mulch. Das ist die Vorbereitung für Brokkoli und Zucchini im nächsten Jahr.",
+        "wann": "ganzer Monat",
+        "prio": "wichtig",
+        "ref": [
+          "2027-09-beete-01"
+        ]
+      },
+      {
+        "id": "m9-tomate",
+        "bereich": "Tomaten außen",
+        "ort": "Tomatenstreifen",
+        "titel": "Tomaten bis Oktober ernten",
+        "anleitung": "Weiter von unten gießen und ausgeizen. Grüne Früchte vor der ersten Frostnacht ins Haus zum Nachreifen, kranke nicht.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-09-beete-02"
+        ]
+      },
+      {
+        "id": "m9-feldsalat",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Feldsalat säen, sobald die Tomaten raus sind",
+        "anleitung": "Beide Seiten, Reihen 15 cm, 1 cm tief. Vorher 3–5 l/m² Kompost. Kranke Tomatenreste in den Hausmüll, nicht in die Erde.",
+        "wann": "Mitte/Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-09-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m9-himbeer",
+        "bereich": "Beeren",
+        "ort": "Himbeeren",
+        "titel": "Herbsthimbeeren ernten",
+        "anleitung": "Nur wenn es Herbstsorten sind. Madige Früchte weg in den Hausmüll. Die Ruten bleiben bis Februar stehen.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-09-obst-01"
+        ]
+      },
+      {
+        "id": "m9-laub",
+        "bereich": "Boden/Kompost",
+        "ort": "neben der Sauerkirsche",
+        "titel": "Laub- und Totholzhaufen aufsetzen",
+        "anleitung": "Am Südrand, locker, nicht festtreten. Schnittgut vom Sommerschnitt darf dazu. Kein lackiertes Holz und kein Plastik.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-09-natur-01"
+        ]
+      },
+      {
+        "id": "m9-mulch",
+        "bereich": "Boden/Kompost",
+        "ort": "1D, 2F",
+        "titel": "Abgeblühte Phacelia als Mulch liegen lassen",
+        "anleitung": "Nicht einarbeiten. Die Stängel schützen den Boden und die Insekten. Nur vom Weg ziehen, was im Weg liegt.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-09-natur-02"
+        ]
+      },
+      {
+        "id": "m9-gruenkohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohlnetz noch lassen",
+        "anleitung": "Geerntet wird ab Oktober, nach dem ersten Frost. Das Netz bleibt, solange noch Kohlweißlinge fliegen.",
+        "wann": "ganzer Monat",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m9-bohnen",
+        "bereich": "Beete",
+        "ort": "2E",
+        "titel": "Buschbohnen abräumen, wenn sie durch sind",
+        "anleitung": "Gesunde Reste auf den Kompost, die Wurzeln in der Erde lassen. Kranke Ruten in den Hausmüll.",
+        "wann": "Ende",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m9-fass",
+        "bereich": "Wasser & Technik",
+        "ort": "Regenfässer",
+        "titel": "Fässer noch in Betrieb lassen",
+        "anleitung": "Deckel bleibt drauf. Filter von Laub befreien, damit das Herbstwasser hineinläuft und nicht daneben.",
+        "wann": "Mitte",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m9-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Seltener mähen",
+        "anleitung": "Das Wachstum lässt nach. Laub noch nicht alles wegnehmen, ein Teil darf unter die Sträucher.",
+        "wann": "laufend",
+        "prio": "optional"
+      },
+      {
+        "id": "m9-saum",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume",
+        "titel": "Säume nicht mehr düngen und kaum gießen",
+        "anleitung": "Stauden sollen abschließen. Verblühtes stehen lassen, es ist Winterfutter und Quartier.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      },
+      {
+        "id": "m9-moehre",
+        "bereich": "Beete",
+        "ort": "2D",
+        "titel": "Möhren noch im Beet lassen",
+        "anleitung": "Sie werden bis Oktober geerntet. Bei Trockenheit einmal durchdringend gießen, sonst platzen sie nicht und bleiben süß.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      }
+    ],
+    "10": [
+      {
+        "id": "m10-rinne",
+        "bereich": "Wasser & Technik",
+        "ort": "Dachrinne, Fallrohr",
+        "titel": "Rinne und Filter von Laub befreien",
+        "anleitung": "Sonst läuft das Wasser am Fass vorbei. Gleich mit ansehen, ob der Deckel noch dicht aufliegt.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-wasser-01"
+        ]
+      },
+      {
+        "id": "m10-1a",
+        "bereich": "Beete",
+        "ort": "1A",
+        "titel": "Zucchinifeld nur mulchen",
+        "anleitung": "Reste abräumen. Keinen Knoblauch stecken, 2028 kommt Rote Bete. Laub oder Rasenschnitt als Decke, nicht umgraben.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-beete-01"
+        ]
+      },
+      {
+        "id": "m10-ernte",
+        "bereich": "Beete",
+        "ort": "2D, 1B",
+        "titel": "Möhren und Rote Bete ernten",
+        "anleitung": "Vor strengem Frost. Zwiebeln sind schon im Sommer raus. Gesunde Blätter auf den Kompost, kranke in den Hausmüll.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-beete-02"
+        ]
+      },
+      {
+        "id": "m10-kompost",
+        "bereich": "Boden/Kompost",
+        "ort": "Kompost",
+        "titel": "Gesunde Reste kompostieren",
+        "anleitung": "So anlegen, dass es die Nachbarn nicht stört. Kranke Tomaten, Kohlstrünke mit Herkules und Fruchtmumien nicht darauf.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-beete-03"
+        ]
+      },
+      {
+        "id": "m10-tomate",
+        "bereich": "Tomaten außen",
+        "ort": "Tomatenstreifen",
+        "titel": "Tomatenreste entsorgen und Kompost auffüllen",
+        "anleitung": "Was Braunfäule hat, in den Hausmüll. Am festen Platz eine Schicht reifen Kompost, dann Mulch. Nicht umgraben.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-beete-04"
+        ]
+      },
+      {
+        "id": "m10-haus",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Tomaten abräumen und Feldsalat säen",
+        "anleitung": "Kranke Reste raus, 3–5 l/m² Kompost einarbeiten, beide Seiten Feldsalat, Reihen 15 cm, 1 cm tief.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m10-leim",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche, Sauerkirsche, Pflaume",
+        "titel": "Leimringe gegen Frostspanner anlegen",
+        "anleitung": "Glatt um den Stamm, oberhalb der Veredlung, ohne Lücke. Raupenleim aus dem Fachhandel, kein Insektizid in die Krone.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-obst-01"
+        ]
+      },
+      {
+        "id": "m10-stauden",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "Säume",
+        "titel": "Stauden nicht zurückschneiden",
+        "anleitung": "Hohle Stängel und Samenstände sind Winterquartier und Futter. Nur umgefallenes, das auf dem Weg liegt, zur Seite legen.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-10-natur-01"
+        ]
+      },
+      {
+        "id": "m10-kohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohl nach dem ersten Frost ernten",
+        "anleitung": "Dann wird er milder. Netz kann jetzt ab. Die Pflanzen bleiben stehen und werden bis Februar beerntet.",
+        "wann": "bei Frost",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m10-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Letzten Schnitt nicht zu spät und nicht zu kurz",
+        "anleitung": "Etwa 5 cm. Laub zum Teil auf die Baumscheiben und unter die Johannisbeeren, den Rest auf den Laubhaufen. Ruhezeiten gelten noch.",
+        "wann": "Mitte",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m10-beeren",
+        "bereich": "Beeren",
+        "ort": "Johannisbeeren, Himbeeren",
+        "titel": "Laub als Mulch unter die Beeren",
+        "anleitung": "Eine lockere Schicht, nicht an die Ruten anhäufeln. Das hält die Flachwurzler feucht und füttert den Boden.",
+        "wann": "Ende",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m10-bohnen",
+        "bereich": "Beete",
+        "ort": "2E",
+        "titel": "Bohnenbeet mit Laub decken",
+        "anleitung": "Wenn die Pflanzen weg sind, eine Mulchdecke statt Umgraben. Die Wurzelknöllchen bleiben in der Erde.",
+        "wann": "Ende",
+        "prio": "optional"
+      },
+      {
+        "id": "m10-feldsalat-beet",
+        "bereich": "Beete",
+        "ort": "1C",
+        "titel": "Feldsalat im Beet stehen lassen",
+        "anleitung": "Er wächst bei mildem Wetter weiter und übersteht Frost. Nur ernten, was gebraucht wird.",
+        "wann": "laufend",
+        "prio": "optional"
+      },
+      {
+        "id": "m10-pumpe",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe",
+        "titel": "Pumpe noch nicht einwintern",
+        "anleitung": "Solange kein Dauerfrost angesagt ist, bleibt sie an. Erst im November entleeren. Fässer weiter nutzen.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      }
+    ],
+    "11": [
+      {
+        "id": "m11-fass",
+        "bereich": "Wasser & Technik",
+        "ort": "Regenfässer",
+        "titel": "Regenfässer leeren und umdrehen",
+        "anleitung": "Vor dem ersten Dauerfrost. Umdrehen oder so abdecken, dass kein Wasser darin gefriert. Filter mit leeren.",
+        "wann": "bei Frost",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-wasser-regenfaesser",
+          "2027-11-wasser-01"
+        ]
+      },
+      {
+        "id": "m11-pumpe",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe",
+        "titel": "Brunnenpumpe winterfest machen",
+        "anleitung": "Pumpe und Leitungen vollständig entleeren, Pumpe frostfrei einlagern, Brunnenrohr oder Leitungsenden abdecken.",
+        "wann": "bei Frost",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-wasser-brunnenpumpe",
+          "2027-11-wasser-02"
+        ]
+      },
+      {
+        "id": "m11-schlauch",
+        "bereich": "Wasser & Technik",
+        "ort": "Schläuche, Außenhahn",
+        "titel": "Schläuche und Hahn entleeren",
+        "anleitung": "Schläuche frostfrei lagern. Außenhahn und Leitung absperren, entleeren, Hahn offen lassen.",
+        "wann": "bei Frost",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-wasser-schlaeuche"
+        ]
+      },
+      {
+        "id": "m11-rinne",
+        "bereich": "Wasser & Technik",
+        "ort": "Dachrinne",
+        "titel": "Rinnen nach dem Laubfall noch einmal leeren",
+        "anleitung": "Laub aus Rinne, Fallrohr und Filter. Sonst staut der nächste Regen und spritzt an die Wand.",
+        "wann": "nach dem Laubfall",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-wasser-dachrinnen",
+          "2027-11-wasser-03"
+        ]
+      },
+      {
+        "id": "m11-hauswasser",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Bewässerung im Haus entleeren",
+        "anleitung": "Schläuche, Kannen und eine Tropfleitung, falls vorhanden. Wasser steht sonst und sprengt sie beim Frost.",
+        "wann": "bei Frost",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-gewaechshaus-bewaesserung",
+          "2027-11-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m11-lueften",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "An frostfreien Tagen kurz lüften",
+        "anleitung": "Zehn Minuten, damit Feldsalat und die Luft abtrocknen. Vor der Nacht wieder zu.",
+        "wann": "bei Sonne",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-gewaechshaus-lueften"
+        ]
+      },
+      {
+        "id": "m11-mulch",
+        "bereich": "Boden/Kompost",
+        "ort": "Beete",
+        "titel": "Abgeerntete Beete mulchen statt umgraben",
+        "anleitung": "Laub oder angetrockneter Rasenschnitt, eine Hand hoch. Der humose Boden soll liegen bleiben. Regenwürmer ziehen das Laub selbst ein.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-beete-mulch",
+          "2027-11-beete-02"
+        ]
+      },
+      {
+        "id": "m11-kohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohl ernten",
+        "anleitung": "Nach dem ersten Frost ist er milder. Blatt für Blatt, der Strunk bleibt bis zum Frühjahr, wenn er gesund ist.",
+        "wann": "bei Frost",
+        "prio": "wichtig",
+        "ref": [
+          "2027-11-beete-01"
+        ]
+      },
+      {
+        "id": "m11-johannis",
+        "bereich": "Beeren",
+        "ort": "Johannisbeeren",
+        "titel": "Johannisbeeren auslichten",
+        "anleitung": "Aufbauschnitt: schwache und bodennahe Triebe weg. Ziel 8–10 Triebe. An einem frostfreien Tag, nicht bei Kahlfrost.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-obst-johannisbeeren"
+        ]
+      },
+      {
+        "id": "m11-himbeer",
+        "bereich": "Beeren",
+        "ort": "Himbeeren",
+        "titel": "Abgetragene Sommerruten bodennah weg",
+        "anleitung": "Herbsthimbeeren erst im Februar ganz zurückschneiden. Kranke Ruten in den Hausmüll, gesunde auf den Totholzhaufen.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-obst-himbeeren"
+        ]
+      },
+      {
+        "id": "m11-mumien",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche, Sauerkirsche, Pflaume",
+        "titel": "Fruchtmumien und Fallobst entfernen",
+        "anleitung": "In den Hausmüll, nicht auf den Kompost. Das ist die wichtigste Vorbeugung gegen Monilia. Nicht verbrennen.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-obst-fruchtmumien",
+          "2027-11-obst-01"
+        ]
+      },
+      {
+        "id": "m11-laub",
+        "bereich": "Boden/Kompost",
+        "ort": "neben der Sauerkirsche",
+        "titel": "Laubhaufen mit Schnittgut anlegen oder auffüllen",
+        "anleitung": "Locker am Südrand. Igel nutzen ihn. Nicht mit dem Rasenmäher schreddern, wenn noch Tiere darin sitzen könnten.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-natur-laubhaufen"
+        ]
+      },
+      {
+        "id": "m11-beerenmulch",
+        "bereich": "Beeren",
+        "ort": "Johannisbeeren, Himbeeren",
+        "titel": "Laub unter den Beeren liegen lassen",
+        "anleitung": "Eine lockere Schicht als Mulch. Nicht an die Ruten drücken und nicht festtreten.",
+        "wann": "nach dem Laubfall",
+        "prio": "wichtig",
+        "ref": [
+          "2026-11-natur-beerenmulch"
+        ]
+      },
+      {
+        "id": "m11-kasten",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche",
+        "titel": "Nistkasten reinigen, Nisthilfe nicht öffnen",
+        "anleitung": "Alten Nistkasten ausbürsten, brütet niemand mehr. Die Wildbienen-Röhren bleiben zu, die Tiere sitzen darin.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-11-natur-01"
+        ]
+      },
+      {
+        "id": "m11-feldsalat",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Feldsalat nur bei Bedarf schneiden",
+        "anleitung": "Er wächst langsam weiter. Ganze Rosetten oder einzelne Blätter. Nicht alles auf einmal.",
+        "wann": "laufend",
+        "prio": "optional"
+      },
+      {
+        "id": "m11-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Laub vom Rasen zum Teil abräumen",
+        "anleitung": "Eine dichte nasse Matte erstickt den Rasen. Das Laub unter die Sträucher und auf die Beete, nicht in die Biotonne.",
+        "wann": "nach dem Laubfall",
+        "prio": "optional"
+      }
+    ],
+    "12": [
+      {
+        "id": "m12-abdeckung",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe, Regenfässer",
+        "titel": "Abdeckungen nach Sturm oder Schnee prüfen",
+        "anleitung": "Liegt Schnee auf dem Brunnenrohr oder ist ein Fass wieder vollgelaufen, leeren und neu abdecken.",
+        "wann": "nach Sturm oder Schnee",
+        "prio": "wichtig",
+        "ref": [
+          "2026-12-wasser-01",
+          "2027-12-wasser-01"
+        ]
+      },
+      {
+        "id": "m12-lager",
+        "bereich": "Wasser & Technik",
+        "ort": "Pumpe, Schläuche",
+        "titel": "Prüfen, ob Pumpe und Schläuche frostfrei liegen",
+        "anleitung": "Nicht in der Gartenlaube, wenn die durchfriert. Ein Blick auf Risse reicht, repariert wird im Februar.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2026-12-wasser-02"
+        ]
+      },
+      {
+        "id": "m12-mulch",
+        "bereich": "Boden/Kompost",
+        "ort": "Beete",
+        "titel": "Mulchdecke nach Sturm nachlegen",
+        "anleitung": "Wind verweht Laub. Wo der Boden blank liegt, wieder decken. Nicht umgraben.",
+        "wann": "nach Sturm",
+        "prio": "wichtig",
+        "ref": [
+          "2026-12-beete-01"
+        ]
+      },
+      {
+        "id": "m12-saat",
+        "bereich": "Allgemein",
+        "ort": "Saatgut",
+        "titel": "Saatgut sichten und Wunschliste schreiben",
+        "anleitung": "Was 2027 wachsen soll, gegen die Tüten halten. Die Einkaufsliste im Plan nennt Mengen und ungefähre Preise.",
+        "wann": "Mitte",
+        "prio": "wichtig",
+        "ref": [
+          "2026-12-beete-02",
+          "2027-12-beete-02"
+        ]
+      },
+      {
+        "id": "m12-folge",
+        "bereich": "Allgemein",
+        "ort": "Beete",
+        "titel": "Erträge und die Folge für 2028 notieren",
+        "anleitung": "1A wird Rote Bete, 1B Zuckererbsen, 1C Phacelia, 1D Brokkoli, 2C Möhren, 2D Buschbohnen, 2E Phacelia, 2F Zucchini. 2B bleibt Rhabarber.",
+        "wann": "Ende",
+        "prio": "wichtig",
+        "ref": [
+          "2027-12-beete-01"
+        ]
+      },
+      {
+        "id": "m12-lueften",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "An frostfreien, sonnigen Tagen kurz lüften",
+        "anleitung": "Feldsalat mag keine stehende feuchte Luft. Zehn Minuten, dann wieder zu, bevor es Nacht wird.",
+        "wann": "bei Sonne",
+        "prio": "wichtig",
+        "ref": [
+          "2026-12-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m12-feldsalat",
+        "bereich": "Gewächshaus",
+        "ort": "Gewächshaus",
+        "titel": "Feldsalat ernten",
+        "anleitung": "Rosetten schneiden, nicht ausreißen, wenn noch welche nachwachsen sollen. Was schimmelt, kommt weg.",
+        "wann": "laufend",
+        "prio": "wichtig",
+        "ref": [
+          "2027-12-gewaechshaus-01"
+        ]
+      },
+      {
+        "id": "m12-mumien",
+        "bereich": "Obstbäume",
+        "ort": "Süßkirsche, Sauerkirsche, Pflaume",
+        "titel": "Letzte Fruchtmumien abnehmen",
+        "anleitung": "Auch kleine schwarze Früchte in den Kronen. Hausmüll, nicht Kompost.",
+        "wann": "Anfang",
+        "prio": "wichtig",
+        "ref": [
+          "2026-12-obst-01"
+        ]
+      },
+      {
+        "id": "m12-haufen",
+        "bereich": "Boden/Kompost",
+        "ort": "Laubhaufen",
+        "titel": "Laub- und Totholzhaufen in Ruhe lassen",
+        "anleitung": "Nicht umsetzen, nicht anzünden. Stauden in den Säumen bleiben stehen.",
+        "wann": "ganzer Monat",
+        "prio": "wichtig",
+        "ref": [
+          "2026-12-natur-01",
+          "2027-12-natur-01"
+        ]
+      },
+      {
+        "id": "m12-kohl",
+        "bereich": "Beete",
+        "ort": "2C",
+        "titel": "Grünkohl bei offenem Wetter ernten",
+        "anleitung": "Auch im Dezember. Bei Kahlfrost die Blätter nicht brechen, einen milderen Tag nehmen.",
+        "wann": "bei offenem Wetter",
+        "prio": "wichtig"
+      },
+      {
+        "id": "m12-rhabarber",
+        "bereich": "Rhabarber/Stauden & Säume",
+        "ort": "2B",
+        "titel": "Rhabarber unter der Mulchdecke lassen",
+        "anleitung": "Nicht aufdecken und nicht ernten. Die erste Ernte ist erst im nächsten April, und dann nur ein Drittel der Stangen.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      },
+      {
+        "id": "m12-rasen",
+        "bereich": "Rasen",
+        "ort": "Rasen",
+        "titel": "Rasen nicht mähen und nicht festtreten",
+        "anleitung": "Nasses oder gefrorenes Gras leidet. Laub, das noch liegt, darf bis zum Frühjahr unter den Sträuchern bleiben.",
+        "wann": "ganzer Monat",
+        "prio": "optional"
+      }
+    ]
   }
 }

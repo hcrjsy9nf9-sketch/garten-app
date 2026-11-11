@@ -1,10 +1,14 @@
 const TABS = [
   { id: "heute", label: "Heute" },
+  { id: "checkliste", label: "Checkliste" },
   { id: "kalender", label: "Kalender" },
   { id: "garten", label: "Garten" },
   { id: "plan", label: "Plan" },
   { id: "mehr", label: "Mehr" },
 ];
+
+const CHECK_MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+const CHECK_GROUPS = ["Beete", "Gewächshaus", "Tomaten außen", "Obstbäume", "Beeren", "Rhabarber/Stauden & Säume", "Rasen", "Wasser & Technik", "Boden/Kompost", "Allgemein"];
 
 const PLAN_NAV = [
   ["leitidee", "Leitidee"],
@@ -43,6 +47,9 @@ const state = {
   searchOpen: false,
   mehrView: null,
   detail: null,
+  checkMonth: null,
+  checkWichtig: false,
+  checkHideDone: false,
 };
 
 const SVGNS = "http://www.w3.org/2000/svg";
@@ -140,6 +147,10 @@ function icon(name) {
   } else if (name === "bestand") {
     path("M5 19c6-1 8-8 8-14 4 3 6 8 6 12a8 8 0 0 1-14 2z");
     path("M9 13c2 0 4-2 5-5");
+  } else if (name === "checkliste") {
+    svg.append(svgEl("rect", { x: 4, y: 3, width: 16, height: 18, rx: 2 }));
+    path("M8 9l2 2 4-4");
+    path("M8 16h8");
   } else if (name === "garten") {
     path("M5 19c6-1 8-8 8-14 4 3 6 8 6 12a8 8 0 0 1-14 2z");
     path("M9 13c2 0 4-2 5-5");
@@ -333,6 +344,7 @@ function renderHeute() {
           {},
           h("h2", {}, "Heute zu tun"),
           h("div", { id: "heute-aufgaben" }, tasks.map((task) => taskLine("heute", task.text, task.bereich, task.done, false, heuteIds(task)))),
+          renderCheckHint(),
           h("p", { class: "hint" }, "Abhaken gilt nur auf diesem Gerät. Sag dem Gartenhelfer Bescheid, dann wird es dauerhaft eingetragen.")
         )
       : h(
@@ -364,6 +376,112 @@ function renderHeute() {
         )
       )
     )
+  );
+}
+
+function renderCheckHint() {
+  const now = berlinParts();
+  const progress = checklistProgress(now.year, now.month);
+  if (!progress.total) return null;
+  return h(
+    "button",
+    { type: "button", class: "quiet-link check-hint", "data-tab": "checkliste" },
+    h("span", {}, CHECK_MONTHS[now.month - 1] + ": " + progress.done + " von " + progress.total + " erledigt"),
+    h("span", { class: "task-meta" }, "Checkliste")
+  );
+}
+
+function checklistLine(item, year, month) {
+  const done = isChecklistDone(year, month, item);
+  const meta = [item.ort, item.wann, item.prio === "optional" ? "optional" : ""].filter(Boolean).join(" · ");
+  return h(
+    "article",
+    { class: "task" + (done ? " is-done" : "") },
+    h(
+      "button",
+      {
+        type: "button",
+        class: "check-btn",
+        "data-checkitem": item.id,
+        "data-checkmonth": String(month),
+        "aria-pressed": done ? "true" : "false",
+        "aria-label": done ? "Erledigt" : "Abhaken",
+      },
+      h("span", { class: "check" + (done ? " is-on" : "") })
+    ),
+    h(
+      "button",
+      { type: "button", class: "line", "data-check-detail": item.id },
+      h("span", { class: "line-text" }, item.titel),
+      meta ? h("span", { class: "task-meta" }, meta) : null
+    )
+  );
+}
+
+function renderCheckliste() {
+  const now = berlinParts();
+  const month = state.checkMonth || now.month;
+  const year = now.year;
+  const all = (((state.data || {}).checkliste || {})[String(month)]) || [];
+  const visible = all.filter((item) => {
+    if (state.checkWichtig && item.prio !== "wichtig") return false;
+    if (state.checkHideDone && isChecklistDone(year, month, item)) return false;
+    return true;
+  });
+  const progress = checklistProgress(year, month);
+  const pct = progress.total ? Math.round((100 * progress.done) / progress.total) : 0;
+  const groups = CHECK_GROUPS.map((name) => ({ name, items: visible.filter((item) => item.bereich === name) })).filter((group) => group.items.length);
+  return h(
+    "div",
+    { class: "view check-view" },
+    h(
+      "div",
+      { class: "section-head" },
+      h("h2", {}, "Checkliste"),
+      h("span", { class: "task-meta" }, progress.done + " von " + progress.total)
+    ),
+    h(
+      "div",
+      { class: "check-track", role: "progressbar", "aria-valuenow": String(progress.done), "aria-valuemin": "0", "aria-valuemax": String(progress.total), "aria-label": "Fortschritt im Monat" },
+      h("span", { style: "width:" + pct + "%" })
+    ),
+    h("p", { class: "caption" }, CHECK_MONTHS[month - 1] + " " + year + " · Häkchen gelten für dieses Jahr"),
+    monthChips(
+      "Checkliste",
+      CHECK_MONTHS.map((label, index) => ({ value: String(index + 1), label: label.slice(0, 3) })),
+      String(month),
+      "data-checkmonth"
+    ),
+    h(
+      "div",
+      { class: "chips", role: "group", "aria-label": "Filter" },
+      h(
+        "button",
+        { type: "button", class: "chip" + (state.checkWichtig ? " is-on" : ""), "data-check-filter": "wichtig", "aria-pressed": state.checkWichtig ? "true" : "false" },
+        "nur wichtige"
+      ),
+      h(
+        "button",
+        { type: "button", class: "chip" + (state.checkHideDone ? " is-on" : ""), "data-check-filter": "offen", "aria-pressed": state.checkHideDone ? "true" : "false" },
+        "Erledigte aus"
+      )
+    ),
+    groups.length
+      ? groups.map((group) => {
+          const open = group.items.some((item) => !isChecklistDone(year, month, item));
+          const details = h("details", { class: "fold", open: open ? "open" : null });
+          details.append(
+            h(
+              "summary",
+              {},
+              h("span", { class: "fold-label" }, group.name),
+              h("span", { class: "task-meta count" }, String(group.items.length))
+            )
+          );
+          details.append(h("div", { class: "fold-body" }, group.items.map((item) => checklistLine(item, year, month))));
+          return details;
+        })
+      : h("p", { class: "caption" }, "Nichts für diesen Filter.")
   );
 }
 
@@ -2090,7 +2208,7 @@ function renderDetail() {
     h(
       "div",
       { class: "sheet", role: "dialog", "aria-modal": "true", "aria-label": "Aufgabe" },
-      h("div", { class: "sheet-bar" }, h("h2", {}, "Aufgabe"), h("button", { type: "button", class: "text-btn", "data-close": "1" }, "Schließen")),
+      h("div", { class: "sheet-bar" }, h("h2", {}, detail.title || "Aufgabe"), h("button", { type: "button", class: "text-btn", "data-close": "1" }, "Schließen")),
       control ? control.button : null,
       h("p", {}, detail.text),
       control && control.local ? h("p", { class: "caption" }, "auf diesem Gerät abgehakt") : null
@@ -2101,6 +2219,7 @@ function renderDetail() {
 function renderView() {
   const query = (state.query || "").trim();
   if (query.length >= 2) return renderSearch();
+  if (state.tab === "checkliste") return renderCheckliste();
   if (state.tab === "kalender") return renderJahr();
   if (state.tab === "garten") return renderGarten();
   if (state.tab === "plan") return renderPlan();
@@ -2267,6 +2386,34 @@ function onClick(event) {
     paint(false);
     return;
   }
+  if (button.dataset.checkitem) {
+    const now = berlinParts();
+    toggleChecklistItem(now.year, Number(button.dataset.checkmonth) || now.month, button.dataset.checkitem);
+    state.burst = button.dataset.checkitem;
+    paint(false);
+    return;
+  }
+  if (button.dataset.checkDetail) {
+    const month = state.checkMonth || berlinParts().month;
+    const item = ((((state.data || {}).checkliste || {})[String(month)]) || []).find((entry) => entry.id === button.dataset.checkDetail);
+    if (item) {
+      state.detail = { text: item.anleitung, title: item.titel, scope: "", jsonDone: false, ids: null };
+      state.sheet = null;
+      paint(false);
+    }
+    return;
+  }
+  if (button.dataset.checkFilter) {
+    if (button.dataset.checkFilter === "wichtig") state.checkWichtig = !state.checkWichtig;
+    if (button.dataset.checkFilter === "offen") state.checkHideDone = !state.checkHideDone;
+    paint(false);
+    return;
+  }
+  if (button.dataset.checkmonth) {
+    state.checkMonth = Number(button.dataset.checkmonth);
+    paint(false);
+    return;
+  }
   if (button.dataset.check) {
     const key = button.dataset.check;
     const turningOn = !checksOn(key);
@@ -2288,6 +2435,7 @@ function onClick(event) {
     state.query = "";
     state.searchOpen = false;
     if (button.dataset.resultMonat) state.monatKey = button.dataset.resultMonat;
+    if (button.dataset.resultCheck) state.checkMonth = Number(button.dataset.resultCheck);
     if (button.dataset.resultPlan) state.planMonat = button.dataset.resultPlan;
     state.pendingScroll = button.dataset.goto || null;
     const raw = button.dataset.resultTab;

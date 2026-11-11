@@ -82,16 +82,102 @@ function checksOn(key) {
 
 function toggleCheck(key) {
   const map = loadMap(STORE_CHECKS);
+  let turnedOn = false;
+  let touched = [];
   if (String(key).startsWith("ids:")) {
     const ids = key.slice(4).split(",").filter(Boolean);
     const allOn = ids.length > 0 && ids.every((id) => !!map[idKey(id)]);
+    turnedOn = !allOn;
+    touched = ids;
     ids.forEach((id) => {
       if (allOn) delete map[idKey(id)];
       else map[idKey(id)] = true;
     });
   } else if (map[key]) delete map[key];
-  else map[key] = true;
+  else {
+    map[key] = true;
+    turnedOn = true;
+  }
   saveMap(STORE_CHECKS, map);
+  if (touched.length) mirrorHakenToChecklist(touched, turnedOn);
+}
+
+function checkStoreKey(year, month) {
+  return "garten-check-" + year + "-" + String(month).padStart(2, "0");
+}
+
+function checklistRefs(item, year, month) {
+  const raw = item && item.ref;
+  const refs = raw == null ? [] : Array.isArray(raw) ? raw : [raw];
+  const prefix = year + "-" + String(month).padStart(2, "0") + "-";
+  const known = new Set(jahrCatalog().map((entry) => entry.id));
+  return refs.filter((id) => known.has(id) && String(id).startsWith(prefix));
+}
+
+function isChecklistDone(year, month, item) {
+  if (!item) return false;
+  if (loadMap(checkStoreKey(year, month))[item.id]) return true;
+  const refs = checklistRefs(item, year, month);
+  if (!refs.length) return false;
+  const permanent = permanentIds();
+  const map = loadMap(STORE_CHECKS);
+  return refs.every((id) => !!map[idKey(id)] || permanent.has(id));
+}
+
+function checklistProgress(year, month) {
+  const tasks = ((state.data && state.data.checkliste) || {})[String(month)] || [];
+  const done = tasks.filter((item) => isChecklistDone(year, month, item)).length;
+  return { done, total: tasks.length };
+}
+
+function toggleChecklistItem(year, month, id) {
+  const tasks = ((state.data && state.data.checkliste) || {})[String(month)] || [];
+  const item = tasks.find((entry) => entry.id === id);
+  if (!item) return;
+  const storeKey = checkStoreKey(year, month);
+  const store = loadMap(storeKey);
+  const wasOn = isChecklistDone(year, month, item);
+  if (wasOn) delete store[id];
+  else store[id] = true;
+  saveMap(storeKey, store);
+  const refs = checklistRefs(item, year, month);
+  if (!refs.length) return;
+  const haken = loadMap(STORE_CHECKS);
+  const permanent = permanentIds();
+  refs.forEach((ref) => {
+    if (permanent.has(ref)) return;
+    if (wasOn) delete haken[idKey(ref)];
+    else haken[idKey(ref)] = true;
+  });
+  saveMap(STORE_CHECKS, haken);
+}
+
+function mirrorHakenToChecklist(ids, turningOn) {
+  if (!state.data || !state.data.checkliste) return;
+  const batches = {};
+  ids.forEach((id) => {
+    const match = String(id).match(/^(\d{4})-(\d{2})-/);
+    if (!match) return;
+    const key = match[1] + "-" + String(Number(match[2]));
+    (batches[key] = batches[key] || []).push(id);
+  });
+  Object.keys(batches).forEach((key) => {
+    const parts = key.split("-");
+    const year = parts[0];
+    const month = parts[1];
+    const batch = new Set(batches[key]);
+    const tasks = (state.data.checkliste[month] || []).filter((item) => checklistRefs(item, year, month).some((id) => batch.has(id)));
+    if (!tasks.length) return;
+    const store = loadMap(checkStoreKey(year, month));
+    const haken = loadMap(STORE_CHECKS);
+    const permanent = permanentIds();
+    tasks.forEach((item) => {
+      const refs = checklistRefs(item, year, month);
+      if (turningOn && refs.every((id) => !!haken[idKey(id)] || permanent.has(id))) store[item.id] = true;
+      if (!turningOn && refs.some((id) => batch.has(id))) delete store[item.id];
+    });
+    saveMap(checkStoreKey(year, month), store);
+  });
 }
 
 function isShopChecked(name) {
@@ -603,6 +689,9 @@ function searchResults(query) {
   (((plan.kosten || {}).posten) || []).forEach((row) => push(row.posten, row.kosten, { tab: "plan", goto: "plan-kosten" }));
   (((plan.regeln || {}).zeilen) || []).forEach((row) => push(row.thema + " " + row.regel, row.quelle, { tab: "plan", goto: "plan-regeln" }));
   (((plan.offen || {}).punkte) || []).forEach((point) => push(point, "Offene Punkte", { tab: "plan", goto: "plan-offen" }));
+  Object.keys(state.data.checkliste || {}).forEach((month) => {
+    (state.data.checkliste[month] || []).forEach((item) => push(item.titel + " " + item.anleitung, "Checkliste · " + item.bereich, { tab: "checkliste", checkMonth: month }));
+  });
   return hits;
 }
 
@@ -627,6 +716,7 @@ function renderSearch() {
             "data-result-tab": hit.tab,
             "data-result-monat": hit.monat || null,
             "data-result-plan": hit.planMonat || null,
+            "data-result-check": hit.checkMonth || null,
             "data-goto": hit.goto || null,
           },
           h("strong", {}, hit.title),

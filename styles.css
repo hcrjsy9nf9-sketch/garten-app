@@ -867,7 +867,11 @@ h2 { font-size: 1.35rem; margin: 8px 0; }
 .back { border: 0; background: transparent; color: var(--green-ink); min-height: 44px; padding: 0; font-weight: 650; }
 .dot.warn { background: var(--amber); }
 .badge { display: none; }
-.tabbar { grid-template-columns: repeat(5, 1fr); }
+.tabbar { grid-template-columns: repeat(6, 1fr); }
+.check-track { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.check-track > span { display: block; height: 100%; background: var(--green); border-radius: 99px; }
+.check-view .chips { margin-top: 4px; }
+.check-hint { margin-top: 8px; }
 .sketch-card.pan svg, table { min-width: 0; }
 .table-scroll { overflow: visible; }
 .chips { margin: 0 -4px; }

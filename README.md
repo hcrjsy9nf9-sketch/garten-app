@@ -20,12 +20,12 @@ Danach startet sie ohne Browserleiste. Einmal online geöffnet, bleiben die letz
 1. Nur `data/garten.json` ändern. Texte in `index.html`, `app.js` oder `styles.css` sind die Oberfläche, nicht das Gartenbuch.
 2. `stand` auf das lesbare Datum der Daten setzen (Beispiel: `10. Nov. 2026`) und `standIso` auf `JJJJ-MM-TT` (Beispiel: `2026-11-10`). Oben steht das getrennt von heute: „Daten vom …“ ist dieses Feld, „Heute …“ ist das Datum des Geräts.
 3. `standIso` wählt den Monat in der Jahresübersicht (wenn `jahr[].key` dazu passt, Form `JJJJ-MM`) und den umrandeten Monat im Saisonstreifen. Im Gartenplan öffnet sich derselbe Kalendermonat.
-4. Heutige Aufgaben: `heute[].done` auf `true` oder `false`. `true` bleibt immer erledigt. Ein Häkchen nur auf dem Handy steht in `localStorage` (`garten-haken`) und wird mit dem Hinweis „auf diesem Gerät abgehakt“ gezeigt. Dauerhaft wird es erst durch `done: true` in dieser Datei. Setze `heute[].ref` auf die `id` der passenden Aufgabe in `jahr` (eine Id oder eine Liste). Dann gilt dasselbe Häkchen unter Heute und im Kalender. Fehlt `ref`, sucht die App im Monat von `standIso` nach Stichworten (Brunnenpumpe, Regenfässer, Johannisbeeren, Fruchtmumien). Beim Umformulieren einer Monatsaufgabe die `id` behalten und nur `text` ändern.
+4. Heutige Aufgaben: `heute[].done` auf `true` oder `false`. `true` bleibt immer erledigt. Ein Häkchen nur auf dem Handy steht in `localStorage` (`garten-haken`) und wird mit dem Hinweis „auf diesem Gerät abgehakt“ gezeigt. Dauerhaft wird es erst durch `done: true` in dieser Datei. Setze `heute[].ref` auf die `id` der passenden Aufgabe in `jahr` (eine Id oder eine Liste). Dann gilt dasselbe Häkchen unter Heute, im Kalender und in der Checkliste, wenn dort `ref` dieselbe Id nennt. Fehlt `ref`, sucht die App im Monat von `standIso` nach Stichworten (Brunnenpumpe, Regenfässer, Johannisbeeren, Fruchtmumien). Beim Umformulieren einer Monatsaufgabe die `id` behalten und nur `text` ändern.
 5. Neue Tagebucheinträge in `tagebuch` anhängen. `datum` ist ISO (`2026-11-03`), `anzeige` der lesbare Text. Die App sortiert neueste zuerst.
 6. Monatsaufgaben stehen in `jahr[].aufgaben` unter `wasser`, `beete`, `gewaechshaus`, `obst`, `natur`. Leere Kategorien weglassen.
 7. Gerätestatus in `technik[]`: `status`, `stand`, `erfasst`, `winter`, `fruehjahr`, `saison`, optional `erledigtDurch`. `erledigtDurch` ist eine Liste von `jahr`-Ids. Sind auf diesem Gerät alle diese Aufgaben abgehakt, zeigt die Kachel `winterfest`. Haken weg: es gilt wieder `status` aus dieser Datei. `status` selbst bleibt die Grundlage und wird nicht überschrieben.
 8. `saison` ist genau 12 Zeichen, Januar bis Dezember: `b` in Betrieb, `u` umstellen (in Betrieb nehmen oder winterfest machen), `w` Winterlage. Beispiel Regenfässer: `wwubbbbbbbuw`.
-9. Bestand, offene Punkte und `plan2027` genauso in der JSON pflegen.
+9. Bestand, offene Punkte und `plan2027` genauso in der JSON pflegen. `checkliste` nicht anfassen: sie ist die feste Monats-Checkliste und hängt nicht am Tagesdatum.
 10. Auf `main` committen und pushen. Die Aktion `.github/workflows/pages.yml` veröffentlicht die Seite. `data/garten.json` wird beim Öffnen aus dem Netz geladen; offline erscheint die letzte erfolgreiche Fassung.
 
 Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt die Karte eine Warnung. Enthält er `winterfest` ohne dieses „nicht“, gilt der Status als erledigt.
@@ -55,6 +55,7 @@ Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt
 | `offen` | Liste noch fehlender Angaben der Garten-App |
 | `links` | `{ title, site, date, href }`. Bleibt als Herkunftsverweis in den Daten; der Plan selbst steht in `plan2027` und wird dort angezeigt |
 | `plan2027` | Gartenplan 2027, siehe unten |
+| `checkliste` | Feste Monats-Checkliste, Schlüssel `"1"` bis `"12"`. Jeder Eintrag: `id` (`m11-pumpe`), `bereich`, `ort`, `titel`, `anleitung`, `wann`, `prio` (`wichtig` oder `optional`), optional `ref` (Jahr-Ids, die mit dem Häkchen mitlaufen). Tagesupdates von `stand` und `heute` lassen `checkliste` stehen |
 
 `texte` enthält `heuteUeberschrift`, `jahrUeberschrift`, `technikUeberschrift`, `bestandUeberschrift`, `tagebuchUeberschrift`, `offenUeberschrift`, `bestandHinweis`, `saisonUeberschrift`, `saisonHinweis` und `wasserZuerst` (`ton`, `lead`, `text`).
 
@@ -88,6 +89,7 @@ Optional und nur in der Oberfläche, nicht in der JSON:
 - Wetter kommt von Open-Meteo für Magdeburg (52,13° N, 11,62° O, Zeitzone Europe/Berlin) und wird unter `garten-wetter` im Browser gespeichert. Ohne Netz erscheint die letzte Fassung, sonst ein kurzer Hinweis.
 - Häkchen der Einkaufsliste liegen unter `garten-einkauf`.
 - Der Zeitpunkt des letzten erfolgreichen Ladens liegt unter `garten-daten-zeit`.
+- Häkchen der Monats-Checkliste liegen unter `garten-check-JJJJ-MM` und gelten nur für dieses Jahr.
 
 ## Technik
 
@@ -95,7 +97,7 @@ Optional und nur in der Oberfläche, nicht in der JSON:
 - `manifest.webmanifest`: Name, Kurzname „Garten“, Farbe Grün, Icons 192 und 512.
 - `sw.js`: `data/garten.json` immer netzwerkzuerst und ohne HTTP-Cache (`cache: no-store`); nur offline die letzte gute Kopie. Statische Dateien cache-zuerst (Aktualisierung im Hintergrund für den nächsten Start).
 - Helles und dunkles Erscheinungsbild über `prefers-color-scheme`.
-- Unten die Bereiche Heute, Jahr, Technik, Bestand, Plan 2027, Tagebuch.
+- Unten die Bereiche Heute, Liste, Kalender, Garten, Plan und Mehr.
 
 Ein Push auf `main` startet `.github/workflows/pages.yml` (`actions/deploy-pages`). Die Seite ist auf GitHub Actions als Pages-Quelle eingestellt.
 
