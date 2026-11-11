@@ -32,6 +32,7 @@ const state = {
   planBeet: "b1",
   rotYear: "2027",
   plotId: null,
+  gartenFilter: "alle",
   pendingScroll: null,
   listening: false,
   query: "",
@@ -1225,14 +1226,14 @@ function drawPlotElement(svg, el, on) {
   } else if (el.typ === "haus") {
     g.append(svgEl("path", { d: `M${cx},${y + 4} L${x + 8},${y + 26} L${x + b - 8},${y + 26} Z`, class: "plot-roof plot-shape" }));
     g.append(svgEl("rect", { x: x + 8, y: y + 26, width: b - 16, height: hgt - 34, rx: 6, class: "plot-house plot-shape" }));
-    g.append(svgEl("path", { d: `M${x + 16},${y + 40} H${x + b - 16}`, class: "plot-pane" }));
-    plotLines(g, cx, y + hgt - 38, [el.name, el.masse].filter(Boolean), 13);
+    g.append(svgEl("path", { d: `M${x + 16},${y + 36} H${x + b - 16}`, class: "plot-pane" }));
+    g.append(plotText(cx, y + hgt - 14, el.name, 11, "middle"));
   } else if (el.typ === "baum") {
     const r = Math.min(b, hgt) * 0.34;
     g.append(svgEl("path", { d: `M${cx},${y + r * 2} v${Math.max(8, r * 0.7)}`, class: "plot-trunk" }));
     g.append(svgEl("circle", { cx, cy: y + r + 4, r, class: "plot-canopy plot-shape" }));
     g.append(svgEl("circle", { cx: cx - r * 0.28, cy: y + r * 0.7, r: r * 0.28, class: "plot-canopy-lite" }));
-    plotLines(g, cx, y + hgt - 12, [el.name], 13);
+    plotLines(g, cx, y + hgt - 10, [el.name], 11);
   } else if (el.typ === "tomate") {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 12, class: "plot-tomato plot-shape" }));
     [14, 32].forEach((dx) => {
@@ -1241,7 +1242,7 @@ function drawPlotElement(svg, el, on) {
       g.append(svgEl("circle", { cx: tx, cy: ty, r: 7, class: "plot-tomato-fruit" }));
       g.append(svgEl("path", { d: `M${tx - 3},${ty - 6} q3,-5 7,0 q-3,2 -7,0`, class: "plot-tomato-leaf" }));
     });
-    g.append(plotText(x + 46, y + hgt / 2 + 5, "Tomaten", 14, "start"));
+    g.append(plotText(x + 44, y + hgt / 2 + 4, "Tomaten", 12, "start"));
   } else if (el.typ === "strauch" && el.anzahl > 1) {
     const r = 14;
     for (let i = 0; i < el.anzahl; i += 1) {
@@ -1249,17 +1250,16 @@ function drawPlotElement(svg, el, on) {
       g.append(svgEl("circle", { cx: bx, cy: y + r + 2, r, class: "plot-bush plot-shape" }));
       g.append(svgEl("circle", { cx: bx - 4, cy: y + r, r: 2.2, class: "plot-berry" }));
     }
-    g.append(plotText(cx, y + hgt - 6, el.name, 13, "middle"));
+    g.append(plotText(cx, y + hgt - 4, el.name, 11, "middle"));
   } else if (el.typ === "strauch") {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 12, class: "plot-cane-bed plot-shape" }));
-    const lines = [el.name, el.masse].filter(Boolean);
-    plotLines(g, cx, y + (lines.length > 1 ? 18 : hgt / 2 + 5), lines, 14);
+    g.append(plotText(cx, y + hgt / 2 + 4, el.name, 12, "middle"));
   } else if (el.typ === "rasen") {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 14, class: "plot-lawn plot-shape" }));
     [0.3, 0.5, 0.7].forEach((step) => {
       g.append(svgEl("path", { d: `M${x + b * step},${y + 28} v16`, class: "plot-grass" }));
     });
-    g.append(plotText(cx, y + hgt / 2 + 8, el.name, 16, "middle"));
+    g.append(plotText(cx, y + hgt / 2 + 4, el.name, 12, "middle"));
   } else if (el.typ === "fass") {
     g.append(svgEl("rect", { x: x + 6, y: y + 8, width: b - 12, height: hgt - 12, rx: 8, class: "plot-tech plot-shape" }));
     g.append(svgEl("ellipse", { cx, cy: y + 10, rx: (b - 12) / 2, ry: 4, class: "plot-tech-top" }));
@@ -1268,13 +1268,12 @@ function drawPlotElement(svg, el, on) {
     g.append(svgEl("path", { d: `M${cx},${y + 8} v10 M${cx},${y + 12} h10`, class: "plot-pane" }));
   } else if (el.typ === "weg" && b < hgt / 3) {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 10, class: "plot-path plot-shape" }));
-    const label = [el.name, el.masse].filter(Boolean).join(" · ");
-    const text = plotText(cx, y + hgt / 2, label, 13, "middle");
+    const text = plotText(cx, y + hgt / 2, el.name, 11, "middle");
     text.setAttribute("transform", `rotate(-90 ${cx} ${y + hgt / 2})`);
     g.append(text);
   } else if (el.typ === "weg") {
     g.append(svgEl("rect", { x, y, width: b, height: hgt, rx: 10, class: "plot-path plot-shape" }));
-    g.append(plotText(cx, y + hgt / 2 + 5, el.name, 14, "middle"));
+    g.append(plotText(cx, y + hgt / 2 + 4, el.name, 12, "middle"));
   }
   svg.append(g);
 }
@@ -1380,8 +1379,8 @@ function drawFieldCell(svg, el, row, code, box) {
     text.setAttribute("class", "plot-field-label");
     g.append(text);
   } else {
-    const size = box.b < 78 ? 15 : 16;
-    g.append(plotText(box.x + box.b / 2, box.y + box.h / 2 + size * 0.35, code, size, "middle"));
+    const size = box.b < 78 ? 12 : 13;
+    g.append(plotText(box.x + box.b / 2, box.y + box.h / 2 + size * 0.32, code, size, "middle"));
     g.lastChild.setAttribute("class", "plot-field-label");
   }
   if (now.length) {
@@ -1445,53 +1444,267 @@ function renderPlotCard(el) {
   );
 }
 
-function renderParzelle(lage) {
-  if (!lage || !(lage.elemente || []).length) return null;
+function gartenMonthTasks() {
+  const key = String((state.data && state.data.standIso) || berlinToday()).slice(0, 7);
+  const month = (state.data.jahr || []).find((item) => item.key === key);
+  if (!month) return [];
+  return monthTasks(month).map((task) => Object.assign({ month: month.key }, task));
+}
+
+function tasksForFieldArea(bedId, code) {
+  const bedName = bedId === "beet2" ? "beet 2" : "beet 1";
+  return gartenMonthTasks().filter((task) => {
+    const text = task.text;
+    const other = text.match(/[12][A-F]/g) || [];
+    if (other.some((item) => item !== code)) return false;
+    if (code !== "Saum" && /Johannisbeer|Himbeer|Kirsche|Pflaume|Gewächshaus|Regenfass|Pumpe/i.test(text)) return false;
+    const hay = norm(text);
+    return mentionsField(text, code) || hay.includes(bedName) || hay.includes("beete");
+  });
+}
+
+function tasksForArea(el) {
+  if (el.typ === "beet") {
+    const map = new Map();
+    bedFieldRows(el).forEach((row) => {
+      const code = fieldCodeOf(row.feld);
+      if (code) tasksForFieldArea(el.id, code).forEach((task) => map.set(task.id, task));
+    });
+    return [...map.values()];
+  }
+  const words = (el.treffer && el.treffer.length ? el.treffer : [el.name]).map((word) => norm(word)).filter(Boolean);
+  return gartenMonthTasks().filter((task) => words.some((word) => norm(task.text).includes(word)));
+}
+
+function openTaskCount(tasks) {
+  const permanent = permanentIds();
+  return tasks.filter((task) => !permanent.has(task.id) && !isIdsChecked([task.id])).length;
+}
+
+function areaGroup(el) {
+  if (el.typ === "beet" || el.typ === "tomate") return "beete";
+  if (el.typ === "baum" || el.typ === "strauch") return "obst";
+  if (el.typ === "haus") return "haus";
+  if (el.typ === "fass" || el.typ === "pumpe") return "technik";
+  return "flaeche";
+}
+
+function gartenIcon(typ) {
+  const svg = svgEl("svg", { viewBox: "0 0 24 24", "aria-hidden": "true" });
+  const common = { fill: "none", stroke: "currentColor", "stroke-width": "1.6", "stroke-linecap": "round", "stroke-linejoin": "round" };
+  if (typ === "beet") {
+    svg.append(svgEl("rect", Object.assign({ x: 4, y: 6, width: 16, height: 12, rx: 2 }, common)));
+  } else if (typ === "tomate") {
+    svg.append(svgEl("circle", Object.assign({ cx: 12, cy: 13, r: 5 }, common)));
+    svg.append(svgEl("path", Object.assign({ d: "M12 8c2-3 5-2 5 0" }, common)));
+  } else if (typ === "haus") {
+    svg.append(svgEl("path", Object.assign({ d: "M4 11 L12 5 L20 11 V19 H4 Z" }, common)));
+  } else if (typ === "baum" || typ === "strauch") {
+    svg.append(svgEl("circle", Object.assign({ cx: 12, cy: 10, r: 5 }, common)));
+    svg.append(svgEl("path", Object.assign({ d: "M12 15 v5" }, common)));
+  } else if (typ === "fass" || typ === "pumpe") {
+    svg.append(svgEl("rect", Object.assign({ x: 7, y: 6, width: 10, height: 12, rx: 3 }, common)));
+  } else {
+    svg.append(svgEl("path", Object.assign({ d: "M4 16 h16" }, common)));
+  }
+  return svg;
+}
+
+function renderPlanSvg(lage) {
   const svg = svgEl("svg", {
-    viewBox: lage.viewBox || "0 0 340 660",
+    viewBox: lage.viewBox || "0 0 360 680",
     role: "img",
-    "aria-label": lage.aria || "Lageplan",
+    "aria-label": lage.aria || "Lageplan, Süden oben",
   });
   const box = String(lage.viewBox || "0 0 360 680").split(/[\s,]+/).map(Number);
-  svg.append(svgEl("rect", { x: 8, y: 52, width: (box[2] || 360) - 16, height: (box[3] || 680) - 68, rx: 28, class: "plot-ground" }));
+  svg.append(svgEl("rect", { x: 8, y: 52, width: (box[2] || 360) - 16, height: (box[3] || 680) - 68, rx: 22, class: "plot-ground" }));
   const rose = lage.kompass || { x: 170, y: 34, s: "S", n: "N" };
   const compass = svgEl("g", { "aria-hidden": "true" });
-  compass.append(svgEl("circle", { cx: rose.x, cy: rose.y, r: 15, class: "plot-compass" }));
-  compass.append(svgEl("path", { d: `M${rose.x},${rose.y - 11} l-5,11 h10 z`, class: "plot-needle" }));
-  compass.append(plotText(rose.x, rose.y - 20, rose.s || "S", 14, "middle"));
-  compass.append(plotText(rose.x, rose.y + 30, rose.n || "N", 14, "middle"));
+  compass.append(svgEl("circle", { cx: rose.x, cy: rose.y, r: 13, class: "plot-compass" }));
+  compass.append(svgEl("path", { d: `M${rose.x},${rose.y - 9} l-4,9 h8 z`, class: "plot-needle" }));
+  compass.append(plotText(rose.x, rose.y - 16, rose.s || "S", 11, "middle"));
+  compass.append(plotText(rose.x, rose.y + 24, rose.n || "N", 11, "middle"));
   svg.append(compass);
-  (lage.elemente || []).forEach((el) => drawPlotElement(svg, el, state.plotId === el.id));
-  const fieldPick = String(state.plotId || "").match(/^feld:(beet[12]):(.+)$/);
-  const chosen = (lage.elemente || []).find((el) => el.id === state.plotId);
-  const plan = state.data.plan2027 || {};
-  const years = ((plan.fruchtfolge || {}).spalten || []).slice(1);
-  return h(
-    "section",
-    { class: "plot-block" },
-    h("p", { class: "bed-place" }, lage.flaeche || ""),
-    years.length
-      ? h(
-          "div",
-          { class: "year-toggle", role: "group", "aria-label": "Fruchtfolge-Jahr" },
-          years.map((year) =>
-            h(
-              "button",
-              {
-                type: "button",
-                class: "chip" + ((state.rotYear || "2027") === year ? " is-on" : ""),
-                "aria-pressed": (state.rotYear || "2027") === year ? "true" : "false",
-                "data-rot": year,
-              },
-              year
+  (lage.elemente || []).forEach((el) => drawPlotElement(svg, el, state.plotId === el.id || String(state.plotId || "").startsWith("feld:" + el.id + ":")));
+  return svg;
+}
+
+function gartenSheetBody(lage) {
+  const pick = String(state.plotId || "").match(/^feld:(beet[12]):(.+)$/);
+  if (pick) {
+    const bedId = pick[1];
+    const code = pick[2];
+    const row = bedFieldRows({ id: bedId }).find((item) => fieldCodeOf(item.feld) === code);
+    if (!row) return [h("p", {}, "Feld nicht gefunden.")];
+    const face = cropFace(row, code);
+    const year = state.rotYear || "2027";
+    const tasks = tasksForFieldArea(bedId, code);
+    const years = ((((state.data.plan2027 || {}).fruchtfolge || {}).spalten) || []).slice(1);
+    return [
+      h("p", { class: "garten-measure" }, massEquation(row) || fieldParts(row.feld).size || ""),
+      h("p", { class: "garten-grow" }, face),
+      year === "2027" ? h("p", { class: "garten-note" }, row.kultur) : h("p", { class: "garten-note" }, year + ": Fruchtfolge-Stufe. Kultur im Plan gilt für 2027."),
+      years.length
+        ? h(
+            "div",
+            { class: "year-toggle garten-years", role: "group", "aria-label": "Fruchtfolge-Jahr" },
+            years.map((item) =>
+              h(
+                "button",
+                {
+                  type: "button",
+                  class: "chip" + ((state.rotYear || "2027") === item ? " is-on" : ""),
+                  "data-rot": item,
+                  "aria-pressed": (state.rotYear || "2027") === item ? "true" : "false",
+                },
+                item
+              )
             )
           )
+        : null,
+      h("h3", {}, "Offen"),
+      tasks.length
+        ? h(
+            "div",
+            { class: "garten-tasks" },
+            tasks.map((task) => taskLine(task.month, task.text, "", permanentIds().has(task.id), false, [task.id]))
+          )
+        : h("p", { class: "garten-note" }, "Nichts Offen in diesem Monat."),
+      h(
+        "details",
+        { class: "garten-more" },
+        h("summary", {}, "Plan 2027"),
+        h("p", {}, [row.aussaat, row.abstand, row.ernte, row.pflege].filter(Boolean).join(" · "))
+      ),
+    ];
+  }
+  const el = (lage.elemente || []).find((item) => item.id === state.plotId);
+  if (!el) return [];
+  const bestand = bestandByName(el.name);
+  const tasks = tasksForArea(el);
+  const measure = massEquation(el) || (bestand && bestand.masse && bestand.masse !== "–" ? bestand.masse : el.masse || "");
+  const grows = el.karte || (bestand && bestand.notiz) || "";
+  return [
+    measure ? h("p", { class: "garten-measure" }, measure) : null,
+    grows ? h("p", { class: "garten-grow" }, grows) : null,
+    el.ungefahr ? h("p", { class: "garten-note" }, "Lage ungefähr") : null,
+    h("h3", {}, "Offen"),
+    tasks.length
+      ? h(
+          "div",
+          { class: "garten-tasks" },
+          tasks.map((task) => taskLine(task.month, task.text, "", permanentIds().has(task.id), false, [task.id]))
         )
+      : h("p", { class: "garten-note" }, "Nichts Offen in diesem Monat."),
+    (el.aufgaben || []).length
+      ? h("details", { class: "garten-more" }, h("summary", {}, "Pflege im Jahr"), h("ul", { class: "clean" }, el.aufgaben.map((line) => h("li", {}, line))))
       : null,
-    h("div", { class: "plot-wrap" }, svg),
-    h("p", { class: "caption" }, lage.fussnote || ""),
-    h("p", { class: "caption" }, lage.hinweis || ""),
-    fieldPick ? renderFieldCard(fieldPick[1], fieldPick[2]) : renderPlotCard(chosen)
+  ];
+}
+
+function renderGartenSheet(lage) {
+  if (!state.plotId) return null;
+  const pick = String(state.plotId).match(/^feld:(beet[12]):(.+)$/);
+  const el = (lage.elemente || []).find((item) => item.id === state.plotId);
+  const title = pick ? "Feld " + pick[2] : el ? el.name : "Bereich";
+  return h(
+    "div",
+    { class: "garten-sheet-back", "data-plot-close": "1" },
+    h(
+      "aside",
+      { class: "garten-sheet", role: "dialog", "aria-modal": "true", "aria-label": title },
+      h("div", { class: "garten-grab", "data-plot-swipe": "1" }),
+      h(
+        "div",
+        { class: "garten-sheet-bar" },
+        h("h2", {}, title),
+        h("button", { type: "button", class: "text-btn", "data-plot-close": "1" }, "Schließen")
+      ),
+      h("div", { class: "garten-sheet-body" }, ...gartenSheetBody(lage))
+    )
+  );
+}
+
+function renderGarten() {
+  const lage = state.data.lageplan || {};
+  const elements = lage.elemente || [];
+  const filter = state.gartenFilter || "alle";
+  const filters = [
+    ["alle", "Alle"],
+    ["beete", "Beete"],
+    ["obst", "Obst"],
+    ["haus", "Gewächshaus"],
+    ["technik", "Technik"],
+  ];
+  const visible = elements.filter((el) => filter === "alle" || areaGroup(el) === filter);
+  const plan = state.data.plan2027 || {};
+  const rows = [].concat((plan.beete && plan.beete.b1) || [], (plan.beete && plan.beete.b2) || []);
+  return h(
+    "div",
+    { class: "view garten-view" },
+    h("h2", { class: "garten-title" }, lage.titel || "Parzelle"),
+    h("p", { class: "garten-lead" }, lage.flaeche || ""),
+    h("div", { class: "plot-wrap" }, elements.length ? renderPlanSvg(lage) : null),
+    h("p", { class: "garten-hint" }, lage.hinweis || ""),
+    h(
+      "div",
+      { class: "garten-filters", role: "group", "aria-label": "Bereiche filtern" },
+      filters.map(([id, label]) =>
+        h(
+          "button",
+          {
+            type: "button",
+            class: "garten-chip" + (filter === id ? " is-on" : ""),
+            "data-garten-filter": id,
+            "aria-pressed": filter === id ? "true" : "false",
+          },
+          label
+        )
+      )
+    ),
+    h(
+      "div",
+      { class: "garten-list" },
+      visible.map((el) => {
+        const open = openTaskCount(tasksForArea(el));
+        return h(
+          "button",
+          { type: "button", class: "garten-row", "data-plot": el.id },
+          h("span", { class: "garten-ico " + areaGroup(el), "aria-hidden": "true" }, gartenIcon(el.typ)),
+          h("span", { class: "garten-name" }, el.name),
+          open ? h("span", { class: "garten-badge" }, String(open), h("span", { class: "sr" }, " Aufgaben offen")) : null
+        );
+      })
+    ),
+    h(
+      "details",
+      { class: "garten-more" },
+      h("summary", {}, "Plan 2027 · Felder"),
+      h(
+        "ul",
+        { class: "garten-fold-list" },
+        rows.map((row) => {
+          const code = fieldCodeOf(row.feld);
+          const bed = code.startsWith("2") ? "beet2" : "beet1";
+          return h(
+            "li",
+            {},
+            h("button", { type: "button", "data-plot": "feld:" + bed + ":" + code }, code || row.feld, h("span", {}, cropFace(row, code)))
+          );
+        })
+      )
+    ),
+    h(
+      "details",
+      { class: "garten-more" },
+      h("summary", {}, "Bestand"),
+      h(
+        "ul",
+        { class: "garten-fold-list" },
+        (state.data.bestand || []).map((item) => h("li", {}, h("strong", {}, item.name), item.notiz ? h("span", {}, item.notiz) : null))
+      )
+    ),
+    renderGartenSheet(lage)
   );
 }
 
@@ -1511,40 +1724,6 @@ function bedCard(title, mass, place, rows) {
     h("p", { class: "compass" }, skizze.sueden || "Süden"),
     h("div", { class: "bed-soil" }, h("div", { class: "bed-tiles" }, rows.map(fieldTile))),
     h("p", { class: "compass" }, skizze.norden || "Norden")
-  );
-}
-
-function renderGarten() {
-  const plan = state.data.plan2027 || {};
-  const beete = plan.beete || {};
-  const skizze = (plan.lageplan && plan.lageplan.skizze) || {};
-  const placeOf = (value) => {
-    const parts = String(value || "").split("·");
-    return parts.length > 1 ? parts.slice(1).join("·").trim() : "";
-  };
-  const options = beete.optionen || [];
-  const place1 = placeOf((options.find((item) => item.value === "b1") || {}).label);
-  const place2 = placeOf((options.find((item) => item.value === "b2") || {}).label);
-  const key = [
-    ["stark", "Starkzehrer"],
-    ["mittel", "Mittelzehrer"],
-    ["schwach", "Schwachzehrer"],
-    ["grau", "Gründüngung"],
-  ];
-  const lage = state.data.lageplan || {};
-  return h(
-    "div",
-    { class: "view garten-view" },
-    h("h2", {}, lage.titel || "Parzelle 23"),
-    renderParzelle(lage),
-    h("h2", {}, "Beete"),
-    h(
-      "ul",
-      { class: "bed-key" },
-      key.map(([id, label]) => h("li", {}, h("i", { class: "swatch " + id, "aria-hidden": "true" }), label))
-    ),
-    bedCard("Beet 1", bedMeasure(skizze.beet1), place1, beete.b1 || []),
-    bedCard("Beet 2", bedMeasure(skizze.beet2Mass || skizze.beet2), place2, beete.b2 || [])
   );
 }
 
@@ -1692,6 +1871,20 @@ function paint(resetScroll) {
       if (el.dataset.dash) el.setAttribute("stroke-dasharray", el.dataset.dash);
     });
     document.querySelectorAll(".sketch-zoom, .sketch-card").forEach(bindMapZoom);
+    const grab = document.querySelector("[data-plot-swipe]");
+    if (grab && !grab.dataset.bound) {
+      grab.dataset.bound = "1";
+      let startY = 0;
+      grab.addEventListener("pointerdown", (event) => {
+        startY = event.clientY;
+      });
+      grab.addEventListener("pointerup", (event) => {
+        if (event.clientY - startY > 64) {
+          state.plotId = null;
+          paint(false);
+        }
+      });
+    }
   });
   if (state.pendingScroll) {
     const target = document.getElementById(state.pendingScroll);
@@ -1716,8 +1909,19 @@ function setTab(id, push) {
 }
 
 function onClick(event) {
+  if (event.target.closest("button[data-plot-close]") || (event.target.classList && event.target.classList.contains("garten-sheet-back"))) {
+    state.plotId = null;
+    paint(false);
+    return;
+  }
+  const filter = event.target.closest("[data-garten-filter]");
+  if (filter) {
+    state.gartenFilter = filter.getAttribute("data-garten-filter");
+    paint(false);
+    return;
+  }
   const plot = event.target.closest("[data-plot]");
-  if (plot && !event.target.closest(".sheet")) {
+  if (plot && !event.target.closest(".sheet") && !event.target.closest(".garten-tasks")) {
     state.plotId = plot.getAttribute("data-plot");
     state.plotScroll = true;
     paint(false);
@@ -1852,6 +2056,11 @@ function listen() {
     paint(false);
   });
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && state.plotId) {
+      state.plotId = null;
+      paint(false);
+      return;
+    }
     if (event.key === "Escape" && state.sheet) {
       state.sheet = null;
       paint(false);

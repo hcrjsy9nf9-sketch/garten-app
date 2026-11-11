@@ -158,16 +158,16 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 
 .plot-block { display: flex; flex-direction: column; gap: 8px; }
 .plot-wrap {
-  background: var(--card);
-  border: 3px solid var(--soil-edge);
-  border-radius: 28px;
-  padding: 6px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   overflow: visible;
 }
 .plot-wrap svg { width: 100%; height: auto; display: block; overflow: visible; max-width: 100%; }
 .plot-ground { fill: var(--soil); }
-.plot-bed-frame { fill: none; stroke: var(--soil-edge); stroke-width: 2; pointer-events: none; }
-.plot-field { stroke-width: 1.6; }
+.plot-bed-frame { fill: none; stroke: var(--soil-edge); stroke-width: 1; pointer-events: none; }
+.plot-field { stroke-width: 1; }
 .plot-field.stark { fill: var(--green-soft); stroke: var(--green); }
 .plot-field.mittel { fill: var(--beete-soft, #fff0dc); stroke: var(--beete, var(--mittel)); }
 .plot-field.schwach { fill: var(--obst-soft, #ffe4ee); stroke: var(--obst, var(--schwach)); }
@@ -175,27 +175,148 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 800; }
 .plot-field.is-dashed { stroke-dasharray: 4 3; }
 .plot-field-label { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 800; }
 .plot-now { fill: var(--amber); stroke: var(--card); stroke-width: 1; }
-.plot-tomato { fill: #fde8e4; stroke: #a33b32; stroke-width: 2.5; }
+.plot-tomato { fill: #fde8e4; stroke: #a33b32; stroke-width: 1; }
 .plot-tomato-fruit { fill: #d64545; stroke: #8e2424; stroke-width: 1.5; }
 .plot-tomato-leaf { fill: #2f9e4f; stroke: none; }
-.plot-hit.is-on .plot-field { stroke: var(--ink); stroke-width: 3; }
+.plot-hit.is-on .plot-field { stroke: var(--ink); stroke-width: 1.6; }
 .plot-sprout { fill: var(--green); }
-.plot-house, .plot-roof { fill: var(--haus-soft); stroke: var(--haus); stroke-width: 2.5; }
-.plot-pane, .plot-trunk, .plot-cane, .plot-grass { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+.plot-house, .plot-roof { fill: var(--haus-soft); stroke: var(--haus); stroke-width: 1; }
+.plot-pane, .plot-trunk, .plot-cane, .plot-grass { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-linecap: round; }
 .plot-canopy { fill: var(--green); stroke: var(--green-ink); stroke-width: 2; }
 .plot-canopy-lite { fill: var(--card); opacity: 0.55; }
-.plot-bush { fill: var(--obst); stroke: var(--ink); stroke-width: 2; }
+.plot-bush { fill: var(--obst); stroke: var(--ink); stroke-width: 1; }
 .plot-berry { fill: var(--card); }
-.plot-cane-bed { fill: var(--obst-soft); stroke: var(--obst); stroke-width: 2.5; }
-.plot-lawn { fill: color-mix(in srgb, var(--green) 28%, var(--card)); stroke: var(--green); stroke-width: 2.5; }
-.plot-path { fill: var(--soil); stroke: var(--soil-edge); stroke-width: 2; }
-.plot-tech, .plot-tech-top { fill: var(--wasser-soft); stroke: var(--wasser); stroke-width: 2.5; }
+.plot-cane-bed { fill: var(--obst-soft); stroke: var(--obst); stroke-width: 1; }
+.plot-lawn { fill: color-mix(in srgb, var(--green) 22%, var(--card)); stroke: var(--green); stroke-width: 1; }
+.plot-path { fill: var(--soil); stroke: var(--soil-edge); stroke-width: 1; }
+.plot-tech, .plot-tech-top { fill: var(--wasser-soft); stroke: var(--wasser); stroke-width: 1; }
 .plot-compass { fill: var(--card); stroke: var(--ink); stroke-width: 2; }
 .plot-needle { fill: var(--amber); }
-.plot-label, .plot-sub { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 800; }
-.plot-sub { font-weight: 700; }
+.plot-label, .plot-sub, .plot-field-label { fill: var(--ink); font-family: Nunito, "Segoe UI", sans-serif; font-weight: 700; }
+.plot-sub { font-weight: 600; }
 .plot-hit { cursor: pointer; }
-.plot-hit.is-on .plot-shape { stroke: var(--ink); stroke-width: 4; }
+.plot-hit.is-on .plot-shape { stroke: var(--ink); stroke-width: 1.8; }
+
+.garten-view { gap: 14px; }
+.garten-title { font-size: 1.15rem; font-weight: 750; margin: 0; }
+.garten-lead, .garten-hint { margin: 0; color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+.garten-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.garten-chip {
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.garten-chip.is-on { background: var(--green-soft); color: var(--green-ink); border-color: transparent; }
+.garten-list { display: flex; flex-direction: column; }
+.garten-row {
+  min-height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  text-align: left;
+  color: inherit;
+}
+.garten-ico {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  background: var(--green-soft);
+  color: var(--green-ink);
+}
+.garten-ico svg { width: 16px; height: 16px; }
+.garten-ico.obst { background: var(--obst-soft); color: var(--obst); }
+.garten-ico.haus { background: var(--haus-soft); color: var(--haus); }
+.garten-ico.technik { background: var(--wasser-soft); color: var(--wasser); }
+.garten-ico.flaeche { background: var(--soil); color: var(--muted); }
+.garten-name { flex: 1; min-width: 0; font-size: 0.95rem; font-weight: 700; }
+.garten-badge {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 99px;
+  background: var(--amber-soft);
+  color: var(--amber);
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.garten-more { border-bottom: 1px solid var(--line); }
+.garten-more summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 700; font-size: 0.92rem; }
+.garten-fold-list { list-style: none; margin: 0; padding: 0 0 10px; }
+.garten-fold-list li { padding: 6px 0; border-top: 1px solid var(--line); font-size: 0.88rem; }
+.garten-fold-list button {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+}
+.garten-fold-list span { color: var(--muted); }
+.garten-sheet-back {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  background: rgba(20, 32, 24, 0.28);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.garten-sheet {
+  width: min(46rem, 100%);
+  max-height: min(78dvh, 640px);
+  overflow: auto;
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 18px 18px 0 0;
+  padding: 8px 16px calc(16px + env(safe-area-inset-bottom));
+  animation: garten-up 0.22s ease;
+}
+.garten-grab { width: 36px; height: 4px; border-radius: 4px; background: var(--line-strong); margin: 4px auto 8px; }
+.garten-sheet-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: 0; background: var(--card); }
+.garten-sheet-bar h2 { font-size: 1.05rem; margin: 0; }
+.garten-sheet-bar .text-btn { min-height: 44px; }
+.garten-measure { margin: 8px 0 0; font-weight: 700; }
+.garten-grow { margin: 4px 0 0; }
+.garten-note { margin: 4px 0 0; color: var(--muted); font-size: 0.88rem; }
+.garten-sheet h3 { font-size: 0.95rem; margin: 14px 0 4px; }
+.garten-tasks .task { padding: 2px 0; }
+.garten-years { margin-top: 10px; }
+@media (min-width: 840px) {
+  .garten-sheet-back { justify-content: flex-end; align-items: stretch; }
+  .garten-sheet {
+    width: min(400px, 42vw);
+    max-height: none;
+    height: 100%;
+    border-radius: 0;
+    animation: garten-side 0.22s ease;
+  }
+}
+@keyframes garten-up { from { transform: translateY(16px); opacity: 0.6; } to { transform: none; opacity: 1; } }
+@keyframes garten-side { from { transform: translateX(16px); opacity: 0.6; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .garten-sheet { animation: none; }
+}
 .plot-karte {
   background: var(--card);
   border-radius: 22px;
