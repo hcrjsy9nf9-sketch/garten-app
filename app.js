@@ -1529,6 +1529,129 @@ function renderPlanSvg(lage) {
   return svg;
 }
 
+const INFO_MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+
+function kulturEntry() {
+  const bag = (((state.data.plan2027 || {}).kulturInfo || {}).eintraege) || {};
+  const pick = String(state.plotId || "").match(/^feld:(beet[12]):(.+)$/);
+  if (pick) {
+    const code = pick[2] === "Saum" ? (pick[1] === "beet2" ? "saum2" : "saum1") : pick[2];
+    return bag[code] || null;
+  }
+  return bag[state.plotId] || null;
+}
+
+function monthSpan(nums) {
+  const sorted = [...new Set(nums || [])].filter((n) => n >= 1 && n <= 12).sort((a, b) => a - b);
+  if (!sorted.length) return "";
+  const groups = [];
+  let start = sorted[0];
+  let prev = sorted[0];
+  for (let i = 1; i <= sorted.length; i += 1) {
+    const n = sorted[i];
+    if (n === prev + 1) {
+      prev = n;
+      continue;
+    }
+    groups.push(start === prev ? INFO_MONTHS[start - 1] : INFO_MONTHS[start - 1] + "–" + INFO_MONTHS[prev - 1]);
+    start = n;
+    prev = n;
+  }
+  return groups.join(", ");
+}
+
+function infoIcon(kind) {
+  const svg = svgEl("svg", { viewBox: "0 0 24 24", "aria-hidden": "true" });
+  const c = { fill: "none", stroke: "currentColor", "stroke-width": "1.7", "stroke-linecap": "round", "stroke-linejoin": "round" };
+  if (kind === "saat") {
+    svg.append(svgEl("path", Object.assign({ d: "M12 21V10" }, c)));
+    svg.append(svgEl("path", Object.assign({ d: "M12 13c-3-1-5-3-5-6 3 0 5 2 6 4" }, c)));
+    svg.append(svgEl("path", Object.assign({ d: "M12 12c3 0 6-1 8-3-1 4-4 6-7 6" }, c)));
+  } else if (kind === "pflege") {
+    svg.append(svgEl("path", Object.assign({ d: "M12 3c1.5 3.2 1.2 5.2-.2 7.2" }, c)));
+    svg.append(svgEl("path", Object.assign({ d: "M8 14.5a4 4 0 0 0 8 0c0-2.4-1.6-4-4-4s-4 1.6-4 4z" }, c)));
+  } else {
+    svg.append(svgEl("rect", Object.assign({ x: 3, y: 6, width: 7, height: 12, rx: 2 }, c)));
+    svg.append(svgEl("rect", Object.assign({ x: 14, y: 6, width: 7, height: 12, rx: 2 }, c)));
+  }
+  return svg;
+}
+
+function monthStrip(crop) {
+  const letters = state.data.monateKurz || ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
+  const s = new Set(crop.s || []);
+  const p = new Set(crop.p || []);
+  const e = new Set(crop.e || []);
+  const bits = [];
+  const saat = monthSpan(crop.s);
+  const pflanz = monthSpan(crop.p);
+  const ernte = monthSpan(crop.e);
+  if (saat) bits.push("Saat " + saat);
+  if (pflanz) bits.push("Pflanzung " + pflanz);
+  if (ernte) bits.push("Ernte " + ernte);
+  return h(
+    "div",
+    {
+      class: "month-strip",
+      role: "img",
+      "aria-label": (crop.name || "Kultur") + (bits.length ? ": " + bits.join(", ") : ""),
+    },
+    letters.map((letter, i) => {
+      const m = i + 1;
+      const kind = (s.has(m) ? "s" : "") + (p.has(m) ? "p" : "") + (e.has(m) ? "e" : "");
+      return h("span", { class: kind ? "is-" + kind : "" }, letter);
+    })
+  );
+}
+
+function renderKulturInfo(info) {
+  if (!info) return null;
+  const crops = info.kulturen || [];
+  return h(
+    "div",
+    { class: "info-wrap" },
+    crops.length
+      ? h(
+          "section",
+          { class: "info-sec" },
+          h("h3", {}, infoIcon("saat"), "Was kommt rein"),
+          crops.map((crop) =>
+            h(
+              "div",
+              { class: "info-crop" },
+              h("div", { class: "info-crop-line" }, h("strong", {}, crop.name), crop.art ? h("span", { class: "info-art" }, crop.art) : null),
+              monthStrip(crop)
+            )
+          ),
+          h(
+            "p",
+            { class: "info-legend" },
+            h("span", {}, h("span", { class: "swatch is-s" }), "Saat"),
+            h("span", {}, h("span", { class: "swatch is-p" }), "Pflanzung"),
+            h("span", {}, h("span", { class: "swatch is-e" }), "Ernte")
+          )
+        )
+      : null,
+    (info.pflege || []).length
+      ? h(
+          "section",
+          { class: "info-sec" },
+          h("h3", {}, infoIcon("pflege"), "Pflege"),
+          h("ul", { class: "info-tips" }, info.pflege.slice(0, 4).map((line) => h("li", {}, line)))
+        )
+      : null,
+    info.gut || info.schlecht
+      ? h(
+          "section",
+          { class: "info-sec" },
+          h("h3", {}, infoIcon("nachbar"), "Nachbarn"),
+          info.gut && info.gut.length ? h("p", { class: "info-nb gut" }, h("b", {}, "Gut "), info.gut.join(", ")) : null,
+          info.schlecht && info.schlecht.length ? h("p", { class: "info-nb schlecht" }, h("b", {}, "Meiden "), info.schlecht.join(", ")) : null
+        )
+      : null
+  );
+}
+
 function gartenSheetBody(lage) {
   const pick = String(state.plotId || "").match(/^feld:(beet[12]):(.+)$/);
   if (pick) {
@@ -1539,11 +1662,16 @@ function gartenSheetBody(lage) {
     const face = cropFace(row, code);
     const year = state.rotYear || "2027";
     const tasks = tasksForFieldArea(bedId, code);
+    const info = kulturEntry();
     const years = ((((state.data.plan2027 || {}).fruchtfolge || {}).spalten) || []).slice(1);
     return [
       h("p", { class: "garten-measure" }, massEquation(row) || fieldParts(row.feld).size || ""),
       h("p", { class: "garten-grow" }, face),
-      year === "2027" ? h("p", { class: "garten-note" }, row.kultur) : h("p", { class: "garten-note" }, year + ": Fruchtfolge-Stufe. Kultur im Plan gilt für 2027."),
+      year === "2027"
+        ? info
+          ? null
+          : h("p", { class: "garten-note" }, row.kultur)
+        : h("p", { class: "garten-note" }, year + ": nur die Fruchtfolge-Stufe. Die Kulturen unten gelten für 2027."),
       years.length
         ? h(
             "div",
@@ -1562,7 +1690,8 @@ function gartenSheetBody(lage) {
             )
           )
         : null,
-      h("h3", {}, "Offen"),
+      renderKulturInfo(info),
+      h("h3", { class: "info-open" }, "Offen"),
       tasks.length
         ? h(
             "div",
@@ -1574,7 +1703,8 @@ function gartenSheetBody(lage) {
         "details",
         { class: "garten-more" },
         h("summary", {}, "Plan 2027"),
-        h("p", {}, [row.aussaat, row.abstand, row.ernte, row.pflege].filter(Boolean).join(" · "))
+        h("p", {}, [row.aussaat, row.abstand, row.ernte, row.pflege].filter(Boolean).join(" · ")),
+        info && info.mehr ? h("p", {}, info.mehr) : null
       ),
     ];
   }
@@ -1584,11 +1714,13 @@ function gartenSheetBody(lage) {
   const tasks = tasksForArea(el);
   const measure = massEquation(el) || (bestand && bestand.masse && bestand.masse !== "–" ? bestand.masse : el.masse || "");
   const grows = el.karte || (bestand && bestand.notiz) || "";
+  const info = kulturEntry();
   return [
     measure ? h("p", { class: "garten-measure" }, measure) : null,
     grows ? h("p", { class: "garten-grow" }, grows) : null,
     el.ungefahr ? h("p", { class: "garten-note" }, "Lage ungefähr") : null,
-    h("h3", {}, "Offen"),
+    renderKulturInfo(info),
+    h("h3", { class: "info-open" }, "Offen"),
     tasks.length
       ? h(
           "div",
@@ -1596,8 +1728,14 @@ function gartenSheetBody(lage) {
           tasks.map((task) => taskLine(task.month, task.text, "", permanentIds().has(task.id), false, [task.id]))
         )
       : h("p", { class: "garten-note" }, "Nichts Offen in diesem Monat."),
-    (el.aufgaben || []).length
-      ? h("details", { class: "garten-more" }, h("summary", {}, "Pflege im Jahr"), h("ul", { class: "clean" }, el.aufgaben.map((line) => h("li", {}, line))))
+    (el.aufgaben || []).length || (info && info.mehr)
+      ? h(
+          "details",
+          { class: "garten-more" },
+          h("summary", {}, (el.aufgaben || []).length ? "Pflege im Jahr" : "Hinweis"),
+          (el.aufgaben || []).length ? h("ul", { class: "clean" }, el.aufgaben.map((line) => h("li", {}, line))) : null,
+          info && info.mehr ? h("p", {}, info.mehr) : null
+        )
       : null,
   ];
 }

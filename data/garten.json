@@ -1266,6 +1266,985 @@
       "ca": true,
       "hinweis": "ca., Länge der Gewächshauswand 2,5 m × ca. 0,6 m. Nicht vermessen."
     },
+    "kulturInfo": {
+      "hinweis": "Kulturen 2027 für Magdeburg: letzte Fröste Mitte Mai, wärmeliebendes Gemüse ins Freiland erst nach dem 15. Mai. Nur Maßnahmen für Haus- und Kleingarten, ohne Spritzmittel.",
+      "eintraege": {
+        "1A": {
+          "kulturen": [
+            {
+              "name": "Zucchini",
+              "art": "Voranzucht, Auspflanzen",
+              "s": [
+                4
+              ],
+              "p": [
+                5
+              ],
+              "e": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Hokkaido",
+              "art": "Voranzucht, Auspflanzen",
+              "s": [
+                4
+              ],
+              "p": [
+                5
+              ],
+              "e": [
+                8,
+                9,
+                10
+              ]
+            }
+          ],
+          "pflege": [
+            "5 l/m² Kompost vor der Pflanzung, danach mulchen.",
+            "Reichlich gießen, Blätter trocken lassen.",
+            "Kapuzinerkresse und Ringelblume statt Spritzmittel."
+          ],
+          "gut": [
+            "Kapuzinerkresse",
+            "Ringelblume",
+            "Buschbohne",
+            "Zwiebel"
+          ],
+          "schlecht": [
+            "Kartoffel"
+          ]
+        },
+        "1B": {
+          "kulturen": [
+            {
+              "name": "Steckzwiebeln",
+              "art": "Stecken Ende März",
+              "p": [
+                3
+              ],
+              "e": [
+                6,
+                7,
+                8
+              ]
+            },
+            {
+              "name": "Rote Bete",
+              "art": "Direktsaat",
+              "s": [
+                4,
+                5,
+                6
+              ],
+              "e": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Pflücksalat",
+              "art": "Direktsaat, Zwischensaat",
+              "s": [
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "e": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          ],
+          "pflege": [
+            "3 l/m² Kompost, Boden gleichmäßig feucht halten.",
+            "Pflücksalat zwischen die Zwiebelreihen setzen.",
+            "Rote Bete in Sätzen säen."
+          ],
+          "gut": [
+            "Pflücksalat zur Zwiebel",
+            "Möhre",
+            "Dill"
+          ],
+          "schlecht": [
+            "Bohne",
+            "Erbse",
+            "Mangold"
+          ]
+        },
+        "1C": {
+          "kulturen": [
+            {
+              "name": "Zuckererbsen",
+              "art": "Direktsaat",
+              "s": [
+                3,
+                4
+              ],
+              "e": [
+                6,
+                7
+              ]
+            },
+            {
+              "name": "Buschbohnen",
+              "art": "Direktsaat ab Mitte Mai",
+              "s": [
+                5,
+                6
+              ],
+              "e": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "name": "Bohnenkraut",
+              "art": "Zwischenkultur",
+              "p": [
+                5
+              ],
+              "e": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "name": "Feldsalat",
+              "art": "Nachkultur",
+              "s": [
+                8
+              ],
+              "e": [
+                10,
+                11
+              ]
+            }
+          ],
+          "pflege": [
+            "Kein Dünger, Leguminosen binden Stickstoff selbst.",
+            "Bohnenkraut in die Reihe, hält Läuse fern.",
+            "Nach den Erbsen im August Feldsalat säen."
+          ],
+          "gut": [
+            "Bohnenkraut",
+            "Kapuzinerkresse",
+            "Möhre",
+            "Gurke"
+          ],
+          "schlecht": [
+            "Zwiebel",
+            "Knoblauch",
+            "Fenchel"
+          ]
+        },
+        "1D": {
+          "kulturen": [
+            {
+              "name": "Radieschen",
+              "art": "Direktsaat, Vorkultur",
+              "s": [
+                3
+              ],
+              "e": [
+                4,
+                5
+              ]
+            },
+            {
+              "name": "Spinat",
+              "art": "Direktsaat, Vorkultur",
+              "s": [
+                3
+              ],
+              "e": [
+                4,
+                5
+              ]
+            },
+            {
+              "name": "Phacelia",
+              "art": "Direktsaat, Blüte Aug–Sep",
+              "s": [
+                6
+              ]
+            },
+            {
+              "name": "Buchweizen",
+              "art": "Direktsaat, Blüte Aug–Sep",
+              "s": [
+                6
+              ]
+            }
+          ],
+          "pflege": [
+            "Radieschen und Spinat früh ernten, dann Phacelia und Buchweizen.",
+            "Blühende Gründüngung stehen lassen, Bienen nutzen sie.",
+            "Abgefrorenes als Mulch liegen lassen, nicht untergraben."
+          ],
+          "gut": [
+            "Phacelia verträgt sich mit allem Gemüse"
+          ],
+          "schlecht": [
+            "Radieschen nicht nach Kohl",
+            "Spinat nicht neben Mangold"
+          ]
+        },
+        "saum1": {
+          "kulturen": [
+            {
+              "name": "Thymian, Salbei, Schnittlauch",
+              "art": "Pflanzung, Ernte der Kräuter",
+              "p": [
+                4
+              ],
+              "e": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Blut-Storchschnabel, Karthäuser-Nelke",
+              "art": "Pflanzung April, Blüte Mai–Sep",
+              "p": [
+                4
+              ]
+            }
+          ],
+          "pflege": [
+            "Im April pflanzen, danach kaum gießen.",
+            "Sandarium im südlichen Meter sonnig und offen lassen.",
+            "Verblühtes erst im Frühjahr schneiden."
+          ],
+          "gut": [
+            "Thymian",
+            "Salbei",
+            "Schnittlauch",
+            "Storchschnabel"
+          ],
+          "schlecht": [
+            "Minze, sie überwuchert den Saum"
+          ]
+        },
+        "2A": {
+          "kulturen": [
+            {
+              "name": "Spinat",
+              "art": "Direktsaat",
+              "s": [
+                3,
+                8
+              ],
+              "e": [
+                5,
+                6,
+                10,
+                11
+              ]
+            },
+            {
+              "name": "Pflücksalat",
+              "art": "Direktsaat alle 3–4 Wochen",
+              "s": [
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "e": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Mangold",
+              "art": "Direktsaat",
+              "s": [
+                4
+              ],
+              "e": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
+            },
+            {
+              "name": "Rucola, Asia-Salat",
+              "art": "Direktsaat, Zwischensaat",
+              "s": [
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "e": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            }
+          ],
+          "pflege": [
+            "3 l/m² Kompost, im Halbschatten gleichmäßig feucht halten.",
+            "Salat alle 3–4 Wochen nachsäen.",
+            "Spinat im März und noch einmal im August."
+          ],
+          "gut": [
+            "Radieschen",
+            "Zwiebel",
+            "Kohlrabi"
+          ],
+          "schlecht": [
+            "Mangold nicht neben Rote Bete",
+            "Spinat und Mangold nur zeitlich versetzt"
+          ]
+        },
+        "2B": {
+          "kulturen": [
+            {
+              "name": "Rhabarber",
+              "art": "Pflanzung, Ernte erst ab 2028",
+              "p": [
+                3
+              ]
+            },
+            {
+              "name": "Walderdbeeren",
+              "art": "Pflanzung",
+              "p": [
+                4
+              ],
+              "e": [
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "name": "Petersilie",
+              "art": "Direktsaat",
+              "s": [
+                4
+              ],
+              "e": [
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          ],
+          "pflege": [
+            "Mehrjährig, nicht in die Fruchtfolge nehmen.",
+            "Jedes Jahr Kompost; Rhabarber im Pflanzjahr nicht ernten.",
+            "Mulchen, Walderdbeeren nicht auf nacktem Boden."
+          ],
+          "gut": [
+            "Schnittlauch",
+            "Buschbohne",
+            "Salat"
+          ],
+          "schlecht": [
+            "Sellerie neben Rhabarber",
+            "Kohl neben Erdbeeren"
+          ],
+          "mehr": "Rhabarber trägt ab 2028, dann April bis Juni. Die Stangen vor dem Johannistag ernten und die Blüte ausbrechen."
+        },
+        "2C": {
+          "kulturen": [
+            {
+              "name": "Brokkoli",
+              "art": "Voranzucht, Auspflanzen Mitte Mai",
+              "s": [
+                3
+              ],
+              "p": [
+                5
+              ],
+              "e": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Knollensellerie",
+              "art": "Voranzucht, Auspflanzen Mitte Mai",
+              "s": [
+                2,
+                3
+              ],
+              "p": [
+                5
+              ],
+              "e": [
+                10,
+                11
+              ]
+            },
+            {
+              "name": "Kohlrabi",
+              "art": "Direktsaat oder Jungpflanzen, April und Juli",
+              "s": [
+                4,
+                7
+              ],
+              "p": [
+                4,
+                7
+              ],
+              "e": [
+                6,
+                7,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Grünkohl",
+              "art": "Direktsaat oder Pflanzung Ende Juni",
+              "s": [
+                6
+              ],
+              "p": [
+                6
+              ],
+              "e": [
+                10,
+                11,
+                12,
+                1,
+                2
+              ]
+            }
+          ],
+          "pflege": [
+            "5 l/m² Kompost, gleichmäßig und reichlich gießen.",
+            "Kulturschutznetz gegen Kohlweißling und Kohlfliege.",
+            "Sellerie neben den Kohl setzen."
+          ],
+          "gut": [
+            "Knollensellerie",
+            "Tomate",
+            "Bohne"
+          ],
+          "schlecht": [
+            "Zwiebel",
+            "Erdbeere",
+            "Kohl nicht nach Kohl"
+          ]
+        },
+        "2D": {
+          "kulturen": [
+            {
+              "name": "Pastinake",
+              "art": "Direktsaat",
+              "s": [
+                3,
+                4
+              ],
+              "e": [
+                10,
+                11,
+                12,
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "name": "Möhren",
+              "art": "Direktsaat",
+              "s": [
+                4,
+                5
+              ],
+              "e": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Lauch",
+              "art": "Voranzucht, Auspflanzen Juni",
+              "s": [
+                3
+              ],
+              "p": [
+                6
+              ],
+              "e": [
+                9,
+                10,
+                11,
+                12,
+                1,
+                2,
+                3
+              ]
+            }
+          ],
+          "pflege": [
+            "Möhre und Lauch Reihe um Reihe wechseln.",
+            "Saat flach feucht halten, später mulchen.",
+            "Pastinake über den Winter im Beet lassen."
+          ],
+          "gut": [
+            "Lauch",
+            "Zwiebel",
+            "Salat",
+            "Erbse"
+          ],
+          "schlecht": [
+            "Dill",
+            "Bohne neben Lauch"
+          ]
+        },
+        "2E": {
+          "kulturen": [
+            {
+              "name": "Stangenbohnen",
+              "art": "Direktsaat ab Mitte Mai",
+              "s": [
+                5,
+                6
+              ],
+              "e": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "name": "Feuerbohnen",
+              "art": "Direktsaat ab Mitte Mai",
+              "s": [
+                5,
+                6
+              ],
+              "e": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "name": "Kapuzinerkresse",
+              "art": "Direktsaat, Blüte bis zum Frost",
+              "s": [
+                5
+              ],
+              "e": [
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          ],
+          "pflege": [
+            "Erst ab Mitte Mai säen, bis dahin droht Frost.",
+            "Rankhilfe an der Nordkante, kein Stickstoffdünger.",
+            "Feuerbohne blüht für Hummeln, Kresse hält Läuse klein."
+          ],
+          "gut": [
+            "Kapuzinerkresse",
+            "Bohnenkraut",
+            "Gurke"
+          ],
+          "schlecht": [
+            "Zwiebel",
+            "Knoblauch",
+            "Fenchel"
+          ]
+        },
+        "2F": {
+          "kulturen": [
+            {
+              "name": "Radieschen",
+              "art": "Direktsaat, Vorkultur",
+              "s": [
+                3,
+                4
+              ],
+              "e": [
+                4,
+                5
+              ]
+            },
+            {
+              "name": "Spinat",
+              "art": "Direktsaat, Vorkultur",
+              "s": [
+                3,
+                4
+              ],
+              "e": [
+                4,
+                5
+              ]
+            },
+            {
+              "name": "Phacelia",
+              "art": "Direktsaat, Blüte Jul–Sep",
+              "s": [
+                6
+              ]
+            },
+            {
+              "name": "Buchweizen",
+              "art": "Direktsaat, Blüte Jul–Sep",
+              "s": [
+                6
+              ]
+            }
+          ],
+          "pflege": [
+            "Radieschen und Spinat März bis April, danach Phacelia und Buchweizen.",
+            "Blüte stehen lassen, der Boden lockert sich für 2028.",
+            "Abgefrorenes als Mulch liegen lassen."
+          ],
+          "gut": [
+            "Phacelia verträgt sich mit allem Gemüse"
+          ],
+          "schlecht": [
+            "Radieschen nicht nach Kohl",
+            "Spinat nicht neben Mangold"
+          ]
+        },
+        "saum2": {
+          "kulturen": [
+            {
+              "name": "Balkan-Storchschnabel",
+              "art": "Pflanzung April, Blüte Mai–Sep",
+              "p": [
+                4
+              ]
+            },
+            {
+              "name": "Blut-Storchschnabel, Salbei, Dost, Nelke",
+              "art": "Pflanzung April, Blüte Mai–Sep",
+              "p": [
+                4
+              ]
+            }
+          ],
+          "pflege": [
+            "Im April pflanzen, nach dem Anwachsen kaum gießen.",
+            "Süden 2 m Balkan-Storchschnabel, Norden die übrigen Stauden.",
+            "Im Winter stehen lassen, Insekten nutzen die Halme."
+          ],
+          "gut": [
+            "Dost",
+            "Salbei",
+            "Storchschnabel",
+            "Karthäuser-Nelke"
+          ],
+          "schlecht": [
+            "Salbei nicht direkt an Gurke"
+          ]
+        },
+        "tomaten": {
+          "kulturen": [
+            {
+              "name": "Tomate, Freiland",
+              "art": "Voranzucht oder Jungpflanze, ab 15. Mai",
+              "s": [
+                3
+              ],
+              "p": [
+                5
+              ],
+              "e": [
+                7,
+                8,
+                9,
+                10
+              ]
+            }
+          ],
+          "pflege": [
+            "Abstand 50–60 cm, Stab oder Spirale, Kompost und Mulch.",
+            "Von unten gießen, Juni bis August ausgeizen.",
+            "Sorten wie Philovita, Primabella oder Resi; kranke Reste in den Hausmüll."
+          ],
+          "gut": [
+            "Basilikum",
+            "Petersilie",
+            "Kapuzinerkresse",
+            "Ringelblume"
+          ],
+          "schlecht": [
+            "Kartoffel",
+            "Fenchel",
+            "Gurke"
+          ],
+          "mehr": "Jedes Jahr am geschützten Platz an der Gewächshauswand. Jährlich Kompost auffüllen, krankes Laub nicht kompostieren."
+        },
+        "gewaechshaus": {
+          "kulturen": [
+            {
+              "name": "Radieschen, Pflücksalat, Kohlrabi",
+              "art": "Vorkultur, Direktsaat",
+              "s": [
+                3,
+                4
+              ],
+              "e": [
+                4,
+                5
+              ]
+            },
+            {
+              "name": "Tomaten, Basilikum darunter",
+              "art": "Voranzucht, Ende April/Anfang Mai",
+              "s": [
+                3
+              ],
+              "p": [
+                4,
+                5
+              ],
+              "e": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Paprika, Chili",
+              "art": "Voranzucht Ende Februar, Mitte Mai",
+              "s": [
+                2
+              ],
+              "p": [
+                5
+              ],
+              "e": [
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "name": "Snackgurke",
+              "art": "Voranzucht, Auspflanzen Mitte Mai",
+              "s": [
+                4
+              ],
+              "p": [
+                5
+              ],
+              "e": [
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "name": "Feldsalat, Winterpostelein, Spinat",
+              "art": "Nachkultur, Direktsaat Aug/Sep",
+              "s": [
+                8,
+                9
+              ],
+              "e": [
+                11,
+                12,
+                1,
+                2,
+                3
+              ]
+            }
+          ],
+          "pflege": [
+            "Täglich lüften, Tomaten ausgeizen, morgens am Fuß gießen.",
+            "Gurke feucht halten, Tomatenblätter trocken lassen.",
+            "3–5 l/m² Kompost; Tomaten und Paprika jährlich die Seite tauschen."
+          ],
+          "gut": [
+            "Basilikum unter Tomate",
+            "Tagetes"
+          ],
+          "schlecht": [
+            "Gurke direkt neben Tomate",
+            "Kartoffel"
+          ],
+          "mehr": "Gurke und Tomate wollen unterschiedliche Luftfeuchte. Bei Mehltau oder Braunfäule die Gurke 2028 ins Freiland auf das Starkzehrer-Feld setzen."
+        },
+        "himbeeren": {
+          "kulturen": [
+            {
+              "name": "Sommerhimbeere",
+              "art": "falls Sommersorte, Ernte Jul–Aug",
+              "e": [
+                7,
+                8
+              ]
+            },
+            {
+              "name": "Herbsthimbeere",
+              "art": "falls Herbstsorte, Ernte Aug–Okt",
+              "e": [
+                8,
+                9,
+                10
+              ]
+            }
+          ],
+          "pflege": [
+            "Drahtgerüst, 8–10 Ruten je Meter, dick mulchen, keine Staunässe.",
+            "Sommer: abgetragene Ruten nach der Ernte bodennah. Herbst: alle Ruten im Februar.",
+            "Madige Früchte und kranke Ruten entfernen, Bestand luftig halten."
+          ],
+          "gut": [
+            "Knoblauch",
+            "Ringelblume",
+            "Buschbohne"
+          ],
+          "schlecht": [
+            "Kartoffel",
+            "Erdbeere",
+            "Staunässe"
+          ],
+          "mehr": "Sorte unbekannt. Schnitt und Ernte nach Sommer- oder Herbstsorte wählen."
+        },
+        "johannisbeeren": {
+          "kulturen": [
+            {
+              "name": "Johannisbeeren, 2 junge Sträucher",
+              "art": "steht, Ernte je nach Sorte",
+              "e": [
+                6,
+                7
+              ]
+            }
+          ],
+          "pflege": [
+            "Dauerhaft mulchen, bei Trockenheit gießen, Kompost im März.",
+            "Aufbau: schwache und liegende Triebe weg, Ziel 8–10 Triebe.",
+            "Luftig halten; Mehltau-Spitzen schneiden, Rundknospen ausbrechen."
+          ],
+          "gut": [
+            "Knoblauch",
+            "Schnittlauch"
+          ],
+          "schlecht": [
+            "Staunässe",
+            "dichte Überpflanzung"
+          ],
+          "mehr": "Rot oder schwarz ist nicht bekannt. Schwarze Sorten auf Gallmilben-Rundknospen prüfen."
+        },
+        "sauerkirsche": {
+          "kulturen": [
+            {
+              "name": "Sauerkirsche",
+              "art": "steht, Ernte im Juli",
+              "e": [
+                7
+              ]
+            }
+          ],
+          "pflege": [
+            "Kompost im März, Balkan-Storchschnabel auf die Baumscheibe.",
+            "Nach der Ernte abgetragene Triebe auf junges Holz ableiten.",
+            "Monilia-Spitzen bis 15 cm ins gesunde Holz, Fruchtmumien weg, nicht spritzen."
+          ],
+          "gut": [
+            "Balkan-Storchschnabel",
+            "Schnittlauch"
+          ],
+          "schlecht": [
+            "dichte, feuchte Unterpflanzung"
+          ]
+        },
+        "pflaume": {
+          "kulturen": [
+            {
+              "name": "Pflaume, junger Baum",
+              "art": "steht, Ernte Aug–Sep",
+              "e": [
+                8,
+                9
+              ]
+            }
+          ],
+          "pflege": [
+            "Nach der Ernte im August 3–4 Leitäste aufbauen.",
+            "Im Juni bei starkem Behang ausdünnen.",
+            "Madige Früchte, Narrentaschen und Fruchtmumien absammeln."
+          ],
+          "gut": [
+            "Schnittlauch",
+            "Kapuzinerkresse am Rand"
+          ],
+          "schlecht": [
+            "stark zehrendes Gemüse in der Baumscheibe"
+          ],
+          "mehr": "Junger Baum, Krone etwa 1 m. Wasserschosse früh ausreißen, nicht mit der Schere im Sommer schneiden."
+        },
+        "suesskirsche": {
+          "kulturen": [
+            {
+              "name": "Süßkirsche",
+              "art": "steht, Ernte Juni–Juli",
+              "e": [
+                6,
+                7
+              ]
+            }
+          ],
+          "pflege": [
+            "Baumscheibe mulchen; bei Trockenheit alle 7–10 Tage durchdringend gießen.",
+            "Sommerschnitt direkt nach der Ernte im Juli.",
+            "Fallobst täglich aufsammeln, Gelbtafeln ab dem Umfärben, Leimring ab Oktober."
+          ],
+          "gut": [
+            "Schnittlauch",
+            "Kapuzinerkresse am Rand"
+          ],
+          "schlecht": [
+            "Rasen bis an den Stamm",
+            "Gemüse in der Baumscheibe"
+          ]
+        }
+      }
+    },
     "fruchtfolge": {
       "titel": "Fruchtfolge 2027–2030",
       "spalten": ["Feld", "2027", "2028", "2029", "2030"],

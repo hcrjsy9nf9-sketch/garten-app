@@ -69,6 +69,7 @@ Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt
 | `beete` | `titel`, `optionen` (`value`: `b1` oder `b2`), `spalten`, `b1`, `b2`, `hinweis` |
 | Beetzeile | `feld`, `kultur`, `aussaat`, `abstand`, `ernte`, `pflege` |
 | `fruchtfolge` | `titel`, `spalten`, `zeilen` (Listen), `text` |
+| `kulturInfo` | Zusatz fürs Detail-Blatt. `eintraege` je Feldcode (`1A`–`1D`, `2A`–`2F`, `saum1`, `saum2`) und je Lageplan-Id (`tomaten`, `gewaechshaus`, `himbeeren`, `johannisbeeren`, `sauerkirsche`, `pflaume`, `suesskirsche`). Pro Eintrag `kulturen` (`name`, `art`, Monate `s` Saat, `p` Pflanzung, `e` Ernte als 1–12), `pflege` (kurze Stichpunkte), `gut`, `schlecht`, optional `mehr`. Bestehende Felder bleiben |
 | `gewaechshaus` | `titel`, `sommerTitel`, `sommerSpalten`, `sommer` (`bereich`, `kultur`, `pflanzung`, `abstand`, `ernte`), `jahreszeitenTitel`, `schritte` (`titel`, `text`), `hinweis` |
 | `obst` | `titel`, `spalten`, `zeilen` (`gehoelz`, `schnitt`, `pflege`, `vorbeugung`), `hinweis` |
 | `kraeuter` | `titel`, `spalten`, `zeilen` (`standort`, `pflanze`, `anzahl`, `abstand`, `licht`, `kosten`), `punkte` |
@@ -80,7 +81,7 @@ Hinweis zum Technik-Status: Enthält `status` den Text `nicht winterfest`, zeigt
 
 Hinweise mit `ton` nutzen `warning` oder `info`.
 
-Neue Felder in `garten.json` sind für diese Fassung nicht nötig. Das Schema bleibt kompatibel; alles Bisherige gilt weiter.
+`kulturInfo` ist ein Zusatz. Bestehende Felder, Ids und der Lageplan bleiben; Tagesupdates von `stand` und `heute` lassen `kulturInfo` stehen. Das Schema bleibt kompatibel.
 
 Optional und nur in der Oberfläche, nicht in der JSON:
 
