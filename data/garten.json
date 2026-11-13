@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "12. Nov. 2026",
-  "standIso": "2026-11-12",
+  "stand": "13. Nov. 2026",
+  "standIso": "2026-11-13",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Falls noch offen, am trockenen Wochenende (Sonntagnacht bis ca. 1 °C) erledigen: Brunnenpumpe und Leitungen entleeren und frostfrei einlagern, Regenfässer leeren und umdrehen, Schläuche und Gewächshaus-Bewässerung entleeren, Außenhahn absperren und offen lassen (Kosten: keine)",
-      "bereich": "Wasser & Technik · Brunnenpumpe, Regenfässer, Schläuche, Gewächshaus",
+      "text": "Vor dem Regen ab Dienstag (ca. 15 mm bis Mi.): Dachrinnen, Fallrohre und Fallrohrfilter, die die Regenfässer speisen, von Laub befreien. Falls noch offen, am trockenen Wochenende (Sonntagnacht um 0 °C) gleich mit erledigen: Brunnenpumpe und Leitungen entleeren und frostfrei einlagern, Regenfässer leeren und umdrehen, Schläuche und Gewächshaus-Bewässerung entleeren (Kosten: keine)",
+      "bereich": "Wasser & Technik · Dachrinnen, Regenfässer, Brunnenpumpe, Schläuche",
       "kategorie": "wasser",
-      "ref": ["2026-11-wasser-regenfaesser", "2026-11-wasser-brunnenpumpe", "2026-11-wasser-schlaeuche", "2026-11-gewaechshaus-bewaesserung"],
+      "ref": ["2026-11-wasser-dachrinnen", "2026-11-wasser-regenfaesser", "2026-11-wasser-brunnenpumpe", "2026-11-wasser-schlaeuche", "2026-11-gewaechshaus-bewaesserung"],
       "done": false
     },
     {
-      "text": "Johannisbeeren auslichten, solange es frostfrei und trocken ist (bis So.): schwache, bodennahe und alte Triebe direkt an der Basis abschneiden, 8–10 kräftige Triebe stehen lassen; Schnittgut auf den Laubhaufen (Kosten: keine, scharfe Schere vorausgesetzt)",
-      "bereich": "Obst & Beeren · 2 Johannisbeeren (Südseite)",
+      "text": "Fruchtmumien und Fallobst an Süßkirsche, Sauerkirsche und Pflaume abnehmen bzw. aufsammeln, auch eingetrocknete Früchte in der Krone; in den Hausmüll, nicht auf den Kompost und nicht verbrennen (Monilia-Vorbeugung, Kosten: keine)",
+      "bereich": "Obst & Beeren · Süßkirsche, Sauerkirsche, Pflaume",
       "kategorie": "obst",
-      "ref": ["2026-11-obst-johannisbeeren"],
+      "ref": ["2026-11-obst-fruchtmumien"],
       "done": false
     },
     {
-      "text": "Abgetragene Sommer-Himbeerruten bodennah abschneiden, junge diesjährige Ruten stehen lassen (ca. 8–10 pro laufendem Meter); kranke Ruten in den Hausmüll, gesunde auf den Totholz- oder Laubhaufen. Herbsthimbeeren erst im Februar schneiden (Kosten: keine)",
-      "bereich": "Obst & Beeren · Himbeeren (2,1 × 1 m)",
-      "kategorie": "obst",
-      "ref": ["2026-11-obst-himbeeren"],
+      "text": "Abgeerntete Flächen in Beet 1 und Beet 2 handhoch (ca. 5–10 cm) mit Laub oder angetrocknetem Rasenschnitt mulchen statt umgraben, am besten vor dem Regen ab Dienstag; noch stehende Kulturen aussparen (Kosten: keine, Laub aus dem eigenen Garten)",
+      "bereich": "Beete · Beet 1 und Beet 2",
+      "kategorie": "beete",
+      "ref": ["2026-11-beete-mulch"],
       "done": false
     }
   ],
