@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "13. Nov. 2026",
-  "standIso": "2026-11-13",
+  "stand": "14. Nov. 2026",
+  "standIso": "2026-11-14",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Vor dem Regen ab Dienstag (ca. 15 mm bis Mi.): Dachrinnen, Fallrohre und Fallrohrfilter, die die Regenfässer speisen, von Laub befreien. Falls noch offen, am trockenen Wochenende (Sonntagnacht um 0 °C) gleich mit erledigen: Brunnenpumpe und Leitungen entleeren und frostfrei einlagern, Regenfässer leeren und umdrehen, Schläuche und Gewächshaus-Bewässerung entleeren (Kosten: keine)",
-      "bereich": "Wasser & Technik · Dachrinnen, Regenfässer, Brunnenpumpe, Schläuche",
-      "kategorie": "wasser",
-      "ref": ["2026-11-wasser-dachrinnen", "2026-11-wasser-regenfaesser", "2026-11-wasser-brunnenpumpe", "2026-11-wasser-schlaeuche", "2026-11-gewaechshaus-bewaesserung"],
-      "done": false
-    },
-    {
-      "text": "Fruchtmumien und Fallobst an Süßkirsche, Sauerkirsche und Pflaume abnehmen bzw. aufsammeln, auch eingetrocknete Früchte in der Krone; in den Hausmüll, nicht auf den Kompost und nicht verbrennen (Monilia-Vorbeugung, Kosten: keine)",
-      "bereich": "Obst & Beeren · Süßkirsche, Sauerkirsche, Pflaume",
+      "text": "Heute (trocken, bis 9 °C) die Johannisbeeren auslichten: schwache, bodennahe und alte Triebe direkt an der Basis weg, 8–10 kräftige Triebe stehen lassen. Bei den Himbeeren die abgetragenen Sommerruten bodennah abschneiden, Herbsthimbeeren erst im Februar. Kranke Ruten in den Hausmüll (Kosten: keine, scharfe Schere)",
+      "bereich": "Obst & Beeren · Johannisbeeren, Himbeeren",
       "kategorie": "obst",
-      "ref": ["2026-11-obst-fruchtmumien"],
+      "ref": ["2026-11-obst-johannisbeeren", "2026-11-obst-himbeeren"],
       "done": false
     },
     {
-      "text": "Abgeerntete Flächen in Beet 1 und Beet 2 handhoch (ca. 5–10 cm) mit Laub oder angetrocknetem Rasenschnitt mulchen statt umgraben, am besten vor dem Regen ab Dienstag; noch stehende Kulturen aussparen (Kosten: keine, Laub aus dem eigenen Garten)",
-      "bereich": "Beete · Beet 1 und Beet 2",
-      "kategorie": "beete",
-      "ref": ["2026-11-beete-mulch"],
+      "text": "Das Schnittgut gleich als lockeren Laub- und Reisighaufen (ca. 1 m², knapp kniehoch) am Südrand neben der Sauerkirsche aufschichten: unten grobe Ruten, oben Laub. Unterschlupf für Igel, danach nicht mehr umsetzen (Kosten: keine)",
+      "bereich": "Natur & Insekten · Südrand, Sauerkirsche",
+      "kategorie": "natur",
+      "ref": ["2026-11-natur-laubhaufen"],
+      "done": false
+    },
+    {
+      "text": "Gewächshaus heute oder Sonntag mittags ca. 10 Minuten lüften, damit der Feldsalat abtrocknet, vor der Nacht wieder schließen (Sonntagnacht um 0 °C). Vor den Böen bis ca. 55 km/h am Mo./Di. Tür und Fenster fest verriegeln (Kosten: keine)",
+      "bereich": "Gewächshaus",
+      "kategorie": "gewaechshaus",
+      "ref": ["2026-11-gewaechshaus-lueften"],
       "done": false
     }
   ],
