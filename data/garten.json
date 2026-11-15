@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "14. Nov. 2026",
-  "standIso": "2026-11-14",
+  "stand": "15. Nov. 2026",
+  "standIso": "2026-11-15",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Heute (trocken, bis 9 °C) die Johannisbeeren auslichten: schwache, bodennahe und alte Triebe direkt an der Basis weg, 8–10 kräftige Triebe stehen lassen. Bei den Himbeeren die abgetragenen Sommerruten bodennah abschneiden, Herbsthimbeeren erst im Februar. Kranke Ruten in den Hausmüll (Kosten: keine, scharfe Schere)",
-      "bereich": "Obst & Beeren · Johannisbeeren, Himbeeren",
-      "kategorie": "obst",
-      "ref": ["2026-11-obst-johannisbeeren", "2026-11-obst-himbeeren"],
+      "text": "Heute ist der letzte trockene Tag vor einer Regenwoche, die Nacht hatte leichten Frost (−0,7 °C): Schläuche entleeren und frostfrei einlagern, Außenhahn absperren, entleeren und offen lassen, im Gewächshaus Schläuche und Kannen leeren. Die Brunnenpumpe samt Leitungen entleeren und frostfrei einlagern, Brunnenrohr abdecken (Kosten: keine)",
+      "bereich": "Wasser & Technik · Schläuche, Außenhahn, Brunnenpumpe, Gewächshaus",
+      "kategorie": "wasser",
+      "ref": ["2026-11-wasser-schlaeuche", "2026-11-wasser-brunnenpumpe", "2026-11-gewaechshaus-bewaesserung"],
       "done": false
     },
     {
-      "text": "Das Schnittgut gleich als lockeren Laub- und Reisighaufen (ca. 1 m², knapp kniehoch) am Südrand neben der Sauerkirsche aufschichten: unten grobe Ruten, oben Laub. Unterschlupf für Igel, danach nicht mehr umsetzen (Kosten: keine)",
-      "bereich": "Natur & Insekten · Südrand, Sauerkirsche",
-      "kategorie": "natur",
-      "ref": ["2026-11-natur-laubhaufen"],
+      "text": "Laub vom Rasen zum Teil abrechen, bevor es ab Montag nass als Matte liegt. Eine handhohe Schicht auf die abgeräumten Flächen von Beet 1 und Beet 2 verteilen, den Rest locker unter Johannisbeeren und Himbeeren, nicht an die Ruten drücken. Nicht umgraben (Kosten: keine)",
+      "bereich": "Beete · Beet 1, Beet 2, Beeren",
+      "kategorie": "beete",
+      "ref": ["2026-11-beete-mulch", "2026-11-natur-beerenmulch", "m11-rasen"],
       "done": false
     },
     {
-      "text": "Gewächshaus heute oder Sonntag mittags ca. 10 Minuten lüften, damit der Feldsalat abtrocknet, vor der Nacht wieder schließen (Sonntagnacht um 0 °C). Vor den Böen bis ca. 55 km/h am Mo./Di. Tür und Fenster fest verriegeln (Kosten: keine)",
+      "text": "Mittags (um 7 °C, trocken) das Gewächshaus ca. 10 Minuten lüften und bei Bedarf etwas Feldsalat schneiden, einzelne Rosetten, nicht alles. Vor den Böen bis ca. 50 km/h am Mo./Di. Tür und Fenster fest verriegeln (Kosten: keine)",
       "bereich": "Gewächshaus",
       "kategorie": "gewaechshaus",
-      "ref": ["2026-11-gewaechshaus-lueften"],
+      "ref": ["2026-11-gewaechshaus-lueften", "m11-feldsalat"],
       "done": false
     }
   ],
