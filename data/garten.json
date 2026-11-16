@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "15. Nov. 2026",
-  "standIso": "2026-11-15",
+  "stand": "16. Nov. 2026",
+  "standIso": "2026-11-16",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Heute ist der letzte trockene Tag vor einer Regenwoche, die Nacht hatte leichten Frost (−0,7 °C): Schläuche entleeren und frostfrei einlagern, Außenhahn absperren, entleeren und offen lassen, im Gewächshaus Schläuche und Kannen leeren. Die Brunnenpumpe samt Leitungen entleeren und frostfrei einlagern, Brunnenrohr abdecken (Kosten: keine)",
-      "bereich": "Wasser & Technik · Schläuche, Außenhahn, Brunnenpumpe, Gewächshaus",
+      "text": "Die Regenwoche (Di.–Do. je ca. 7–8 mm) füllt die Regenfässer noch einmal. Fr./Sa., bevor die Nächte am Wochenende um 0 °C fallen: Fässer leeren, umdrehen oder dicht abdecken und den Fallrohrfilter mit leeren, damit nichts einfriert (Kosten: keine)",
+      "bereich": "Wasser & Technik · Regenfässer",
       "kategorie": "wasser",
-      "ref": ["2026-11-wasser-schlaeuche", "2026-11-wasser-brunnenpumpe", "2026-11-gewaechshaus-bewaesserung"],
+      "ref": ["2026-11-wasser-regenfaesser", "m11-fass"],
       "done": false
     },
     {
-      "text": "Laub vom Rasen zum Teil abrechen, bevor es ab Montag nass als Matte liegt. Eine handhohe Schicht auf die abgeräumten Flächen von Beet 1 und Beet 2 verteilen, den Rest locker unter Johannisbeeren und Himbeeren, nicht an die Ruten drücken. Nicht umgraben (Kosten: keine)",
-      "bereich": "Beete · Beet 1, Beet 2, Beeren",
+      "text": "Regentag für drinnen: Saatgut-Inventur für 2027. Vorhandene Tüten mit der Einkaufsliste im Gartenplan abgleichen (14 Tüten Gemüsesaat ca. 49 €, Tomate 2 Tüten ca. 8 €, Steckzwiebeln 250 g ca. 6 €, Phacelia ca. 8 €, Blumensaat für die Säume ca. 8 €). Abgelaufene Tüten notieren, Möhre und Pastinake möglichst frisch kaufen",
+      "bereich": "Planung · Beet 1, Beet 2, Gewächshaus",
       "kategorie": "beete",
-      "ref": ["2026-11-beete-mulch", "2026-11-natur-beerenmulch", "m11-rasen"],
+      "ref": ["2026-12-beete-02"],
       "done": false
     },
     {
-      "text": "Mittags (um 7 °C, trocken) das Gewächshaus ca. 10 Minuten lüften und bei Bedarf etwas Feldsalat schneiden, einzelne Rosetten, nicht alles. Vor den Böen bis ca. 50 km/h am Mo./Di. Tür und Fenster fest verriegeln (Kosten: keine)",
+      "text": "Böen bis ca. 50 km/h heute und am Mi.: Gewächshaus geschlossen halten und Tür und Fenster verriegeln. Erst am trockenen Sa. mittags ca. 10 Minuten lüften (Kosten: keine)",
       "bereich": "Gewächshaus",
       "kategorie": "gewaechshaus",
-      "ref": ["2026-11-gewaechshaus-lueften", "m11-feldsalat"],
+      "ref": ["2026-11-gewaechshaus-lueften", "m11-lueften"],
       "done": false
     }
   ],
