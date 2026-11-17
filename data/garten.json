@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "16. Nov. 2026",
-  "standIso": "2026-11-16",
+  "stand": "17. Nov. 2026",
+  "standIso": "2026-11-17",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Die Regenwoche (Di.–Do. je ca. 7–8 mm) füllt die Regenfässer noch einmal. Fr./Sa., bevor die Nächte am Wochenende um 0 °C fallen: Fässer leeren, umdrehen oder dicht abdecken und den Fallrohrfilter mit leeren, damit nichts einfriert (Kosten: keine)",
-      "bereich": "Wasser & Technik · Regenfässer",
+      "text": "Erster Nachtfrost in der Nacht auf Mo. (23.11.), ca. −1 °C. Sa./So. sind nach dem Regen bis Fr. die ersten trockenen Tage: Regenfässer leeren und umdrehen, Fallrohrfilter leeren. Brunnenpumpe und Leitungen entleeren und frostfrei einlagern, Schläuche entleeren, Außenhahn absperren und offen lassen, Gießkannen im Gewächshaus leeren (Kosten: keine)",
+      "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Gewächshaus",
       "kategorie": "wasser",
-      "ref": ["2026-11-wasser-regenfaesser", "m11-fass"],
+      "ref": ["2026-11-wasser-regenfaesser", "m11-fass", "2026-11-wasser-brunnenpumpe", "m11-pumpe", "2026-11-wasser-schlaeuche", "m11-schlauch", "2026-11-gewaechshaus-bewaesserung", "m11-hauswasser"],
       "done": false
     },
     {
-      "text": "Regentag für drinnen: Saatgut-Inventur für 2027. Vorhandene Tüten mit der Einkaufsliste im Gartenplan abgleichen (14 Tüten Gemüsesaat ca. 49 €, Tomate 2 Tüten ca. 8 €, Steckzwiebeln 250 g ca. 6 €, Phacelia ca. 8 €, Blumensaat für die Säume ca. 8 €). Abgelaufene Tüten notieren, Möhre und Pastinake möglichst frisch kaufen",
-      "bereich": "Planung · Beet 1, Beet 2, Gewächshaus",
-      "kategorie": "beete",
-      "ref": ["2026-12-beete-02"],
-      "done": false
-    },
-    {
-      "text": "Böen bis ca. 50 km/h heute und am Mi.: Gewächshaus geschlossen halten und Tür und Fenster verriegeln. Erst am trockenen Sa. mittags ca. 10 Minuten lüften (Kosten: keine)",
+      "text": "Gewächshaus bei Regen bis Fr. und Böen bis ca. 50 km/h am Sa. geschlossen halten. Am ruhigen So. mittags ca. 10 Minuten lüften, damit Feldsalat und Luft abtrocknen, vor der Frostnacht wieder zu (Kosten: keine)",
       "bereich": "Gewächshaus",
       "kategorie": "gewaechshaus",
       "ref": ["2026-11-gewaechshaus-lueften", "m11-lueften"],
+      "done": false
+    },
+    {
+      "text": "So.: Alten Nistkasten an der Süßkirsche ausbürsten. Altes Nest raus, nur Bürste und Handschuhe, kein Reiniger. Die Wildbienen-Nisthilfe bleibt zu, darin überwintern die Tiere (Kosten: keine)",
+      "bereich": "Obstbäume · Süßkirsche",
+      "kategorie": "natur",
+      "ref": ["m11-kasten"],
       "done": false
     }
   ],
