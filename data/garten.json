@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "18. Nov. 2026",
-  "standIso": "2026-11-18",
+  "stand": "19. Nov. 2026",
+  "standIso": "2026-11-19",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,21 +35,21 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Wassertechnik bleibt Pflicht fürs trockene Wochenende (Sa./So.): Ab der Nacht auf Mo. (23.11.) Nachtfrost, laut neuer Prognose −0,5 °C, Di. −1,3 °C, Mi. −2,5 °C. Regenfässer leeren und umdrehen, Brunnenpumpe, Leitungen, Schläuche, Außenhahn und Gießkannen im Gewächshaus entleeren (Kosten: keine)",
+      "text": "Sa./So. (trocken, letzte Nächte knapp über 0 °C) Wassertechnik komplett winterfest: Ab der Nacht auf Mo. (23.11.) Nachtfrost, −0,6 °C, in der Nacht auf Di. bis −2,8 °C, Do. erneut ca. −2 °C. Regenfässer leeren und umdrehen, Brunnenpumpe und Leitungen entleeren und Pumpe frostfrei einlagern, Schläuche, Außenhahn (Hahn offen lassen) und Gießkannen im Gewächshaus leeren (Kosten: keine)",
       "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Gewächshaus",
       "kategorie": "wasser",
       "ref": ["2026-11-wasser-regenfaesser", "m11-fass", "2026-11-wasser-brunnenpumpe", "m11-pumpe", "2026-11-wasser-schlaeuche", "m11-schlauch", "2026-11-gewaechshaus-bewaesserung", "m11-hauswasser"],
       "done": false
     },
     {
-      "text": "Fr. (nach dem Sturm heute und dem Regen am Do., dann ruhig): Dachrinne, Fallrohr und Fallrohrfilter noch einmal von Laub befreien, bevor die Fässer am Wochenende geleert werden. Dabei Gewächshaus auf Sturmschäden prüfen, Tür und Fenster bis So. geschlossen lassen (Kosten: keine)",
-      "bereich": "Wasser & Technik · Dachrinne, Fallrohr · Gewächshaus",
+      "text": "Fr. (nach Regen heute ruhiger): Dachrinne, Fallrohr und Fallrohrfilter laubfrei machen, bevor die Fässer geleert werden. Dabei nach den Sturmtagen Gewächshaus und die Leimringe an Kirschen und Pflaume prüfen (lose oder voller Laub? andrücken bzw. erneuern, ca. 5 € falls neu nötig). Gewächshaus bis So. geschlossen lassen",
+      "bereich": "Wasser & Technik · Dachrinne, Fallrohr · Gewächshaus · Obstbäume",
       "kategorie": "wasser",
-      "ref": ["2026-11-wasser-dachrinnen", "m11-rinne"],
+      "ref": ["2026-11-wasser-dachrinnen", "m11-rinne", "2027-10-obst-01", "m10-leim"],
       "done": false
     },
     {
-      "text": "Sa. ist der letzte frostfreie Tag vor der Frostphase: Johannisbeeren auslichten (schwache und bodennahe Triebe weg, Ziel 8–10 kräftige Triebe) und bei den Himbeeren die abgetragenen Sommerruten bodennah abschneiden. Gesundes Schnittgut auf den Laubhaufen neben der Sauerkirsche (Kosten: keine)",
+      "text": "Sa., letzter milder Tag vor der Frostphase: Johannisbeeren auslichten (schwache und bodennahe Triebe weg, 8–10 kräftige bleiben) und abgetragene Sommerruten der Himbeeren bodennah abschneiden. Gesundes Schnittgut auf den Laubhaufen neben der Sauerkirsche (Kosten: keine)",
       "bereich": "Obst & Beeren · Johannisbeeren, Himbeeren, Laubhaufen Sauerkirsche",
       "kategorie": "obst",
       "ref": ["2026-11-obst-johannisbeeren", "m11-johannis", "2026-11-obst-himbeeren", "m11-himbeer", "2026-11-natur-laubhaufen", "m11-laub"],
