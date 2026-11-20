@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "19. Nov. 2026",
-  "standIso": "2026-11-19",
+  "stand": "20. Nov. 2026",
+  "standIso": "2026-11-20",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,24 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Sa./So. (trocken, letzte Nächte knapp über 0 °C) Wassertechnik komplett winterfest: Ab der Nacht auf Mo. (23.11.) Nachtfrost, −0,6 °C, in der Nacht auf Di. bis −2,8 °C, Do. erneut ca. −2 °C. Regenfässer leeren und umdrehen, Brunnenpumpe und Leitungen entleeren und Pumpe frostfrei einlagern, Schläuche, Außenhahn (Hahn offen lassen) und Gießkannen im Gewächshaus leeren (Kosten: keine)",
-      "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Gewächshaus",
-      "kategorie": "wasser",
-      "ref": ["2026-11-wasser-regenfaesser", "m11-fass", "2026-11-wasser-brunnenpumpe", "m11-pumpe", "2026-11-wasser-schlaeuche", "m11-schlauch", "2026-11-gewaechshaus-bewaesserung", "m11-hauswasser"],
-      "done": false
-    },
-    {
-      "text": "Fr. (nach Regen heute ruhiger): Dachrinne, Fallrohr und Fallrohrfilter laubfrei machen, bevor die Fässer geleert werden. Dabei nach den Sturmtagen Gewächshaus und die Leimringe an Kirschen und Pflaume prüfen (lose oder voller Laub? andrücken bzw. erneuern, ca. 5 € falls neu nötig). Gewächshaus bis So. geschlossen lassen",
+      "text": "Heute (Fr., trocken, 7 °C, Böen um 38 km/h): Dachrinne, Fallrohr und Fallrohrfilter laubfrei machen, damit die Fässer am Wochenende sauber geleert werden können. Dabei Gewächshaus nach den Sturmtagen und die Leimringe an Kirschen und Pflaume prüfen (lose andrücken, falls neu nötig ca. 5 €). Gewächshaus mittags 10 Minuten lüften, vor der Nacht schließen",
       "bereich": "Wasser & Technik · Dachrinne, Fallrohr · Gewächshaus · Obstbäume",
       "kategorie": "wasser",
-      "ref": ["2026-11-wasser-dachrinnen", "m11-rinne", "2027-10-obst-01", "m10-leim"],
+      "ref": ["2026-11-wasser-dachrinnen", "m11-rinne", "2027-10-obst-01", "m10-leim", "2026-11-gewaechshaus-lueften", "m11-lueften"],
       "done": false
     },
     {
-      "text": "Sa., letzter milder Tag vor der Frostphase: Johannisbeeren auslichten (schwache und bodennahe Triebe weg, 8–10 kräftige bleiben) und abgetragene Sommerruten der Himbeeren bodennah abschneiden. Gesundes Schnittgut auf den Laubhaufen neben der Sauerkirsche (Kosten: keine)",
+      "text": "Sa. (6 °C, frostfrei, letzter guter Schnitttag vor der Frostphase): Johannisbeeren auslichten (schwache und bodennahe Triebe weg, 8–10 kräftige bleiben), abgetragene Sommerruten der Himbeeren bodennah abschneiden (Herbsthimbeeren erst im Februar). Gesundes Schnittgut auf den Laubhaufen neben der Sauerkirsche, kranke Ruten in den Hausmüll (Kosten: keine)",
       "bereich": "Obst & Beeren · Johannisbeeren, Himbeeren, Laubhaufen Sauerkirsche",
       "kategorie": "obst",
       "ref": ["2026-11-obst-johannisbeeren", "m11-johannis", "2026-11-obst-himbeeren", "m11-himbeer", "2026-11-natur-laubhaufen", "m11-laub"],
+      "done": false
+    },
+    {
+      "text": "Spätestens So. (trocken, 6 °C) Wassertechnik komplett winterfest: Ab Mo. (23.11.) Nachtfrost bis −2,5 °C, Mi./Do. tagsüber kaum über 0 °C, Fr. (27.11.) bis −3,5 °C. Regenfässer samt Filter leeren und umdrehen, Brunnenpumpe und Leitungen entleeren und Pumpe frostfrei einlagern, Brunnenrohr abdecken, Schläuche frostfrei lagern, Außenhahn absperren, entleeren und offen lassen, Kannen und Schläuche im Gewächshaus leeren (Kosten: keine)",
+      "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Gewächshaus",
+      "kategorie": "wasser",
+      "ref": ["2026-11-wasser-regenfaesser", "m11-fass", "2026-11-wasser-brunnenpumpe", "m11-pumpe", "2026-11-wasser-schlaeuche", "m11-schlauch", "2026-11-gewaechshaus-bewaesserung", "m11-hauswasser"],
       "done": false
     }
   ],
