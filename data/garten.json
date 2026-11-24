@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "23. Nov. 2026",
-  "standIso": "2026-11-23",
+  "stand": "24. Nov. 2026",
+  "standIso": "2026-11-24",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,24 +35,45 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Falls gestern nicht geschafft: heute (Mo., bis 2,6 °C, trüb) oder spätestens Di. (bis 2,4 °C) mittags Wassertechnik winterfest machen. Nachts leichter Frost (Mo. −0,7, Di. −0,8 °C), ab Mi. kälter (−2,2 °C), Do. −2,7 °C, Fr./Sa. (27./28.11.) Dauerfrost, tagsüber unter 0 °C, nachts bis −4,7 °C; nach Regen am So. (ca. 12 mm) in der Nacht auf Mo. 30.11. bis −5,9 °C. Regenfässer samt Filter leeren und umdrehen, Brunnenpumpe und Leitungen entleeren und Pumpe frostfrei einlagern, Brunnenrohr abdecken, Schläuche entleeren und frostfrei lagern, Außenhahn absperren, entleeren und offen lassen, Kannen und Schläuche im Gewächshaus leeren (Kosten: keine)",
+      "text": "Heute (Di., bis 2,6 °C, trocken) oder spätestens morgen (Mi., bis 1,6 °C) mittags Wassertechnik winterfest machen, das ist das letzte Fenster: Do. nur noch 0,6 °C, Fr./Sa. (27./28.11.) Dauerfrost, tagsüber −1,7 bzw. −1,2 °C, nachts bis −4,4 °C, So. noch −3,8 °C. Erst Mo. 30.11. wird es wieder milder (bis 4,4 °C). Regenfässer samt Filter leeren und umdrehen, Brunnenpumpe und Leitungen entleeren und Pumpe frostfrei einlagern, Brunnenrohr abdecken, Schläuche entleeren und frostfrei lagern, Außenhahn absperren, entleeren und offen lassen, Kannen und Schläuche im Gewächshaus leeren (Kosten: keine)",
       "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Außenhahn, Gewächshaus",
       "kategorie": "wasser",
-      "ref": ["2026-11-wasser-regenfaesser", "m11-fass", "2026-11-wasser-brunnenpumpe", "m11-pumpe", "2026-11-wasser-schlaeuche", "m11-schlauch", "2026-11-gewaechshaus-bewaesserung", "m11-hauswasser"],
+      "ref": [
+        "2026-11-wasser-regenfaesser",
+        "m11-fass",
+        "2026-11-wasser-brunnenpumpe",
+        "m11-pumpe",
+        "2026-11-wasser-schlaeuche",
+        "m11-schlauch",
+        "2026-11-gewaechshaus-bewaesserung",
+        "m11-hauswasser"
+      ],
       "done": false
     },
     {
-      "text": "Beerenschnitt, falls noch offen: Mo.–Mi. mittags (tagsüber 1–2,6 °C, kein Kahlfrost) Johannisbeeren auf 8–10 kräftige Triebe auslichten und abgetragene Himbeer-Sommerruten bodennah abschneiden; ab Do. nicht mehr schneiden (Dauerfrost Fr./Sa.). Dabei Fruchtmumien und Fallobst an Süßkirsche, Sauerkirsche und Pflaume in den Hausmüll (Monilia-Vorbeugung). Gesundes Schnittgut auf den Laubhaufen neben der Sauerkirsche (Kosten: keine)",
+      "text": "Beerenschnitt, falls noch offen: nur noch heute oder Mi. mittags (tagsüber 1,6–2,6 °C, kein Kahlfrost) Johannisbeeren auf 8–10 kräftige Triebe auslichten und abgetragene Himbeer-Sommerruten bodennah abschneiden; ab Do. Schere liegen lassen, der Rest wartet bis Februar. Dabei Fruchtmumien und Fallobst an Süßkirsche, Sauerkirsche und Pflaume in den Hausmüll (Monilia-Vorbeugung). Gesundes Schnittgut auf den Laubhaufen neben der Sauerkirsche (Kosten: keine)",
       "bereich": "Obst & Beeren · Johannisbeeren, Himbeeren, Kirschen, Pflaume, Laubhaufen",
       "kategorie": "obst",
-      "ref": ["2026-11-obst-johannisbeeren", "m11-johannis", "2026-11-obst-himbeeren", "m11-himbeer", "2026-11-obst-fruchtmumien", "m11-mumien", "2026-11-natur-laubhaufen", "m11-laub"],
+      "ref": [
+        "2026-11-obst-johannisbeeren",
+        "m11-johannis",
+        "2026-11-obst-himbeeren",
+        "m11-himbeer",
+        "2026-11-obst-fruchtmumien",
+        "m11-mumien",
+        "2026-11-natur-laubhaufen",
+        "m11-laub"
+      ],
       "done": false
     },
     {
-      "text": "Gewächshaus geschlossen halten, nur Mo./Di. mittags 10 Minuten lüften und vor der Nacht schließen. Ab Mi. (−2,2 °C, Fr./Sa. bis −4,7 °C) Vlies locker über den Feldsalat legen, falls er drin steht (ca. 5 €, falls keins da)",
+      "text": "Gewächshaus geschlossen halten, heute mittags kurz 10 Minuten lüften und vor der Nacht schließen. Ab Mi. (nachts −2,1 °C, Do. −3,9, Fr./Sa. bis −4,4 °C) Vlies locker über den Feldsalat legen, falls er drin steht (ca. 5 €, falls keins da); an Dauerfrosttagen nicht ernten, gefrorene Blätter werden matschig",
       "bereich": "Gewächshaus",
       "kategorie": "gewaechshaus",
-      "ref": ["2026-11-gewaechshaus-lueften", "m11-lueften"],
+      "ref": [
+        "2026-11-gewaechshaus-lueften",
+        "m11-lueften"
+      ],
       "done": false
     }
   ],
