@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "25. Nov. 2026",
-  "standIso": "2026-11-25",
+  "stand": "26. Nov. 2026",
+  "standIso": "2026-11-26",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,7 +35,7 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Heute (Mi., bis 1,9 °C, vereinzelt Schneegriesel) mittags Wassertechnik winterfest machen, das ist das letzte gute Fenster: Do. nur noch 1,0 °C, von Fr. 27.11. bis Mo. 30.11. Dauerfrost, nachts bis −5,8 °C (So.). Erst Mi. 2.12. wird es mit 5 °C wieder milder. Regenfässer samt Filter leeren und umdrehen, Brunnenpumpe und Leitungen entleeren und Pumpe frostfrei einlagern, Brunnenrohr abdecken, Schläuche entleeren und frostfrei lagern, Außenhahn absperren, entleeren und offen lassen, Kannen und Schläuche im Gewächshaus leeren. Notfalls noch Do. mittags (Kosten: keine)",
+      "text": "Heute (Do., bis 1,3 °C, trocken) mittags allerletztes Fenster für die Wassertechnik, falls noch offen: Fr. 27.11. bleibt es ganztags unter 0 °C (max. −0,5 °C), nachts bis −3,2 °C (Sa.), bis Mi. 2.12. jede Nacht Frost. Regenfässer samt Filter leeren und umdrehen, Brunnenpumpe und Leitungen entleeren und Pumpe frostfrei einlagern, Brunnenrohr abdecken, Schläuche entleeren und frostfrei lagern, Außenhahn absperren, entleeren und offen lassen, Kannen und Schläuche im Gewächshaus leeren (Kosten: keine)",
       "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Außenhahn, Gewächshaus",
       "kategorie": "wasser",
       "ref": [
@@ -51,24 +51,20 @@
       "done": false
     },
     {
-      "text": "Beerenschnitt nur noch heute mittags, falls noch offen: Johannisbeeren auf 8–10 kräftige Triebe auslichten, abgetragene Himbeer-Sommerruten bodennah abschneiden. Ab Do. Schere liegen lassen, der Rest wartet bis Februar. Fruchtmumien an Süßkirsche, Sauerkirsche und Pflaume gehen auch bei Frost noch: in den Hausmüll (Monilia-Vorbeugung). Gesundes Schnittgut auf den Laubhaufen neben der Sauerkirsche (Kosten: keine)",
-      "bereich": "Obst & Beeren · Johannisbeeren, Himbeeren, Kirschen, Pflaume, Laubhaufen",
-      "kategorie": "obst",
+      "text": "Bei Frost gut machbar: Nistkasten an der Süßkirsche ausbürsten (brütet jetzt niemand), die Wildbienen-Nisthilfe bleibt zu. Dabei letzte Fruchtmumien an Süßkirsche, Sauerkirsche und Pflaume abnehmen, in den Hausmüll (Monilia-Vorbeugung). Beerenschnitt bei Kahlfrost liegen lassen; falls noch offen, geht er am Di. 1.12. mittags bei ca. 4 °C, sonst im Februar (Kosten: keine)",
+      "bereich": "Obst & Natur · Süßkirsche (Nistkasten), Sauerkirsche, Pflaume",
+      "kategorie": "natur",
       "ref": [
-        "2026-11-obst-johannisbeeren",
-        "m11-johannis",
-        "2026-11-obst-himbeeren",
-        "m11-himbeer",
+        "2027-11-natur-01",
+        "m11-kasten",
         "2026-11-obst-fruchtmumien",
-        "m11-mumien",
-        "2026-11-natur-laubhaufen",
-        "m11-laub"
+        "m11-mumien"
       ],
       "done": false
     },
     {
-      "text": "Gewächshaus ab heute geschlossen halten, bei Dauerfrost nicht lüften. Heute Vlies locker über den Feldsalat legen, falls er drin steht (ca. 5 €, falls keins da); bis Di. 1.12. nicht ernten, gefrorene Blätter werden matschig. Erst am Mi. 2.12. (5 °C) wieder kurz lüften",
-      "bereich": "Gewächshaus",
+      "text": "Gewächshaus bis Mo. 30.11. geschlossen lassen, Vlies bleibt über dem Feldsalat. Am Di. 1.12. (bis 4,4 °C) mittags 10 Minuten lüften und ab dann wieder Feldsalat ernten, Rosetten schneiden statt ausreißen; vor dem Abend wieder zu",
+      "bereich": "Gewächshaus · Feldsalat",
       "kategorie": "gewaechshaus",
       "ref": [
         "2026-11-gewaechshaus-lueften",
