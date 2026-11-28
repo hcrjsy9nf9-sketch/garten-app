@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "titel": "Garten-App – Parzelle 23",
-  "stand": "27. Nov. 2026",
-  "standIso": "2026-11-27",
+  "stand": "28. Nov. 2026",
+  "standIso": "2026-11-28",
   "zusammenfassung": "Laufendes Gartenbuch für den Kleingarten in Magdeburg (440 m², Boden humos, Süden oben auf der Skizze): Aufgaben, Jahresübersicht, Wasser & Technik, Bestand und Tagebuch.",
   "kategorien": [
     { "key": "wasser", "label": "Wasser & Technik" },
@@ -35,8 +35,8 @@
   "monateKurz": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
   "heute": [
     {
-      "text": "Frost bis Sonntag: heute (Fr.) max. 0,8 °C, Sa. 28.11. Dauerfrost (max. −0,2 °C, nachts bis −3,3 °C), Nacht auf So. bis −2,5 °C. Ab Mo. 30.11. Tauwetter, Nächte bis Fr. 4.12. frostfrei, kaum Regen. Falls die Wassertechnik noch offen ist: Mo. 30.11. (bis 4,5 °C) nachholen. Erst Regenfässer, Pumpe und Außenhahn auf Frostrisse ansehen, dann Fässer samt Filter leeren und umdrehen, Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr abdecken, Schläuche leeren und frostfrei lagern, Außenhahn absperren, entleeren und offen lassen, Kannen im Gewächshaus leeren (Kosten: keine)",
-      "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Außenhahn, Gewächshaus",
+      "text": "Frost übers Wochenende: heute (Sa.) max. 1,6 °C, nachts −1,8 °C; So. 29.11. kaum über 0 °C (max. 0,8 °C), Nacht auf So. bis −3,2 °C. Ab Mo. 30.11. milder (4,3 °C), Nächte bis Do. um 0 °C, Do. 3.12. bis 6,7 °C, fast trocken. Falls die Wassertechnik noch offen ist: Mo. 30.11. mittags nachholen. Erst Regenfässer, Pumpe und Außenhahn auf Frostrisse ansehen, dann Fässer samt Filter leeren und umdrehen, Pumpe und Leitungen entleeren, Pumpe frostfrei einlagern, Brunnenrohr abdecken, Schläuche leeren, Außenhahn absperren, entleeren und offen lassen (Kosten: keine)",
+      "bereich": "Wasser & Technik · Regenfässer, Pumpe, Schläuche, Außenhahn",
       "kategorie": "wasser",
       "ref": [
         "2026-11-wasser-regenfaesser",
@@ -44,33 +44,37 @@
         "2026-11-wasser-brunnenpumpe",
         "m11-pumpe",
         "2026-11-wasser-schlaeuche",
-        "m11-schlauch",
-        "2026-11-gewaechshaus-bewaesserung",
-        "m11-hauswasser"
+        "m11-schlauch"
       ],
       "done": false
     },
     {
-      "text": "Beerenschnitt im Tauwetter Mo. 30.11. bis Do. 3.12. (Do. bis 7 °C, am angenehmsten): Johannisbeeren auslichten, schwache, bodennahe und alte dunkle Triebe bodennah weg, 8–10 kräftige Triebe stehen lassen. Himbeeren: abgetragene Sommerruten bodennah abschneiden, Herbsthimbeeren erst im Februar. Gesundes Schnittgut auf den Laub- und Totholzhaufen neben der Sauerkirsche, Krankes in den Hausmüll (Kosten: keine)",
-      "bereich": "Beeren · 2 Johannisbeeren, Himbeeren (2,1 × 1 m)",
-      "kategorie": "obst",
+      "text": "Im Tauwetter Mo. 30.11. bis Do. 3.12.: falls noch offen Beerenschnitt (Johannisbeeren auf 8–10 kräftige Triebe auslichten, abgetragene Himbeer-Sommerruten bodennah weg). Dabei gleich Laub verteilen: einen Teil des Laubs vom Rasen auf blanke Stellen in Beet 1 und Beet 2 legen, etwa eine Hand hoch, nicht umgraben; unter den Beeren bleibt eine lockere Laubschicht liegen. Gesundes Schnittgut und Restlaub auf den Laubhaufen neben der Sauerkirsche (Kosten: keine)",
+      "bereich": "Beeren · Johannisbeeren, Himbeeren / Beet 1, Beet 2 / Rasen · Laub",
+      "kategorie": "beete",
       "ref": [
         "2026-11-obst-johannisbeeren",
         "m11-johannis",
         "2026-11-obst-himbeeren",
-        "m11-himbeer"
+        "m11-himbeer",
+        "2026-11-beete-mulch",
+        "m11-mulch",
+        "m11-rasen",
+        "2026-11-natur-beerenmulch",
+        "m11-beerenmulch",
+        "2026-11-natur-laubhaufen",
+        "m11-laub"
       ],
       "done": false
     },
     {
-      "text": "Am Frost-Wochenende: Gewächshaus bis So. zu, Vlies bleibt auf dem Feldsalat; ab Mo. 30.11. mittags 10 Minuten lüften und wieder ernten (Rosetten schneiden). Drinnen Saatgut sichten und mit der Einkaufsliste abgleichen: Gemüsesaatgut 14 Tüten ca. 49 €, Steckzwiebeln 250 g ca. 6 €, Tomatensaat 2 Tüten ca. 8 €, Phacelia 250 g ca. 8 €, Blumensaat für die Säume ca. 8 €",
-      "bereich": "Gewächshaus · Feldsalat / Planung · Saatgut 2027",
+      "text": "Gewächshaus übers Frost-Wochenende zu lassen, Vlies bleibt auf dem Feldsalat. Ab Mo. 30.11. mittags 10 Minuten lüften und vor dem Abend wieder schließen; Feldsalat dann wieder nach Bedarf schneiden (Rosetten abschneiden, nicht ausreißen, Schimmeliges entfernen)",
+      "bereich": "Gewächshaus · Feldsalat",
       "kategorie": "gewaechshaus",
       "ref": [
         "2026-11-gewaechshaus-lueften",
         "m11-lueften",
-        "2026-12-beete-02",
-        "m12-saat"
+        "m11-feldsalat"
       ],
       "done": false
     }
